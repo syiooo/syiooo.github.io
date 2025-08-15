@@ -3,7 +3,9 @@ site_url: https://www.sy-study.top
 plugins:
   - search
   - blog
-  - social
+  # - social:
+  #     cards_layout_options:
+  #       font_family: Noto Sans SC
 theme: 
   # 应用主题
   name: material
@@ -46,6 +48,10 @@ markdown_extensions:
   # 数学公式
   - pymdownx.arithmatex:
       generic: true
+  # 图像
+  - attr_list
+  - md_in_html
+  - pymdownx.blocks.caption
 
 extra_javascript:
   - javascripts/mathjax.js
