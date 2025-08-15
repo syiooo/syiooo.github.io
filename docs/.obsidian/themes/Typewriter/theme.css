@@ -289,7 +289,7 @@ body {
 body {
 /*  --font-text-theme: "iA Writer Quattro S";*/
 /*自定义字体*/
-  --font-text-theme: "EconomistSerif",ui-serif,Georgia,Times,"Times New Roman",serif;
+  --font-text-theme: "EconomistSerif",ui-serif,Georgia,Times,"Times New Roman";
   --bold-color: #e6915c;
 /*自定义部分*/
   --font-interface-theme: var(--font-text-theme);
