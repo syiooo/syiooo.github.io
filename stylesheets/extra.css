@@ -1,11 +1,12 @@
 :root {
-  --md-text-font: "EconomistSerif",ui-serif,Georgia,Times,"Times New Roman", monospace, serif; 
+  /* --md-text-font: "EconomistSerif",ui-serif,Georgia,Times,"Times New Roman", monospace, serif;  */
+  --md-text-font: monospace; 
 }
 
 .md-ellipsis {
   font-family: monospace;
 }
 
-.md-nav__title {
+.md-tabs__item {
   font-family: monospace;
 }
