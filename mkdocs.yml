@@ -1,0 +1,55 @@
+site_name: Sy_Blog&Notes
+site_url: https://www.sy-study.top
+theme: 
+  # 应用主题
+  name: material
+  # 字体
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+  features:
+  # 导航栏🧭
+    - navigation.top
+    - content.code.copy
+    - content.code.select
+  # 修改颜色
+  palette:
+  # 明亮主题
+    - scheme: default
+      primary: white
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+
+    # 暗色主题
+    - scheme: slate
+      primary: black
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+
+  # 插件
+  plugins:
+    - search
+
+# markdown扩展（代码高亮）
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  # 数学公式
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+extra_css:
+  - stylesheets/extra.css
