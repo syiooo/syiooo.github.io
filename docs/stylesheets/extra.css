@@ -1,5 +1,5 @@
 :root {
-  --md-text-font: "EconomistSerif",ui-serif,Georgia,Times,"Times New Roman",serif; 
+  --md-text-font: "EconomistSerif",ui-serif,Georgia,Times,"Times New Roman", monospace, serif; 
 }
 
 .md-ellipsis {

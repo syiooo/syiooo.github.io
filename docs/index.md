@@ -6,8 +6,6 @@ description: 网站事项
 
 # 公告
 
-test.test
-
 本站由 Mkdocs 搭建，Vercel 托管。主题采用 Material。
 
 朴实无华...朴实无华...朴实无华...

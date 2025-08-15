@@ -7,7 +7,7 @@ index_img: >-
   https://ccccooh.oss-cn-hangzhou.aliyuncs.com/img/%E6%88%AA%E5%B1%8F2025-07-10%2016.58.38.png
 sticky: 0
 expires: ''
-description: manim 官方演示代码笔记。
+excerpt: manim 官方演示代码笔记。
 tags:
   - manim
 categories:
