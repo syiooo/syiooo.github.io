@@ -1,0 +1,1787 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Sy">
+      
+      
+        <link rel="canonical" href="https://www.sy-study.top/05_Latex/%E3%80%90Latex%E3%80%9130%E5%88%86%E9%92%9F%E5%AD%A6%E4%BC%9ALaTeX/">
+      
+      
+        <link rel="prev" href="../../04_English/%E3%80%90Guardian%E3%80%91Israel-strikes-Syria%E2%80%99s-defence-ministry-in-third-day-of-attacks/">
+      
+      
+        <link rel="next" href="../%E3%80%90Latex%E3%80%91Latex-%E5%A4%87%E5%BF%98%E5%BD%95/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+    
+    
+      
+        <title>【Latex】30分钟学会LaTeX - Sy_Blog&Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-latex" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Sy_Blog&amp;Notes" class="md-header__button md-logo" aria-label="Sy_Blog&Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sy_Blog&Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              【Latex】30分钟学会LaTeX
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Sy_Blog&amp;Notes" class="md-nav__button md-logo" aria-label="Sy_Blog&Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Sy_Blog&Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+  
+  <span class="md-ellipsis">
+    首页
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    01 Bible
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            01 Bible
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01_Bible/%E8%BD%AF%E5%BE%AE%E5%9C%A3%E7%BB%8F/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    软微圣经
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    02 Cognition
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            02 Cognition
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02_Cognition/%E3%80%90%E8%AE%A4%E7%9F%A5%E5%BF%83%E7%90%86%E5%AD%A6%E3%80%91%E8%80%83%E7%A0%94%E5%A6%82%E4%BD%95%E5%A4%8D%E4%B9%A0%EF%BC%9F%E8%B0%88%E8%B0%88%E6%88%91%E5%AF%B9%E9%97%B4%E9%9A%94%E5%BC%8F%E7%BB%83%E4%B9%A0%E7%9A%84%E7%90%86%E8%A7%A3%E3%80%82/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    【认知心理学】考研如何复习？谈谈我对间隔式练习的理解。
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02_Cognition/%E3%80%90%E8%AE%A4%E7%9F%A5%E5%BF%83%E7%90%86%E5%AD%A6%E6%9D%82%E8%B0%88%E3%80%91%E4%B8%BA%E4%BB%80%E4%B9%88%E6%9C%89%E4%BA%9B%E4%BA%BA%E5%AD%A6%E4%B8%8D%E5%A5%BDxx%EF%BC%9F/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    【认知心理学杂谈】为什么有些人学不好xx？
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    03 Math
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            03 Math
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03_Math/%E3%80%90%E6%95%B0%E5%AD%A6%E3%80%91%E5%BF%85%E8%83%8C%E5%85%AC%E5%BC%8F%E5%92%8C%E5%AE%9A%E7%90%86%E6%95%B4%E7%90%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    【数学】必背公式和定理整理
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03_Math/%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%E5%9F%BA%E7%A1%80%E6%95%B4%E7%90%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    三角函数基础整理
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03_Math/%E5%BF%AB%E9%80%9F%E5%BC%80%E6%A0%B9%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    快速开根法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    04 English
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            04 English
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04_English/%E3%80%90Guardian%E3%80%91Israel-strikes-Syria%E2%80%99s-defence-ministry-in-third-day-of-attacks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    【Guardian】Israel strikes Syria’s defence ministry in third day of attacks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    05 Latex
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            05 Latex
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    【Latex】30分钟学会LaTeX
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    【Latex】30分钟学会LaTeX
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-latex" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 什么是LaTeX?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-latex" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 为什么要学习 LaTeX？
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-latex" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 编写你的第一篇 LaTeX 代码
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-preamble" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 文档 preamble
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 包括标题、作者和日期信息
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 添加注释
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. 粗体、斜体和下换线
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. 添加图像
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. 标题、标签和参考
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-latex" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. 在LaTeX中创建列表
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-adding-math-to-latex" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Adding math to LaTeX
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Adding math to LaTeX">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-inline-math-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      11.1 inline math mode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-display-math-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      11.2 Display math mode
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. 基本文档结构
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. 基本文档结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.1 摘要
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.2 段落与换行
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#123-chapter" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.3 章节 - chapter
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      13. 创建表
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. 创建表">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131" class="md-nav__link">
+    <span class="md-ellipsis">
+      13.1 基本
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132-captiontitlereference" class="md-nav__link">
+    <span class="md-ellipsis">
+      13.2 Caption、Title、Reference
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    <span class="md-ellipsis">
+      14. 添加目录
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E3%80%90Latex%E3%80%91Latex-%E5%A4%87%E5%BF%98%E5%BD%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    【Latex】 LaTeX 备忘录
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    06 Manim
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            06 Manim
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06_Manim/%E3%80%90manim%E3%80%91Axes-%E5%9D%90%E6%A0%87%E7%B3%BB%E5%8F%8A%E5%85%B6%E5%9F%BA%E7%B1%BB%E8%AF%A6%E8%A7%A3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    【manim】Axes 坐标系及其基类详解
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06_Manim/%E3%80%90manim%E3%80%91%E4%B8%89%E4%B8%AA%E5%B0%8F%E6%97%B6%E7%94%A8-manim-%E5%86%99%E4%B8%80%E4%B8%AA%E6%B3%B0%E5%8B%92%E5%B1%95%E5%BC%80%E5%BC%8F%E6%BC%94%E7%A4%BA%E5%8A%A8%E7%94%BB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    【manim】写一个泰勒展开式演示动画
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06_Manim/%E3%80%90manim%E3%80%91%E5%88%9D%E5%85%A5%E4%BB%A3%E7%A0%81%E5%8A%A8%E7%94%BB%E7%9A%84%E7%8E%8B%E5%9B%BD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    【manim】初入代码动画的王国
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06_Manim/%E3%80%90manim%E3%80%91%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E8%BF%9B%E9%98%B6%E7%8E%A9%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    【manim】Animations 详解
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-latex" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 什么是LaTeX?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-latex" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 为什么要学习 LaTeX？
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-latex" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 编写你的第一篇 LaTeX 代码
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-preamble" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 文档 preamble
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 包括标题、作者和日期信息
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 添加注释
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. 粗体、斜体和下换线
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. 添加图像
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. 标题、标签和参考
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-latex" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. 在LaTeX中创建列表
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-adding-math-to-latex" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Adding math to LaTeX
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Adding math to LaTeX">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-inline-math-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      11.1 inline math mode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-display-math-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      11.2 Display math mode
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. 基本文档结构
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. 基本文档结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.1 摘要
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.2 段落与换行
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#123-chapter" class="md-nav__link">
+    <span class="md-ellipsis">
+      12.3 章节 - chapter
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      13. 创建表
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. 创建表">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131" class="md-nav__link">
+    <span class="md-ellipsis">
+      13.1 基本
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132-captiontitlereference" class="md-nav__link">
+    <span class="md-ellipsis">
+      13.2 Caption、Title、Reference
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    <span class="md-ellipsis">
+      14. 添加目录
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>【Latex】30分钟学会LaTeX</h1>
+
+<blockquote>
+<p>本文是笔记。尊重原文，<a href="https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes#Creating_lists_in_LaTeX">参考原文地址</a>。</p>
+</blockquote>
+<h2 id="1-latex">1. 什么是LaTeX?</h2>
+<p><span class="arithmatex">\(L^AT_EX\)</span> 发音为 "LAY-tek" 亦或是 "LAH-tek"。是一款用于排版专业外观文档的工具。然而，Latex的工作方式类似于 Markdown。文档<span class="arithmatex">\(\xrightarrow[排版]{TeX引擎}\)</span>排版后文档。这意味着能够通过LaTeX语法来产生专业排版的PDF文件。</p>
+<h2 id="2-latex">2. 为什么要学习 LaTeX？</h2>
+<p>你当然可以提出各种拒绝使用LaTeX的理由，那是你的事儿。But 最终选择LaTeX的用户往往在意以下优点：</p>
+<ul>
+<li>支持排版<strong>极其复杂的数学</strong>、表格和其他科学的技术内容；</li>
+<li>脚注、交叉引用和书目管理设施；</li>
+<li>易于制作复杂或繁琐的文档元素，如索引、词汇表、目录、图表列表；</li>
+<li>强大的<strong>编程性和可扩展性</strong>，数千个插件，<strong>高度定制</strong>；</li>
+</ul>
+<p>总而言之，各种好处，不胜枚举。当然，有些类型的文档 LaTeX 并不擅长，这类“自由格式”文档往往通过 Word 解决。</p>
+<p>与 Markdown 类似，LaTeX 将文档的内容和其样式进行了分离。更换“主题”无需修改内容即可修改样式。</p>
+<h2 id="3-latex">3. 编写你的第一篇 LaTeX 代码</h2>
+<p>第一步是创建一个新的 LaTeX 项目，在电脑上创建一个新的 <code>.tex</code> 文件来完成此操作。在”尊贵“的 mac 上用终端命令做到这一步。</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>First document. This is a simple example, with no 
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>extra parameters or packages included.
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></div>
+<p>此示例将产生的输出：</p>
+<p><img alt="image.png" src="https://ccccooh.oss-cn-hangzhou.aliyuncs.com/img/202507230738619.png" /></p>
+<p>你可以看到，LaTeX 已自动缩进段落首行，帮你处理好了格式问题。让我们仔细看看代码的每个部分都做了什么。</p>
+<p>第一行代码 <code>\documentclass{article}</code> 申明了文档类型，它控制文档的整体外观。设置好文档类型后，文档的内容介于 <code>\begin{document}</code> 和 <code>\end{document}</code> 标签之间。</p>
+<h2 id="4-preamble">4. 文档 preamble</h2>
+<p>文档的 preamble是有别于 body 中的内容的。最小的文档 <span class="arithmatex">\(preamble\)</span> 如下所示：</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">\documentclass</span> [12pt, letterpaper] <span class="nb">{</span>文章<span class="nb">}</span> 
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">\usepackage</span> <span class="nb">{</span> graphicx <span class="nb">}</span>
+</span></code></pre></div>
+<p>其中 <code>\documentclass[12pt, letterpaper]{article}</code> 定义了文档的整体类。</p>
+<p>在此示例中，这两个参数执行以下操作：
+- <code>12pt</code>设置字体大小
+- <code>letterpaper</code>设置纸张尺寸</p>
+<p>当然，也可以使用其他字体大小，<code>9pt</code>、<code>11pt</code>、<code>12pt</code>，但如果未指定，则默认大小为<code>10pt</code>。置于纸张尺寸，其他可能的值有 a4papaer 和 legalpaper。<a href="https://www.overleaf.com/learn/latex/Page_size_and_margins">更多信息参阅</a>。</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">\usepackage</span> <span class="nb">{</span> graphicx <span class="nb">}</span>
+</span></code></pre></div>
+<p>这是一个加载外部包的示例，使其能够导入外部图形文件。<a href="https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes#Finding_and_using_LaTeX_packages">查找和使用LaTeX包</a>。</p>
+<h2 id="5">5. 包括标题、作者和日期信息</h2>
+<p>在 <span class="arithmatex">\(preamble\)</span> 中（注意不是文档正文）添加三行</p>
+<ul>
+<li>\title{My first LaTeX document}: 文档标题</li>
+<li>\author{Sy IoOozZzz}: 作者姓名，可选\thanks{}命令。<ul>
+<li>\thanks{Funded by the HollowSyight}: 可以添加到作者姓名后，位于 author 命令的括号内。如果你需要致谢某个机构，这非常有用。</li>
+</ul>
+</li>
+<li>\date{August 2022}: 你可以手动输入日期，也可以 \today 在每次文档编译时使用命令排版当前的日期。</li>
+</ul>
+<p>添加后你的 <span class="arithmatex">\(preamble\)</span> 大体是这样的：</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">\documentclass</span><span class="na">[12pt, letterpaper]</span><span class="nb">{</span>article<span class="nb">}</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">\title</span><span class="nb">{</span>My first LaTeX document<span class="nb">}</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">\author</span><span class="nb">{</span>Hubert Farnsworth<span class="k">\thanks</span><span class="nb">{</span>Funded by the Overleaf team.<span class="nb">}}</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="k">\date</span><span class="nb">{</span>August 2022<span class="nb">}</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="k">\maketitle</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>We have now added a title, author and date to our first <span class="k">\LaTeX</span><span class="nb">{}</span> document!
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></div>
+<p>用 \maketitle 添加或排版（官方用语为 <span class="arithmatex">\(typeset\)</span> ）标题，作者和日期。</p>
+<p>效果如下：</p>
+<p><img alt="image.png" src="https://ccccooh.oss-cn-hangzhou.aliyuncs.com/img/202507230801560.png" /></p>
+<h2 id="6">6. 添加注释</h2>
+<p>LaTeX 是一种代码，专注于文档排版。因此，与其他任何编程语言写的代码一样，在文档中添加注释非常有用。</p>
+<p>要在 LaTeX 中添加注释，只需 % 起手（行首写一个%）：</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">\documentclass</span><span class="na">[12pt, letterpaper]</span><span class="nb">{</span>article<span class="nb">}</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">\title</span><span class="nb">{</span>My first LaTeX document<span class="nb">}</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="k">\author</span><span class="nb">{</span>Hubert Farnsworth<span class="k">\thanks</span><span class="nb">{</span>Funded by the Overleaf team.<span class="nb">}}</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="k">\date</span><span class="nb">{</span>August 2022<span class="nb">}</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="k">\maketitle</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>We have now added a title, author and date to our first <span class="k">\LaTeX</span><span class="nb">{}</span> document!
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="c">% This line here is a comment. It will not be typeset in the document.</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></div>
+<h2 id="7">7. 粗体、斜体和下换线</h2>
+<ul>
+<li><span class="arithmatex">\(\textbf{粗体}\)</span>：<code>\textbf{}</code></li>
+<li><span class="arithmatex">\(\textit{斜体}\)</span>：<code>\textit{}</code></li>
+<li><span class="arithmatex">\(\underline{下划线}\)</span>：<code>\underline{}</code></li>
+</ul>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Some of the <span class="k">\textbf</span><span class="nb">{</span>greatest<span class="nb">}</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>discoveries in <span class="k">\underline</span><span class="nb">{</span>science<span class="nb">}</span> 
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>were made by <span class="k">\textbf</span><span class="nb">{</span><span class="k">\textit</span><span class="nb">{</span>accident<span class="nb">}}</span>.
+</span></code></pre></div>
+<h2 id="8">8. 添加图像</h2>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">\usepackage</span><span class="nb">{</span>graphicx<span class="nb">}</span> <span class="c">%LaTeX package to import graphics</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="k">\graphicspath</span><span class="nb">{{</span>images/<span class="nb">}}</span> <span class="c">%configuring the graphicx package</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>The universe is immense and it seems to be homogeneous, 
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>on a large scale, everywhere we look.
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="c">% The \includegraphics command is </span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="c">% provided (implemented) by the </span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="c">% graphicx package</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="k">\includegraphics</span><span class="nb">{</span>universe<span class="nb">}</span>  
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>There&#39;s a picture of a galaxy above.
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></div>
+<p>效果：</p>
+<p><img alt="image.png" src="https://ccccooh.oss-cn-hangzhou.aliyuncs.com/img/202507230809454.png" /></p>
+<p>要是用该 graphics 包，在 preamble 中包含下行：</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">\usepackage</span> <span class="nb">{</span> graphicx <span class="nb">}</span>
+</span></code></pre></div>
+<p>若用 OverLeaf，使用<code>\graphicspath{{images/}}</code> 告知 LaTeX 图像保存路径。</p>
+<p><img alt="" src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/1/17/ImagesInAFolder.png" /></p>
+<blockquote>
+<p>注意文件名，最佳做法是省略扩展名。一般来说，图片的文件名不应该包含空格或多个点；若上传到 Overleaf 建议使用小写字母作为文件扩展名。</p>
+</blockquote>
+<h2 id="9">9. 标题、标签和参考</h2>
+<p>可以通过 <span class="arithmatex">\(figure\)</span> 来引用图像。</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">\usepackage</span><span class="nb">{</span>graphicx<span class="nb">}</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="k">\graphicspath</span><span class="nb">{{</span>images/<span class="nb">}}</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[h]
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>    <span class="k">\centering</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>    <span class="k">\includegraphics</span><span class="na">[width=0.75\textwidth]</span><span class="nb">{</span>mesh<span class="nb">}</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>    <span class="k">\caption</span><span class="nb">{</span>A nice plot.<span class="nb">}</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>    <span class="k">\label</span><span class="nb">{</span>fig:mesh1<span class="nb">}</span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>As you can see in figure <span class="k">\ref</span><span class="nb">{</span>fig:mesh1<span class="nb">}</span>, the function grows near the origin. This example is on page <span class="k">\pageref</span><span class="nb">{</span>fig:mesh1<span class="nb">}</span>.
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></div>
+<p>将产生的效果：</p>
+<p><img alt="image.png" src="https://ccccooh.oss-cn-hangzhou.aliyuncs.com/img/202507230814015.png" /></p>
+<p>示例中几个值得注意的命令：
+- <strong><code>\includegraphics[width=0.75\textwidth]{mesh}</code></strong>：这种形式<code>\includegraphics</code>指示LaTeX将图形的宽度设置为文本宽度的 75%——其值存储在<code>\textwidth</code>命令中。
+- <strong><code>\caption{A nice plot.}</code></strong>：顾名思义，此命令用于设置图形标题，可以放置在图形上方或下方。如果您创建了图形列表，则此标题将在该列表中使用。
+- <strong><code>\label{fig:mesh1}</code></strong>：要在文档中引用此图像，请使用该命令为其添加标签<code>\label</code>。该标签用于为图像生成编号，并与下一个命令结合使用，即可引用该图像。
+- <strong><code>\ref{fig:mesh1}</code></strong>：此代码将被对应于参考图的数字替换。</p>
+<h2 id="10-latex">10. 在LaTeX中创建列表</h2>
+<p>无序列表：</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="k">\begin</span><span class="nb">{</span>itemize<span class="nb">}</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>  <span class="k">\item</span> The individual entries are indicated with a black dot, a so-called bullet.
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>  <span class="k">\item</span> The text in the entries may be of any length.
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="k">\end</span><span class="nb">{</span>itemize<span class="nb">}</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></div>
+<p>其效果：</p>
+<p><img alt="An example of bulleted lists in LaTeX" src="https://images.ctfassets.net/nrgyaltdicpt/1lDj29Mg9ZuLNHXwZrTJew/cd7d950c65fd05b251c4aa55746f4eb7/LL30Fig7-plain.svg" /></p>
+<p>有序列表：</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="k">\begin</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>  <span class="k">\item</span> This is the first entry in our list.
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>  <span class="k">\item</span> The list numbers increase with each entry we add.
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="k">\end</span><span class="nb">{</span>enumerate<span class="nb">}</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></div>
+<p>效果：</p>
+<p><img alt="An example numbered list produced in LaTeX" src="https://images.ctfassets.net/nrgyaltdicpt/2vkfa7RiAIJxv5wIZbg9UK/530c384f159d091a587de279d13fefec/LL30Fig8-plain.svg" /></p>
+<h2 id="11-adding-math-to-latex">11. Adding math to LaTeX</h2>
+<h3 id="111-inline-math-mode">11.1 inline math mode</h3>
+<p><div class="language-latex highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">\documentclass</span><span class="na">[12pt, letterpaper]</span><span class="nb">{</span>article<span class="nb">}</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>In physics, the mass-energy equivalence is stated 
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>by the equation <span class="s">$</span><span class="nb">E</span><span class="o">=</span><span class="nb">mc^</span><span class="m">2</span><span class="s">$</span>, discovered in 1905 by Albert Einstein.
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></div>
+<img alt="Image showing math typeset in inline math mode" src="https://images.ctfassets.net/nrgyaltdicpt/77oK8pfew1B1VvxiBtALag/15714f2da4e469bbb8cf70a0d3733e5d/LL30Fig9-plain.svg" /></p>
+<p>排版 inline-mode math 你可以用：<code>\( ... \)</code>, <code>$ ... $</code> 亦或是 <code>\begin{math} ...\end{math}</code>。</p>
+<h3 id="112-display-math-mode">11.2 Display math mode</h3>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">\documentclass</span><span class="na">[12pt, letterpaper]</span><span class="nb">{</span>article<span class="nb">}</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>The mass-energy equivalence is described by the famous equation
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="sb">\[</span><span class="nb"> E</span><span class="o">=</span><span class="nb">mc^</span><span class="m">2</span><span class="nb"> </span><span class="s">\]</span> discovered in 1905 by Albert Einstein. 
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>In natural units (<span class="s">$</span><span class="nb">c </span><span class="o">=</span><span class="nb"> </span><span class="m">1</span><span class="s">$</span>), the formula expresses the identity
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="k">\begin</span><span class="nb">{</span>equation<span class="nb">}</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>E=m
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="k">\end</span><span class="nb">{</span>equation<span class="nb">}</span>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></div>
+<p><img alt="Image showing display mode math in LaTeX" src="https://images.ctfassets.net/nrgyaltdicpt/6n1FPYFzmzCHPpWoEoYQZM/79b33f1096be06326bff7d2e1976c67c/LL30Fig11-plain.svg" /></p>
+<p>使用 <code>\[ ... \]</code>or<code>\begin{displaymath}...\end{displaymath}</code>or<code>\begin{equation}...\end{equation}</code>or<code>$$...$$</code></p>
+<p>更加完整的例子：</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>Subscripts in math mode are written as <span class="s">$</span><span class="nb">a_b</span><span class="s">$</span> and superscripts are written as <span class="s">$</span><span class="nb">a^b</span><span class="s">$</span>. These can be combined and nested to write expressions such as
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="sb">\[</span><span class="nb"> T^{i_</span><span class="m">1</span><span class="nb"> i_</span><span class="m">2</span><span class="nb"> </span><span class="nv">\dots</span><span class="nb"> i_p}_{j_</span><span class="m">1</span><span class="nb"> j_</span><span class="m">2</span><span class="nb"> </span><span class="nv">\dots</span><span class="nb"> j_q} </span><span class="o">=</span><span class="nb"> T</span><span class="o">(</span><span class="nb">x^{i_</span><span class="m">1</span><span class="nb">},</span><span class="nv">\dots</span><span class="nb">,x^{i_p},e_{j_</span><span class="m">1</span><span class="nb">},</span><span class="nv">\dots</span><span class="nb">,e_{j_q}</span><span class="o">)</span><span class="nb"> </span><span class="s">\]</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>We write integrals using <span class="s">$</span><span class="nv">\int</span><span class="s">$</span> and fractions using <span class="s">$</span><span class="nv">\frac</span><span class="nb">{a}{b}</span><span class="s">$</span>. Limits are placed on integrals using superscripts and subscripts:
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="sb">\[</span><span class="nb"> </span><span class="nv">\int</span><span class="nb">_</span><span class="m">0</span><span class="nb">^</span><span class="m">1</span><span class="nb"> </span><span class="nv">\frac</span><span class="nb">{dx}{e^x} </span><span class="o">=</span><span class="nb">  </span><span class="nv">\frac</span><span class="nb">{e</span><span class="o">-</span><span class="m">1</span><span class="nb">}{e} </span><span class="s">\]</span>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>Lower case Greek letters are written as <span class="s">$</span><span class="nv">\omega</span><span class="s">$</span> <span class="s">$</span><span class="nv">\delta</span><span class="s">$</span> etc. while upper case Greek letters are written as <span class="s">$</span><span class="nv">\Omega</span><span class="s">$</span> <span class="s">$</span><span class="nv">\Delta</span><span class="s">$</span>.
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>Mathematical operators are prefixed with a backslash as <span class="s">$</span><span class="nv">\sin</span><span class="o">(</span><span class="nv">\beta</span><span class="o">)</span><span class="s">$</span>, <span class="s">$</span><span class="nv">\cos</span><span class="o">(</span><span class="nv">\alpha</span><span class="o">)</span><span class="s">$</span>, <span class="s">$</span><span class="nv">\log</span><span class="o">(</span><span class="nb">x</span><span class="o">)</span><span class="s">$</span> etc.
+</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></div>
+<p><img alt="Image showing a range of math typeset in LaTeX" src="https://images.ctfassets.net/nrgyaltdicpt/5xfm4NybWckHL5ndpdnBRq/bc0b5e27044820ea5cdd11648a68f543/LL30Fig12r-plain.svg" /></p>
+<p>更多例子：</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="k">\usepackage</span><span class="nb">{</span>amsmath<span class="nb">}</span><span class="c">% For the equation* environment</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="k">\section</span><span class="nb">{</span>First example<span class="nb">}</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>The well-known Pythagorean theorem <span class="s">\(</span><span class="nb">x^</span><span class="m">2</span><span class="nb"> </span><span class="o">+</span><span class="nb"> y^</span><span class="m">2</span><span class="nb"> </span><span class="o">=</span><span class="nb"> z^</span><span class="m">2</span><span class="s">\)</span> was proved to be invalid for other exponents, meaning the next equation has no integer solutions for <span class="s">\(</span><span class="nb">n&gt;</span><span class="m">2</span><span class="s">\)</span>:
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="sb">\[</span><span class="nb"> x^n </span><span class="o">+</span><span class="nb"> y^n </span><span class="o">=</span><span class="nb"> z^n </span><span class="s">\]</span>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="k">\section</span><span class="nb">{</span>Second example<span class="nb">}</span>
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>This is a simple math expression <span class="s">\(</span><span class="nv">\sqrt</span><span class="nb">{x^</span><span class="m">2</span><span class="o">+</span><span class="m">1</span><span class="nb">}</span><span class="s">\)</span> inside text. 
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>And this is also the same: 
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a><span class="k">\begin</span><span class="nb">{</span>math<span class="nb">}</span>
+</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a><span class="k">\sqrt</span><span class="nb">{</span>x<span class="nb">^</span>2+1<span class="nb">}</span>
+</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a><span class="k">\end</span><span class="nb">{</span>math<span class="nb">}</span>
+</span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a>but by using another command.
+</span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a>
+</span><span id="__span-14-19"><a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a>This is a simple math expression without numbering
+</span><span id="__span-14-20"><a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a><span class="sb">\[</span><span class="nv">\sqrt</span><span class="nb">{x^</span><span class="m">2</span><span class="o">+</span><span class="m">1</span><span class="nb">}</span><span class="s">\]</span> 
+</span><span id="__span-14-21"><a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a>separated from text.
+</span><span id="__span-14-22"><a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a>
+</span><span id="__span-14-23"><a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a>This is also the same:
+</span><span id="__span-14-24"><a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a><span class="k">\begin</span><span class="nb">{</span>displaymath<span class="nb">}</span>
+</span><span id="__span-14-25"><a id="__codelineno-14-25" name="__codelineno-14-25" href="#__codelineno-14-25"></a><span class="k">\sqrt</span><span class="nb">{</span>x<span class="nb">^</span>2+1<span class="nb">}</span>
+</span><span id="__span-14-26"><a id="__codelineno-14-26" name="__codelineno-14-26" href="#__codelineno-14-26"></a><span class="k">\end</span><span class="nb">{</span>displaymath<span class="nb">}</span>
+</span><span id="__span-14-27"><a id="__codelineno-14-27" name="__codelineno-14-27" href="#__codelineno-14-27"></a>
+</span><span id="__span-14-28"><a id="__codelineno-14-28" name="__codelineno-14-28" href="#__codelineno-14-28"></a><span class="k">\ldots</span> and this:
+</span><span id="__span-14-29"><a id="__codelineno-14-29" name="__codelineno-14-29" href="#__codelineno-14-29"></a><span class="k">\begin</span><span class="nb">{</span>equation*<span class="nb">}</span>
+</span><span id="__span-14-30"><a id="__codelineno-14-30" name="__codelineno-14-30" href="#__codelineno-14-30"></a><span class="k">\sqrt</span><span class="nb">{</span>x<span class="nb">^</span>2+1<span class="nb">}</span>
+</span><span id="__span-14-31"><a id="__codelineno-14-31" name="__codelineno-14-31" href="#__codelineno-14-31"></a><span class="k">\end</span><span class="nb">{</span>equation*<span class="nb">}</span>
+</span><span id="__span-14-32"><a id="__codelineno-14-32" name="__codelineno-14-32" href="#__codelineno-14-32"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></div>
+<p><img alt="Image showing a range of math typeset in LaTeX" src="https://images.ctfassets.net/nrgyaltdicpt/hT85gkewCDlxCHeNU5slE/9256c129b25bec7a93dcfe9e44b0654a/LL30Fig13r-plain.svg" /></p>
+<h2 id="12">12. 基本文档结构</h2>
+<h3 id="121">12.1 摘要</h3>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="k">\begin</span><span class="nb">{</span>abstract<span class="nb">}</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>This is a simple paragraph at the beginning of the 
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>document. A brief introduction about the main subject.
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="k">\end</span><span class="nb">{</span>abstract<span class="nb">}</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></div>
+<p><img alt="Image showing an abstract typeset in LaTeX" src="https://images.ctfassets.net/nrgyaltdicpt/4cPu8x8ZxuDVF6efcZ03yi/91aa6aa84719613b0e25c725b70aa0b8/LL30Fig14-plain.svg" /></p>
+<h3 id="122">12.2 段落与换行</h3>
+<p>写好摘要后，我们可以开始书写第一个段落。用 <code>\\</code> 手动换行 or <code>\newline</code> 命令。</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="k">\begin</span><span class="nb">{</span>abstract<span class="nb">}</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>This is a simple paragraph at the beginning of the 
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>document. A brief introduction about the main subject.
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="k">\end</span><span class="nb">{</span>abstract<span class="nb">}</span>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>After our abstract we can begin the first paragraph, then press ``enter&#39;&#39; twice to start the second one.
+</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>
+</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>This line will start a second paragraph.
+</span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>
+</span><span id="__span-16-13"><a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>I will start the third paragraph and then add <span class="k">\\</span> a manual line break which causes this text to start on a new line but remains part of the same paragraph. Alternatively, I can use the <span class="k">\verb</span>|<span class="k">\newline</span>|<span class="k">\newline</span> command to start a new line, which is also part of the same paragraph.
+</span><span id="__span-16-14"><a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></div>
+<p><img alt="Image showing the creation of paragraphs in LaTeX" src="https://images.ctfassets.net/nrgyaltdicpt/5DdSH06hFli8k4lR0dxw4m/a55cddf9aa10b64302ae7b72ba0c6447/LL30Fig15r-plain.svg" /></p>
+<h3 id="123-chapter">12.3 章节 - chapter</h3>
+<p>较长的文档通常被分为若干部分，章节、小节等。LaTeX中提供了文档结构化命令，但可用的命令和功能取决于文档类<code>\documentclass</code>。例如，<code>\documentclass { book }</code> 支持将文档划分为部分，但 <code>\documentclass { letter }</code> 不支持。</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">\documentclass</span> <span class="nb">{</span> book <span class="nb">}</span> 
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="k">\begin</span> <span class="nb">{</span> document <span class="nb">}</span> 
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="k">\chapter</span> <span class="nb">{</span>第一章<span class="nb">}</span> 
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="k">\section</span> <span class="nb">{</span>简介<span class="nb">}</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>这是第一部分。
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>Lorem ipsum dolor 坐在 amet，consectetuer adipiscing   elit。 Etiam lobortisfacilisis sem。 Nullam nec mi et 
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>neque pharetra sollicidin。 Praesent imperdietmi nec ante。
+</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>Donec ullamcorper，felis non sodales... <span class="k">\section</span> <span class="nb">{</span>第二节<span class="nb">}</span> 
+</span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>Lorem ipsum dolor sat amet，consectetuer adipiscing elit。   Etiam lobortis facilisissem。 Nullam nec mi et neque pharetra sollicidin。 Praesent imperdiet mi necante... <span class="k">\subsection</span> <span class="nb">{</span>第一小节<span class="nb">}</span> 
+</span><span id="__span-17-12"><a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a>Praesent imperdietmi necante。 Donec ullamcorper，felis non sodales... <span class="k">\section*</span> <span class="nb">{</span>未编号部分<span class="nb">}</span> 
+</span><span id="__span-17-13"><a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a>Lorem ipsum dolor sat amet，consectetuer adipiscing elit。   Etiam lobortis facilisissem... <span class="k">\end</span> <span class="nb">{</span>文档<span class="nb">}</span>
+</span></code></pre></div>
+<p><img alt="该图显示了 LaTeX 书籍文档中的章节" src="https://images.ctfassets.net/nrgyaltdicpt/1A1T7YsurQdM058OwmLqd8/7f6e962c31356bafa702bab9062f6061/LL30Fig16-plain.svg" /></p>
+<p>章节令文章结构一目了然，对人脑的信息处理是极其好的。例如，<code>\chapter{First Chapter}</code> 会创建一个名为 First Chapter 的章节，<code>\section{Introduction}</code> 生成一个名为 Introduction 的章节，等等。章节可以进一步划分为 <code>\subsection{}</code> 甚至 <code>\subsubsection{}</code>。但可以使用末尾带星号的版本来禁用，例如<code>\section*{...}和\subsection*{...}</code>。</p>
+<p>总的来说，LaTeX 文档类提供了下面这些分段命令，每个类都支持相关的子集：
+- \part{part}
+- \chapter{chapter}
+- \section{section}
+- \subsection{subsection}
+- \subsubsection{subsubsection}
+- \paragraph{paragraph}
+- \subparagraph{subparagraph}</p>
+<p>特别说明，\part 和 \chapter 命令只能在 report 和 book 文档类中使用。</p>
+<p>更多信息关于 <a href="https://www.overleaf.com/learn/latex/Sections_and_chapters" title="篇章">Chapter</a>。</p>
+<h2 id="13">13. 创建表</h2>
+<h3 id="131">13.1 基本</h3>
+<p>示例：</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="k">\begin</span><span class="nb">{</span>center<span class="nb">}</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="k">\begin</span><span class="nb">{</span>tabular<span class="nb">}{</span>c c c<span class="nb">}</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a> cell1 <span class="nb">&amp;</span> cell2 <span class="nb">&amp;</span> cell3 <span class="k">\\</span> 
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a> cell4 <span class="nb">&amp;</span> cell5 <span class="nb">&amp;</span> cell6 <span class="k">\\</span>  
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a> cell7 <span class="nb">&amp;</span> cell8 <span class="nb">&amp;</span> cell9    
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="k">\end</span><span class="nb">{</span>tabular<span class="nb">}</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="k">\end</span><span class="nb">{</span>center<span class="nb">}</span>
+</span></code></pre></div>
+<p><img alt="Graphic displaying a table typeset in LaTeX" src="https://images.ctfassets.net/nrgyaltdicpt/5K46QavbKv9vF4RI1GbUf2/f22d4f8a06d00251166f86d2c891321e/LL30Fig17-plain.svg" /></p>
+<p>添加边框。\hline以添加水平线规则，此示例中 {|c|c|c|} 声明了三个列，每个列由一条垂直线分隔。</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="k">\begin</span><span class="nb">{</span>center<span class="nb">}</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="k">\begin</span><span class="nb">{</span>tabular<span class="nb">}{</span>|c|c|c|<span class="nb">}</span> 
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a> <span class="k">\hline</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a> cell1 <span class="nb">&amp;</span> cell2 <span class="nb">&amp;</span> cell3 <span class="k">\\</span> 
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a> cell4 <span class="nb">&amp;</span> cell5 <span class="nb">&amp;</span> cell6 <span class="k">\\</span> 
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a> cell7 <span class="nb">&amp;</span> cell8 <span class="nb">&amp;</span> cell9 <span class="k">\\</span> 
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a> <span class="k">\hline</span>
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="k">\end</span><span class="nb">{</span>tabular<span class="nb">}</span>
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="k">\end</span><span class="nb">{</span>center<span class="nb">}</span>
+</span></code></pre></div>
+<p>产生的输出：</p>
+<p><img alt="Graphic displaying a table typeset in LaTeX containing horizontal and vertical rules" src="https://images.ctfassets.net/nrgyaltdicpt/5uWYGUhK1XJJJaWz5R1EmX/3ee88bf6b2eaf8d0644b57fa8064800b/LL30Fig18-plain.svg" /></p>
+<p>额外的例子：</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="k">\begin</span><span class="nb">{</span>center<span class="nb">}</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a> <span class="k">\begin</span><span class="nb">{</span>tabular<span class="nb">}{</span>||c c c c||<span class="nb">}</span> 
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a> <span class="k">\hline</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a> Col1 <span class="nb">&amp;</span> Col2 <span class="nb">&amp;</span> Col2 <span class="nb">&amp;</span> Col3 <span class="k">\\</span> [0.5ex] 
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a> <span class="k">\hline\hline</span>
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a> 1 <span class="nb">&amp;</span> 6 <span class="nb">&amp;</span> 87837 <span class="nb">&amp;</span> 787 <span class="k">\\</span> 
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a> <span class="k">\hline</span>
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a> 2 <span class="nb">&amp;</span> 7 <span class="nb">&amp;</span> 78 <span class="nb">&amp;</span> 5415 <span class="k">\\</span>
+</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a> <span class="k">\hline</span>
+</span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a> 3 <span class="nb">&amp;</span> 545 <span class="nb">&amp;</span> 778 <span class="nb">&amp;</span> 7507 <span class="k">\\</span>
+</span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a> <span class="k">\hline</span>
+</span><span id="__span-20-12"><a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a> 4 <span class="nb">&amp;</span> 545 <span class="nb">&amp;</span> 18744 <span class="nb">&amp;</span> 7560 <span class="k">\\</span>
+</span><span id="__span-20-13"><a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a> <span class="k">\hline</span>
+</span><span id="__span-20-14"><a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a> 5 <span class="nb">&amp;</span> 88 <span class="nb">&amp;</span> 788 <span class="nb">&amp;</span> 6344 <span class="k">\\</span> [1ex] 
+</span><span id="__span-20-15"><a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a> <span class="k">\hline</span>
+</span><span id="__span-20-16"><a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a><span class="k">\end</span><span class="nb">{</span>tabular<span class="nb">}</span>
+</span><span id="__span-20-17"><a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a><span class="k">\end</span><span class="nb">{</span>center<span class="nb">}</span>****
+</span></code></pre></div>
+<p><img alt="Graphic displaying a table typeset in LaTeX containing horizontal and vertical rules" src="https://images.ctfassets.net/nrgyaltdicpt/1Cy9FcRnDVDRUPQdCgaKq6/c21e5f7d9a53514756c6e1f2996e51e0/LL30Fig19-plain.svg" /></p>
+<h3 id="132-captiontitlereference">13.2 Caption、Title、Reference</h3>
+<p>类似于图片的 Caption、Title。</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>Table <span class="k">\ref</span><span class="nb">{</span>table:data<span class="nb">}</span> shows how to add a table caption and reference a table.
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="k">\begin</span><span class="nb">{</span>table<span class="nb">}</span>[h!]
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="k">\centering</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="k">\begin</span><span class="nb">{</span>tabular<span class="nb">}{</span>||c c c c||<span class="nb">}</span> 
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a> <span class="k">\hline</span>
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a> Col1 <span class="nb">&amp;</span> Col2 <span class="nb">&amp;</span> Col2 <span class="nb">&amp;</span> Col3 <span class="k">\\</span> [0.5ex] 
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a> <span class="k">\hline\hline</span>
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a> 1 <span class="nb">&amp;</span> 6 <span class="nb">&amp;</span> 87837 <span class="nb">&amp;</span> 787 <span class="k">\\</span> 
+</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a> 2 <span class="nb">&amp;</span> 7 <span class="nb">&amp;</span> 78 <span class="nb">&amp;</span> 5415 <span class="k">\\</span>
+</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a> 3 <span class="nb">&amp;</span> 545 <span class="nb">&amp;</span> 778 <span class="nb">&amp;</span> 7507 <span class="k">\\</span>
+</span><span id="__span-21-11"><a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a> 4 <span class="nb">&amp;</span> 545 <span class="nb">&amp;</span> 18744 <span class="nb">&amp;</span> 7560 <span class="k">\\</span>
+</span><span id="__span-21-12"><a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a> 5 <span class="nb">&amp;</span> 88 <span class="nb">&amp;</span> 788 <span class="nb">&amp;</span> 6344 <span class="k">\\</span> [1ex] 
+</span><span id="__span-21-13"><a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a> <span class="k">\hline</span>
+</span><span id="__span-21-14"><a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a><span class="k">\end</span><span class="nb">{</span>tabular<span class="nb">}</span>
+</span><span id="__span-21-15"><a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a><span class="k">\caption</span><span class="nb">{</span>Table to test captions and labels.<span class="nb">}</span>
+</span><span id="__span-21-16"><a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a><span class="k">\label</span><span class="nb">{</span>table:data<span class="nb">}</span>
+</span><span id="__span-21-17"><a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a><span class="k">\end</span><span class="nb">{</span>table<span class="nb">}</span>
+</span></code></pre></div>
+<p><img alt="A LaTeX table with a caption" src="https://images.ctfassets.net/nrgyaltdicpt/1f5w74UIaTCkpApaPdVeWf/580a87c2413ddc9d6bdef3bf462689fc/LL30Fig20-plain.svg" /></p>
+<h3 id="14">14. 添加目录</h3>
+<p>极其简单，因为 \tableofcontents 几乎为你完成了所有工作：</p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="k">\title</span><span class="nb">{</span>Sections and Chapters<span class="nb">}</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="k">\author</span><span class="nb">{</span>Gubert Farnsworth<span class="nb">}</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="k">\date</span><span class="nb">{</span>August 2022<span class="nb">}</span>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="k">\maketitle</span>
+</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>
+</span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a><span class="k">\tableofcontents</span>
+</span><span id="__span-22-10"><a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a>
+</span><span id="__span-22-11"><a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a><span class="k">\section</span><span class="nb">{</span>Introduction<span class="nb">}</span>
+</span><span id="__span-22-12"><a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a>
+</span><span id="__span-22-13"><a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a>This is the first section.
+</span><span id="__span-22-14"><a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a>
+</span><span id="__span-22-15"><a id="__codelineno-22-15" name="__codelineno-22-15" href="#__codelineno-22-15"></a>Lorem  ipsum  dolor  sit  amet,  consectetuer  adipiscing  
+</span><span id="__span-22-16"><a id="__codelineno-22-16" name="__codelineno-22-16" href="#__codelineno-22-16"></a>elit.   Etiam  lobortisfacilisis sem.  Nullam nec mi et 
+</span><span id="__span-22-17"><a id="__codelineno-22-17" name="__codelineno-22-17" href="#__codelineno-22-17"></a>neque pharetra sollicitudin.  Praesent imperdietmi nec ante. 
+</span><span id="__span-22-18"><a id="__codelineno-22-18" name="__codelineno-22-18" href="#__codelineno-22-18"></a>Donec ullamcorper, felis non sodales...
+</span><span id="__span-22-19"><a id="__codelineno-22-19" name="__codelineno-22-19" href="#__codelineno-22-19"></a>
+</span><span id="__span-22-20"><a id="__codelineno-22-20" name="__codelineno-22-20" href="#__codelineno-22-20"></a><span class="k">\section*</span><span class="nb">{</span>Unnumbered Section<span class="nb">}</span>
+</span><span id="__span-22-21"><a id="__codelineno-22-21" name="__codelineno-22-21" href="#__codelineno-22-21"></a><span class="k">\addcontentsline</span><span class="nb">{</span>toc<span class="nb">}{</span>section<span class="nb">}{</span>Unnumbered Section<span class="nb">}</span>
+</span><span id="__span-22-22"><a id="__codelineno-22-22" name="__codelineno-22-22" href="#__codelineno-22-22"></a>
+</span><span id="__span-22-23"><a id="__codelineno-22-23" name="__codelineno-22-23" href="#__codelineno-22-23"></a>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  
+</span><span id="__span-22-24"><a id="__codelineno-22-24" name="__codelineno-22-24" href="#__codelineno-22-24"></a>Etiam lobortis facilisissem.  Nullam nec mi et neque pharetra 
+</span><span id="__span-22-25"><a id="__codelineno-22-25" name="__codelineno-22-25" href="#__codelineno-22-25"></a>sollicitudin.  Praesent imperdiet mi necante...
+</span><span id="__span-22-26"><a id="__codelineno-22-26" name="__codelineno-22-26" href="#__codelineno-22-26"></a>
+</span><span id="__span-22-27"><a id="__codelineno-22-27" name="__codelineno-22-27" href="#__codelineno-22-27"></a><span class="k">\section</span><span class="nb">{</span>Second Section<span class="nb">}</span>
+</span><span id="__span-22-28"><a id="__codelineno-22-28" name="__codelineno-22-28" href="#__codelineno-22-28"></a>
+</span><span id="__span-22-29"><a id="__codelineno-22-29" name="__codelineno-22-29" href="#__codelineno-22-29"></a>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  
+</span><span id="__span-22-30"><a id="__codelineno-22-30" name="__codelineno-22-30" href="#__codelineno-22-30"></a>Etiam lobortis facilisissem.  Nullam nec mi et neque pharetra 
+</span><span id="__span-22-31"><a id="__codelineno-22-31" name="__codelineno-22-31" href="#__codelineno-22-31"></a>sollicitudin.  Praesent imperdiet mi necante...
+</span><span id="__span-22-32"><a id="__codelineno-22-32" name="__codelineno-22-32" href="#__codelineno-22-32"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</span></code></pre></div>
+<p><img alt="Graphic showing a table of contents produced by LaTeX" src="https://images.ctfassets.net/nrgyaltdicpt/MxY592Q6EGsDKMA2mZw0t/fffa41a0a0d30770526f73aff72a7be1/LL30Fig21r-plain.svg" /></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "content.code.copy", "content.code.select"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.50899def.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
