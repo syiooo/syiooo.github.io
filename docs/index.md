@@ -8,8 +8,6 @@ description: 网站事项
 
 本站由 Mkdocs 搭建，Vercel 托管。主题采用 Material。
 
-朴实无华...朴实无华...朴实无华...
-
 考研期间使用的博客，剔除了一些技术类文章，专注于考研。
 
 > 这类文章仍然保存在我之前的静态网站上：[https://shenying.online](https://shenying.online)

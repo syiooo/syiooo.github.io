@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "5b9fdfaeebb08222",
+        "id": "b6a28111f839375e",
         "type": "tabs",
         "children": [
           {
-            "id": "30aadb1e2e5ae731",
+            "id": "2105ee0b9b95edaa",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "index.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "index"
             }
           }
         ]
@@ -161,8 +165,10 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "30aadb1e2e5ae731",
+  "active": "2105ee0b9b95edaa",
   "lastOpenFiles": [
+    "07_CSAPP/未命名.md",
+    "07_CSAPP",
     "02_Cognition/【认知心理学杂谈】为什么有些人学不好xx？.md",
     "02_Cognition/【认知心理学】考研如何复习？谈谈我对间隔式练习的理解。.md",
     "index.md"
