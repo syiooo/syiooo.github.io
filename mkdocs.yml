@@ -3,6 +3,7 @@ site_url: https://www.sy-study.top
 plugins:
   - search
   - blog
+  - social
 theme: 
   # 应用主题
   name: material
