@@ -1,24 +1,24 @@
 {
   "main": {
-    "id": "5b9d1c109f3a6fc9",
+    "id": "ad06ff5871276930",
     "type": "split",
     "children": [
       {
-        "id": "b6a28111f839375e",
+        "id": "5ed076d9afaae877",
         "type": "tabs",
         "children": [
           {
-            "id": "2105ee0b9b95edaa",
+            "id": "405a3d6e67127c19",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "index.md",
+                "file": "07_CSAPP/第一章 计算机系统漫游.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "第一章 计算机系统漫游"
             }
           }
         ]
@@ -27,15 +27,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "9f3b09aa52ad5cbf",
+    "id": "336e316cc454d17b",
     "type": "split",
     "children": [
       {
-        "id": "a71aef53c7238a9b",
+        "id": "51af1a31ecbad024",
         "type": "tabs",
         "children": [
           {
-            "id": "ec5988d46a68ce4e",
+            "id": "cd83c24e48d61d19",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -48,7 +48,7 @@
             }
           },
           {
-            "id": "87b617b3a61a5550",
+            "id": "c81ff709aef79f9b",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -65,7 +65,7 @@
             }
           },
           {
-            "id": "e210baa702588c8c",
+            "id": "e032af6a86a6622b",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -78,18 +78,19 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
-    "id": "88fe1ec8bd431e6a",
+    "id": "d585b806ec645efa",
     "type": "split",
     "children": [
       {
-        "id": "5da6511be949a833",
+        "id": "8dc3495d9784c236",
         "type": "tabs",
         "children": [
           {
-            "id": "854539a0a988c299",
+            "id": "9306217395fc0588",
             "type": "leaf",
             "state": {
               "type": "backlink",
@@ -107,20 +108,21 @@
             }
           },
           {
-            "id": "3c5dc6567ff2949a",
+            "id": "00551e55f940dcd7",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "数学/必背公式整理.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "出链"
+              "title": "必背公式整理 的出链列表"
             }
           },
           {
-            "id": "ddc795390162bd75",
+            "id": "a4de80dbe171dba0",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -135,20 +137,22 @@
             }
           },
           {
-            "id": "61f8c6623f409cf4",
+            "id": "a1e655b0b055f07d",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
+                "file": "07_CSAPP/第一章 计算机系统漫游.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大纲"
+              "title": "第一章 计算机系统漫游 的大纲"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -165,12 +169,39 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "2105ee0b9b95edaa",
+  "active": "405a3d6e67127c19",
   "lastOpenFiles": [
-    "07_CSAPP/未命名.md",
-    "07_CSAPP",
-    "02_Cognition/【认知心理学杂谈】为什么有些人学不好xx？.md",
-    "02_Cognition/【认知心理学】考研如何复习？谈谈我对间隔式练习的理解。.md",
-    "index.md"
+    "07_CSAPP/index.md",
+    "07_CSAPP/第一章 计算机系统漫游.md",
+    "30讲/第五讲 - 笔记补充.md",
+    "30讲/【数学】必背公式和定理整理.md",
+    "30讲/第三讲整理.canvas",
+    "CSAPP笔记/第一章 计算机系统漫游.md",
+    "认知/如何复习？-- 谈间隔练习和滚动式复习.md",
+    "认知/鬼压床.md",
+    "认知/【认知心理学杂谈】为什么有些人学不好XX，以数学为例.md",
+    "30讲/三角函数基础整理.md",
+    "数学/Latex 备忘录📝.md",
+    "CSAPP笔记",
+    "日记/2025-08-03.md",
+    "日记/2025-08-01.md",
+    "日记/2025-07-08.md",
+    "日记/2025-07-07.md",
+    "Web前端/astro 主题开发.md",
+    "Web前端/Vitepress主题功能Todo.canvas",
+    "Web前端/astro主题开发",
+    "Web前端",
+    "Web前端/vitepress 主题开发.md",
+    "30讲/未命名.canvas",
+    "Pasted image 20250728154051.png",
+    "Pasted image 20250728153941.png",
+    "Pasted image 20250728154043.png",
+    "Pasted image 20250728153952.png",
+    "认知",
+    "README.md",
+    "30讲",
+    "2025-07-27.md",
+    "数学/【Latex教程】30分钟学会 LaTeX.md",
+    "数学/【心碎踩坑王】在 M1 上安装 LaTeX-OCR 识别工具.md"
   ]
 }

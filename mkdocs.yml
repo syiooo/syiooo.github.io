@@ -3,6 +3,7 @@ site_url: https://www.sy-study.top
 plugins:
   - search
   - blog
+  - meta 
   # - social:
   #     cards_layout_options:
   #       font_family: Noto Sans SC
@@ -15,11 +16,18 @@ theme:
     code: Roboto Mono
 
   features:
-  # 导航栏🧭
-    - navigation.top
-    - content.code.copy
-    - content.code.select
-    - navigation.tabs
+    - navigation.instant # 进度指示器
+    - navigation.instant.progress # 进度指示器仅仅在400ms仍未加载出页面时显示来优化用户体验
+    - navigation.tracking # 锚点追踪
+    - navigation.prune # 导航修剪
+    - navigation.indexes # 章节索引页
+    - toc.follow # 锚点跟随
+    # - toc.integrate # 导航集成
+    - navigation.top # 回到顶部
+    - content.code.copy # 代码复制按钮
+    - content.code.select # 代码选择
+    - navigation.tabs # 导航栏标签
+    - content.footnote.tooltips # 脚注
   # 修改颜色
   palette:
   # 明亮主题
@@ -38,6 +46,15 @@ theme:
 
 # markdown扩展（代码高亮）
 markdown_extensions:
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - admonition
+  - pymdownx.details
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
