@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "07_CSAPP/index.md",
+                "file": "03_Math/【数学】必背公式和定理整理.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "【数学】必背公式和定理整理"
             }
           }
         ],
@@ -182,8 +182,9 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "439547057dc2dee2",
+  "active": "cd83c24e48d61d19",
   "lastOpenFiles": [
+    "07_CSAPP/index.md",
     "stylesheets/extra.css",
     "stylesheets",
     "stylesheets/NotoSerifSC-Regular.ttf",
@@ -198,7 +199,6 @@
     "08_Experience Stickers/【狗哥】24 二战420 上岸浙大计专.md",
     "08_Experience Stickers/index.md",
     "08_Experience Stickers",
-    "07_CSAPP/index.md",
     "30讲/第五讲 - 笔记补充.md",
     "30讲/【数学】必背公式和定理整理.md",
     "30讲/第三讲整理.canvas",
