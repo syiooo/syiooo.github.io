@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "07_CSAPP/第一章 计算机系统漫游.md",
+                "file": "07_CSAPP/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "第一章 计算机系统漫游"
+              "title": "index"
             }
           }
         ],
@@ -184,6 +184,7 @@
   },
   "active": "439547057dc2dee2",
   "lastOpenFiles": [
+    "07_CSAPP/第一章 计算机系统漫游.md",
     "08_Experience Stickers/【呆神】双非建环专业跨考11408上岸上交计专经验贴.md",
     "08_Experience Stickers/【学院战神｜浙大】三峡学院25考研11408一战上岸浙大计算机经验贴.md",
     "08_Experience Stickers/【寻神】25考研上岸北大软微11408经验贴.md",
@@ -192,7 +193,6 @@
     "08_Experience Stickers/【保姆贴】2024考研数学数一150分经验贴(完全符合26考研).md",
     "08_Experience Stickers/【狗哥】24 二战420 上岸浙大计专.md",
     "08_Experience Stickers/index.md",
-    "07_CSAPP/第一章 计算机系统漫游.md",
     "08_Experience Stickers",
     "07_CSAPP/index.md",
     "30讲/第五讲 - 笔记补充.md",
