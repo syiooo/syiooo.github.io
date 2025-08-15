@@ -1,6 +1,6 @@
 :root {
-  /* --md-text-font: "EconomistSerif",ui-serif,Georgia,Times,"Times New Roman", monospace, serif;  */
-  --md-text-font: monospace; 
+  /* 小米字体族 */
+  --md-text-font: "EconomistSerif",ui-serif,Georgia,Times,"Times New Roman";
 }
 
 .md-ellipsis {
