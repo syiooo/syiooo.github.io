@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "05395d43efc4102a",
+        "id": "5b9fdfaeebb08222",
         "type": "tabs",
         "children": [
           {
-            "id": "563b68977ce0375d",
+            "id": "30aadb1e2e5ae731",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -161,10 +161,10 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "ec5988d46a68ce4e",
+  "active": "30aadb1e2e5ae731",
   "lastOpenFiles": [
-    "Cognition/【认知心理学杂谈】为什么有些人学不好xx？.md",
-    "Cognition/【认知心理学】考研如何复习？谈谈我对间隔式练习的理解。.md",
+    "02_Cognition/【认知心理学杂谈】为什么有些人学不好xx？.md",
+    "02_Cognition/【认知心理学】考研如何复习？谈谈我对间隔式练习的理解。.md",
     "index.md"
   ]
 }
