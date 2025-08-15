@@ -12,8 +12,9 @@ theme:
   name: material
   # 字体
   font:
-    text: Noto Serif SC
-    code: Roboto Mono
+    text: Noto Serif SC # 思源宋体
+    # text: Noto Sans Simplified Chinese
+    code: Noto Sans Mono
 
   features:
     - navigation.instant # 进度指示器
@@ -75,5 +76,5 @@ extra_javascript:
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 
 # 自定义 CSS
-# extra_css:
-#   - stylesheets/extra.css
+extra_css:
+  - stylesheets/extra.css
