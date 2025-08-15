@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "03_Math/【数学】必背公式和定理整理.md",
+                "file": "index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "【数学】必背公式和定理整理"
+              "title": "index"
             }
           }
         ],
@@ -182,8 +182,9 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "cd83c24e48d61d19",
+  "active": "439547057dc2dee2",
   "lastOpenFiles": [
+    "03_Math/【数学】必背公式和定理整理.md",
     "07_CSAPP/index.md",
     "stylesheets/extra.css",
     "stylesheets",
