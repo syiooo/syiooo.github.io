@@ -12,7 +12,7 @@ theme:
   name: material
   # 字体
   font:
-    text: Roboto
+    text: Noto Serif SC
     code: Roboto Mono
 
   features:
@@ -74,5 +74,6 @@ extra_javascript:
   - javascripts/mathjax.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 
-extra_css:
-  - stylesheets/extra.css
+# 自定义 CSS
+# extra_css:
+#   - stylesheets/extra.css
