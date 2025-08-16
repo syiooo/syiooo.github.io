@@ -1,13 +1,13 @@
 ## 1. 基本定义
 
-| 基本函数                                                                                                       | 英文          | 缩写  | 表达式 | 语言描述     |
-| ---------------------------------------------------------------------------------------------------------- | ----------- | --- | --- | -------- |
-| [正弦函数](https://baike.baidu.com/item/%E6%AD%A3%E5%BC%A6%E5%87%BD%E6%95%B0/9601948?fromModule=lemma_inlink)  | *sine*      | sin | a/c | ∠A的对边比斜边 |
-| [余弦函数](https://baike.baidu.com/item/%E4%BD%99%E5%BC%A6%E5%87%BD%E6%95%B0/9602078?fromModule=lemma_inlink)  | *cosine*    | cos | b/c | ∠A的邻边比斜边 |
-| [正切函数](https://baike.baidu.com/item/%E6%AD%A3%E5%88%87%E5%87%BD%E6%95%B0/10796488?fromModule=lemma_inlink) | *tangent*   | tan | a/b | ∠A的对边比邻边 |
-| [余切函数](https://baike.baidu.com/item/%E4%BD%99%E5%88%87%E5%87%BD%E6%95%B0/10798631?fromModule=lemma_inlink) | *cotangent* | cot | b/a | ∠A的邻边比对边 |
-| [正割函数](https://baike.baidu.com/item/%E6%AD%A3%E5%89%B2%E5%87%BD%E6%95%B0/10795811?fromModule=lemma_inlink) | *secant*    | sec | c/b | ∠A的斜边比邻边 |
-| [余割函数](https://baike.baidu.com/item/%E4%BD%99%E5%89%B2%E5%87%BD%E6%95%B0/10606283?fromModule=lemma_inlink) | *cosecant*  | csc | c/a | ∠A的斜边比对边 |
+| 基本函数                                                                                                       | 英文          | 缩写    | 表达式   | 语言描述     |
+| ---------------------------------------------------------------------------------------------------------- | ----------- | ----- | ----- | -------- |
+| [正弦函数](https://baike.baidu.com/item/%E6%AD%A3%E5%BC%A6%E5%87%BD%E6%95%B0/9601948?fromModule=lemma_inlink)  | *sine*      | $sin$ | $a/c$ | ∠A的对边比斜边 |
+| [余弦函数](https://baike.baidu.com/item/%E4%BD%99%E5%BC%A6%E5%87%BD%E6%95%B0/9602078?fromModule=lemma_inlink)  | *cosine*    | $cos$ | $b/c$ | ∠A的邻边比斜边 |
+| [正切函数](https://baike.baidu.com/item/%E6%AD%A3%E5%88%87%E5%87%BD%E6%95%B0/10796488?fromModule=lemma_inlink) | *tangent*   | $tan$ | $a/b$ | ∠A的对边比邻边 |
+| [余切函数](https://baike.baidu.com/item/%E4%BD%99%E5%88%87%E5%87%BD%E6%95%B0/10798631?fromModule=lemma_inlink) | *cotangent* | $cot$ | $b/a$ | ∠A的邻边比对边 |
+| [正割函数](https://baike.baidu.com/item/%E6%AD%A3%E5%89%B2%E5%87%BD%E6%95%B0/10795811?fromModule=lemma_inlink) | *secant*    | $sec$ | $c/b$ | ∠A的斜边比邻边 |
+| [余割函数](https://baike.baidu.com/item/%E4%BD%99%E5%89%B2%E5%87%BD%E6%95%B0/10606283?fromModule=lemma_inlink) | *cosecant*  | $csc$ | $c/a$ | ∠A的斜边比对边 |
 ![上表所对应的图](https://ccccooh.oss-cn-hangzhou.aliyuncs.com/img/202507290920936.svg)
 
 > 注：正切函数、余切函数曾被写作tg、ctg，现已不用这种写法。
@@ -31,9 +31,9 @@
 - $\cot\alpha=\frac{\cos\alpha}{\sin\alpha}$
 
 平方关系：
-- $\sin\alpha^{2}+\cos\alpha^{2}=1$
-- $1+\cot\alpha^{2}=\csc\alpha^{2}$
-- $1+\tan\alpha^{2}=\sec\alpha^{2}$
+- $\sin ^{2}\alpha+\cos ^{2}\alpha=1$
+- $1+\cot ^{2}\alpha=\csc ^{2}\alpha$
+- $1+\tan ^{2}\alpha=\sec ^{2}\alpha$
 
 
 ## 2. 诱导公式

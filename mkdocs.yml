@@ -32,14 +32,14 @@ theme:
   palette:
   # 明亮主题
     - scheme: default
-      primary: white
+      primary: green
       toggle:
         icon: material/brightness-7 
         name: Switch to dark mode
 
     # 暗色主题
     - scheme: slate
-      primary: black
+      primary: teal
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
