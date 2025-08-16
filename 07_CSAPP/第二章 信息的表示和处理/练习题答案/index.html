@@ -1,0 +1,1574 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://www.sy-study.top/07_CSAPP/%E7%AC%AC%E4%BA%8C%E7%AB%A0%20%E4%BF%A1%E6%81%AF%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E5%A4%84%E7%90%86/%E7%BB%83%E4%B9%A0%E9%A2%98%E7%AD%94%E6%A1%88/">
+      
+      
+        <link rel="prev" href="../%E5%AE%B6%E5%BA%AD%E4%BD%9C%E4%B8%9A/">
+      
+      
+        <link rel="next" href="../../../08_Experience%20Stickers/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+    
+    
+      
+        <title>练习题答案 - Sy_Blog&Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:300,300i,400,400i,700,700i%7CNoto+Sans+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Serif SC";--md-code-font:"Noto Sans Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Sy_Blog&amp;Notes" class="md-header__button md-logo" aria-label="Sy_Blog&Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sy_Blog&Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              练习题答案
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../01_Bible/%E8%BD%AF%E5%BE%AE%E5%9C%A3%E7%BB%8F/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  01 Bible
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../02_Cognition/%E3%80%90%E8%AE%A4%E7%9F%A5%E5%BF%83%E7%90%86%E5%AD%A6%E3%80%91%E8%80%83%E7%A0%94%E5%A6%82%E4%BD%95%E5%A4%8D%E4%B9%A0%EF%BC%9F%E8%B0%88%E8%B0%88%E6%88%91%E5%AF%B9%E9%97%B4%E9%9A%94%E5%BC%8F%E7%BB%83%E4%B9%A0%E7%9A%84%E7%90%86%E8%A7%A3%E3%80%82/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  02 Cognition
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../03_Math/%E3%80%90%E6%95%B0%E5%AD%A6%E3%80%91%E5%BF%85%E8%83%8C%E5%85%AC%E5%BC%8F%E5%92%8C%E5%AE%9A%E7%90%86%E6%95%B4%E7%90%86/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  03 Math
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../04_English/%E3%80%90Guardian%E3%80%91Israel-strikes-Syria%E2%80%99s-defence-ministry-in-third-day-of-attacks/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  04 English
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../05_Latex/%E3%80%90Latex%E3%80%9130%E5%88%86%E9%92%9F%E5%AD%A6%E4%BC%9ALaTeX/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  05 Latex
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../06_Manim/%E3%80%90manim%E3%80%91Axes-%E5%9D%90%E6%A0%87%E7%B3%BB%E5%8F%8A%E5%85%B6%E5%9F%BA%E7%B1%BB%E8%AF%A6%E8%A7%A3/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  06 Manim
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  07 CSAPP
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../08_Experience%20Stickers/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  08 Experience Stickers
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../blog/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Sy_Blog&amp;Notes" class="md-nav__button md-logo" aria-label="Sy_Blog&Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Sy_Blog&Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+  
+  <span class="md-ellipsis">
+    首页
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../01_Bible/%E8%BD%AF%E5%BE%AE%E5%9C%A3%E7%BB%8F/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    01 Bible
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../02_Cognition/%E3%80%90%E8%AE%A4%E7%9F%A5%E5%BF%83%E7%90%86%E5%AD%A6%E3%80%91%E8%80%83%E7%A0%94%E5%A6%82%E4%BD%95%E5%A4%8D%E4%B9%A0%EF%BC%9F%E8%B0%88%E8%B0%88%E6%88%91%E5%AF%B9%E9%97%B4%E9%9A%94%E5%BC%8F%E7%BB%83%E4%B9%A0%E7%9A%84%E7%90%86%E8%A7%A3%E3%80%82/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    02 Cognition
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../03_Math/%E3%80%90%E6%95%B0%E5%AD%A6%E3%80%91%E5%BF%85%E8%83%8C%E5%85%AC%E5%BC%8F%E5%92%8C%E5%AE%9A%E7%90%86%E6%95%B4%E7%90%86/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    03 Math
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../04_English/%E3%80%90Guardian%E3%80%91Israel-strikes-Syria%E2%80%99s-defence-ministry-in-third-day-of-attacks/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    04 English
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../05_Latex/%E3%80%90Latex%E3%80%9130%E5%88%86%E9%92%9F%E5%AD%A6%E4%BC%9ALaTeX/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    05 Latex
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../06_Manim/%E3%80%90manim%E3%80%91Axes-%E5%9D%90%E6%A0%87%E7%B3%BB%E5%8F%8A%E5%85%B6%E5%9F%BA%E7%B1%BB%E8%AF%A6%E8%A7%A3/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    06 Manim
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    07 CSAPP
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            07 CSAPP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../%E7%AC%AC%E4%B8%80%E7%AB%A0%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%BC%AB%E6%B8%B8/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    第一章 计算机系统漫游
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    第二章 信息的表示和处理
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8_3" id="__nav_8_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8_3">
+            <span class="md-nav__icon md-icon"></span>
+            第二章 信息的表示和处理
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.1%20%E4%BF%A1%E6%81%AF%E5%AD%98%E5%82%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.1 信息存储
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.2%20%E6%95%B4%E6%95%B0%E8%A1%A8%E7%A4%BA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.2 整数表示
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.3%20%E6%95%B4%E6%95%B0%E8%BF%90%E7%AE%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.3 整数运算
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.4%20%E6%B5%AE%E7%82%B9%E6%95%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.4 浮点数
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.5%20%E5%B0%8F%E7%BB%93/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.5 小结
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE%E8%AF%B4%E6%98%8E/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    参考文献说明
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%AE%B6%E5%BA%AD%E4%BD%9C%E4%B8%9A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    家庭作业
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    练习题答案
+    
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../08_Experience%20Stickers/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    08 Experience Stickers
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../blog/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Blog
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>练习题答案</h1>
+
+<p>2.1 在我们开始查看机器级程序的时候, 理解十六进制和二进制格式之间的关系将是很重要的。虽然本书中介绍了完成这些转换的方法, 但是做点练习能够让你更加熟练。</p>
+<p>A. 将 0 x 39 A 7 F 8 转换成二进制:</p>
+<!-- Media -->
+
+<p>十六进制 3 9 A 7 F 8</p>
+<p>二进制 0011 1001 1010 0111 1111 1000</p>
+<!-- Media -->
+
+<p>B. 将二进制 1100100101111011 转换成十六进制:</p>
+<p>二进制 1100 1001 0111 1011</p>
+<p>十六进制 C 9 7 B</p>
+<!-- Meanless: 98 第一部分 程序结构和执行-->
+
+<p>C. 将 0 xD 5 E 4 C 转换成二进制:</p>
+<!-- Media -->
+
+<p>十六进制 D 5 E 4 C</p>
+<p>二进制 1101 0101 1110 0100 1100</p>
+<!-- Media -->
+
+<p>D. 将二进制 1001101110011110110101 转换成十六进制:</p>
+<p>二进制 10 0110 1110 0111 1011 0101</p>
+<p>十六进制 2 6 E 7 B 5</p>
+<p>2.2 这个问题给你一个机会思考 2 的幂和它们的十六进制表示。</p>
+<!-- Media -->
+
+<table><tr><td>$n$</td><td>${2}^{n}$ (十进制)</td><td>${2}^{n}$ (十六进制)</td></tr><tr><td>9</td><td>512</td><td>$0 \times  {200}$</td></tr><tr><td>19</td><td>524 288</td><td>0 x 80000</td></tr><tr><td>14</td><td>16 384</td><td>$0 \times  {4000}$</td></tr><tr><td>16</td><td>65 536</td><td>0 x 10000</td></tr><tr><td>17</td><td>131 072</td><td>0 x 20000</td></tr><tr><td>5</td><td>32</td><td>$0 \times  {20}$</td></tr><tr><td>7</td><td>128</td><td>$0 \times  {80}$</td></tr></table>
+
+<!-- Media -->
+
+<p>2.3 这个问题给你一个机会试着对一些小的数在十六进制和十进制表示之间进行转换。对于较大的数, 使用计算器或者转换程序会更加方便和可靠。</p>
+<!-- Media -->
+
+<table><tr><td>十进制</td><td>二. 进制</td><td>十六进制</td></tr><tr><td>0</td><td>0000 0000</td><td>$0 \times  {00}$</td></tr><tr><td>${167} = {10} \cdot  {16} + 7$</td><td>1010 0111</td><td>0 xA 7</td></tr><tr><td>${62} = 3 \cdot  {16} + {14}$</td><td>0011 1110</td><td>0 x 3 E</td></tr><tr><td>${188} = {11} \cdot  {16} + {12}$</td><td>1011 1100</td><td>0 xBC</td></tr><tr><td>$3 \cdot  {16} + 7 = {55}$</td><td>0011 0111</td><td>$0 \times  {37}$</td></tr><tr><td>$8 \cdot  {16} + 8 = {136}$</td><td>1000 1000</td><td>$0 \times  {88}$</td></tr><tr><td>${15} \cdot  {16} + 3 = {243}$</td><td>1111 0011</td><td>0 xF 3</td></tr><tr><td>$5 \cdot  {16} + 2 = {82}$</td><td>0101 0010</td><td>0 x 52</td></tr><tr><td>${10} \cdot  {16} + {12} = {172}$</td><td>1010 1100</td><td>0 xAC</td></tr><tr><td>${14} \cdot  {16} + 7 = {231}$</td><td>1110 0111</td><td>0 xE 7</td></tr></table>
+
+<!-- Media -->
+
+<p>2.4 当开始调试机器级程序时, 你将发现在许多情况中, 一些简单的十六进制运算是很有用的。可以总是把数转换成十进制, 完成运算, 再把它们转换回来, 但是能够直接用十六进制工作更加有效, 而且能够提供更多的信息。</p>
+<p>A. <span class="arithmatex">\(0 \times  {503}\mathrm{c} + 0 \times  8 = 0 \times  {5044}\)</span> 。 8 加上十六进制 <span class="arithmatex">\(\mathrm{c}\)</span> 得到 4 并且进位 1 。</p>
+<p>B. $0 \times  {503}\mathrm{c} - 0 \times  {40} = 0 \times  4\mathrm {{ffc}} $ 。在第二个数位, 3 减去 4 要从第三位借 1 。因为第三位是 0 ,所以我们必须从第四位借位。</p>
+<p>C. <span class="arithmatex">\(0 \times  {503}\mathrm{c} + {64} = 0 \times  {507}\mathrm{c}\)</span> 。十进制 <span class="arithmatex">\({64}\left( {2}^{6}\right)\)</span> 等于十六进制 <span class="arithmatex">\(0 \times  {40}\)</span> 。</p>
+<p>D. 0 x 50 ea-0 x 503 c=0 xae。十六进制数 a(十进制 10) 减去十六进制数 c(十进制 12),我们从第二位借 16,得到十六进制数 <span class="arithmatex">\(\mathrm{e}\)</span> (十进制数 14)。在第二个数位,我们现在用十六进制 <span class="arithmatex">\(\mathrm{d}\)</span> (十进制 13) 减去 3,得到十六进制 a(十进制 10)。</p>
+<p>2.5 这个练习测试你对数据的字节表示和两种不同字节顺序的理解。</p>
+<p>小端法: 21 大端法: 87</p>
+<p>小端法 :2143 大端法: 87 65</p>
+<p>小端法 : 21 43 65 大端法: 87 65 43</p>
+<p>回想一下,show bytes 列举了一系列字节,从低位地址的字节开始,然后逐一列出高位地址的字</p>
+<!-- Meanless: 第 2 章 信息的表示和处理 99-->
+
+<p>节。在小端法机器上, 它将按照从最低有效字节到最高有效字节的顺序列出字节。在大端法机器上, 它将按照从最高有效字节到最低有效字节的顺序列出字节。</p>
+<p>2.6 这又是一个练习从十六进制到二进制转换的机会。同时也让你思考整数和浮点表示。我们将在本章后面更加详细地研究这些表示。</p>
+<p>A. 利用书中示例的符号, 我们将两个串写成:</p>
+<hr />
+<div class="language-text highlight"><pre><span></span><code>    $\begin{array}{llllllll} 0 &amp; 0 &amp; 3 &amp; 5 &amp; 9 &amp; 1 &amp; 4 &amp; 1 \end{array}$
+</code></pre></div>
+<p>00000000001101011001000101000001
+                        <strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong>***
+            <span class="arithmatex">\(\begin{array}{llllllll} 4 &amp; A &amp; 5 &amp; 6 &amp; 4 &amp; 5 &amp; 0 &amp; 4 \end{array}\)</span>
+    01001010010101100100010100000100</p>
+<hr />
+<p>B. 将第二个字相对于第一个字向右移动 2 位, 我们发现一个有 21 个匹配位的序列。</p>
+<p>C. 我们发现除了最高有效位 1 , 整数的所有位都嵌在浮点数中。这正好也是书中示例的情况。另外, 浮点数有一些非零的高位不与整数中的高位相匹配。</p>
+<p>2.7 它打印 61 62 63 64 65 66。回想一下,库函数 strlen 不计算终止的空字符,所以 show_ bytes 只打印到字符‘f’。</p>
+<p>2.8 这是一个帮助你更加熟悉布尔运算的练习。</p>
+<!-- Media -->
+
+<table><tr><td>运算</td><td>结果</td><td>运算</td><td>结果</td></tr><tr><td>$a$</td><td>[01101001]</td><td>$a\& b$</td><td>[01000001]</td></tr><tr><td>$b$</td><td>[01010101]</td><td>$a \mid  b$</td><td>[01111101]</td></tr><tr><td>$\sim  a$</td><td>[10010110]</td><td>$a \land  b$</td><td>[00111100]</td></tr><tr><td>$\sim  b$</td><td>[1010101]</td><td/><td/></tr></table>
+
+<!-- Media -->
+
+<p>2.9 这个问题说明了怎样用布尔代数来描述和解释现实世界的系统。我们能够看到这个颜色代数和长度为 3 的位向量上的布尔代数是一样的。</p>
+<p>A. 颜色的取补是通过对 <span class="arithmatex">\(R\)</span> 、 <span class="arithmatex">\(G\)</span> 和 <span class="arithmatex">\(B\)</span> 的值取补得到的。由此,我们可以看出,白色是黑色的补,黄色是蓝色的补,红紫色是绿色的补,蓝绿色是红色的补。</p>
+<p>B. 我们基于颜色的位向量表示来进行布尔运算。据此, 我们得到以下结果:</p>
+<p>蓝色(001) 绿色(010) = 蓝绿色(011)</p>
+<p>黄色( 110 ) &amp; 蓝绿色( 011 )= 绿色( 010 )</p>
+<p>红色(100) ^ 紫红色(101)= 蓝色(001)</p>
+<p>2.10 这个程序依赖于两个事实,EXCLUSIVE-OR 是可交换的和可结合,以及对于任意的 <span class="arithmatex">\(a\)</span> ,有 <span class="arithmatex">\(a \land  a = 0\)</span> 。</p>
+<!-- Media -->
+
+<table><tr><td>步骤</td><td>$* x$</td><td>*y</td></tr><tr><td>初始</td><td>$a$</td><td>$b$</td></tr><tr><td>步骤 1</td><td>$a$</td><td>${a}^{ \land  }b$</td></tr><tr><td>步骤 2</td><td>${a}^{ \land  }\left( {{a}^{ \land  }b}\right)  = \left( {{a}^{ \land  }a}\right) {}^{ \land  }b = b$</td><td>${a}^{ \land  }b$</td></tr><tr><td>步骤 3</td><td>$b$</td><td>${b}^{ \land  }\left( {a \land  b}\right)  = \left( {b \land  b}\right)  \land  a = a$</td></tr></table>
+
+<!-- Media -->
+
+<p>某种情况下这个函数会失败,参见练习题 2.11 。</p>
+<p>2.11 这个题目说明了我们的原地交换例程微妙而有趣的特性。</p>
+<p>A. first 和 last 的值都为 <span class="arithmatex">\(k\)</span> ,所以我们试图交换正中间的元素和它自己。</p>
+<p>B. 在这种情况中,inplace_swap 的参数 <span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(y\)</span> 都指向同一个位置。当计算 <span class="arithmatex">\({x}^{\lambda ,x}y\)</span> 的时候,我们得到 0 。然后将 0 作为数组正中间的元素, 而后面的步骤一直都把这个元素设置为 0 。我们可以看到,练习题 2.10 的推理隐含地假设 <span class="arithmatex">\(\mathrm{x}\)</span> 和 <span class="arithmatex">\(\mathrm{y}\)</span> 代表不同的位置。</p>
+<p>C. 将 reverse_array 的第 4 行的测试简单地替换成 first&lt;last, 因为没有必要交换正中间的元素和它自己。</p>
+<p>2.12 这些表达式如下:</p>
+<!-- Meanless: 100 第一部分 程序结构和执行-->
+<p>A. <span class="arithmatex">\(x\&amp; {0 xFF}\)</span></p>
+<p>B. <span class="arithmatex">\({x}^{2} \sim  0{x}^{5}{F}^{2}\)</span></p>
+<p>C. $\mathrm{x} \mid  0\mathrm {{xFF}} $</p>
+<p>这些表达式是在执行低级位运算中经常发现的典型类型。表达式 $\sim  0\mathrm {{xFF}} $ 创建一个掩码,该掩码 8 个最低位等于 0 ,而其余的位为 1 。可以观察到,这些掩码的产生和字长无关。而相比之下,表达式 0 xFFFFFF 00 只能工作在 32 位的机器上。</p>
+<p>2.13 这个问题帮助你思考布尔运算和程序员应用掩码运算的典型方式之间的关系。代码如下：</p>
+<hr />
+<p>/<em> Declarations of functions implementing operations bis and bic </em>/
+int bis( int x, int m ) ;
+int bic(int x, int m);
+/<em> Compute xly using only calls to functions bis and bic </em>/
+int bool_or(int x, int y) {
+    int result = bis(x,y);
+    return result;
+}
+/<em> Compute x "y using only calls to functions bis and bic </em>/
+int bool_xor( int x, int y ) {
+    int result = bis(bic(x,y),bic(y,x));
+    return result;
+}</p>
+<hr />
+<p>bis 运算等价于布尔 $\mathrm {{OR}} $ ——如果 <span class="arithmatex">\(\mathrm{x}\)</span> 中或者 <span class="arithmatex">\(\mathrm{m}\)</span> 中的这一位置位了,那么 <span class="arithmatex">\(\mathrm{z}\)</span> 中的这一位就置位。另一方面,bic(x,m)等价于 <span class="arithmatex">\(\mathrm{x}\varepsilon  \sim  \mathrm{m}\)</span> ；我们想实现只有当 <span class="arithmatex">\(\mathrm{x}\)</span> 对应的位为 1 且 <span class="arithmatex">\(\mathrm{m}\)</span> 对应的位为 0 时,该位等于 1。</p>
+<p>由此, 可以通过对 bis 的一次调用来实现。为了实现, 我们利用以下属性</p>
+<div class="arithmatex">\[
+x \land  y = \left( {x\&amp;  \sim  y}\right)  \mid  \left( { \sim  x\&amp; y}\right) 
+\]</div>
+<p>2.14 这个问题突出了位级布尔运算和 <span class="arithmatex">\(\mathrm{C}\)</span> 语言中的逻辑运算之间的关系。常见的编程错误是在想用逻辑运算的时候用了位级运算, 或者反过来。</p>
+<!-- Media -->
+
+<table><tr><td>表达式</td><td>值</td><td>表达式</td><td>值</td></tr><tr><td>$\mathrm{x}$ & $\mathrm{y}$</td><td>$0 \times  {20}$</td><td>x && y</td><td>$0 \times  {01}$</td></tr><tr><td>$x + y$</td><td>0 x 7 F</td><td>x Il y</td><td>$0 \times  {01}$</td></tr><tr><td>~x 1 ~y</td><td>0 xDF</td><td>!x || !y</td><td>$0 \times  {00}$</td></tr><tr><td>x & !y</td><td>$0 \times  {00}$</td><td>x && ~y</td><td>$0 \times  {01}$</td></tr></table>
+
+<!-- Media -->
+
+<p>2.15 这个表达式是 <span class="arithmatex">\(\left( {\mathrm{x} \land  \mathrm{y}}\right)\)</span> 。</p>
+<p>也就是,当且仅当 <span class="arithmatex">\(\mathrm{x}\)</span> 的每一位和 <span class="arithmatex">\(\mathrm{y}\)</span> 相应的每一位匹配时, <span class="arithmatex">\(\mathrm{x}\lambda \mathrm{y}\)</span> 等于零。然后,我们利用! 来判定一个字是否包含任何非零位。</p>
+<p>没有任何实际的理由要去使用这个表达式,因为可以简单地写成 <span class="arithmatex">\(\mathrm{x} =  = \mathrm{y}\)</span> ,但是它说明了位级运算和逻辑运算之间的一些细微差别。</p>
+<p>2.16 这个练习可以帮助你理解各种移位运算。</p>
+<!-- Media -->
+
+<table><tr><td colspan="2">$x$</td><td colspan="2">$x <  < 3$</td><td colspan="2">(逻辑) $x >  > 2$</td><td colspan="2">(算术) $x >  > 2$</td></tr><tr><td>十六进制</td><td>二进制</td><td>二进制</td><td>十六进制</td><td>二进制</td><td>十六进制</td><td>二进制</td><td>十六进制</td></tr><tr><td>0 xC 3</td><td>[11000011]</td><td>[00011000]</td><td>0 x 18</td><td>[00110000]</td><td>$0 \times  {30}$</td><td>[11110000]</td><td>0 xF 0</td></tr><tr><td>0 x 75</td><td>[01110101]</td><td>[10101000]</td><td>0 xA 8</td><td>[00011101]</td><td>0 x 1 D</td><td>[00011101]</td><td>0 x 1 D</td></tr><tr><td>0 x 87</td><td>[10000111]</td><td>[00111000]</td><td>0 x 38</td><td>[00100001]</td><td>0 x 21</td><td>[11100001]</td><td>0 xE 1</td></tr><tr><td>0 x 66</td><td>[01100110]</td><td>[00110000]</td><td>0 x 30</td><td>[00011001]</td><td>0 x 19</td><td>[00011001]</td><td>0 x 19</td></tr></table>
+
+<!-- Media -->
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "content.code.copy", "content.code.select", "navigation.tabs", "content.footnote.tooltips"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.50899def.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

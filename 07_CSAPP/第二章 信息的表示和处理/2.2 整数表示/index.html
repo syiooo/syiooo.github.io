@@ -1,0 +1,2163 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://www.sy-study.top/07_CSAPP/%E7%AC%AC%E4%BA%8C%E7%AB%A0%20%E4%BF%A1%E6%81%AF%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E5%A4%84%E7%90%86/2.2%20%E6%95%B4%E6%95%B0%E8%A1%A8%E7%A4%BA/">
+      
+      
+        <link rel="prev" href="../2.1%20%E4%BF%A1%E6%81%AF%E5%AD%98%E5%82%A8/">
+      
+      
+        <link rel="next" href="../2.3%20%E6%95%B4%E6%95%B0%E8%BF%90%E7%AE%97/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+    
+    
+      
+        <title>2.2 整数表示 - Sy_Blog&Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:300,300i,400,400i,700,700i%7CNoto+Sans+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Serif SC";--md-code-font:"Noto Sans Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#22" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Sy_Blog&amp;Notes" class="md-header__button md-logo" aria-label="Sy_Blog&Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sy_Blog&Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2.2 整数表示
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../01_Bible/%E8%BD%AF%E5%BE%AE%E5%9C%A3%E7%BB%8F/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  01 Bible
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../02_Cognition/%E3%80%90%E8%AE%A4%E7%9F%A5%E5%BF%83%E7%90%86%E5%AD%A6%E3%80%91%E8%80%83%E7%A0%94%E5%A6%82%E4%BD%95%E5%A4%8D%E4%B9%A0%EF%BC%9F%E8%B0%88%E8%B0%88%E6%88%91%E5%AF%B9%E9%97%B4%E9%9A%94%E5%BC%8F%E7%BB%83%E4%B9%A0%E7%9A%84%E7%90%86%E8%A7%A3%E3%80%82/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  02 Cognition
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../03_Math/%E3%80%90%E6%95%B0%E5%AD%A6%E3%80%91%E5%BF%85%E8%83%8C%E5%85%AC%E5%BC%8F%E5%92%8C%E5%AE%9A%E7%90%86%E6%95%B4%E7%90%86/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  03 Math
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../04_English/%E3%80%90Guardian%E3%80%91Israel-strikes-Syria%E2%80%99s-defence-ministry-in-third-day-of-attacks/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  04 English
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../05_Latex/%E3%80%90Latex%E3%80%9130%E5%88%86%E9%92%9F%E5%AD%A6%E4%BC%9ALaTeX/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  05 Latex
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../06_Manim/%E3%80%90manim%E3%80%91Axes-%E5%9D%90%E6%A0%87%E7%B3%BB%E5%8F%8A%E5%85%B6%E5%9F%BA%E7%B1%BB%E8%AF%A6%E8%A7%A3/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  06 Manim
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  07 CSAPP
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../08_Experience%20Stickers/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  08 Experience Stickers
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../blog/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Sy_Blog&amp;Notes" class="md-nav__button md-logo" aria-label="Sy_Blog&Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Sy_Blog&Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+  
+  <span class="md-ellipsis">
+    首页
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../01_Bible/%E8%BD%AF%E5%BE%AE%E5%9C%A3%E7%BB%8F/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    01 Bible
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../02_Cognition/%E3%80%90%E8%AE%A4%E7%9F%A5%E5%BF%83%E7%90%86%E5%AD%A6%E3%80%91%E8%80%83%E7%A0%94%E5%A6%82%E4%BD%95%E5%A4%8D%E4%B9%A0%EF%BC%9F%E8%B0%88%E8%B0%88%E6%88%91%E5%AF%B9%E9%97%B4%E9%9A%94%E5%BC%8F%E7%BB%83%E4%B9%A0%E7%9A%84%E7%90%86%E8%A7%A3%E3%80%82/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    02 Cognition
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../03_Math/%E3%80%90%E6%95%B0%E5%AD%A6%E3%80%91%E5%BF%85%E8%83%8C%E5%85%AC%E5%BC%8F%E5%92%8C%E5%AE%9A%E7%90%86%E6%95%B4%E7%90%86/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    03 Math
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../04_English/%E3%80%90Guardian%E3%80%91Israel-strikes-Syria%E2%80%99s-defence-ministry-in-third-day-of-attacks/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    04 English
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../05_Latex/%E3%80%90Latex%E3%80%9130%E5%88%86%E9%92%9F%E5%AD%A6%E4%BC%9ALaTeX/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    05 Latex
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../06_Manim/%E3%80%90manim%E3%80%91Axes-%E5%9D%90%E6%A0%87%E7%B3%BB%E5%8F%8A%E5%85%B6%E5%9F%BA%E7%B1%BB%E8%AF%A6%E8%A7%A3/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    06 Manim
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    07 CSAPP
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            07 CSAPP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../%E7%AC%AC%E4%B8%80%E7%AB%A0%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%BC%AB%E6%B8%B8/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    第一章 计算机系统漫游
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    第二章 信息的表示和处理
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8_3" id="__nav_8_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8_3">
+            <span class="md-nav__icon md-icon"></span>
+            第二章 信息的表示和处理
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.1%20%E4%BF%A1%E6%81%AF%E5%AD%98%E5%82%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.1 信息存储
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    2.2 整数表示
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.2 整数表示
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#221" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.1 整型数据类型
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#222" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.2 无符号数的编码
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#223" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.3 补码编码
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#224" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.4 有符号数和无符号数之间的转换
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#225-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.5 C 语言中的有符号数与无符号数
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.3%20%E6%95%B4%E6%95%B0%E8%BF%90%E7%AE%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.3 整数运算
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.4%20%E6%B5%AE%E7%82%B9%E6%95%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.4 浮点数
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.5%20%E5%B0%8F%E7%BB%93/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.5 小结
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE%E8%AF%B4%E6%98%8E/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    参考文献说明
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%AE%B6%E5%BA%AD%E4%BD%9C%E4%B8%9A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    家庭作业
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%BB%83%E4%B9%A0%E9%A2%98%E7%AD%94%E6%A1%88/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    练习题答案
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../08_Experience%20Stickers/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    08 Experience Stickers
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../blog/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Blog
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#221" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.1 整型数据类型
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#222" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.2 无符号数的编码
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#223" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.3 补码编码
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#224" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.4 有符号数和无符号数之间的转换
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#225-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2.5 C 语言中的有符号数与无符号数
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="22">2.2 整数表示</h1>
+<p>在本节中, 我们描述用位来编码整数的两种不同的方式: 一种只能表示非负数, 而另一种能够表示负数、零和正数。后面我们将会看到它们在数学属性和机器级实现方面密切相关。我们还会研究扩展或者收缩一个已编码整数以适应不同长度表示的效果。</p>
+<p>图 2-8 列出了我们引入的数学术语,用于精确定义和描述计算机如何编码和操作整数。这些术语将在描述的过程中介绍,图在此处列出作为参考。</p>
+<!-- Meanless: 42 第一部分 程序结构和执行-->
+
+<!-- Media -->
+
+<table><tr><td>符号</td><td>类型</td><td>含义</td></tr><tr><td>${B 2}{T}_{w}$</td><td>函数</td><td>二进制转补码</td></tr><tr><td>${B 2}{U}_{w}$</td><td>函数</td><td>二进制转无符号数</td></tr><tr><td>${U 2}{B}_{n}$</td><td>函数</td><td>无符号数转二进制</td></tr><tr><td>${U 2}{T}_{w}$</td><td>函数</td><td>无符号转补码</td></tr><tr><td>${T 2}{B}_{w}$</td><td>函数</td><td>补码转二进制</td></tr><tr><td>${T 2}{U}_{w}$</td><td>函数</td><td>补码转无符号数</td></tr><tr><td>${TMi}{n}_{w}$</td><td>常数</td><td>最小补码值</td></tr><tr><td>${TMa}{x}_{w}$</td><td>常数</td><td>最大补码值</td></tr><tr><td>${UMa}{x}_{n}$</td><td>常数</td><td>最大无符号数</td></tr><tr><td>$+ {}_{w}^{t}$</td><td>操作</td><td>补码加法</td></tr><tr><td>$+ {}_{w}^{\mathrm{u}}$</td><td>操作</td><td>无符号数加法</td></tr><tr><td>$* {}_{w}^{t}$</td><td>操作</td><td>补码乘法</td></tr><tr><td>$* {}_{w}^{\mathrm{u}}$</td><td>操作</td><td>无符号数乘法</td></tr><tr><td>$- {}_{w}^{t}$</td><td>操作</td><td>补码取反</td></tr><tr><td>$- \frac{\mathrm{u}}{w}$</td><td>操作</td><td>无符号数取反</td></tr></table>
+
+<p>图 2-8 整数的数据与算术操作术语。下标 <span class="arithmatex">\(w\)</span> 表示数据表示中的位数</p>
+<!-- Media -->
+
+<h2 id="221">2.2.1 整型数据类型</h2>
+<p>C 语言支持多种整型数据类型——表示有限范围的整数。这些类型如图 2-9 和图 2-10 所示,其中还给出了 “典型” 32 位和 64 位机器的取值范围。每种类型都能用关键字来指定大小, 这些关键字包括 char、short、long, 同时还可以指示被表示的数字是非负数 (声明为 unsigned), 或者可能是负数 (默认)。如图 2-3 所示, 为这些不同的大小分配的字节数根据程序编译为 32 位还是 64 位而有所不同。根据字节分配, 不同的大小所能表示的值的范围是不同的。这里给出来的唯一一个与机器相关的取值范围是大小指示符 long 的。大多数 64 位机器使用 8 个字节的表示, 比 32 位机器上使用的 4 个字节的表示的取值范围大很多。</p>
+<!-- Media -->
+
+<table><tr><td>C 数据类型</td><td>最小值</td><td>最大值</td></tr><tr><td>[signed]char</td><td>-128</td><td>127</td></tr><tr><td>unsigned char</td><td>0</td><td>255</td></tr><tr><td>short</td><td>-32768</td><td>32 767</td></tr><tr><td>unsigned short</td><td>0</td><td>65535</td></tr><tr><td>int</td><td>-2147483648</td><td>2 147 483 647</td></tr><tr><td>unsigned</td><td>0</td><td>4 294 967 295</td></tr><tr><td>long</td><td>-2147483648</td><td>2 147 483 647</td></tr><tr><td>unsigned long</td><td>0</td><td>4 294 967 295</td></tr><tr><td>int 32_t</td><td>-2147483648</td><td>2 147 483 647</td></tr><tr><td>uint 32_t</td><td>0</td><td>4 294 967 295</td></tr><tr><td>int 64_t</td><td>-9 223 372 036 854 775 808</td><td>9 223 372 036 854 775 807</td></tr><tr><td>uint 64_t</td><td>0</td><td>18 446 744 073 709 551 615</td></tr></table>
+
+<p>图 2-9 32 位程序上 <span class="arithmatex">\(\mathrm{C}\)</span> 语言整型数据类型的典型取值范围</p>
+<!-- Meanless: 第 2 章 信息的表示和处理 43-->
+
+<table><tr><td>C 数据类型</td><td>最小值</td><td>最大值</td></tr><tr><td>[signed]char</td><td>-128</td><td>127</td></tr><tr><td>unsigned char</td><td>0</td><td>255</td></tr><tr><td>short</td><td>-32.768</td><td>32 767</td></tr><tr><td>unsigned short</td><td>0</td><td>65 535</td></tr><tr><td>int</td><td>-2147483648</td><td>2 147 483 647</td></tr><tr><td>unsigned</td><td>0</td><td>4 294 967 295</td></tr><tr><td>long</td><td>-9 223 372 036 854 775 808</td><td>9 223 372 036 854 775 807</td></tr><tr><td>unsigned long</td><td>0</td><td>18 446 744 073 709 551 615</td></tr><tr><td>int 32_t</td><td>-2147483648</td><td>2 147 483 647</td></tr><tr><td>uint 32_t</td><td>0</td><td>4 294 967 295</td></tr><tr><td>int 64_t</td><td>-9 223 372 036 854 775 808</td><td>9 223 372 036 854 775 807</td></tr><tr><td>uint 64_t</td><td>0</td><td>18 446 744 073 709 551 615</td></tr></table>
+
+<p>图 2-10 64 位程序上 C 语言整型数据类型的典型取值范围</p>
+<!-- Media -->
+
+<p>图 2-9 和图 2-10 中一个很值得注意的特点是取值范围不是对称的——负数的范围比整数的范围大 1 。当我们考虑如何表示负数的时候,会看到为什么会这样。</p>
+<p>C 语言标准定义了每种数据类型必须能够表示的最小的取值范围。如图 2-11 所示, 它们的取值范围与图 2-9 和图 2-10 所示的典型实现一样或者小一些。特别地, 除了固定大小的数据类型是例外, 我们看到它们只要求正数和负数的取值范围是对称的。此外, 数据类型 int 可以用 2 个字节的数字来实现, 而这几乎回退到了 16 位机器的时代。还可以看到, long 的大小可以用 4 个字节的数字来实现, 对 32 位程序来说这是很典型的。固定大小的数据类型保证数值的范围与图 2-9 给出的典型数值一致, 包括负数与正数的不对称性。</p>
+<!-- Media -->
+
+<table><tr><td>C 数据类型</td><td>最小值</td><td>最大值</td></tr><tr><td>[signed]char</td><td>-127</td><td>127</td></tr><tr><td>unsigned char</td><td>0</td><td>255</td></tr><tr><td>short</td><td>-32767</td><td>32 767</td></tr><tr><td>unsigned short</td><td>0</td><td>65 535</td></tr><tr><td>int</td><td>-32.767</td><td>32 767</td></tr><tr><td>unsigned</td><td>0</td><td>65 535</td></tr><tr><td>long</td><td>-2147483647</td><td>2 147 483 647</td></tr><tr><td>unsigned long</td><td>0</td><td>4 294 967 295</td></tr><tr><td>int 32_t</td><td>-2147483648</td><td>2 147 483 647</td></tr><tr><td>uint 32_t</td><td>0</td><td>4 294 967 295</td></tr><tr><td>int 64_t</td><td>-9 223 372 036 854 775 808</td><td>9 223 372 036 854 775 807</td></tr><tr><td>uint 64_t</td><td>0</td><td>18 446 744 073 709 551 615</td></tr></table>
+
+<p>图 2-11 C 语言的整型数据类型的保证的取值范围。C 语言标准要求这些数据类型必须至少具有这样的取值范围</p>
+<!-- Media -->
+
+<details class="info">
+<summary>给 <span class="arithmatex">\(\mathrm{C}\)</span> 语言初学者 <span class="arithmatex">\(\mathrm{C}\)</span> 、 <span class="arithmatex">\(\mathrm{C} ++\)</span> 和 Java 中的有符号和无符号数</summary>
+<p>C 和 C++ 都支持有符号(默认)和无符号数。Java 只支持有符号数。</p>
+</details>
+<h2 id="222">2.2.2 无符号数的编码</h2>
+<p>假设有一个整数数据类型有 <span class="arithmatex">\(w\)</span> 位。我们可以将位向量写成 <span class="arithmatex">\(\overrightarrow{x}\)</span> ,表示整个向量,或者写成 <span class="arithmatex">\(\left\lbrack  {{x}_{w - 1},{x}_{w - 2},\cdots ,{x}_{0}}\right\rbrack\)</span> ,表示向量中的每一位。把 <span class="arithmatex">\(\overrightarrow{x}\)</span> 看做一个二进制表示的数,就获得了 <span class="arithmatex">\(\overrightarrow{x}\)</span> 的无符号表示。在这个编码中,每个位 <span class="arithmatex">\({x}_{i}\)</span> 都取值为 0 或 1,后一种取值意味着数值 <span class="arithmatex">\({2}^{i}\)</span> 应为数字值的一部分。我们用一个函数 <span class="arithmatex">\({B2}{U}_{w}\)</span> (Binary to Unsigned 的缩写,长度为 <span class="arithmatex">\(w\)</span> )来表示:</p>
+<!-- Meanless: 44 第一部分 程序结构和执行-->
+
+<p>原理: 无符号数编码的定义</p>
+<p>对向量 <span class="arithmatex">\(\overrightarrow{x} = \left\lbrack  {{x}_{w - 1},{x}_{w - 2},\cdots ,{x}_{0}}\right\rbrack\)</span> :</p>
+<div class="arithmatex">\[
+{B2}{U}_{w}\left( \overrightarrow{x}\right)  \doteq  \mathop{\sum }\limits_{{i = 0}}^{{w - 1}}{x}_{i}{2}^{i} \tag{2.1}
+\]</div>
+<p>在这个等式中,符号 “〨” 表示左边被定义为等于右边。函数 <span class="arithmatex">\({B2}{U}_{w}\)</span> 将一个长度为 <span class="arithmatex">\(w\)</span> 的 0、1 串映射到非负整数。举一个示例,图 2-11 展示的是下面几种情况下 <span class="arithmatex">\({B2U}\)</span> 给出的从位向量到整数的映射:</p>
+<div class="arithmatex">\[
+{B2}{U}_{4}\left( \left\lbrack  {0001}\right\rbrack  \right)  = 0 \cdot  {2}^{3} + 0 \cdot  {2}^{2} + 0 \cdot  {2}^{1} + 1 \cdot  {2}^{0} = 0 + 0 + 0 + 1 = 1
+\]</div>
+<div class="arithmatex">\[
+{B2}{U}_{4}\left( \left\lbrack  {0101}\right\rbrack  \right)  = 0 \cdot  {2}^{3} + 1 \cdot  {2}^{2} + 0 \cdot  {2}^{1} + 1 \cdot  {2}^{0} = 0 + 4 + 0 + 1 = 5 \tag{2.2}
+\]</div>
+<div class="arithmatex">\[
+{B2}{U}_{4}\left( \left\lbrack  {1011}\right\rbrack  \right)  = 1 \cdot  {2}^{3} + 0 \cdot  {2}^{2} + 1 \cdot  {2}^{1} + 1 \cdot  {2}^{0} = 8 + 0 + 2 + 1 = {11}
+\]</div>
+<div class="arithmatex">\[
+{B2}{U}_{4}\left( \left\lbrack  {1111}\right\rbrack  \right)  = 1 \cdot  {2}^{3} + 1 \cdot  {2}^{2} + 1 \cdot  {2}^{1} + 1 \cdot  {2}^{0} = 8 + 4 + 2 + 1 = {15}
+\]</div>
+<p>在图中,我们用长度为 <span class="arithmatex">\({2}^{i}\)</span> 的指向右侧箭头的条表示每个位的位置 <span class="arithmatex">\(i\)</span> 。每个位向量对应的数值就等于所有值为 1 的位对应的条的长度之和。</p>
+<!-- Media -->
+
+<!-- figureText: ${2}^{3} = 8$ 10 12 13 ${2}^{2} = 4$ ${2}^{1} = 2$ ${2}^{0} = 1$ 3 6 [0001] [0101] [1011] [1111] -->
+
+<p><img src="https://cdn.noedgeai.com/bo_d2ft4sref24c73b0iki0_23.jpg?x=755&y=896&w=732&h=472&r=0"/></p>
+<p>图 2-12 <span class="arithmatex">\(w = 4\)</span> 的无符号数示例。当二进制表示中位 <span class="arithmatex">\(i\)</span> 为 1,数值就会相应加上 <span class="arithmatex">\({2}^{i}\)</span></p>
+<!-- Media -->
+
+<p>让我们来考虑一下 <span class="arithmatex">\(w\)</span> 位所能表示的值的范围。最小值是用位向量 <span class="arithmatex">\(\lbrack {00}\cdots\)</span> 0]表示,也就是整数值 0 ,而最大值是用位向量 <span class="arithmatex">\(\left\lbrack  {{11}\cdots 1}\right\rbrack\)</span> 表示,也就是整数值 <span class="arithmatex">\({UMa}{x}_{w} \doteq  \mathop{\sum }\limits_{{i = 0}}^{{w - 1}}{2}^{i} = {2}^{w} - 1\)</span> 。以 4 位情况为例, <span class="arithmatex">\({UMa}{x}_{4} = {B2}{U}_{4}\left( \left\lbrack  {1111}\right\rbrack  \right)  = {2}^{4} -\)</span> <span class="arithmatex">\(1 = {15}\)</span> 。因此,函数 <span class="arithmatex">\({B2}{U}_{w}\)</span> 能够被定义为一个映射 <span class="arithmatex">\({B2}{U}_{w} : \{ 0,1{\} }^{w} \rightarrow  \{ 0,\cdots\)</span> , <span class="arithmatex">\({2}^{w} - 1\}\)</span> 。</p>
+<p>无符号数的二进制表示有一个很重要的属性,也就是每个介于 <span class="arithmatex">\(0 \sim  {2}^{w} - 1\)</span> 之间的数都有唯一一个 <span class="arithmatex">\(w\)</span> 位的值编码。例如,十进制值 11 作为无符号数,只有一个 4 位的表示,即 [1011]。我们用数学原理来重点讲述它,先表述原理再解释。</p>
+<p>原理：无符号数编码的唯一性</p>
+<p>函数 <span class="arithmatex">\({B2}{U}_{w}\)</span> 是一个双射。</p>
+<p>数学术语双射是指一个函数 <span class="arithmatex">\(f\)</span> 有两面: 它将数值 <span class="arithmatex">\(x\)</span> 映射为数值 <span class="arithmatex">\(y\)</span> ,即 <span class="arithmatex">\(y = f\left( x\right)\)</span> ,但它也可以反向操作,因为对每一个 <span class="arithmatex">\(y\)</span> 而言,都有唯一一个数值 <span class="arithmatex">\(x\)</span> 使得 <span class="arithmatex">\(f\left( x\right)  = y\)</span> 。这可以用反函数 <span class="arithmatex">\({f}^{-1}\)</span> 来表示,在本例中,即 <span class="arithmatex">\(x = {f}^{-1}\left( y\right)\)</span> 。函数 <span class="arithmatex">\({B2}{U}_{w}\)</span> 将每一个长度为 <span class="arithmatex">\(w\)</span> 的位向量都映射为 <span class="arithmatex">\(0 \sim  {2}^{w} - 1\)</span> 之间的一个唯一值; 反过来,我们称其为 <span class="arithmatex">\({U2}{B}_{w}\)</span> (即 “无符号数到二进制”), 在 <span class="arithmatex">\(0 \sim  {2}^{w} - 1\)</span> 之间的每一个整数都可以映射为一个唯一的长度为 <span class="arithmatex">\(w\)</span> 的位模式。</p>
+<h2 id="223">2.2.3 补码编码</h2>
+<p>对于许多应用, 我们还希望表示负数值。最常见的有符号数的计算机表示方式就是补码(two's-complement)形式。在这个定义中, 将字的最高有效位解释为负权(negative weight)。我们用函数 <span class="arithmatex">\({B 2}{T}_{w}\)</span> (Binary to Two’s-complement 的缩写,长度为 <span class="arithmatex">\(w\)</span> )来表示:</p>
+<!-- Meanless: 第 2 章 信息的表示和处理 45-->
+
+<p>原理：补码编码的定义</p>
+<p>对向量 <span class="arithmatex">\(\overrightarrow{x} = \left\lbrack  {{x}_{w - 1},{x}_{w - 2},\cdots ,{x}_{0}} \right\rbrack\)</span> :</p>
+<div class="arithmatex">\[
+{B 2}{T}_{w}\left( \overrightarrow{x}\right)  \doteq   - {x}_{w - 1}{2}^{w - 1} + \mathop{\sum }\limits_ {{i = 0}} ^ {{w - 2}} {x}_{i}{2}^{i} \tag{2.3}
+\]</div>
+<p>最高有效位 <span class="arithmatex">\({x}_{w - 1}\)</span> 也称为符号位,它的 “权重” 为 <span class="arithmatex">\(- {2}^{w - 1}\)</span> ,是无符号表示中权重的负数。符号位被设置为 1 时, 表示值为负, 而当设置为 0 时, 值为非负。这里来看一个示例,图 2-13 展示的是下面几种情况下 <span class="arithmatex">\({B 2 T}\)</span> 给出的从位向量到整数的映射。</p>
+<div class="arithmatex">\[
+{B 2}{T}_{4}\left( \left\lbrack  {0001}\right\rbrack  \right)  =  - 0 \cdot  {2}^{3} + 0 \cdot  {2}^{2} + 0 \cdot  {2}^{1} + 1 \cdot  {2}^{0} = 0 + 0 + 0 + 1 = 1
+\]</div>
+<div class="arithmatex">\[
+{B 2}{T}_{4}\left( \left\lbrack  {0101}\right\rbrack  \right)  =  - 0 \cdot  {2}^{3} + 1 \cdot  {2}^{2} + 0 \cdot  {2}^{1} + 1 \cdot  {2}^{0} = 0 + 4 + 0 + 1 = 5 \tag{2.4}
+\]</div>
+<div class="arithmatex">\[
+{B 2}{T}_{4}\left( \left\lbrack  {1011}\right\rbrack  \right)  =  - 1 \cdot  {2}^{3} + 0 \cdot  {2}^{2} + 1 \cdot  {2}^{1} + 1 \cdot  {2}^{0} =  - 8 + 0 + 2 + 1 =  - 5
+\]</div>
+<div class="arithmatex">\[
+{B 2}{T}_{4}\left( \left\lbrack  {1111}\right\rbrack  \right)  =  - 1 \cdot  {2}^{3} + 1 \cdot  {2}^{2} + 1 \cdot  {2}^{1} + 1 \cdot  {2}^{0} =  - 8 + 4 + 2 + 1 =  - 1
+\]</div>
+<p>在这个图中, 我们用向左指的条表示符号位具有负权重。于是, 与一个位向量相关联的数值是由可能的向左指的条和向右指的条加起来决定的。</p>
+<!-- Media -->
+
+<!-- figureText: ${2}^{2} = 4$ ${2}^{1} = 2$ ${2}^{0} = 1$ [0001] [0101] [1011] [1111] -->
+
+<p><img src="https://cdn.noedgeai.com/bo_d2ft4sref24c73b0iki0_24.jpg?x=655&y=769&w=733&h=501&r=0"/></p>
+<p>图 2-13 <span class="arithmatex">\(w = 4\)</span> 的补码示例。把位 3 作为符号位,因此当它为 1 时,对数值的影响是 <span class="arithmatex">\(- {2}^{3} =  - 8\)</span> 。这个权重在图中用带向左箭头的条表示</p>
+<!-- Media -->
+
+<p>我们可以看到, 图 2-12 和图 2-13 中的位模式都是一样的, 对等式 (2.2) 和等式 (2.4) 来说也是一样, 但是当最高有效位是 1 时, 数值是不同的, 这是因为在一种情况中, 最高有效位的权重是 +8 ,而在另一种情况中, 它的权重是 -8 。</p>
+<p>让我们来考虑一下 <span class="arithmatex">\(w\)</span> 位补码所能表示的值的范围。它能表示的最小值是位向量 <span class="arithmatex">\(\left\lbrack  {{10}\cdots 0}\right\rbrack\)</span> (也就是设置这个位为负权,但是清除其他所有的位),其整数值为 <span class="arithmatex">\({TMi}{n}_{w} \doteq   - {2}^{w - 1}\)</span> 。而最大值是位向量 <span class="arithmatex">\(\left\lbrack  {{01}\cdots 1}\right\rbrack\)</span> (清除具有负权的位,而设置其他所有的位),其整数值为 <span class="arithmatex">\({\operatorname{TMax}} _{w} \doteq  \mathop{\sum }\limits_ {{i = 0}} ^ {{w - 2}} {2}^{i} = {2}^{w - 1} - 1\)</span> 。以长度为 4 为例,我们有 <span class="arithmatex">\({TMi}{n}_{4} = {B 2}{T}_{4}\left( \left\lbrack  {1000}\right\rbrack  \right)  =  - {2}^{3} =  - 8\)</span> ,而 <span class="arithmatex">\({TMa}{x}_{4} = {B 2}{T}_{4}\left( \left\lbrack  {0111}\right\rbrack  \right)  =\)</span> <span class="arithmatex">\({2}^{2} + {2}^{1} + {2}^{0} = 4 + 2 + 1 = 7\)</span> 。</p>
+<p>我们可以看出 <span class="arithmatex">\({B 2}{T}_{w}\)</span> 是一个从长度为 <span class="arithmatex">\(w\)</span> 的位模式到 <span class="arithmatex">\({TMi}{n}_{w}\)</span> 和 <span class="arithmatex">\({TMa}{x}_{w}\)</span> 之间数字的映射,写作 <span class="arithmatex">\({B 2}{T}_{w} : \{ 0,1{\} }^{w} \rightarrow  \left\{  {{TMi}{n}_{w},\cdots ,{TMa}{x}_{w}} \right\}\)</span> 。同无符号表示一样,在可表示的取值范围内的每个数字都有一个唯一的 <span class="arithmatex">\(w\)</span> 位的补码编码。这就导出了与无符号数相似的补码数原理:</p>
+<p>原理: 补码编码的唯一性</p>
+<p>函数 <span class="arithmatex">\({B 2}{T}_{w}\)</span> 是一个双射。</p>
+<p>我们定义函数 <span class="arithmatex">\({T 2}{B}_{w}\)</span> (即 “补码到二进制”) 作为 <span class="arithmatex">\({B 2}{T}_{w}\)</span> 的反函数。也就是说,对于每个数 <span class="arithmatex">\(x\)</span> ,满足 <span class="arithmatex">\({TMi}{n}_{w} \leq  x \leq  {TMa}{x}_{w}\)</span> ,则 <span class="arithmatex">\({T 2}{B}_{w}\left( x\right)\)</span> 是 <span class="arithmatex">\(x\)</span> 的 (唯一的) <span class="arithmatex">\(w\)</span> 位模式。</p>
+<p>练习题 2.17 假设 <span class="arithmatex">\(w = 4\)</span> ,我们能给每个可能的十六进制数字赋予一个数值,假设用一个无符号或者补码表示。请根据这些表示,通过写出等式 (2.1) 和等式 (2.3) 所示的求和公式中的 2 的非零次幂, 填写下表:</p>
+<!-- Meanless: 46 第一部分 程序结构和执行-->
+
+<!-- Media -->
+
+<table><tr><td colspan="2">$\overrightarrow{x}$</td><td rowspan="2">${B 2}{U}_{4}\left( \overrightarrow{x}\right)$</td><td rowspan="2">${B 2}{T}_{4}\left( \overrightarrow{x}\right)$</td></tr><tr><td>十六进制</td><td>二进制</td></tr><tr><td>0 xE</td><td>[1110]</td><td>${2}^{3} + {2}^{2} + {2}^{1} = {14}$</td><td>$- {2}^{3} + {2}^{2} + {2}^{1} =  - 2$</td></tr><tr><td>$0 \times  0$</td><td/><td/><td/></tr><tr><td>0 x 5</td><td/><td/><td/></tr><tr><td>$0 \times  8$</td><td/><td/><td/></tr><tr><td>$0 \times  D$</td><td/><td/><td/></tr><tr><td>0 xF</td><td/><td/><td/></tr></table>
+
+<!-- Media -->
+
+<p>图 2-14 展示了针对不同字长,几个重要数字的位模式和数值。前三个给出的是可表示的整数的范围,用 <span class="arithmatex">\({UMa}{x}_{w}\text{、}{TMi}{n}_{w}\)</span> 和 <span class="arithmatex">\({TMa}{x}_{w}\)</span> 来表示。在后面的讨论中,我们还会经常引用到这三个特殊的值。如果可以从上下文中推断出 <span class="arithmatex">\(w\)</span> ,或者 <span class="arithmatex">\(w\)</span> 不是讨论的主要内容时,我们会省略下标 <span class="arithmatex">\(w\)</span> ,直接引用 <span class="arithmatex">\({UMax}\text{、}{TMin}\)</span> 和 <span class="arithmatex">\({TMax}\)</span> 。</p>
+<!-- Media -->
+
+<table><tr><td rowspan="2">数</td><td colspan="4">字长 w</td></tr><tr><td>8</td><td>16</td><td>32</td><td>64</td></tr><tr><td rowspan="2">${UMa}{x}_{w}$</td><td>0 xFF</td><td>0 xFFFF</td><td>Oxffffffff</td><td>0 xFFFFFFFFFFFFFFF</td></tr><tr><td>255</td><td>65 535</td><td>4 294 967 295</td><td>18 446 744 073 709 551 615</td></tr><tr><td rowspan="2">${TMi}{n}_{w}$</td><td>$0 \times  {80}$</td><td>$0 \times  {8000}$</td><td>0 x 80000000</td><td>0 x 8000000000000000</td></tr><tr><td>-128</td><td>-32768</td><td>-2147483648</td><td>-9 223 372 036 854 775 808</td></tr><tr><td rowspan="2">${TMa}{x}_{w}$</td><td>0 x 7 F</td><td>0 x 7 FFF</td><td>0 x 7 FFFFFFF</td><td>0 x 7 fffffffffffffff</td></tr><tr><td>127</td><td>32 767</td><td>2 147 483 647</td><td>9 223 372 036 854 775 807</td></tr><tr><td>-1</td><td>0 xFF</td><td>0 xFFFF</td><td>0 xFFFFFFFF</td><td>0 xFFFFFFFFFFFFFFFFF</td></tr><tr><td>0</td><td>$0 \times  {00}$</td><td>$0 \times  {0000}$</td><td>0 x 00000000</td><td>0 x 0000000000000000</td></tr></table>
+
+<p>图 2-14 重要的数字。图中给出了数值和十六进制表示</p>
+<!-- Media -->
+
+<p>关于这些数字, 有几点值得注意。第一, 从图 2-9 和图 2-10 可以看到, 补码的范围是不对称的: <span class="arithmatex">\(\left| {{TM}\text{in}} \right|  = \left| {{TM}\text{ax}} \right|  + 1\)</span> ,也就是说, <span class="arithmatex">\({TM}\)</span> in 没有与之对应的正数。正如我们将会看到的, 这导致了补码运算的某些特殊的属性, 并且容易造成程序中细微的错误。之所以会有这样的不对称性, 是因为一半的位模式 (符号位设置为 1 的数) 表示负数, 而另一半 (符号位设置为 0 的数) 表示非负数。因为 0 是非负数, 也就意味着能表示的整数比负数少一个。第二,最大的无符号数值刚好比补码的最大值的两倍大一点: <span class="arithmatex">\({UMa}{x}_{w} = {2 TMa}{x}_{w} +\)</span> 1。补码表示中所有表示负数的位模式在无符号表示中都变成了正数。图 2-14 也给出了常数 -1 和 0 的表示。注意 -1 和 UMax 有同样的位表示——一个全 1 的串。数值 0 在两种表示方式中都是全 0 的串。</p>
+<p><span class="arithmatex">\(\mathrm{C}\)</span> 语言标准并没有要求要用补码形式来表示有符号整数,但是几乎所有的机器都是这么做的。程序员如果希望代码具有最大可移植性, 能够在所有可能的机器上运行, 那么除了图 2-11 所示的那些范围之外, 我们不应该假设任何可表示的数值范围, 也不应该假设有符号数会使用何种特殊的表示方式。另一方面, 许多程序的书写都假设用补码来表示有符号数, 并且具有图 2-9 和图 2-10 所示的 “典型的” 取值范围, 这些程序也能够在大量的机器和编译器上移植。C 库中的文件<limits.h>定义了一组常量,来限定编译器运行的这台机器的不同整型数据类型的取值范围。比如, 它定义了常量 INT_MAX、INT_MIN 和 UINT_MAX, 它们描述了有符号和无符号整数的范围。对于一个补码的机器, 数据类型 int 有 <span class="arithmatex">\(w\)</span> 位,这些常量就对应于 <span class="arithmatex">\({TMa}{x}_{w}\text{、}{TMi}{n}_{w}\)</span> 和 <span class="arithmatex">\({UMa}{x}_{w}\)</span> 的值。</p>
+<!-- Meanless: 第 2 章 信息的表示和处理 47-->
+
+<details class="info">
+<summary>旁注：关于确定大小的整数类型的更多内容</summary>
+<p>对于某些程序来说,用某个确定大小的表示来编码数据类型非常重要。例如,当编写程序, 使得机器能够按照一个标准协议在因特网上通信时, 让数据类型与协议指定的数据类型兼容是非常重要的。我们前面看到了,某些 <span class="arithmatex">\(\mathrm{C}\)</span> 数据类型,特别是 long 型,在不同的机器上有不同的取值范围,而实际上 C 语言标准只指定了每种数据类型的最小范围,而不是确定的范围。虽然我们可以选择与大多数机器上的标准表示兼容的数据类型,但是这也不能保证可移植性。</p>
+<p>我们已经见过了 32 位和 64 位版本的确定大小的整数类型 (图 2-3), 它们是一个更大数据类型类的一部分。ISO C 99 标准在文件 stdint.h 中引入了这个整数类型类。这个文件定义了一组数据类型,它们的声明形如 intN_t 和 uintN_t,对不同的 <span class="arithmatex">\(\mathrm{N}\)</span> 值指定 <span class="arithmatex">\(\mathrm{N}\)</span> 位有符号和无符号整数。 <span class="arithmatex">\(\mathrm{N}\)</span> 的具体值与实现相关,但是大多数编译器允许的值为 8、 16、32 和 64。因此,通过将它的类型声明为 uint 16_t,我们可以无歧义地声明一个 16 位无符号变量,而如果声明为 int 32_t,就是一个 32 位有符号变量。</p>
+<p>这些数据类型对应着一组宏,定义了每个 <span class="arithmatex">\(\mathrm{N}\)</span> 的值对应的最小和最大值。这些宏名字形如 INTN_MIN、INTN_MAX 和 UINTN_MAX。</p>
+<p>确定宽度类型的带格式打印需要使用宏,以与系统相关的方式扩展为格式串。因此,举个例子来说,变量 <span class="arithmatex">\(\mathrm{x}\)</span> 和 <span class="arithmatex">\(\mathrm{y}\)</span> 的类型是 int 32_t 和 uint 64_t,可以通过调用 printf 来打印它们的值, 如下所示:</p>
+<div class="arithmatex">\[
+\text{printf("x = %" PRId 32 ", y = %" PRIu 64 "\\n", x, y);}
+\]</div>
+<p>编译为 64 位程序时, 宏 PRId 32 展开成字符串 “d”,宏 PRIu 64 则展开成两个字符串 “1” “u”。当 <span class="arithmatex">\(\mathrm{C}\)</span> 预处理器遇到仅用空格(或其他空白字符)分隔的一个字符串常量序列时, 就把它们串联起来。因此, 上面的 printf 调用就变成了:</p>
+<div class="arithmatex">\[
+\text{printf("x = %d, y = %lu\\n", x, y);}
+\]</div>
+<p>使用宏能保证：不论代码是如何被编译的, 都能生成正确的格式字符串。</p>
+</details>
+<p>关于整数数据类型的取值范围和表示,Java 标准是非常明确的。它要求采用补码表示,取值范围与图 2-10 中 64 位的情况一样。在 Java 中, 单字节数据类型称为 byte, 而不是 char。这些非常具体的要求都是为了保证无论在什么机器上运行, Java 程序都能表现地完全一样。</p>
+<details class="info">
+<summary>旁注：有符号数的其他表示方法</summary>
+<p>有符号数还有两种标准的表示方法:</p>
+<p>反码 (Ones’ Complement): 除了最高有效位的权是 <span class="arithmatex">\(- \left( {{2}^{w - 1} - 1}\right)\)</span> 而不是 <span class="arithmatex">\(- {2}^{w - 1}\)</span> ,它和补码是一样的:</p>
+<div class="arithmatex">\[
+{B 2}{O}_{w}\left( \overrightarrow{x}\right)  \doteq   - {x}_{w - 1}\left( {{2}^{w - 1} - 1}\right)  + \mathop{\sum }\limits_{{i = 0}} ^ {{w - 2}} {x}_{i}{2}^{i}
+\]</div>
+<p>原码(Sign-Magnitude): 最高有效位是符号位, 用来确定剩下的位应该取负权还是正权:</p>
+<div class="arithmatex">\[
+{B 2}{S}_{w}\left( \overrightarrow{x}\right)  \doteq  {\left( -1\right) }^ {{x}_{w - 1}} \cdot  \left( {\mathop{\sum }\limits_ {{i = 0}} ^ {{w - 2}} {x}_{i}{2}^{i}}\right) 
+\]</div>
+<p>这两种表示方法都有一个奇怪的属性, 那就是对于数字 0 有两种不同的编码方式。这两种表示方法,把 <span class="arithmatex">\(\left\lbrack  {{00}\cdots 0}\right\rbrack\)</span> 都解释为 +0 。而值 -0 在原码中表示为 <span class="arithmatex">\(\left\lbrack  {{10}\cdots 0}\right\rbrack\)</span> ,在反码中表示为 <span class="arithmatex">\(\left\lbrack  {{11}\cdots 1}\right\rbrack\)</span> 。虽然过去生产过基于反码表示的机器,但是几乎所有的现代机器都使用补码。我们将看到在浮点数中有使用原码编码。</p>
+<!-- Meanless: 48 第一部分 程序结构和执行-->
+<p>请注意补码(Two's complement)和反码(Ones' complement)中撇号的位置是不同的。术语补码来源于这样一个情况,对于非负数 <span class="arithmatex">\(x\)</span> ,我们用 <span class="arithmatex">\({2}^{w} - x\)</span> (这里只有一个 2) 来计算 <span class="arithmatex">\(- x\)</span> 的 <span class="arithmatex">\(w\)</span> 位表示。术语反码来源于这样一个属性,我们用 <span class="arithmatex">\(\left\lbrack  {{111}\cdots 1}\right\rbrack   - x\)</span> (这里有很多个 1 ) 来计算 <span class="arithmatex">\(- x\)</span> 的反码表示。</p>
+</details>
+<p>为了更好地理解补码表示, 考虑下面的代码:</p>
+<hr />
+<div class="language-text highlight"><pre><span></span><code>                    short x = 12345 ;
+</code></pre></div>
+<p>2 short mx = -x ;
+4 show_bytes((byte_pointer) &amp;x, sizeof(short));
+                    show_bytes((byte_pointer) &amp;mx, sizeof(short));</p>
+<hr />
+<p>当在大端法机器上运行时,这段代码的输出为 3039 和 cf c 7,指明 <span class="arithmatex">\(\mathrm{x}\)</span> 的十六进制表示为 0 x 3039,而 mx 的十六进制表示为 0 xCFC 7。将它们展开为二进制,我们得到 <span class="arithmatex">\(\mathrm{x}\)</span> 的位模式为 [0011000000111001],而 mx 的位模式为 [1100111111000111]。如图 2-15 所示,等式 (2.3) 对这两个位模式生成的值为 12345 和 -12345 。</p>
+<!-- Media -->
+
+<table><tr><td rowspan="2">权</td><td colspan="2">12345</td><td colspan="2">-12345</td><td colspan="2">53 191</td></tr><tr><td>位</td><td>值</td><td>位</td><td>值</td><td>位</td><td>值</td></tr><tr><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr><tr><td>2</td><td>0</td><td>0</td><td>1</td><td>2</td><td>1</td><td>2</td></tr><tr><td>4</td><td>0</td><td>0</td><td>1</td><td>4</td><td>1</td><td>4</td></tr><tr><td>8</td><td>1</td><td>8</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>16</td><td>1</td><td>16</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>32</td><td>1</td><td>32</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>64</td><td>0</td><td>0</td><td>1</td><td>64</td><td>1</td><td>64</td></tr><tr><td>128</td><td>0</td><td>0</td><td>1</td><td>128</td><td>1</td><td>128</td></tr><tr><td>256</td><td>0</td><td>0</td><td>1</td><td>256</td><td>1</td><td>256</td></tr><tr><td>512</td><td>0</td><td>0</td><td>1</td><td>512</td><td>1</td><td>512</td></tr><tr><td>1024</td><td>0</td><td>0</td><td>1</td><td>1024</td><td>1</td><td>1024</td></tr><tr><td>2048</td><td>0</td><td>0</td><td>1</td><td>2048</td><td>1</td><td>2048</td></tr><tr><td>4 096</td><td>1</td><td>4096</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>8192</td><td>1</td><td>8192</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>16 384</td><td>0</td><td>0</td><td>1</td><td>16384</td><td>1</td><td>16 384</td></tr><tr><td>$\pm  {32768}$</td><td>0</td><td>0</td><td>1</td><td>-32768</td><td>1</td><td>32 768</td></tr><tr><td>总计</td><td colspan="2">12 345</td><td colspan="2">-12345</td><td colspan="2">53 191</td></tr></table>
+
+<p>图 2-15 12345 和 -12345 的补码表示,以及 53191 的无符号表示。注意后面两个数有相同的位表示</p>
+<!-- Media -->
+
+<details class="question">
+<summary>练习题 2.18</summary>
+<p>在第 3 章中,我们将看到由反汇编器生成的列表,反汇编器是一种将可执行程序文件转换回可读性更好的 ASCII 码形式的程序。这些文件包含许多十六进制数字, 都是用典型的补码形式来表示这些值。能够认识这些数字并理解它们的意义 (例如它们是正数还是负数),是一项重要的技巧。</p>
+<p>在下面的列表中,对于标号为 <span class="arithmatex">\(\mathrm{A} \sim  \mathrm{I}\)</span> (标记在右边) 的那些行,将指令名 (sub、mov 和 add) 右边显示的 (32 位补码形式表示的) 十六进制值转换为等价的十进制值。</p>
+<!-- Media -->
+<p><table><tr><td/><td>4004 d 0: 4881 ec e 0 02 00 00</td><td>sub</td><td>$0 x 2 e 0,%rsp</td><td><span class="arithmatex">\(A\)</span> .</td></tr><tr><td/><td>4004 d 7: <span class="arithmatex">\({488 b 4424}\mathrm{a}8\)</span></td><td>mov</td><td>-0 x 58(%rsp),%rax</td><td><span class="arithmatex">\(B\)</span> .</td></tr><tr><td/><td>04 dc: 48 03 47 28</td><td>add</td><td>0 x 28(%rdi),%rax</td><td><span class="arithmatex">\(C\)</span> .</td></tr><tr><td/><td>04 e 0: <span class="arithmatex">\({48894424}\;{d 0}\)</span></td><td>mov</td><td>%rax,-0 x 30 (%rsp)</td><td><span class="arithmatex">\(D\)</span> .</td></tr></table></p>
+<!-- Media -->
+<!-- Meanless: 第 2 章 信息的表示和处理 49-->
+<hr />
+<p>4004 e 5: 48 8 b 44 24 78 mov 0 x 78(%rsp),%rax <span class="arithmatex">\(E\)</span> .
+4004 ea: 4889 87 88 00 00 00 mov %rax,0 x 88(%rdi) <span class="arithmatex">\(F\)</span> .
+    4004 f 1: 488 b 84 24 f 8 01 00 mov 0 x 1 f 8(%rsp),%rax <span class="arithmatex">\(G\)</span> .
+                    4004 f 8: 00
+4004 f 9: 4803442408 add 0 x 8(%rsp),%rax
+            4004 fe: 48898424 c 0 00 00 mov %rax,0 xc 0(%rsp <span class="arithmatex">\(H\)</span> .
+            400505: 00
+400506: 48 8 b 44 d 4 b 8 mov -0 x 48(%rsp,%rdx,8),%rax I</p>
+<hr />
+</details>
+<h2 id="224">2.2.4 有符号数和无符号数之间的转换</h2>
+<p><span class="arithmatex">\(\mathrm{C}\)</span> 语言允许在各种不同的数字数据类型之间做强制类型转换。例如,假设变量 <span class="arithmatex">\(\mathrm{x}\)</span> 声明为 int, <span class="arithmatex">\(\mathrm{u}\)</span> 声明为 unsigned。表达式 (unsigned) <span class="arithmatex">\(\mathrm{x}\)</span> 会将 <span class="arithmatex">\(\mathrm{x}\)</span> 的值转换成一个无符号数值,而 (int) <span class="arithmatex">\(\mathrm{u}\)</span> 将 <span class="arithmatex">\(\mathrm{u}\)</span> 的值转换成一个有符号整数。将有符号数强制类型转换成无符号数,或者反过来, 会得到什么结果呢? 从数学的角度来说, 可以想象到几种不同的规则。很明显, 对于在两种形式中都能表示的值, 我们是想要保持不变的。另一方面, 将负数转换成无符号数可能会得到 0 。如果转换的无符号数太大以至于超出了补码能够表示的范围, 可能会得到 TMax。不过,对于大多数 <span class="arithmatex">\(\mathrm{C}\)</span> 语言的实现来说,对这个问题的回答都是从位级角度来看的, 而不是数的角度。</p>
+<p>比如说, 考虑下面的代码:</p>
+<hr />
+<p>1 short int v = -12345 ;
+    2 unsigned short uv = (unsigned short) v;
+    3 printf("v = %d, uv = %u\n", v, uv);</p>
+<hr />
+<p>在一台采用补码的机器上, 上述代码会产生如下输出:</p>
+<hr />
+<p><span class="arithmatex">\(v =  - {12345},{uv} = {53191}\)</span></p>
+<hr />
+<p>我们看到, 强制类型转换的结果保持位值不变, 只是改变了解释这些位的方式。在图 2-15 中我们看到过, -12345 的 16 位补码表示与 53191 的 16 位无符号表示是完全一样的。将 short 强制类型转换为 unsigned short 改变数值,但是不改变位表示。</p>
+<p>类似地, 考虑下面的代码:</p>
+<hr />
+<p>1 unsigned u = 4294967295 u; /<em> UMax </em>/
+    2 int tu = (int) u;
+3 printf("u = %u, tu = %d\n", u, tu);</p>
+<hr />
+<p>在一台采用补码的机器上, 上述代码会产生如下输出:</p>
+<hr />
+<p>u = 4294967295 , tu = -1</p>
+<hr />
+<p>从图 2-14 我们可以看到,对于 32 位字长来说,无符号形式的 4294967295(UMa <span class="arithmatex">\({}_{32}\)</span> ) 和补码形式的 -1 的位模式是完全一样的。将 unsigned 强制类型转换成 int, 底层的位表示保持不变。</p>
+<p>对于大多数 <span class="arithmatex">\(\mathrm{C}\)</span> 语言的实现,处理同样字长的有符号数和无符号数之间相互转换的一般规则是：数值可能会改变,但是位模式不变。让我们用更数学化的形式来描述这个规则。我们定义函数 <span class="arithmatex">\({U 2}{B}_{w}\)</span> 和 <span class="arithmatex">\({T 2}{B}_{w}\)</span> ,它们将数值映射为无符号数和补码形式的位表示。也就是说,给定 <span class="arithmatex">\(0 \leq  x \leq  {UMa}{x}_{w}\)</span> 范围内的一个整数 <span class="arithmatex">\(x\)</span> ,函数 <span class="arithmatex">\({U 2}{B}_{w}\left( x\right)\)</span> 会给出 <span class="arithmatex">\(x\)</span> 的唯一的 <span class="arithmatex">\(w\)</span> 位无符号表示。相似地,当 <span class="arithmatex">\(x\)</span> 满足 <span class="arithmatex">\({TMi}{n}_{w} \leq  x \leq  {TMa}{x}_{w}\)</span> ,函数 <span class="arithmatex">\({T 2}{B}_{w}\left( x\right)\)</span> 会给出 <span class="arithmatex">\(x\)</span> 的唯一的 <span class="arithmatex">\(w\)</span> 位补码表示。</p>
+<p>现在,将函数 <span class="arithmatex">\({T 2}{U}_{w}\)</span> 定义为 <span class="arithmatex">\({T 2}{U}_{w}\left( x\right)  \doteq  {B 2}{U}_{w}\left( {{T 2}{B}_{w}\left( x\right) }\right)\)</span> 。这个函数的输入是一个 <span class="arithmatex">\({TMi}{n}_{w} \sim  {TMa}{x}_{w}\)</span> 的数,结果得到一个 <span class="arithmatex">\(0 \sim  {UMa}{x}_{w}\)</span> 的值,这里两个数有相同的位模式,除了参数是无符号的,而结果是以补码表示的。类似地,对于 <span class="arithmatex">\(0 \sim  {UMa}{x}_{w}\)</span> 之间的值 <span class="arithmatex">\(x\)</span> ,定义函数 <span class="arithmatex">\({U 2}{T}_{w}\)</span> 为 <span class="arithmatex">\({U 2}{T}_{w}\left( x\right)  \doteq  {B 2}{T}_{w}\left( {{U 2}{B}_{w}\left( x\right) }\right)\)</span> 。生成一个数的无符号表示和 <span class="arithmatex">\(x\)</span> 的补码表示相同。</p>
+<!-- Meanless: 50 第一部分 程序结构和执行-->
+
+<p>继续我们前面的例子,从图 2-15 中,我们看到 <span class="arithmatex">\({T 2}{U}_{16}\left( {-{12345}}\right)  = {53191}\)</span> ,并且 <span class="arithmatex">\({U 2}{T}_{16}\left( {53191}\right)  =  - {12345}\)</span> 。也就是说,十六进制表示写作 <span class="arithmatex">\(0\mathrm {{xCFC}} 7\)</span> 的 16 位位模式既是 -12345 的补码表示,又是 53191 的无符号表示。同时请注意 <span class="arithmatex">\({12345} + {53191} = {65536} =\)</span> <span class="arithmatex">\({2}^{16}\)</span> 。这个属性可以推广到给定位模式的两个数值(补码和无符号数)之间的关系。类似地, 从图 2-14 我们看到 <span class="arithmatex">\({T 2}{U}_{32}\left( {-1}\right)  = {4294967295}\)</span> ,并且 <span class="arithmatex">\({U 2}{T}_{32}\left( {4294967295}\right)  =  - 1\)</span> 。也就是说,无符号表示中的 <span class="arithmatex">\({UMax}\)</span> 有着和补码表示的 -1 相同的位模式。我们在这两个数之间也能看到这种关系: <span class="arithmatex">\(1 + {UMa}{x}_{w} = {2}^{w}\)</span> 。</p>
+<p>接下来,我们看到函数 <span class="arithmatex">\({U 2 T}\)</span> 描述了从无符号数到补码的转换,而 <span class="arithmatex">\({T 2 U}\)</span> 描述的是补码到无符号的转换。这两个函数描述了在大多数 <span class="arithmatex">\(\mathrm{C}\)</span> 语言实现中这两种数据类型之间的强制类型转换效果。</p>
+<details class="question">
+<summary>练习题 2.19</summary>
+<p>利用你解答练习题 2.17 时填写的表格,填写下列描述函数 <span class="arithmatex">\({T 2}{U}_{4}\)</span> 的表格。</p>
+<!-- Media -->
+<p><table><tr><td><span class="arithmatex">\(x\)</span></td><td><span class="arithmatex">\({T 2 U}_{4}\left( x\right)\)</span></td></tr><tr><td>-8</td><td/></tr><tr><td>-3</td><td/></tr><tr><td>-2</td><td/></tr><tr><td>-1</td><td/></tr><tr><td>0</td><td/></tr><tr><td>5</td><td/></tr></table></p>
+<!-- Media -->
+<p>通过上述这些例子, 我们可以看到给定位模式的补码与无符号数之间的关系可以表示为函数 <span class="arithmatex">\({T 2 U}\)</span> 的一个属性:</p>
+<p>原理: 补码转换为无符号数</p>
+<p>对满足 <span class="arithmatex">\({TMi}{n}_{w} \leq  x \leq  {TMa}{x}_{w}\)</span> 的 <span class="arithmatex">\(x\)</span> 有:</p>
+<div class="arithmatex">\[
+{T 2}{U}_{w}\left( x\right)  = \left\{  \begin{array}{ll} x + {2}^{w}, &amp; x &lt; 0 \\  x, &amp; x \geq  0 \end{array}\right.  \tag{2.5}
+\]</div>
+<p>比如,我们看到 <span class="arithmatex">\({T 2}{U}_{16}\left( {-{12345}}\right)  =  - {12345} + {2}^{16} = {53191}\)</span> ,同时 <span class="arithmatex">\({T 2}{U}_{w}\left( {-1}\right)  =  - 1 +\)</span> <span class="arithmatex">\({2}^{w} = {UMa}{x}_{w}\)</span> 。</p>
+<p>该属性可以通过比较公式 (2.1) 和公式 (2.3) 推导出来。</p>
+<p>推导: 补码转换为无符号数</p>
+<p>比较等式 (2.1) 和等式 (2.3),我们可以发现对于位模式 <span class="arithmatex">\(\overrightarrow{x}\)</span> ,如果我们计算 <span class="arithmatex">\({B 2}{U}_{w}\left( \overrightarrow{x}\right)  -\)</span> <span class="arithmatex">\({B 2}{T}_{w}\left( \overrightarrow{x}\right)\)</span> 之差,从 0 到 <span class="arithmatex">\(w - 2\)</span> 的位的加权和将互相抵消掉,剩下一个值: <span class="arithmatex">\({B 2}{U}_{w}\left( \overrightarrow{x}\right)  - {B 2}{T}_{w}\left( \overrightarrow{x}\right)  =\)</span> <span class="arithmatex">\({x}_{w - 1}\left( {{2}^{w - 1} - \left( {-{2}^{w - 1}} \right) }\right)  = {x}_{w - 1}{2}^{w}\)</span> 。这就得到一个关系: <span class="arithmatex">\({B 2}{U}_{w}\left( \overrightarrow{x}\right)  = {x}_{w - 1}{2}^{w} + {B 2}{T}_{w}\left( \overrightarrow{x}\right)\)</span> 。我们因此就有</p>
+<div class="arithmatex">\[
+{B 2}{U}_{w}\left( {{T 2}{B}_{w}\left( x\right) }\right)  = {T 2}{U}_{w}\left( x\right)  = x + {x}_{w - 1}{2}^{w} \tag{2.6}
+\]</div>
+<p>根据公式 (2.5) 的两种情况,在 <span class="arithmatex">\(x\)</span> 的补码表示中,位 <span class="arithmatex">\({x}_{w - 1}\)</span> 决定了 <span class="arithmatex">\(x\)</span> 是否为负。</p>
+<p>比如说,图 2-16 比较了当 <span class="arithmatex">\(w = 4\)</span> 时函数 <span class="arithmatex">\({B 2 U}\)</span> 和 <span class="arithmatex">\({B 2 T}\)</span> 是如何将数值变成位模式的。对补码来说, 最高有效位是符号位, 我们用带向左箭头的条来表示。对于无符号数来说, 最高有效位是正权重,我们用带向右的箭头的条来表示。从补码变为无符号数,最高有效位的权重从 -8 变为 +8 。因此,补码表示的负数如果看成无符号数,值会增加 <span class="arithmatex">\({2}^{4} = {16}\)</span> 。因而, -5 变成了 +11 , 而 -1 变成了 +15 。</p>
+<!-- Meanless: 第 2 章 信息的表示和处理 51-->
+<!-- Media -->
+<!-- figureText: <span class="arithmatex">\(- {2}^{3} =  - 8\)</span> +16 <span class="arithmatex">\({2}^{3} = 8\)</span> <span class="arithmatex">\({2}^{2} = 4\)</span> <span class="arithmatex">\({2}^{1} = 2\)</span> <span class="arithmatex">\({2}^{0} = 1\)</span> [1011] [1111] -->
+<p><img src="https://cdn.noedgeai.com/bo_d2ft4sref24c73b0iki0_30.jpg?x=176&y=312&w=1064&h=543&r=0"/></p>
+<p>图 2-16 比较当 <span class="arithmatex">\(w = 4\)</span> 时无符号表示和补码表示 (对补码和无符号数来说, 最高有效位的权重分别是 -8 和 +8 ,因而产生一个差为 16 )</p>
+<!-- Media -->
+<p>图 2-17 说明了函数 <span class="arithmatex">\({T 2 U}\)</span> 的一般行为。如图所示,当将一个有符号数映射为它相应的无符号数时, 负数就被转换成了大的正数, 而非负数会保持不变。</p>
+</details>
+<details class="question">
+<summary>练习题 2.20</summary>
+<p>请说明等式(2.5)是如何应用到解答练习题 2.19 时生成的表格中的各项的。反过来看,我们希望推导出一个无符号数 <span class="arithmatex">\(u\)</span> 和与之对应的有符号数 <span class="arithmatex">\({U 2}{T}_{w}\left( u\right)\)</span> 之间的关系:</p>
+<p>原理：无符号数转换为补码</p>
+<p>对满足 <span class="arithmatex">\(0 \leq  u \leq  {UMa}{x}_{w}\)</span> 的 <span class="arithmatex">\(u\)</span> 有:</p>
+<div class="arithmatex">\[
+{U 2}{T}_{w}\left( u\right)  = \left\{  \begin{array}{ll} u, &amp; u \leq  {TMa}{x}_{w} \\  u - {2}^{w}, &amp; u &gt; {TMa}{x}_{w} \end{array}\right.  \tag{2.7}
+\]</div>
+<p>· 该原理证明如下：</p>
+<p>推导: 无符号数转换为补码</p>
+<p>设 <span class="arithmatex">\(\overrightarrow{u} = {U 2}{B}_{w}\left( u\right)\)</span> ,这个位向量也是 <span class="arithmatex">\({U 2}{T}_{w}\left( u\right)\)</span> 的补码表示。公式 (2.1) 和公式 (2.3) 结合起来有</p>
+<div class="arithmatex">\[
+{U 2}{T}_{w}\left( u\right)  =  - {u}_{w - 1}{2}^{w} + u \tag{2.8}
+\]</div>
+<p>在 <span class="arithmatex">\(u\)</span> 的无符号表示中,对公式 (2.7) 的两种情况来说,位 <span class="arithmatex">\({u}_{w - 1}\)</span> 决定了 <span class="arithmatex">\(u\)</span> 是否大于 <span class="arithmatex">\({\operatorname{TMax}}_{w} = {2}^{w - 1} - 1\)</span> 。</p>
+<p>图 2-18 说明了函数 <span class="arithmatex">\({U 2 T}\)</span> 的行为。对于小的数 <span class="arithmatex">\(\left( { \leq  T{\operatorname{Max}}_{w}}\right)\)</span> ,从无符号到有符号的转换将保留数字的原值。对于大的数 <span class="arithmatex">\(\left( { &gt; {\operatorname{TMax}}_{w}}\right)\)</span> ,数字将被转换为一个负数值。</p>
+<!-- Media -->
+<!-- figureText: <span class="arithmatex">\(+ {2}^{w - 1}\)</span> 无符号数 补码 0 -->
+<p><img src="https://cdn.noedgeai.com/bo_d2ft4sref24c73b0iki0_30.jpg?x=115&y=1740&w=507&h=357&r=0"/></p>
+<p>图 2-17 从补码到无符号数的转换。函数 <span class="arithmatex">\({T 2 U}\)</span> 将负数转换为大的正数</p>
+<!-- figureText: <span class="arithmatex">\({2}^{w}\)</span> 补码 无符号数 0 -->
+<p><img src="https://cdn.noedgeai.com/bo_d2ft4sref24c73b0iki0_30.jpg?x=788&y=1744&w=523&h=355&r=0"/></p>
+<p>图 2-18 从无符号数到补码的转换。函数 <span class="arithmatex">\({U 2 T}\)</span> 把大于 <span class="arithmatex">\({2}^{w - 1} - 1\)</span> 的数字转换为负值</p>
+<!-- Media -->
+<!-- Meanless: 52 第一部分 程序结构和执行-->
+<p>总结一下,我们考虑无符号与补码表示之间互相转换的结果。对于在范围 <span class="arithmatex">\(0 \leq  x \leq\)</span> <span class="arithmatex">\({TMa}{x}_{w}\)</span> 之内的值 <span class="arithmatex">\(x\)</span> 而言,我们得到 <span class="arithmatex">\({T 2}{U}_{w}\left( x\right)  = x\)</span> 和 <span class="arithmatex">\({U 2}{T}_{w}\left( x\right)  = x\)</span> 。也就是说,在这个范围内的数字有相同的无符号和补码表示。对于这个范围以外的数值, 转换需要加上或者减去 <span class="arithmatex">\({2}^{w}\)</span> 。例如,我们有 <span class="arithmatex">\({T 2}{U}_{w}\left( {-1}\right)  =  - 1 + {2}^{w} = {UMa}{x}_{w}\)</span> ——最靠近 0 的负数映射为最大的无符号数。在另一个极端,我们可以看到 <span class="arithmatex">\({T 2}{U}_{w}\left( {\mathrm {{TMin}} }_{w}\right)  =  - {2}^{w - 1} + {2}^{w} = {2}^{w - 1} = {\mathrm {{TMax}} }_{w} +\)</span> 1 一最小的负数映射为一个刚好在补码的正数范围之外的无符号数。使用图 2-15 的示例,我们能看到 <span class="arithmatex">\({T 2}{U}_{16}\left( {-{12345}}\right)  = {65563} +  - {12345} = {53191}\)</span> 。</p>
+</details>
+<h2 id="225-c">2.2.5 C 语言中的有符号数与无符号数</h2>
+<p>如图 2-9 和图 2-10 所示,C 语言支持所有整型数据类型的有符号和无符号运算。尽管 <span class="arithmatex">\(\mathrm{C}\)</span> 语言标准没有指定有符号数要采用某种表示,但是几乎所有的机器都使用补码。通常, 大多数数字都默认为是有符号的。例如,当声明一个像 12345 或者 0 x 1 A 2 B 这样的常量时, 这个值就被认为是有符号的。要创建一个无符号常量,必须加上后缀字符‘u’或者‘u’, 例如,12345 U 或者 0 x 1 A 2 Bu。</p>
+<p><span class="arithmatex">\(\mathrm{C}\)</span> 语言允许无符号数和有符号数之间的转换。虽然 <span class="arithmatex">\(\mathrm{C}\)</span> 标准没有精确规定应如何进行这种转换, 但大多数系统遵循的原则是底层的位表示保持不变。因此, 在一台采用补码的机器上,当从无符号数转换为有符号数时,效果就是应用函数 <span class="arithmatex">\({U 2}{T}_{w}\)</span> ,而从有符号数转换为无符号数时,就是应用函数 <span class="arithmatex">\({T 2}{U}_{w}\)</span> ,其中 <span class="arithmatex">\(w\)</span> 表示数据类型的位数。</p>
+<p>显式的强制类型转换就会导致转换发生, 就像下面的代码:</p>
+<hr />
+<div class="language-text highlight"><pre><span></span><code>1 int tx, ty;
+</code></pre></div>
+<p>2 unsigned ux, uy;
+    3
+    4 tx = (int) ux;
+5 uy = (unsigned) ty;</p>
+<hr />
+<p>另外, 当一种类型的表达式被赋值给另外一种类型的变量时, 转换是隐式发生的, 就像下面的代码:</p>
+<hr />
+<p>1 int tx, ty;
+2 unsigned ux, uy;
+3
+4 tx = ux; /<em> Cast to signed </em>/
+    uy = ty; /<em> Cast to unsigned </em>/</p>
+<hr />
+<p>当用 printf 输出数值时,分别用指示符 %d、%u 和 %x 以有符号十进制、无符号十进制和十六进制格式输出一个数字。注意 printf 没有使用任何类型信息, 所以它可以用指示符 <span class="arithmatex">\({\varepsilon }_{u}\)</span> 来输出类型为 int 的数值,也可以用指示符 <span class="arithmatex">\({\varepsilon }_{d}\)</span> 输出类型为 unsigned 的数值。例如, 考虑下面的代码:</p>
+<hr />
+<p>1 int x = -1 ;
+2 unsigned <span class="arithmatex">\(u = {2147483648};/ * 2\)</span> to the <span class="arithmatex">\({31 st} * /\)</span>
+4 printf(" <span class="arithmatex">\(\mathrm{x} = \% \mathrm{u} = \% \mathrm{d} \backslash  \mathrm{n}\)</span> ", <span class="arithmatex">\(\mathrm{x},\mathrm{x}\)</span> );
+    printf("u = %u = %d\n", u, u);</p>
+<hr />
+<p>当在一个 32 位机器上运行时, 它的输出如下:</p>
+<hr />
+<p><span class="arithmatex">\(\mathrm{x} = {4294967295} =  - 1\)</span>
+    <span class="arithmatex">\(u = \left\lbrack  \begin{matrix} 2 &amp; 1 &amp; 4 \\  7 &amp; 4 &amp; 8 \\  3 &amp; 6 &amp; 4 \\  8 &amp; &amp;  \end{matrix}\right\rbrack   = \left\lbrack  \begin{matrix}  - 2 &amp; 1 &amp; 4 \\  7 &amp; 4 &amp; 8 \\  3 &amp; 6 &amp; 4 \\  8 &amp; &amp;  \end{matrix}\right\rbrack\)</span></p>
+<hr />
+<!-- Meanless: 第 2 章 信息的表示和处理 53-->
+
+<p>在这两种情况下, printf 首先将这个字当作一个无符号数输出, 然后把它当作一个有符号数输出。以下是实际运行中的转换函数: <span class="arithmatex">\({T 2}{U}_{32}\left( {-1}\right)  = U{Max}_{32} = {2}^{32} - 1\)</span> 和 <span class="arithmatex">\({U 2}{T}_{32}\left( {2}^{31}\right)  =\)</span> <span class="arithmatex">\({2}^{31} - {2}^{32} =  - {2}^{31} = {\text{ TMin }}_{32}\)</span> 。</p>
+<p>由于 <span class="arithmatex">\(\mathrm{C}\)</span> 语言对同时包含有符号和无符号数表达式的这种处理方式,出现了一些奇特的行为。当执行一个运算时, 如果它的一个运算数是有符号的而另一个是无符号的, 那么 C 语言会隐式地将有符号参数强制类型转换为无符号数, 并假设这两个数都是非负的, 来执行这个运算。就像我们将要看到的, 这种方法对于标准的算术运算来说并无多大差异, 但是对于像 <span class="arithmatex">\(&lt;\)</span> 和 <span class="arithmatex">\(&gt;\)</span> 这样的关系运算符来说,它会导致非直观的结果。图 2-19 展示了一些关系表达式的示例以及它们得到的求值结果, 这里假设数据类型 int 表示为 32 位补码。考虑比较式 - 1 &lt; 0 U。因为第二个运算数是无符号的,第一个运算数就会被隐式地转换为无符号数,因此表达式就等价于 ${4294967295}\mathrm{\;U} &lt; \mathrm {{OU}} $ (回想 <span class="arithmatex">\({T 2}{U}_{w}\left( {-1}\right)  = U{\operatorname{Max}}_{w}\)</span> ),这个答案显然是错的。其他那些示例也可以通过相似的分析来理解。</p>
+<!-- Media -->
+
+<table><tr><td>表达式</td><td>类型</td><td>求值</td></tr><tr><td>==OU</td><td>无符号</td><td>1</td></tr><tr><td>$- 1 <$0</td><td>有符号</td><td>1</td></tr><tr><td>-1 OU</td><td>无符号</td><td>0 *</td></tr><tr><td>2147483647>-2147483647-1</td><td>有符号</td><td>1</td></tr><tr><td>2147483647 U>$- {2147483647} - 1$</td><td>无符号</td><td>0 *</td></tr><tr><td>21474836472147483648 U</td><td>有符号</td><td>1 *</td></tr><tr><td>-1>-2</td><td>有符号</td><td>1</td></tr><tr><td>(unsigned) -1>-2</td><td>无符号</td><td>1</td></tr></table>
+
+<p>图 2-19 C 语言的升级规则的效果</p>
+<p>注：非直观的情况标注了‘ <span class="arithmatex">\(\star\)</span> ’。当一个运算数是无符号的时候,另一个运算数也被隐式强制转换为无符号。将 <span class="arithmatex">\({\mathrm {{TMin}} }_{32}\)</span> 写为 -2147483647-1 的原因请参见网络旁注 DATA: TMIN。</p>
+<!-- Media -->
+
+<details class="question">
+<summary>练习题 2.21</summary>
+<p>假设在采用补码运算的 32 位机器上对这些表达式求值, 按照图 2-19 的格式填写下表,描述强制类型转换和关系运算的结果。</p>
+<!-- Media -->
+<p><table><tr><td>表达式</td><td>类型</td><td>求值</td></tr><tr><td>-2147483647-1 == 2147483648 U</td><td/><td/></tr><tr><td>-2147483647-1 &lt; 2147483647</td><td/><td/></tr><tr><td>-2147483647-1 U &lt; 2147483647</td><td/><td/></tr><tr><td>-2147483647-1 &lt; -2147483647</td><td/><td/></tr><tr><td>-2147483647-1 U &lt; -2147483647</td><td/><td/></tr></table></p>
+<!-- Media -->
+</details>
+<details class="info">
+<summary>网络旁注 DATA:TMIN C 语言中 TMin 的写法</summary>
+<p>在图 2-19 和练习题 2.21 中,我们很小心地将 <span class="arithmatex">\({TMi}{n}_{32}\)</span> 写成 -2147483647-1。为什么不简单地写成-2147483648 或者 0 x 80000000? 看一下 C 头文件 limits.h,注意到它们使用了跟我们写 <span class="arithmatex">\({TMi}{n}_{32}\)</span> 和 <span class="arithmatex">\({TMa}{x}_{32}\)</span> 类似的方法:</p>
+<p>/<em> Minimum and maximum values a 'signed int' can hold. </em>/</p>
+<h1 id="define-int_max-2147483647">define INT_MAX 2147483647</h1>
+<h1 id="define-int_min-int_max-1">define INT_MIN (-INT_MAX - 1)</h1>
+<p>不幸的是, 补码表示的不对称性和 C 语言的转换规则之间奇怪的交互, 迫使我们用</p>
+<!-- Meanless: 54 第一部分 程序结构和执行-->
+<p>这种不寻常的方式来写 <span class="arithmatex">\({TMi}{n}_{32}\)</span> 。虽然理解这个问题需要我们钻研 <span class="arithmatex">\(\mathrm{C}\)</span> 语言标准的一些比较隐晦的角落,但是它能够帮助我们充分领会整数数据类型和表示的一些细微之处。</p>
+</details>
+<h2 id="226">2.2.6 扩展一个数字的位表示</h2>
+<p>一个常见的运算是在不同字长的整数之间转换, 同时又保持数值不变。当然, 当目标数据类型太小以至于不能表示想要的值时, 这根本就是不可能的。然而, 从一个较小的数据类型转换到一个较大的类型, 应该总是可能的。</p>
+<p>要将一个无符号数转换为一个更大的数据类型, 我们只要简单地在表示的开头添加 0 。这种运算被称为零扩展 (zero extension), 表示原理如下:</p>
+<p>原理: 无符号数的零扩展</p>
+<p>定义宽度为 <span class="arithmatex">\(w\)</span> 的位向量 <span class="arithmatex">\(\overrightarrow{u} = \left\lbrack  {{u}_{w - 1},{u}_{w - 2},\cdots ,{u}_{0}} \right\rbrack\)</span> 和宽度为 <span class="arithmatex">\({w}^{\prime }\)</span> 的位向量 <span class="arithmatex">\({\overrightarrow{u}}^{\prime } = \lbrack 0,\cdots ,\)</span> <span class="arithmatex">\(\left. {0,{u}_{w - 1},{u}_{w - 2},\cdots ,{u}_{0}}\right\rbrack\)</span> ,其中 <span class="arithmatex">\({w}^{\prime } &gt; w\)</span> 。则 <span class="arithmatex">\({B 2}{U}_{w}\left( \overrightarrow{u}\right)  = {B 2}{U}_ {{w}^{\prime }} \left( {\overrightarrow{u}}^{\prime }\right)\)</span> 。</p>
+<p>按照公式 (2.1), 该原理可以看作是直接遵循了无符号数编码的定义。</p>
+<p>要将一个补码数字转换为一个更大的数据类型, 可以执行一个符号扩展 (sign extension),在表示中添加最高有效位的值,表示为如下原理。我们用蓝色标出符号位 <span class="arithmatex">\({x}_{w - 1}\)</span> 来突出它在符号扩展中的角色。</p>
+<p>原理: 补码数的符号扩展</p>
+<p>定义宽度为 <span class="arithmatex">\(w\)</span> 的位向量 <span class="arithmatex">\(\overrightarrow{x} = \left\lbrack  {{x}_{w - 1},{x}_{w - 2},\cdots ,{x}_{0}} \right\rbrack\)</span> 和宽度为 <span class="arithmatex">\(w\)</span> 的位向量 <span class="arithmatex">\({\overrightarrow{x}}^{\prime } = \left\lbrack  {{x}_{w - 1},\cdots }\right.\)</span> , <span class="arithmatex">\(\left. {{x}_{w - 1},{x}_{w - 1},{x}_{w - 2},\cdots ,{x}_{0}} \right\rbrack\)</span> ,其中 <span class="arithmatex">\({w}^{\prime } &gt; w\)</span> 。则 <span class="arithmatex">\({B 2}{T}_{w}\left( \overrightarrow{x}\right)  = {B 2}{T}_ {{w}^{\prime }} \left( {\overrightarrow{x}}^{\prime }\right)\)</span> 。</p>
+<p>例如, 考虑下面的代码:</p>
+<hr />
+<div class="language-text highlight"><pre><span></span><code>1 short sx = -12345 / - -12345 */
+2 unsigned short usx $=$ sx; $/ * {53191} * /$
+</code></pre></div>
+<p>3 int <span class="arithmatex">\(y = {ay}\)</span> .
+            unsigned ux = usx; /<em> 53191 </em>/
+    6 printf("sx = %d:\t", sx);
+7 show_bytes((byte_pointer) &amp;sx, sizeof(short));
+    8 printf("usx = %u:\t", usx);
+            show_bytes((byte_pointer) &amp;usx, sizeof(unsigned short));
+10 printf("x = %d:\t", x);
+11 show_bytes((byte_pointer) &amp;x, sizeof(int));
+12 printf("ux = %u:\t", ux);
+        show_bytes((byte_pointer) &amp;ux, sizeof(unsigned));</p>
+<hr />
+<p>在采用补码表示的 32 位大端法机器上运行这段代码时, 打印出如下输出:</p>
+<hr />
+<p>sx = -12345 : cf c 7
+usx = 53191 : cf c 7
+x = -12345 : ff ff cf c 7
+ux = 53191 : 0000 cf c 7</p>
+<hr />
+<p>我们看到, 尽管 -12345 的补码表示和 53191 的无符号表示在 16 位字长时是相同的, 但是在 32 位字长时却是不同的。特别地, -12345 的十六进制表示为 0 xFFFFCFC 7, 而 53191 的十六进制表示为 0 x 0000 CFC 7。前者使用的是符号扩展——最开头加了 16 位,都是最高有效位 1, 表示为十六进制就是 0 xFFFF。后者开头使用 16 个 0 来扩展,表示为十六进制就是 0 x 0000。</p>
+<p>图 2-20 给出了从字长 <span class="arithmatex">\(w = 3\)</span> 到 <span class="arithmatex">\(w = 4\)</span> 的符号扩展的结果。位向量 [101] 表示值 <span class="arithmatex">\(- 4 + 1 =\)</span> -3 。对它应用符号扩展,得到位向量 [1101],表示的值 <span class="arithmatex">\(- 8 + 4 + 1 =  - 3\)</span> 。我们可以看到, 对于 <span class="arithmatex">\(w = 4\)</span> ,最高两位的组合值是 <span class="arithmatex">\(- 8 + 4 =  - 4\)</span> ,与 <span class="arithmatex">\(w = 3\)</span> 时符号位的值相同。类似地,位向量 <span class="arithmatex">\(\left\lbrack  {111}\right\rbrack\)</span> 和 <span class="arithmatex">\(\left\lbrack  {1111}\right\rbrack\)</span> 都表示值 -1 。</p>
+<!-- Meanless: 第 2 章 信息的表示和处理 55-->
+
+<!-- Media -->
+
+<!-- figureText: ${2}^{2} = 4$ $- {2}^{3} =  - 8$ $- {2}^{2} =  - 4$ ${2}^{1} = 2$ ${2}^{0} = 1$ [101] [1101] [111] [1111] -->
+
+<p><img src="https://cdn.noedgeai.com/bo_d2ft4sref24c73b0iki0_34.jpg?x=330&y=349&w=739&h=613&r=0"/></p>
+<p>图 2-20 从 <span class="arithmatex">\(w = 3\)</span> 到 <span class="arithmatex">\(w = 4\)</span> 的符号扩展示例。对于 <span class="arithmatex">\(w = 4\)</span> ,最高两位组合权重为 <span class="arithmatex">\(- 8 + 4 =  - 4\)</span> ,与 <span class="arithmatex">\(w = 3\)</span> 时的符号位的权重一样</p>
+<!-- Media -->
+
+<p>有了这个直觉, 我们现在可以展示保持补码值的符号扩展。</p>
+<p>推导: 补码数值的符号扩展</p>
+<p>令 <span class="arithmatex">\({w}^{\prime } = w + k\)</span> ,我们想要证明的是</p>
+<div class="arithmatex">\[
+{B 2}{T}_{w + k}\left( \left\lbrack  {\underset{k\text{ 次 }}{\underbrace {{x}_{w - 1},\cdots ,{x}_{w - 1}} },{x}_{w - 1},{x}_{w - 2},\cdots ,{x}_{0}}\right\rbrack  \right)  = {B 2}{T}_{w}\left( \left\lbrack  {{x}_{w - 1},{x}_{w - 2},\cdots ,{x}_{0}} \right\rbrack  \right) 
+\]</div>
+<p>下面的证明是对 <span class="arithmatex">\(k\)</span> 进行归纳。也就是说,如果我们能够证明符号扩展一位保持了数值不变, 那么符号扩展任意位都能保持这种属性。因此, 证明的任务就变为了:</p>
+<div class="arithmatex">\[
+{B 2}{T}_{w + 1}\left( \left\lbrack  {{x}_{w - 1},{x}_{w - 1},{x}_{w - 2},\cdots ,{x}_{0}} \right\rbrack  \right)  = {B 2}{T}_{w}\left( \left\lbrack  {{x}_{w - 1},{x}_{w - 2},\cdots ,{x}_{0}} \right\rbrack  \right) 
+\]</div>
+<p>用等式 (2.3) 展开左边的表达式, 得到:</p>
+<div class="arithmatex">\[
+{B 2}{T}_{w + 1}\left( \left\lbrack  {{x}_{w - 1},{x}_{w - 1},{x}_{w - 2},\cdots ,{x}_{0}} \right\rbrack  \right)  =  - {x}_{w - 1}{2}^{w} + \mathop{\sum }\limits_ {{i = 0}} ^ {{w - 1}} {x}_{i}{2}^{i}
+\]</div>
+<div class="arithmatex">\[
+ =  - {x}_{w - 1}{2}^{w} + {x}_{w - 1}{2}^{w - 1} + \mathop{\sum }\limits_ {{i = 0}} ^ {{w - 2}} {x}_{i}{2}^{i}
+\]</div>
+<div class="arithmatex">\[
+ =  - {x}_{w - 1}\left( {{2}^{w} - {2}^{w - 1}} \right)  + \mathop{\sum }\limits_ {{i = 0}} ^ {{w - 2}} {x}_{i}{2}^{i}
+\]</div>
+<div class="arithmatex">\[
+ =  - {x}_{w - 1}{2}^{w - 1} + \mathop{\sum }\limits_ {{i = 0}} ^ {{w - 2}} {x}_{i}{2}^{i}
+\]</div>
+<div class="arithmatex">\[
+ = {B 2}{T}_{w}\left( \left\lbrack  {{x}_{w - 1},{x}_{w - 2},\cdots ,{x}_{0}} \right\rbrack  \right) 
+\]</div>
+<p>我们使用的关键属性是 <span class="arithmatex">\({2}^{w} - {2}^{w - 1} = {2}^{w - 1}\)</span> 。因此,加上一个权值为 <span class="arithmatex">\(- {2}^{w}\)</span> 的位,和将一个权值为 <span class="arithmatex">\(- {2}^{w - 1}\)</span> 的位转换为一个权值为 <span class="arithmatex">\({2}^{w - 1}\)</span> 的位,这两项运算的综合效果就会保持原始的数值。</p>
+<details class="question">
+<summary>练习题 2.22 </summary>
+<p>通过应用等式(2.3), 表明下面每个位向量都是 -5 的补码表示。</p>
+<p>A. [1011]</p>
+<p>B. <span class="arithmatex">\(\left\lbrack  {11011}\right\rbrack\)</span></p>
+<!-- Meanless: 56 第一部分 程序结构和执行-->
+<p>C. <span class="arithmatex">\(\left\lbrack  {111011}\right\rbrack\)</span></p>
+<p>可以看到第二个和第三个位向量可以通过对第一个位向量做符号扩展得到。</p>
+<p>值得一提的是, 从一个数据大小到另一个数据大小的转换, 以及无符号和有符号数字之间的转换的相对顺序能够影响一个程序的行为。考虑下面的代码:</p>
+<hr />
+<p>1 short sx = -12345 ; /<em> -12345 </em>/
+                                                        /<em> Mystery! </em>/
+3
+4 printf("uy = %u:\t", uy);
+    show_bytes((byte_pointer) &amp;uy, sizeof(unsigned));</p>
+<hr />
+<p>在一台大端法机器上, 这部分代码产生如下输出:</p>
+<hr />
+<p>uy = 4294954951 : ff ff cf c 7</p>
+<hr />
+<p>这表明当把 short 转换成 unsigned 时, 我们先要改变大小, 之后再完成从有符号到无符号的转换。也就是说 (unsigned) sx 等价于 (unsigned) (int) sx, 求值得到 4294954951 , 而不等价于 (unsigned) (unsigned short) sx, 后者求值得到 53191 。事实上,这个规则是 <span class="arithmatex">\(\mathrm{C}\)</span> 语言标准要求的。</p>
+</details>
+<details class="question">
+<summary>练习题 2.23</summary>
+<p>考虑下面的 C 函数：</p>
+<hr />
+<p>int fun 1(unsigned word) {
+    return ( int ) ((word &lt;&lt; 24) &gt;&gt; 24);
+}
+int fun 2(unsigned word) {
+    return ((int) word &lt;&lt; 24) &gt;&gt; 24;
+}</p>
+<hr />
+<p>假设在一个采用补码运算的机器上以 32 位程序来执行这些函数。还假设有符号数值的右移是算术右移, 而无符号数值的右移是逻辑右移。</p>
+<p>A. 填写下表,说明这些函数对几个示例参数的结果。你会发现用十六进制表示来做会更方便,只要记住十六进制数字 8 到 <span class="arithmatex">\(\mathrm{F}\)</span> 的最高有效位等于 1 。</p>
+<!-- Media -->
+<p><table><tr><td>W</td><td>fun 1 (w)</td><td>fun 2 (w)</td></tr><tr><td>0 x 00000076</td><td/><td/></tr><tr><td>0 x 87654321</td><td/><td/></tr><tr><td>0 x 000000 C 9</td><td/><td/></tr><tr><td>0 xEDCBA 987</td><td/><td/></tr></table></p>
+<!-- Media -->
+<p>B. 用语言来描述这些函数执行的有用的计算。</p>
+</details>
+<h2 id="227">2.2.7 截断数字</h2>
+<p>假设我们不用额外的位来扩展一个数值, 而是减少表示一个数字的位数。例如下面代码中这种情况:</p>
+<hr />
+<div class="language-text highlight"><pre><span></span><code>    1 int x = 53191 ;
+</code></pre></div>
+<p>2 short sx = (short) x; /<em>-12345 </em>/
+3 int y = sx; /<em> -12345 </em>/</p>
+<hr />
+<p>当我们把 x 强制类型转换为 short 时,我们就将 32 位的 int 截断为了 16 位的 short int。就像前面所看到的, 这个 16 位的位模式就是 -12345 的补码表示。当我们把它强制类型转换回 int 时, 符号扩展把高 16 位设置为 1 , 从而生成 -12345 的 32 位补码表示。</p>
+<!-- Meanless: 第 2 章 信息的表示和处理 57-->
+
+<p>当将一个 <span class="arithmatex">\(w\)</span> 位的数 <span class="arithmatex">\(\overrightarrow{x} = \left\lbrack  {{x}_{w - 1},{x}_{w - 2},\cdots ,{x}_{0}} \right\rbrack\)</span> 截断为一个 <span class="arithmatex">\(k\)</span> 位数字时,我们会丢弃高 <span class="arithmatex">\(w - k\)</span> 位,得到一个位向量 <span class="arithmatex">\({\overrightarrow{x}}^{\prime } = \left\lbrack  {{x}_{k - 1},{x}_{k - 2},\cdots ,{x}_{0}} \right\rbrack\)</span> 。截断一个数字可能会改变它的值——溢出的一种形式。对于一个无符号数,我们可以很容易得出其数值结果。</p>
+<p>原理：截断无符号数</p>
+<p>令 <span class="arithmatex">\(\overrightarrow{x}\)</span> 等于位向量 <span class="arithmatex">\(\left\lbrack  {{x}_{w - 1},{x}_{w - 2},\cdots ,{x}_{0}} \right\rbrack\)</span> ,而 <span class="arithmatex">\({\overrightarrow{x}}^{\prime }\)</span> 是将其截断为 <span class="arithmatex">\(k\)</span> 位的结果: <span class="arithmatex">\({\overrightarrow{x}}^{\prime } = \left\lbrack  {x}_{k - 1}\right.\)</span> , <span class="arithmatex">\(\left. {{x}_{k - 2},\cdots ,{x}_{0}} \right\rbrack\)</span> 。令 <span class="arithmatex">\(x = {B 2}{U}_{w}\left( \overrightarrow{x}\right) ,{x}^{\prime } = {B 2}{U}_{k}\left( {\overrightarrow{x}}^{\prime }\right)\)</span> 。则 <span class="arithmatex">\({x}^{\prime } = x{\;\operatorname{mod}\;{2}^{k}}\)</span> 。</p>
+<p>该原理背后的直觉就是所有被截去的位其权重形式都为 <span class="arithmatex">\({2}^{i}\)</span> ,其中 <span class="arithmatex">\(i \geq  k\)</span> ,因此,每一个权在取模操作下结果都为零。可用如下推导表示：</p>
+<p>推导: 截断无符号数</p>
+<p>通过对等式 (2.1) 应用取模运算就可以看到:</p>
+<div class="arithmatex">\[
+{B 2}{U}_{w}\left( \left\lbrack  {{x}_{w - 1},{x}_{w - 2},\cdots ,{x}_{0}} \right\rbrack  \right) {\;\operatorname{mod}\;{2}^{k}} = \left\lbrack  {\mathop{\sum }\limits_ {{i = 0}} ^ {{w - 1}} {x}_{i}{2}^{i}}\right\rbrack  {\;\operatorname{mod}\;{2}^{k}}
+\]</div>
+<div class="arithmatex">\[
+ = \left\lbrack  {\mathop{\sum }\limits_ {{i = 0}} ^ {{k - 1}} {x}_{i}{2}^{i}}\right\rbrack  {\;\operatorname{mod}\;{2}^{k}}
+\]</div>
+<div class="arithmatex">\[
+ = \mathop{\sum }\limits_ {{i = 0}} ^ {{k - 1}} {x}_{i}{2}^{i}
+\]</div>
+<div class="arithmatex">\[
+ = {B 2}{U}_{k}\left( \left\lbrack  {{x}_{k - 1},{x}_{k - 2},\cdots ,{x}_{0}} \right\rbrack  \right) 
+\]</div>
+<p>在这段推导中,我们利用了属性: 对于任何 <span class="arithmatex">\(i \geq  k,{2}^{i}{\;\operatorname{mod}\;{2}^{k}} = 0\)</span> 。</p>
+<p>补码截断也具有相似的属性, 只不过要将最高位转换为符号位:</p>
+<p>原理：截断补码数值</p>
+<p>令 <span class="arithmatex">\(\overrightarrow{x}\)</span> 等于位向量 <span class="arithmatex">\(\left\lbrack  {{x}_{w - 1},{x}_{w - 2},\cdots ,{x}_{0}} \right\rbrack\)</span> ,而 <span class="arithmatex">\({\overrightarrow{x}}^{\prime }\)</span> 是将其截断为 <span class="arithmatex">\(k\)</span> 位的结果: <span class="arithmatex">\({\overrightarrow{x}}^{\prime } = \left\lbrack  {x}_{k - 1}\right.\)</span> , <span class="arithmatex">\(\left. {{x}_{k - 2},\cdots ,{x}_{0}} \right\rbrack\)</span> 。令 <span class="arithmatex">\(x = {B 2}{U}_{w}\left( \overrightarrow{x}\right) ,{x}^{\prime } = {B 2}{T}_{k}\left( {\overrightarrow{x}}^{\prime }\right)\)</span> 。则 <span class="arithmatex">\({x}^{\prime } = {U 2}{T}_{k}\left( {x{\;\operatorname{mod}\;{2}^{k}}}\right)\)</span> 。</p>
+<p>在这个公式中, <span class="arithmatex">\(x{\;\operatorname{mod}\;{2}^{k}}\)</span> 将是 0 到 <span class="arithmatex">\({2}^{k} - 1\)</span> 之间的一个数。对其应用函数 <span class="arithmatex">\({U 2}{T}_{k}\)</span> 产生的效果是把最高有效位 <span class="arithmatex">\({x}_{k - 1}\)</span> 的权重从 <span class="arithmatex">\({2}^{k - 1}\)</span> 转变为 <span class="arithmatex">\(- {2}^{k - 1}\)</span> 。举例来看,将数值 <span class="arithmatex">\(x = {53191}\)</span> 从 int 转换为 short。由于 <span class="arithmatex">\({2}^{16} = {65536} \geq  x\)</span> ,我们有 <span class="arithmatex">\(x{\;\operatorname{mod}\;{2}^{16}} = x\)</span> 。但是,当我们把这个数转换为 16 位的补码时,我们得到 <span class="arithmatex">\({x}^{\prime } = {53191} - {65536} =  - {12345}\)</span> 。</p>
+<p>推导: 截断补码数值</p>
+<p>使用与无符号数截断相同的参数, 则有</p>
+<div class="arithmatex">\[
+{B 2}{U}_{w}\left( \left\lbrack  {{x}_{w - 1},{x}_{w - 2},\cdots ,{x}_{0}} \right\rbrack  \right) {\;\operatorname{mod}\;{2}^{k}} = {B 2}{U}_{k}\left\lbrack  {{x}_{k - 1},{x}_{k - 2},\cdots ,{x}_{0}} \right\rbrack  
+\]</div>
+<p>也就是, <span class="arithmatex">\(x{\;\operatorname{mod}\;{2}^{k}}\)</span> 能够被一个位级表示为 <span class="arithmatex">\(\left\lbrack  {{x}_{k - 1},{x}_{k - 2},\cdots ,{x}_{0}} \right\rbrack\)</span> 的无符号数表示。将其转换为补码数则有 <span class="arithmatex">\({x}^{\prime } = {U 2}{T}_{k}\left( {x{\;\operatorname{mod}\;{2}^{k}}}\right)\)</span> 。</p>
+<p>总而言之, 无符号数的截断结果是:</p>
+<div class="arithmatex">\[
+{B 2}{U}_{k}\left\lbrack  {{x}_{k - 1},{x}_{k - 2},\cdots ,{x}_{0}} \right\rbrack   = {B 2}{U}_{w}\left( \left\lbrack  {{x}_{w - 1},{x}_{w - 2},\cdots ,{x}_{0}} \right\rbrack  \right) {\;\operatorname{mod}\;{2}^{k}} \tag{2.9}
+\]</div>
+<p>而补码数字的截断结果是:</p>
+<div class="arithmatex">\[
+{B 2}{T}_{k}\left\lbrack  {{x}_{k - 1},{x}_{k - 2},\cdots ,{x}_{0}} \right\rbrack   = {U 2}{T}_{k}\left( {{B2}{U}_{w}\left( \left\lbrack  {{x}_{w - 1},{x}_{w - 2},\cdots ,{x}_{0}} \right\rbrack  \right) {\;\operatorname{mod}\;{2}^{k}})}\right.  \tag{2.10}
+\]</div>
+<details class="question">
+<summary>练习题 2.24</summary>
+<p>假设将一个 4 位数值 (用十六进制数字 <span class="arithmatex">\(0 \sim  \mathrm{F}\)</span> 表示) 截断到一个 3 位数值 (用十六进制数字 0~7 表示)。填写下表,根据那些位模式的无符号和补码解释,说明这种截断对某些情况的结果。</p>
+<!-- Meanless: 58 第一部分 程序结构和执行-->
+<!-- Media -->
+<p><table><tr><td colspan="2">十六进制</td><td colspan="2">无符号</td><td colspan="2">补码</td></tr><tr><td>原始值</td><td>截断值</td><td>原始值</td><td>截断值</td><td>原始值</td><td>截断值</td></tr><tr><td>0</td><td>0</td><td>0</td><td/><td>0</td><td/></tr><tr><td>2</td><td>2</td><td>2</td><td/><td>2</td><td/></tr><tr><td>9</td><td>1</td><td>9</td><td/><td>-7</td><td/></tr><tr><td>B</td><td>3</td><td>11</td><td/><td>-5</td><td/></tr><tr><td>F</td><td>7</td><td>15</td><td/><td>-1</td><td/></tr></table></p>
+<!-- Media -->
+<p>解释如何将等式 (2.9) 和等式 (2.10) 应用到这些示例上。</p>
+</details>
+<h2 id="228">2.2.8 关于有符号数与无符号数的建议</h2>
+<p>就像我们看到的那样, 有符号数到无符号数的隐式强制类型转换导致了某些非直观的行为。而这些非直观的特性经常导致程序错误, 并且这种包含隐式强制类型转换的细微差别的错误很难被发现。因为这种强制类型转换是在代码中没有明确指示的情况下发生的, 程序员经常忽视了它的影响。</p>
+<p>下面两个练习题说明了某些由于隐式强制类型转换和无符号数据类型造成的细微的错误。</p>
+<details class="question">
+<summary>练习题 2.25</summary>
+<p>考虑下列代码, 这段代码试图计算数组 a 中所有元素的和, 其中元素的数量由参数 length 给出。</p>
+<hr />
+<p>/<em> WARNING: This is buggy code </em>/
+float sum_elements(float a[], unsigned length) {
+    int i;
+    float result = 0 ;
+    for (i = 0; i &lt;= length-1; i++)
+        result += a[i];
+    return result;
+}</p>
+<hr />
+<p>当参数 length 等于 0 时, 运行这段代码应该返回 0.0 。但实际上, 运行时会遇到一个内存错误。请解释为什么会发生这样的情况,并且说明如何修改代码。</p>
+</details>
+<details class="question">
+<summary>练习题 2.26</summary>
+<p>现在给你一个任务, 写一个函数用来判定一个字符串是否比另一个更长。前提是你要用字符串库函数 strlen, 它的声明如下:</p>
+<hr />
+<p>/<em> Prototype for library function strlen </em>/
+size_t strlen(const char *s);</p>
+<hr />
+<p>最开始你写的函数是这样的：</p>
+<hr />
+<p>/<em> Determine whether string <span class="arithmatex">\(s\)</span> is longer than string <span class="arithmatex">\(t *\)</span> /
+/</em> WARNING: This function is buggy <em>/
+int strlonger(char </em>s, char *t) {
+    return strlen(s) - strlen(t) &gt; 0 ;
+}</p>
+<hr />
+<p>当你在一些示例数据上测试这个函数时,一切似乎都是正确的。进一步研究发现在头文件 stdio.h 中数据类型 size_t 是定义成 unsigned int 的。</p>
+<p>A. 在什么情况下,这个函数会产生不正确的结果?</p>
+<p>B. 解释为什么会出现这样不正确的结果。</p>
+<p>C. 说明如何修改这段代码好让它能可靠地工作。</p>
+<!-- Meanless: 第 2 章 信息的表示和处理 59-->
+</details>
+<details class="info">
+<summary>旁注：函数 getpeername 的安全漏洞</summary>
+<p>2002 年, 从事 FreeBSD 开源操作系统项目的程序员意识到, 他们对 getpeername 函数的实现存在安全漏洞。代码的简化版本如下：</p>
+<hr />
+<p>/<em>
+    * Illustration of code vulnerability similar to that found in
+    * FreeBSD's implementation of getpeername(   )
+    </em>/
+/<em> Declaration of library function memcpy </em>/
+void <em>memcpy(void </em>dest, void <em>src, size_t n);
+/</em> Kernel memory region holding user-accessible data */</p>
+<h1 id="define-ksize-1024">define KSIZE 1024</h1>
+<p>char kbuf [KSIZE];
+/<em> Copy at most maxlen bytes from kernel region to user buffer </em>/
+int copy_from_kernel(void <em>user_dest, int maxlen) {
+                /</em> Byte count len is minimum of buffer size and maxlen */
+                int len = KSIZE &lt; maxlen ? KSIZE : maxlen;
+                memcpy(user_dest, kbuf, len);
+                return len;
+}</p>
+<hr />
+<p>在这段代码里,第 7 行给出的是库函数 memcpy 的原型, 这个函数是要将一段指定长度为 <span class="arithmatex">\(\mathrm{n}\)</span> 的字节从内存的一个区域复制到另一个区域。</p>
+<p>从第 14 行开始的函数 copy_from_kernel 是要将一些操作系统内核维护的数据复制到指定的用户可以访问的内存区域。对用户来说, 大多数内核维护的数据结构应该是不可读的, 因为这些数据结构可能包含其他用户和系统上运行的其他作业的敏感信息, 但是显示为 kbuf 的区域是用户可以读的。参数 maxlen 给出的是分配给用户的缓冲区的长度, 这个缓冲区是用参数 user_dest 指示的。然后, 第 16 行的计算确保复制的字节数据不会超出源或者目标缓冲区可用的范围。</p>
+<p>不过, 假设有些怀有恶意的程序员在调用 copy_from_kernel 的代码中对 maxlen 使用了负数值, 那么, 第 16 行的最小值计算会把这个值赋给 len, 然后 len 会作为参数 <span class="arithmatex">\(\mathrm{n}\)</span> 被传递给 memcpy。不过,请注意参数 <span class="arithmatex">\(\mathrm{n}\)</span> 是被声明为数据类型 size_t 的。这个数据类型是在库文件 stdio.h 中 (通过 typedef) 被声明的。典型地, 对 32 位程序它被定义为 unsigned int,对 64 位程序定义为 unsigned long。既然参数 <span class="arithmatex">\(\mathrm{n}\)</span> 是无符号的,那么 memcpy 会把它当作一个非常大的正整数, 并且试图将这样多字节的数据从内核区域复制到用户的缓冲区。虽然复制这么多字节 (至少 <span class="arithmatex">\({2}^{31}\)</span> 个) 实际上不会完成,因为程序会遇到进程中非法地址的错误,但是程序还是能读到它没有被授权的内核内存区域。</p>
+<p>我们可以看到, 这个问题是由于数据类型的不匹配造成的: 在一个地方, 长度参数是有符号数；而另一个地方, 它又是无符号数。正如这个例子表明的那样, 这样的不匹配会成为缺陷的原因,甚至会导致安全漏洞。幸运的是,还没有案例报告有程序员在 FreeBSD 上利用了这个漏洞。他们发布了一个安全建议, "FreeBSD-SA-02:38. signed-error", 建议系统管理员如何应用补丁消除这个漏洞。要修正这个缺陷, 只要将 copy_ from_kernel 的参数 maxlen 声明为类型 size_t, 也就是与 memcpy 的参数 n 一致。同时, 我们也应该将本地变量 len 和返回值声明为 size_t。</p>
+</details>
+<!-- Meanless: 60 第一部分 程序结构和执行-->
+
+<p>我们已经看到了许多无符号运算的细微特性, 尤其是有符号数到无符号数的隐式转换, 会导致错误或者漏洞的方式。避免这类错误的一种方法就是绝不使用无符号数。实际上,除了 <span class="arithmatex">\(\mathrm{C}\)</span> 以外很少有语言支持无符号整数。很明显,这些语言的设计者认为它们带来的麻烦要比益处多得多。比如, Java 只支持有符号整数,并且要求以补码运算来实现。正常的右移运算符&gt;&gt;被定义为执行算术右移。特殊的运算符&gt;&gt;&gt;被指定为执行逻辑右移。</p>
+<p>当我们想要把字仅仅看做是位的集合而没有任何数字意义时,无符号数值是非常有用的。例如, 往一个字中放入描述各种布尔条件的标记 (flag) 时, 就是这样。地址自然地就是无符号的, 所以系统程序员发现无符号类型是很有帮助的。当实现模运算和多精度运算的数学包时, 数字是由字的数组来表示的, 无符号值也会非常有用。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "content.code.copy", "content.code.select", "navigation.tabs", "content.footnote.tooltips"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.50899def.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
