@@ -17,7 +17,6 @@ theme:
     code: Noto Sans Mono
 
   features:
-    - navigation.instant # 进度指示器
     - navigation.instant.progress # 进度指示器仅仅在400ms仍未加载出页面时显示来优化用户体验
     - navigation.tracking # 锚点追踪
     - navigation.prune # 导航修剪
