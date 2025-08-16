@@ -34,9 +34,23 @@
               "icon": "lucide-file",
               "title": "index"
             }
+          },
+          {
+            "id": "f61a4a267bd02f88",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "07_CSAPP/第一章 计算机系统漫游/参考文献说明.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "参考文献说明"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -156,12 +170,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "07_CSAPP/第一章 计算机系统漫游/参考文献说明.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大纲"
+              "title": "参考文献说明 的大纲"
             }
           }
         ],
@@ -169,8 +184,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -182,50 +196,50 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "439547057dc2dee2",
+  "active": "f61a4a267bd02f88",
   "lastOpenFiles": [
-    "03_Math/【数学】必背公式和定理整理.md",
+    "07_CSAPP/第一章 计算机系统漫游/练习题答案.md",
+    "07_CSAPP/第一章 计算机系统漫游/index.md",
+    "07_CSAPP/第一章 计算机系统漫游/参考文献说明.md",
+    "07_CSAPP/第一章 计算机系统漫游/1.01 信息就是位＋上下文.md",
+    "07_CSAPP/第一章 计算机系统漫游/1.02 程序被其他程序翻译成不同的格式.md",
+    "07_CSAPP/第一章 计算机系统漫游/1.03 了解编译系统如何工作是大有益处的.md",
+    "07_CSAPP/第一章 计算机系统漫游/1.04 处理器读并解释储存在内存中的指令.md",
+    "07_CSAPP/第一章 计算机系统漫游/1.05 高速缓存至关重要.md",
+    "07_CSAPP/第一章 计算机系统漫游/1.06 存储设备形成层次结构.md",
+    "07_CSAPP/第一章 计算机系统漫游/1.07 操作系统管理硬件.md",
+    "07_CSAPP/第一章 计算机系统漫游/1.08 系统之间利用网络通信.md",
+    "07_CSAPP/第一章 计算机系统漫游/1.09 重要主题.md",
+    "07_CSAPP/第一章 计算机系统漫游/1.10 小结.md",
+    "07_CSAPP/第一章 计算机系统漫游.md",
+    "07_CSAPP/第二章 信息的表示和处理/index.md",
+    "07_CSAPP/第一章 计算机系统漫游",
+    "07_CSAPP/第二章 信息的表示和处理/练习题答案.md",
+    "07_CSAPP/第二章 信息的表示和处理/家庭作业.md",
+    "07_CSAPP/第二章 信息的表示和处理/参考文献说明.md",
+    "07_CSAPP/第二章 信息的表示和处理/2.5 小结.md",
+    "07_CSAPP/第二章 信息的表示和处理/2.4 浮点数.md",
+    "07_CSAPP/第二章 信息的表示和处理/2.3 整数运算.md",
+    "07_CSAPP/第二章 信息的表示和处理/2.1 信息存储.md",
+    "07_CSAPP/第二章 信息的表示和处理/2.2 整数表示.md",
+    "07_CSAPP/第二章 信息的表示和处理.md",
     "07_CSAPP/index.md",
+    "index.md",
+    "07_CSAPP/第二章 信息的表示和处理",
     "stylesheets/extra.css",
     "stylesheets",
     "stylesheets/NotoSerifSC-Regular.ttf",
     "extra.css",
-    "07_CSAPP/第一章 计算机系统漫游.md",
-    "08_Experience Stickers/【呆神】双非建环专业跨考11408上岸上交计专经验贴.md",
-    "08_Experience Stickers/【学院战神｜浙大】三峡学院25考研11408一战上岸浙大计算机经验贴.md",
-    "08_Experience Stickers/【寻神】25考研上岸北大软微11408经验贴.md",
-    "08_Experience Stickers/【双非｜科软】25考研双非一战科软397 408得分135 经验贴.md",
-    "08_Experience Stickers/【双非｜浙大｜反思贴】2025双非11408一战393分上岸浙大软院经验反思贴.md",
-    "08_Experience Stickers/【保姆贴】2024考研数学数一150分经验贴(完全符合26考研).md",
-    "08_Experience Stickers/【狗哥】24 二战420 上岸浙大计专.md",
-    "08_Experience Stickers/index.md",
     "08_Experience Stickers",
-    "30讲/第五讲 - 笔记补充.md",
-    "30讲/【数学】必背公式和定理整理.md",
     "30讲/第三讲整理.canvas",
-    "CSAPP笔记/第一章 计算机系统漫游.md",
-    "认知/如何复习？-- 谈间隔练习和滚动式复习.md",
-    "认知/鬼压床.md",
-    "认知/【认知心理学杂谈】为什么有些人学不好XX，以数学为例.md",
-    "30讲/三角函数基础整理.md",
-    "数学/Latex 备忘录📝.md",
     "CSAPP笔记",
-    "日记/2025-08-03.md",
-    "日记/2025-08-01.md",
-    "日记/2025-07-08.md",
-    "日记/2025-07-07.md",
-    "Web前端/astro 主题开发.md",
     "Web前端/Vitepress主题功能Todo.canvas",
     "Web前端/astro主题开发",
     "Web前端",
-    "Web前端/vitepress 主题开发.md",
     "30讲/未命名.canvas",
     "Pasted image 20250728154051.png",
     "Pasted image 20250728153941.png",
     "Pasted image 20250728154043.png",
-    "Pasted image 20250728153952.png",
-    "认知",
-    "README.md",
-    "30讲"
+    "Pasted image 20250728153952.png"
   ]
 }
