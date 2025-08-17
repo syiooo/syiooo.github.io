@@ -34,7 +34,7 @@ theme:
   palette:
   # 明亮主题
     - scheme: default
-      primary: brown
+      primary: indigo
       toggle:
         icon: material/brightness-7 
         name: Switch to dark mode

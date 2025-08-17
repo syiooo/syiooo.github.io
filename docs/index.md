@@ -14,7 +14,7 @@ comments: true
 ## Site 🚩
 
 - 🚀 本站由 **MkDocs**+**Material**+**GithubPage** 强力驱动。
-- 一个考研蛆的博客网站
+- By 一个考研蛆的博客网站
 - 分享备考经验/教训
 - 22408
 
@@ -32,10 +32,9 @@ comments: true
 ## Links 🔗
 
 
-> 友情链接
+!!! success "友情链接"
 
-
-- 👉 **Momo's Note**：[https://momo.15935779.xyz/](https://momo.15935779.xyz/)
+	- 👉 **Momo's Note**：[https://momo.15935779.xyz/](https://momo.15935779.xyz/)
 
 ---
 
