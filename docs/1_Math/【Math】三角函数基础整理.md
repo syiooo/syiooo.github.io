@@ -17,7 +17,7 @@
 
 1. 对角乘积为 $1$，即互为倒数。
 2. 六边形中任意三个相邻顶点，处于中间的函数等于两边相邻函数值的乘积，例如：$\sin \theta=\cos\theta \tan \theta$
-3. 阴影部分三角形，处于上方两个顶点的平方和等于下方顶点的平方值，如：$\sin\theta^{2}+\cos\theta^{2}=1$、$\tan\theta^{2}+1^{2}=\sec\theta^{2}$
+3. 阴影部分三角形，处于上方两个顶点的平方和等于下方顶点的平方值，如：$\sin\theta^{2}+\cos\theta^{2}=1$、$\tan^{2}\theta+1^{2}=\sec ^{2}\theta$ 
 
 ![速记方法](https://ccccooh.oss-cn-hangzhou.aliyuncs.com/img/202507290937314.svg)
 

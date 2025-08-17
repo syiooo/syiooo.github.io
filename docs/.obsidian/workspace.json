@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "1264bb174d7f5794",
+        "id": "30a2842d54abfa25",
         "type": "tabs",
         "children": [
           {
-            "id": "f3c46b19043ba855",
+            "id": "38cdcd6a7f1bde10",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "1_Math/【第九讲】一元函数积分学的计算.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "【第九讲】一元函数积分学的计算"
             }
           }
         ]
@@ -163,8 +167,10 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "f3c46b19043ba855",
+  "active": "cd83c24e48d61d19",
   "lastOpenFiles": [
+    "1_Math/【Math】三角函数基础整理.md",
+    "1_Math/【Math】必背公式和定理整理.md",
     "index.md",
     "blog/posts/【manim】manim-写一个泰勒展开式演示动画.md",
     "blog/posts/【manim】深入浅出进阶玩法.md",
@@ -176,8 +182,6 @@
     "blog/posts/【认知心理学】考研如何复习？谈谈我对间隔式练习的理解。.md",
     "4_Experience/index.md",
     "1_Math/【第九讲】一元函数积分学的计算.md",
-    "1_Math/【Math】三角函数基础整理.md",
-    "1_Math/【Math】必背公式和定理整理.md",
     "01_Bible/软微圣经.md",
     "blog/index.md",
     "06_Manim/【manim】初入代码动画的王国.md",
