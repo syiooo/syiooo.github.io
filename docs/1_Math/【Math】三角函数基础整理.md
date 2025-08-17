@@ -166,3 +166,16 @@ $$
 5. $\arcsin(\sin x)$ = $x,x\in\left[ - \frac{\pi}{2}, \frac{\pi}{2} \right]$
 6. $\arccos(\cos x)$ = $x,x\in[0, \pi]$
 7. $\arcsin x+\arccos x$ = $\frac{\pi}{2}(-1\leq x\leq 1)$
+
+## 6. 诱导公式
+
+> 诱导公式，极其重要。掌握主动配凑诱导公式才能解决部分换元法的题目，不能只停留在计算诱导公式的层面，更多要学会逆用和主动配凑。
+> 见三十讲 P 597 附录.
+
+下面八个公式要熟稔于心，常用于换元法当中：
+
+1. $\sin\left( \frac{\pi}{2}\pm\alpha \right)$ = $\cos\alpha$
+2. $\sin(\pi\pm\alpha)$ = $\mp \sin\alpha$
+3. $\cos\left( \frac{\pi}{2}\pm\alpha \right)$ = $\mp \sin\alpha$
+4. $\cos(\pi\pm\alpha)$ = $-\cos\alpha$
+

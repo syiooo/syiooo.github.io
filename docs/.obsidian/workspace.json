@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "30a2842d54abfa25",
+        "id": "f72c8e7077c2eb6d",
         "type": "tabs",
         "children": [
           {
-            "id": "38cdcd6a7f1bde10",
+            "id": "ceb44237512a2ea5",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1_Math/【Math】三角函数基础整理.md",
+                "file": "index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "【Math】三角函数基础整理"
+              "title": "index"
             }
           }
         ]
@@ -141,13 +141,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "1_Math/【Math】三角函数基础整理.md",
+                "file": "index.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "【Math】三角函数基础整理 的大纲"
+              "title": "index 的大纲"
             }
           }
         ],
@@ -167,12 +167,12 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "38cdcd6a7f1bde10",
+  "active": "cd83c24e48d61d19",
   "lastOpenFiles": [
     "1_Math/【第九讲】一元函数积分学的计算.md",
+    "index.md",
     "1_Math/【Math】三角函数基础整理.md",
     "1_Math/【Math】必背公式和定理整理.md",
-    "index.md",
     "blog/posts/【manim】manim-写一个泰勒展开式演示动画.md",
     "blog/posts/【manim】深入浅出进阶玩法.md",
     "blog/posts/【manim】Axes-坐标系及其基类详解.md",
