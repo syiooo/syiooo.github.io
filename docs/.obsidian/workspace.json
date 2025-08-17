@@ -11,10 +11,14 @@
             "id": "f3c7218c69711c58",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "blog/posts/【manim】manim-写一个泰勒展开式演示动画.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "【manim】manim-写一个泰勒展开式演示动画"
             }
           }
         ]
@@ -165,17 +169,20 @@
   },
   "active": "f3c7218c69711c58",
   "lastOpenFiles": [
-    "4_Experience/index.md",
+    "blog/posts/【manim】深入浅出进阶玩法.md",
+    "blog/posts/【manim】Axes-坐标系及其基类详解.md",
+    "blog/posts/【manim】初入代码动画的王国.md",
+    "blog/posts/【Latex】Latex-备忘录.md",
+    "blog/posts/【Latex】30分钟学会LaTeX.md",
+    "blog/posts/【认知心理学杂谈】为什么有些人学不好xx？.md",
+    "blog/posts/【认知心理学】考研如何复习？谈谈我对间隔式练习的理解。.md",
     "index.md",
+    "4_Experience/index.md",
     "1_Math/【第九讲】一元函数积分学的计算.md",
     "1_Math/【Math】三角函数基础整理.md",
     "1_Math/【Math】必背公式和定理整理.md",
-    "blog/posts/【Latex】30分钟学会LaTeX.md",
-    "blog/posts/【Latex】Latex-备忘录.md",
     "01_Bible/软微圣经.md",
     "blog/index.md",
-    "blog/posts/【认知心理学】考研如何复习？谈谈我对间隔式练习的理解。.md",
-    "blog/posts/【manim】初入代码动画的王国.md",
     "06_Manim/【manim】初入代码动画的王国.md",
     "03_Math/【奇技淫巧】Root quickly.md",
     "4_Experience/【学院战神｜浙大】三峡学院25考研11408一战上岸浙大计算机经验贴.md",
@@ -188,9 +195,6 @@
     "3_CSAPP/第一章 计算机系统漫游/1.04 处理器读并解释储存在内存中的指令.md",
     "3_CSAPP/第一章 计算机系统漫游/1.05 高速缓存至关重要.md",
     "3_CSAPP/第一章 计算机系统漫游/1.06 存储设备形成层次结构.md",
-    "3_CSAPP/第一章 计算机系统漫游/1.07 操作系统管理硬件.md",
-    "3_CSAPP/第一章 计算机系统漫游/1.08 系统之间利用网络通信.md",
-    "3_CSAPP/第一章 计算机系统漫游/1.09 重要主题.md",
     "3_CSAPP/第一章 计算机系统漫游",
     "3_CSAPP/第二章 信息的表示和处理",
     "stylesheets/extra.css",

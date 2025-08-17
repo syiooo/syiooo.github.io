@@ -19,7 +19,7 @@ date: 2025-07-23 08:57:00
 ## 1. 什么是LaTeX?
 
 $L^AT_EX$ 发音为 "LAY-tek" 亦或是 "LAH-tek"。是一款用于排版专业外观文档的工具。然而，Latex的工作方式类似于 Markdown。文档$\xrightarrow[排版]{TeX引擎}$排版后文档。这意味着能够通过LaTeX语法来产生专业排版的PDF文件。
-
+<!-- more -->
 ## 2. 为什么要学习 LaTeX？
 
 你当然可以提出各种拒绝使用LaTeX的理由，那是你的事儿。But 最终选择LaTeX的用户往往在意以下优点：
