@@ -408,6 +408,8 @@
       
         
       
+        
+      
     
     
     
@@ -977,7 +979,7 @@
 
   <h1>【manim】初入代码动画的王国</h1>
 
-<h2 id="_1">介绍</h2>
+<h2 id="_1">介绍<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>在使用 <code>Manim</code> 之前，要先知道 Manim 分为很多个版本：</p>
 <ul>
 <li>Manim Community - 开发者维护版，也就是社区版</li>
@@ -990,7 +992,7 @@
 </blockquote>
 <!-- more -->
 
-<h2 id="manim">部署 Manim 环境</h2>
+<h2 id="manim">部署 Manim 环境<a class="headerlink" href="#manim" title="Permanent link">&para;</a></h2>
 <p>一开始我尝试了直接在 PycharmCE 中配置软件包来使用 Manim，总得来说效果不太好，还是老老实实按照文档安装来的方便。</p>
 <p>详细步骤建议根据 <a href="https://docs.manim.community/en/stable/installation.html">Manim Community 官网文档</a>来，本文中贴出关键步骤：</p>
 <blockquote>
@@ -1025,7 +1027,7 @@
 <ul>
 <li><strong>Tip</strong>：⚠️我在阅读官方文档前胡乱安装了很多库，故确保以上步骤执行后可能缺少部分依赖，具体以文档为准。</li>
 </ul>
-<h2 id="_2">渲染命令</h2>
+<h2 id="_2">渲染命令<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>学习 Manim 最快的方式我认为是直接读源码示例，直接上一段代码后我们来进行拆分。manim 的代码结构非常简单易懂。</p>
 <p>打开 <code>Vscode</code> ，在方才我们建立的 <code>manimations</code> 目录中有一个 <code>main.py</code> 文件，写入：</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">manim</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
@@ -1071,7 +1073,7 @@
 </span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>    <span class="n">scene</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
 </span></code></pre></div></p>
 <p><code>tempconfig</code>是 manim 自带的上下文资源管理器，<code>with</code>语句用于正常释放资源，效果等价于<code>try</code>语句。</p>
-<h2 id="_3">语法</h2>
+<h2 id="_3">语法<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>上文说完了<code>manim</code>的渲染方法，以及文件的执行方法。下面来扒一下这段代码是在干什么。</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">manim</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
@@ -1105,7 +1107,7 @@
 <p>我们利用<code>Cricle()</code>、<code>Square()</code>, <code>Triangle()</code> 分别创建了一个圆、正方形、三角形。</p>
 <p>这段代码实际上是就是定义了三个“演员”，在这里预设好演员的长相，位置等等属性和参数。然后利用<code>self.play()</code>将演员搬上舞台，并且按照顺序表演。</p>
 <p>其实就这么 easy，下面来看点常见的函数。</p>
-<h2 id="_4">定义方法</h2>
+<h2 id="_4">定义方法<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>用我自己的话说，这叫定义“演员”的属性，其实和游戏开发中很多思想一致。在实际表演的过程中再去动态改变这个属性即可达到动画的效果。</p>
 <blockquote>
 <p>当然了，官方可不是这么定义的（<del>bushi</del> 演员）。</p>
@@ -1118,7 +1120,7 @@
 </span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="n">circle</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="n">square</span><span class="p">)</span> <span class="c1"># 设置圆的位置为临近于方</span>
 </span></code></pre></div>
 <p>有点过于简单了，毕竟这是新手村嘛。</p>
-<h2 id="_5">动画方法</h2>
+<h2 id="_5">动画方法<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>动画方法也是我自己起的名字，官方应该不这么叫吧。上文也提及了，这一类方法就是定义动画是怎么“动态”地执行的，基本上就是写在<code>self.play()</code>里面。也就是说场景类才是剧本的总指挥官。</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Transform</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span> <span class="c1"># 让a转换到 b</span>
 </span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span> <span class="c1"># 停留一会儿，参数可以缺省</span>
@@ -1137,7 +1139,7 @@
 </span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>        <span class="n">定义</span>
 </span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>        <span class="n">执行</span>
 </span></code></pre></div></p>
-<h2 id="_6">杂谈</h2>
+<h2 id="_6">杂谈<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>实际上你还可以使用<code>Vscode</code>的扩展来动态渲染。不过经过我的实际体验，效果不是很好。每次保存都会自动 render 一遍，特别烦。</p>
 <p><img alt="Manim Sideview" src="https://ccccooh.oss-cn-hangzhou.aliyuncs.com/img/%E6%88%AA%E5%B1%8F2025-07-10%2016.58.38.png" /></p>
 

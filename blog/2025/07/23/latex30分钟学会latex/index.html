@@ -410,6 +410,8 @@
       
         
       
+        
+      
     
     
     
@@ -1127,9 +1129,9 @@
 <blockquote>
 <p>本文是笔记。尊重原文，<a href="https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes#Creating_lists_in_LaTeX">参考原文地址</a>。</p>
 </blockquote>
-<h2 id="1-latex">1. 什么是LaTeX?</h2>
+<h2 id="1-latex">1. 什么是LaTeX?<a class="headerlink" href="#1-latex" title="Permanent link">&para;</a></h2>
 <p><span class="arithmatex">\(L^AT_EX\)</span> 发音为 "LAY-tek" 亦或是 "LAH-tek"。是一款用于排版专业外观文档的工具。然而，Latex的工作方式类似于 Markdown。文档<span class="arithmatex">\(\xrightarrow[排版]{TeX引擎}\)</span>排版后文档。这意味着能够通过LaTeX语法来产生专业排版的PDF文件。</p>
-<h2 id="2-latex">2. 为什么要学习 LaTeX？</h2>
+<h2 id="2-latex">2. 为什么要学习 LaTeX？<a class="headerlink" href="#2-latex" title="Permanent link">&para;</a></h2>
 <p>你当然可以提出各种拒绝使用LaTeX的理由，那是你的事儿。But 最终选择LaTeX的用户往往在意以下优点：</p>
 <ul>
 <li>支持排版<strong>极其复杂的数学</strong>、表格和其他科学的技术内容；</li>
@@ -1139,7 +1141,7 @@
 </ul>
 <p>总而言之，各种好处，不胜枚举。当然，有些类型的文档 LaTeX 并不擅长，这类“自由格式”文档往往通过 Word 解决。</p>
 <p>与 Markdown 类似，LaTeX 将文档的内容和其样式进行了分离。更换“主题”无需修改内容即可修改样式。</p>
-<h2 id="3-latex">3. 编写你的第一篇 LaTeX 代码</h2>
+<h2 id="3-latex">3. 编写你的第一篇 LaTeX 代码<a class="headerlink" href="#3-latex" title="Permanent link">&para;</a></h2>
 <p>第一步是创建一个新的 LaTeX 项目，在电脑上创建一个新的 <code>.tex</code> 文件来完成此操作。在”尊贵“的 mac 上用终端命令做到这一步。</p>
 <div class="language-latex highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
@@ -1151,7 +1153,7 @@
 <p><img alt="image.png" src="https://ccccooh.oss-cn-hangzhou.aliyuncs.com/img/202507230738619.png" /></p>
 <p>你可以看到，LaTeX 已自动缩进段落首行，帮你处理好了格式问题。让我们仔细看看代码的每个部分都做了什么。</p>
 <p>第一行代码 <code>\documentclass{article}</code> 申明了文档类型，它控制文档的整体外观。设置好文档类型后，文档的内容介于 <code>\begin{document}</code> 和 <code>\end{document}</code> 标签之间。</p>
-<h2 id="4-preamble">4. 文档 preamble</h2>
+<h2 id="4-preamble">4. 文档 preamble<a class="headerlink" href="#4-preamble" title="Permanent link">&para;</a></h2>
 <p>文档的 preamble是有别于 body 中的内容的。最小的文档 <span class="arithmatex">\(preamble\)</span> 如下所示：</p>
 <div class="language-latex highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">\documentclass</span> [12pt, letterpaper] <span class="nb">{</span>文章<span class="nb">}</span> 
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">\usepackage</span> <span class="nb">{</span> graphicx <span class="nb">}</span>
@@ -1164,7 +1166,7 @@
 <div class="language-latex highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">\usepackage</span> <span class="nb">{</span> graphicx <span class="nb">}</span>
 </span></code></pre></div>
 <p>这是一个加载外部包的示例，使其能够导入外部图形文件。<a href="https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes#Finding_and_using_LaTeX_packages">查找和使用LaTeX包</a>。</p>
-<h2 id="5">5. 包括标题、作者和日期信息</h2>
+<h2 id="5">5. 包括标题、作者和日期信息<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
 <p>在 <span class="arithmatex">\(preamble\)</span> 中（注意不是文档正文）添加三行</p>
 <ul>
 <li>\title{My first LaTeX document}: 文档标题</li>
@@ -1187,7 +1189,7 @@
 <p>用 \maketitle 添加或排版（官方用语为 <span class="arithmatex">\(typeset\)</span> ）标题，作者和日期。</p>
 <p>效果如下：</p>
 <p><img alt="image.png" src="https://ccccooh.oss-cn-hangzhou.aliyuncs.com/img/202507230801560.png" /></p>
-<h2 id="6">6. 添加注释</h2>
+<h2 id="6">6. 添加注释<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
 <p>LaTeX 是一种代码，专注于文档排版。因此，与其他任何编程语言写的代码一样，在文档中添加注释非常有用。</p>
 <p>要在 LaTeX 中添加注释，只需 % 起手（行首写一个%）：</p>
 <div class="language-latex highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">\documentclass</span><span class="na">[12pt, letterpaper]</span><span class="nb">{</span>article<span class="nb">}</span>
@@ -1201,7 +1203,7 @@
 </span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="c">% This line here is a comment. It will not be typeset in the document.</span>
 </span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
 </span></code></pre></div>
-<h2 id="7">7. 粗体、斜体和下换线</h2>
+<h2 id="7">7. 粗体、斜体和下换线<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
 <ul>
 <li><span class="arithmatex">\(\textbf{粗体}\)</span>：<code>\textbf{}</code></li>
 <li><span class="arithmatex">\(\textit{斜体}\)</span>：<code>\textit{}</code></li>
@@ -1211,7 +1213,7 @@
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>discoveries in <span class="k">\underline</span><span class="nb">{</span>science<span class="nb">}</span> 
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>were made by <span class="k">\textbf</span><span class="nb">{</span><span class="k">\textit</span><span class="nb">{</span>accident<span class="nb">}}</span>.
 </span></code></pre></div>
-<h2 id="8">8. 添加图像</h2>
+<h2 id="8">8. 添加图像<a class="headerlink" href="#8" title="Permanent link">&para;</a></h2>
 <div class="language-latex highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">\usepackage</span><span class="nb">{</span>graphicx<span class="nb">}</span> <span class="c">%LaTeX package to import graphics</span>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="k">\graphicspath</span><span class="nb">{{</span>images/<span class="nb">}}</span> <span class="c">%configuring the graphicx package</span>
@@ -1238,7 +1240,7 @@
 <blockquote>
 <p>注意文件名，最佳做法是省略扩展名。一般来说，图片的文件名不应该包含空格或多个点；若上传到 Overleaf 建议使用小写字母作为文件扩展名。</p>
 </blockquote>
-<h2 id="9">9. 标题、标签和参考</h2>
+<h2 id="9">9. 标题、标签和参考<a class="headerlink" href="#9" title="Permanent link">&para;</a></h2>
 <p>可以通过 <span class="arithmatex">\(figure\)</span> 来引用图像。</p>
 <div class="language-latex highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">\usepackage</span><span class="nb">{</span>graphicx<span class="nb">}</span>
@@ -1264,7 +1266,7 @@
 - <strong><code>\caption{A nice plot.}</code></strong>：顾名思义，此命令用于设置图形标题，可以放置在图形上方或下方。如果您创建了图形列表，则此标题将在该列表中使用。
 - <strong><code>\label{fig:mesh1}</code></strong>：要在文档中引用此图像，请使用该命令为其添加标签<code>\label</code>。该标签用于为图像生成编号，并与下一个命令结合使用，即可引用该图像。
 - <strong><code>\ref{fig:mesh1}</code></strong>：此代码将被对应于参考图的数字替换。</p>
-<h2 id="10-latex">10. 在LaTeX中创建列表</h2>
+<h2 id="10-latex">10. 在LaTeX中创建列表<a class="headerlink" href="#10-latex" title="Permanent link">&para;</a></h2>
 <p>无序列表：</p>
 <div class="language-latex highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
@@ -1287,8 +1289,8 @@
 </span></code></pre></div>
 <p>效果：</p>
 <p><img alt="An example numbered list produced in LaTeX" src="https://images.ctfassets.net/nrgyaltdicpt/2vkfa7RiAIJxv5wIZbg9UK/530c384f159d091a587de279d13fefec/LL30Fig8-plain.svg" /></p>
-<h2 id="11-adding-math-to-latex">11. Adding math to LaTeX</h2>
-<h3 id="111-inline-math-mode">11.1 inline math mode</h3>
+<h2 id="11-adding-math-to-latex">11. Adding math to LaTeX<a class="headerlink" href="#11-adding-math-to-latex" title="Permanent link">&para;</a></h2>
+<h3 id="111-inline-math-mode">11.1 inline math mode<a class="headerlink" href="#111-inline-math-mode" title="Permanent link">&para;</a></h3>
 <p><div class="language-latex highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">\documentclass</span><span class="na">[12pt, letterpaper]</span><span class="nb">{</span>article<span class="nb">}</span>
 </span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
 </span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>In physics, the mass-energy equivalence is stated 
@@ -1297,7 +1299,7 @@
 </span></code></pre></div>
 <img alt="Image showing math typeset in inline math mode" src="https://images.ctfassets.net/nrgyaltdicpt/77oK8pfew1B1VvxiBtALag/15714f2da4e469bbb8cf70a0d3733e5d/LL30Fig9-plain.svg" /></p>
 <p>排版 inline-mode math 你可以用：<code>\( ... \)</code>, <code>$ ... $</code> 亦或是 <code>\begin{math} ...\end{math}</code>。</p>
-<h3 id="112-display-math-mode">11.2 Display math mode</h3>
+<h3 id="112-display-math-mode">11.2 Display math mode<a class="headerlink" href="#112-display-math-mode" title="Permanent link">&para;</a></h3>
 <div class="language-latex highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">\documentclass</span><span class="na">[12pt, letterpaper]</span><span class="nb">{</span>article<span class="nb">}</span>
 </span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
 </span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>The mass-energy equivalence is described by the famous equation
@@ -1363,8 +1365,8 @@
 </span><span id="__span-14-32"><a id="__codelineno-14-32" name="__codelineno-14-32" href="#__codelineno-14-32"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
 </span></code></pre></div>
 <p><img alt="Image showing a range of math typeset in LaTeX" src="https://images.ctfassets.net/nrgyaltdicpt/hT85gkewCDlxCHeNU5slE/9256c129b25bec7a93dcfe9e44b0654a/LL30Fig13r-plain.svg" /></p>
-<h2 id="12">12. 基本文档结构</h2>
-<h3 id="121">12.1 摘要</h3>
+<h2 id="12">12. 基本文档结构<a class="headerlink" href="#12" title="Permanent link">&para;</a></h2>
+<h3 id="121">12.1 摘要<a class="headerlink" href="#121" title="Permanent link">&para;</a></h3>
 <div class="language-latex highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
 </span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
 </span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="k">\begin</span><span class="nb">{</span>abstract<span class="nb">}</span>
@@ -1374,7 +1376,7 @@
 </span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
 </span></code></pre></div>
 <p><img alt="Image showing an abstract typeset in LaTeX" src="https://images.ctfassets.net/nrgyaltdicpt/4cPu8x8ZxuDVF6efcZ03yi/91aa6aa84719613b0e25c725b70aa0b8/LL30Fig14-plain.svg" /></p>
-<h3 id="122">12.2 段落与换行</h3>
+<h3 id="122">12.2 段落与换行<a class="headerlink" href="#122" title="Permanent link">&para;</a></h3>
 <p>写好摘要后，我们可以开始书写第一个段落。用 <code>\\</code> 手动换行 or <code>\newline</code> 命令。</p>
 <div class="language-latex highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
 </span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
@@ -1392,7 +1394,7 @@
 </span><span id="__span-16-14"><a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
 </span></code></pre></div>
 <p><img alt="Image showing the creation of paragraphs in LaTeX" src="https://images.ctfassets.net/nrgyaltdicpt/5DdSH06hFli8k4lR0dxw4m/a55cddf9aa10b64302ae7b72ba0c6447/LL30Fig15r-plain.svg" /></p>
-<h3 id="123-chapter">12.3 章节 - chapter</h3>
+<h3 id="123-chapter">12.3 章节 - chapter<a class="headerlink" href="#123-chapter" title="Permanent link">&para;</a></h3>
 <p>较长的文档通常被分为若干部分，章节、小节等。LaTeX中提供了文档结构化命令，但可用的命令和功能取决于文档类<code>\documentclass</code>。例如，<code>\documentclass { book }</code> 支持将文档划分为部分，但 <code>\documentclass { letter }</code> 不支持。</p>
 <div class="language-latex highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">\documentclass</span> <span class="nb">{</span> book <span class="nb">}</span> 
 </span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="k">\begin</span> <span class="nb">{</span> document <span class="nb">}</span> 
@@ -1420,8 +1422,8 @@
 - \subparagraph{subparagraph}</p>
 <p>特别说明，\part 和 \chapter 命令只能在 report 和 book 文档类中使用。</p>
 <p>更多信息关于 <a href="https://www.overleaf.com/learn/latex/Sections_and_chapters" title="篇章">Chapter</a>。</p>
-<h2 id="13">13. 创建表</h2>
-<h3 id="131">13.1 基本</h3>
+<h2 id="13">13. 创建表<a class="headerlink" href="#13" title="Permanent link">&para;</a></h2>
+<h3 id="131">13.1 基本<a class="headerlink" href="#131" title="Permanent link">&para;</a></h3>
 <p>示例：</p>
 <div class="language-latex highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="k">\begin</span><span class="nb">{</span>center<span class="nb">}</span>
 </span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="k">\begin</span><span class="nb">{</span>tabular<span class="nb">}{</span>c c c<span class="nb">}</span>
@@ -1465,7 +1467,7 @@
 </span><span id="__span-20-17"><a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a><span class="k">\end</span><span class="nb">{</span>center<span class="nb">}</span>****
 </span></code></pre></div>
 <p><img alt="Graphic displaying a table typeset in LaTeX containing horizontal and vertical rules" src="https://images.ctfassets.net/nrgyaltdicpt/1Cy9FcRnDVDRUPQdCgaKq6/c21e5f7d9a53514756c6e1f2996e51e0/LL30Fig19-plain.svg" /></p>
-<h3 id="132-captiontitlereference">13.2 Caption、Title、Reference</h3>
+<h3 id="132-captiontitlereference">13.2 Caption、Title、Reference<a class="headerlink" href="#132-captiontitlereference" title="Permanent link">&para;</a></h3>
 <p>类似于图片的 Caption、Title。</p>
 <div class="language-latex highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>Table <span class="k">\ref</span><span class="nb">{</span>table:data<span class="nb">}</span> shows how to add a table caption and reference a table.
 </span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="k">\begin</span><span class="nb">{</span>table<span class="nb">}</span>[h!]
@@ -1486,7 +1488,7 @@
 </span><span id="__span-21-17"><a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a><span class="k">\end</span><span class="nb">{</span>table<span class="nb">}</span>
 </span></code></pre></div>
 <p><img alt="A LaTeX table with a caption" src="https://images.ctfassets.net/nrgyaltdicpt/1f5w74UIaTCkpApaPdVeWf/580a87c2413ddc9d6bdef3bf462689fc/LL30Fig20-plain.svg" /></p>
-<h3 id="14">14. 添加目录</h3>
+<h3 id="14">14. 添加目录<a class="headerlink" href="#14" title="Permanent link">&para;</a></h3>
 <p>极其简单，因为 \tableofcontents 几乎为你完成了所有工作：</p>
 <div class="language-latex highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
 </span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="k">\title</span><span class="nb">{</span>Sections and Chapters<span class="nb">}</span>

@@ -410,6 +410,8 @@
       
         
       
+        
+      
     
     
     
@@ -1081,10 +1083,10 @@
 <p>本文中所有内容均完全基于 <strong>manim community</strong> 参考手册，独立原创。</p>
 </blockquote>
 <p><img alt="Manim Title" src="https://docs.manim.community/en/stable/_static/manim-logo-sidebar.svg" /></p>
-<h2 id="axes">坐标轴 Axes</h2>
+<h2 id="axes">坐标轴 Axes<a class="headerlink" href="#axes" title="Permanent link">&para;</a></h2>
 <p>一个数学动画由哪些元素构成？首先得有平面坐标系吧，坐标系肯定有各种图例和标签符号，这些都是 Mobject。我们先来研究研究坐标系的详细使用方法，再去探讨函数图像的绘制，最后我们讨论一些特殊的 Mobject 怎么用（例如箭头、数字等），在文章末尾我们将他们串连在一起，用 valueTracker 实现动态的渲染。</p>
 <p>要了解坐标系，最好的办法当然是查阅一手资料 -- <a href="https://docs.manim.community/en/stable/reference/manim.mobject.graphing.coordinate_systems.html">官方文档</a>。就在手册的 <strong>Reference Manual &gt; Mobjects &gt; graphing &gt; coordinate_systems</strong> 下，我们主要来看 Axes 和 Coordinate System 怎么用。</p>
-<h3 id="_1">构造方法</h3>
+<h3 id="_1">构造方法<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <p><img alt="参考文档" src="https://ccccooh.oss-cn-hangzhou.aliyuncs.com/img/%E6%88%AA%E5%B1%8F2025-07-11%2011.58.35.png" /></p>
 <p>先来看看 Axes 类的构造方法：</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Axes</span><span class="p">(</span><span class="n">x_range</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">y_range</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">x_length</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">y_length</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">axis_config</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">x_axis_config</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">y_axis_config</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tips</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
@@ -1182,7 +1184,7 @@
 </span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>        <span class="n">graph</span> <span class="o">=</span> <span class="n">axe</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span><span class="p">,</span> <span class="n">x_range</span><span class="o">=</span><span class="p">[</span><span class="mf">0.001</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="n">use_smoothing</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">RED</span><span class="p">)</span>
 </span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">axe</span><span class="p">,</span> <span class="n">graph</span><span class="p">,</span> <span class="n">plane</span><span class="p">)</span>
 </span></code></pre></div>
-<h3 id="_2">类方法</h3>
+<h3 id="_2">类方法<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>我们通过一个例子来讲解一下几个类方法的作用：</p>
 <p><img alt="" src="https://ccccooh.oss-cn-hangzhou.aliyuncs.com/img/%E6%88%AA%E5%B1%8F2025-07-11%2013.01.11.png" /></p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">manim</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
@@ -1244,7 +1246,7 @@
 </span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>        <span class="n">label</span> <span class="o">=</span> <span class="p">(</span><span class="n">Matrix</span><span class="p">([[</span><span class="n">coords</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="p">[</span><span class="n">coords</span><span class="p">[</span><span class="mi">1</span><span class="p">]]])</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="n">circ</span><span class="p">,</span> <span class="n">RIGHT</span><span class="p">))</span> <span class="c1"># 在圆的右边放一个矩阵</span>
 </span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">axe</span><span class="p">,</span> <span class="n">circ</span><span class="p">,</span> <span class="n">Dot</span><span class="p">(</span><span class="n">circ</span><span class="o">.</span><span class="n">get_right</span><span class="p">()),</span> <span class="n">plane</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span>
 </span></code></pre></div>
-<h2 id="coordinatesystem">坐标系 CoordinateSystem</h2>
+<h2 id="coordinatesystem">坐标系 CoordinateSystem<a class="headerlink" href="#coordinatesystem" title="Permanent link">&para;</a></h2>
 <p><strong>CoordinateSystem</strong> 是 <strong>Axes</strong> 的抽象基类。</p>
 <p>文档中一上来就给出了一个相对复杂的例子，我自己也实现了一遍，实际上还是用的 Axes 中的方法：</p>
 <p><img alt="" src="https://ccccooh.oss-cn-hangzhou.aliyuncs.com/img/%E6%88%AA%E5%B1%8F2025-07-11%2014.19.40.png" /></p>
@@ -1468,7 +1470,7 @@
 </tbody>
 </table>
 <p>我们着重挑几个比较有意思的玩玩。</p>
-<h3 id="coordinatesystemget_t_label">CoordinateSystem.get_T_label()</h3>
+<h3 id="coordinatesystemget_t_label">CoordinateSystem.get_T_label()<a class="headerlink" href="#coordinatesystemget_t_label" title="Permanent link">&para;</a></h3>
 <p><img alt="" src="https://ccccooh.oss-cn-hangzhou.aliyuncs.com/img/%E6%88%AA%E5%B1%8F2025-07-11%2014.33.26.png" /></p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">manim</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 </span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
@@ -1482,7 +1484,7 @@
 </span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">axes</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">t_label</span><span class="p">)</span>
 </span></code></pre></div>
 <p>tLabel 就是图中黄色的线+xvalue 的标签组合，只需要指定一个<code>x</code>坐标，并选择一条函数曲线即可。</p>
-<h3 id="coordinatesystemget_area">CoordinateSystem.get_area()</h3>
+<h3 id="coordinatesystemget_area">CoordinateSystem.get_area()<a class="headerlink" href="#coordinatesystemget_area" title="Permanent link">&para;</a></h3>
 <p>可以获取函数和坐标中之间的面积。</p>
 <p><img alt="" src="https://ccccooh.oss-cn-hangzhou.aliyuncs.com/img/%E6%88%AA%E5%B1%8F2025-07-11%2014.38.27.png" /></p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">manim</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
@@ -1508,7 +1510,7 @@
 </span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>    <span class="n">x_range</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 </span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="p">)</span>
 </span></code></pre></div>
-<h3 id="coordinatesystemget_graph_label">CoordinateSystem.get_graph_label()</h3>
+<h3 id="coordinatesystemget_graph_label">CoordinateSystem.get_graph_label()<a class="headerlink" href="#coordinatesystemget_graph_label" title="Permanent link">&para;</a></h3>
 <p>这个方法用于获取坐标系中的图例，比如修改前面 <strong>get_area</strong> 中的代码，增加一个 <strong>label</strong>。在这里我们这只为了带点的标签，通过 <strong>label</strong> 属性设置其内容，<strong>graph</strong> 设置其作用的函数，用 <strong>x_val</strong> 指定了在函数上的位置，<strong>direction</strong> 为偏移方向，以及颜色等等。</p>
 <p><img alt="" src="https://ccccooh.oss-cn-hangzhou.aliyuncs.com/img/%E6%88%AA%E5%B1%8F2025-07-11%2014.46.37.png" /></p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">label</span> <span class="o">=</span> <span class="n">axes</span><span class="o">.</span><span class="n">get_graph_label</span><span class="p">(</span>
@@ -1522,7 +1524,7 @@
 </span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>
 </span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">axes</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">t_label</span><span class="p">,</span> <span class="n">area</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span>
 </span></code></pre></div>
-<h3 id="coordinatesystemget_horizontal_line">CoordinateSystem.get_horizontal_line()</h3>
+<h3 id="coordinatesystemget_horizontal_line">CoordinateSystem.get_horizontal_line()<a class="headerlink" href="#coordinatesystemget_horizontal_line" title="Permanent link">&para;</a></h3>
 <p>得到一条从点到<span class="arithmatex">\(y\)</span>轴的水平线，对应的是 <code>get_vertical_line()</code>。</p>
 <p><img alt="" src="https://ccccooh.oss-cn-hangzhou.aliyuncs.com/img/%E6%88%AA%E5%B1%8F2025-07-11%2014.56.57.png" /></p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">manim</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
@@ -1540,7 +1542,7 @@
 </span></code></pre></div>
 <p>注意这里的第一个参数是<code>point</code>不是 dot 对象。<code>@</code>表示 python 中的矩阵运算。</p>
 <p>传入参数<code>line_config={"dashed_ratio": 0.85}</code>设置虚线并调整图线比例。</p>
-<h3 id="coordinatesystemget_lines_to_point">CoordinateSystem.get_lines_to_point()</h3>
+<h3 id="coordinatesystemget_lines_to_point">CoordinateSystem.get_lines_to_point()<a class="headerlink" href="#coordinatesystemget_lines_to_point" title="Permanent link">&para;</a></h3>
 <p>同时得到垂直和水平的垂线。</p>
 <p><img alt="" src="https://ccccooh.oss-cn-hangzhou.aliyuncs.com/img/%E6%88%AA%E5%B1%8F2025-07-11%2015.05.07.png" /></p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">manim</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
@@ -1556,7 +1558,7 @@
 </span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">axes</span><span class="p">,</span> <span class="n">circ</span><span class="p">,</span> <span class="n">point</span><span class="p">,</span> <span class="n">right_line</span><span class="p">,</span> <span class="n">corner_line</span><span class="p">)</span>
 </span></code></pre></div>
 <p>只需提供点的坐标即可。</p>
-<h3 id="coordinatesystemget_riemann_rectangles">CoordinateSystem.get_riemann_rectangles()</h3>
+<h3 id="coordinatesystemget_riemann_rectangles">CoordinateSystem.get_riemann_rectangles()<a class="headerlink" href="#coordinatesystemget_riemann_rectangles" title="Permanent link">&para;</a></h3>
 <p>为曲线生成黎曼矩形。</p>
 <p><img alt="" src="https://ccccooh.oss-cn-hangzhou.aliyuncs.com/img/%E6%88%AA%E5%B1%8F2025-07-11%2015.50.30.png" /></p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">manim</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
@@ -1575,7 +1577,7 @@
 </span><span id="__span-19-14"><a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">axes</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">rects</span><span class="p">)</span>
 </span></code></pre></div>
 <p><code>input_sample_type</code>用于设置黎曼矩形和曲线接触的点为右上角端点，默认为左上角。<code>dx</code>设置矩形的宽度，<code>dx</code>越大，就越大越稀疏。</p>
-<h3 id="coordinatesystemget_secant_slope_group">CoordinateSystem.get_secant_slope_group()</h3>
+<h3 id="coordinatesystemget_secant_slope_group">CoordinateSystem.get_secant_slope_group()<a class="headerlink" href="#coordinatesystemget_secant_slope_group" title="Permanent link">&para;</a></h3>
 <p>获得切线组，也就是包括割线在内一整个三角形组。</p>
 <p><img alt="" src="https://ccccooh.oss-cn-hangzhou.aliyuncs.com/img/%E6%88%AA%E5%B1%8F2025-07-11%2015.58.35.png" /></p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">manim</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
@@ -1597,7 +1599,7 @@
 </span><span id="__span-20-17"><a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">graph</span><span class="p">,</span> <span class="n">slopes</span><span class="p">)</span>
 </span></code></pre></div>
 <p>可以根据配置项来确定 x 的起点，水平距离，割线长度等等信息。</p>
-<h3 id="coordinatesystemget_vertical_line">CoordinateSystem.get_vertical_line()</h3>
+<h3 id="coordinatesystemget_vertical_line">CoordinateSystem.get_vertical_line()<a class="headerlink" href="#coordinatesystemget_vertical_line" title="Permanent link">&para;</a></h3>
 <p>获取从 x 轴到曲线的多条线。</p>
 <p><img alt="" src="https://ccccooh.oss-cn-hangzhou.aliyuncs.com/img/%E6%88%AA%E5%B1%8F2025-07-11%2016.03.57.png" /></p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">manim</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
@@ -1614,7 +1616,7 @@
 </span><span id="__span-21-12"><a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">graph</span><span class="p">,</span> <span class="n">slopes</span><span class="p">)</span>
 </span></code></pre></div>
 <p>同上面 get_area 用法类似，不赘述。</p>
-<h3 id="coordinatesystemget_x_axis_label">CoordinateSystem.get_x_axis_label()</h3>
+<h3 id="coordinatesystemget_x_axis_label">CoordinateSystem.get_x_axis_label()<a class="headerlink" href="#coordinatesystemget_x_axis_label" title="Permanent link">&para;</a></h3>
 <p>通过 axes 得到x 轴标签，<code>CoordinateSystem.get_y_axis_label()</code>用法类似，不过多赘述。</p>
 <p><img alt="" src="https://ccccooh.oss-cn-hangzhou.aliyuncs.com/img/%E6%88%AA%E5%B1%8F2025-07-11%2016.07.18.png" /></p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">manim</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
@@ -1641,7 +1643,7 @@
 <p><strong>buff</strong> – 标签与线的距离。</p>
 </li>
 </ul>
-<h3 id="coordinatesysteminput_to_graph_point">CoordinateSystem.input_to_graph_point()</h3>
+<h3 id="coordinatesysteminput_to_graph_point">CoordinateSystem.input_to_graph_point()<a class="headerlink" href="#coordinatesysteminput_to_graph_point" title="Permanent link">&para;</a></h3>
 <p>返回对应函数上某个点的坐标。</p>
 <p><img alt="" src="https://ccccooh.oss-cn-hangzhou.aliyuncs.com/img/%E6%88%AA%E5%B1%8F2025-07-11%2016.11.59.png" /></p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">manim</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
@@ -1655,7 +1657,7 @@
 </span><span id="__span-23-9"><a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a>
 </span><span id="__span-23-10"><a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">graph</span><span class="p">,</span> <span class="n">square</span><span class="p">)</span>
 </span></code></pre></div>
-<h3 id="coordinatesystemplot">CoordinateSystem.plot()</h3>
+<h3 id="coordinatesystemplot">CoordinateSystem.plot()<a class="headerlink" href="#coordinatesystemplot" title="Permanent link">&para;</a></h3>
 <p>返回一个曲线，并不会直接绘制需自行赋值并添加。</p>
 <p>参数：</p>
 <ul>
@@ -1697,7 +1699,7 @@
 </span><span id="__span-24-15"><a id="__codelineno-24-15" name="__codelineno-24-15" href="#__codelineno-24-15"></a>        <span class="n">square</span> <span class="o">=</span> <span class="n">Square</span><span class="p">(</span><span class="n">side_length</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">move_to</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span>
 </span><span id="__span-24-16"><a id="__codelineno-24-16" name="__codelineno-24-16" href="#__codelineno-24-16"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Create</span><span class="p">(</span><span class="n">ax</span><span class="p">),</span> <span class="n">Write</span><span class="p">(</span><span class="n">graph</span><span class="p">),</span> <span class="n">Write</span><span class="p">(</span><span class="n">square</span><span class="p">),</span> <span class="n">Write</span><span class="p">(</span><span class="n">dot</span><span class="p">))</span>
 </span></code></pre></div>
-<h2 id="valuetracker">ValueTracker 绘制</h2>
+<h2 id="valuetracker">ValueTracker 绘制<a class="headerlink" href="#valuetracker" title="Permanent link">&para;</a></h2>
 <p>ValueTracker 解决了什么问题：在绘制动画时，我们往往使用 <code>self.play()</code> 方法一步一步的绘制。如果一个数值在每一帧都需要修改其动画怎么办？这就需要用到 valueTracker 来自动更新动画了。</p>
 <p>在没有 tracker 时，我们操作一个矩形移动需要直接操作矩形本身。有了 tracker 之后我们就能像开发游戏一样，直接操作一个变量，系统自动根据变量更改矩形的动画。简而言之，大大方便了动画的制作。</p>
 <p><strong>valueTracker</strong> 仅仅是一个用于存储值的简单对象，将其理解为一个变量就行。</p>

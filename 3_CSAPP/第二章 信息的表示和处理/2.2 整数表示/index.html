@@ -406,6 +406,8 @@
       
         
       
+        
+      
     
     
     
@@ -1210,7 +1212,7 @@
 
 
 
-<h1 id="22">2.2 整数表示</h1>
+<h1 id="22">2.2 整数表示<a class="headerlink" href="#22" title="Permanent link">&para;</a></h1>
 <p>在本节中, 我们描述用位来编码整数的两种不同的方式: 一种只能表示非负数, 而另一种能够表示负数、零和正数。后面我们将会看到它们在数学属性和机器级实现方面密切相关。我们还会研究扩展或者收缩一个已编码整数以适应不同长度表示的效果。</p>
 <p>图 2-8 列出了我们引入的数学术语,用于精确定义和描述计算机如何编码和操作整数。这些术语将在描述的过程中介绍,图在此处列出作为参考。</p>
 <!-- Meanless: 42 第一部分 程序结构和执行-->
@@ -1222,7 +1224,7 @@
 <p>图 2-8 整数的数据与算术操作术语。下标 <span class="arithmatex">\(w\)</span> 表示数据表示中的位数</p>
 <!-- Media -->
 
-<h2 id="221">2.2.1 整型数据类型</h2>
+<h2 id="221">2.2.1 整型数据类型<a class="headerlink" href="#221" title="Permanent link">&para;</a></h2>
 <p>C 语言支持多种整型数据类型——表示有限范围的整数。这些类型如图 2-9 和图 2-10 所示,其中还给出了 “典型” 32 位和 64 位机器的取值范围。每种类型都能用关键字来指定大小, 这些关键字包括 char、short、long, 同时还可以指示被表示的数字是非负数 (声明为 unsigned), 或者可能是负数 (默认)。如图 2-3 所示, 为这些不同的大小分配的字节数根据程序编译为 32 位还是 64 位而有所不同。根据字节分配, 不同的大小所能表示的值的范围是不同的。这里给出来的唯一一个与机器相关的取值范围是大小指示符 long 的。大多数 64 位机器使用 8 个字节的表示, 比 32 位机器上使用的 4 个字节的表示的取值范围大很多。</p>
 <!-- Media -->
 
@@ -1249,7 +1251,7 @@
 <summary>给 <span class="arithmatex">\(\mathrm{C}\)</span> 语言初学者 <span class="arithmatex">\(\mathrm{C}\)</span> 、 <span class="arithmatex">\(\mathrm{C} ++\)</span> 和 Java 中的有符号和无符号数</summary>
 <p>C 和 C++ 都支持有符号(默认)和无符号数。Java 只支持有符号数。</p>
 </details>
-<h2 id="222">2.2.2 无符号数的编码</h2>
+<h2 id="222">2.2.2 无符号数的编码<a class="headerlink" href="#222" title="Permanent link">&para;</a></h2>
 <p>假设有一个整数数据类型有 <span class="arithmatex">\(w\)</span> 位。我们可以将位向量写成 <span class="arithmatex">\(\overrightarrow{x}\)</span> ,表示整个向量,或者写成 <span class="arithmatex">\(\left\lbrack  {{x}_{w - 1},{x}_{w - 2},\cdots ,{x}_{0}}\right\rbrack\)</span> ,表示向量中的每一位。把 <span class="arithmatex">\(\overrightarrow{x}\)</span> 看做一个二进制表示的数,就获得了 <span class="arithmatex">\(\overrightarrow{x}\)</span> 的无符号表示。在这个编码中,每个位 <span class="arithmatex">\({x}_{i}\)</span> 都取值为 0 或 1,后一种取值意味着数值 <span class="arithmatex">\({2}^{i}\)</span> 应为数字值的一部分。我们用一个函数 <span class="arithmatex">\({B2}{U}_{w}\)</span> (Binary to Unsigned 的缩写,长度为 <span class="arithmatex">\(w\)</span> )来表示:</p>
 <!-- Meanless: 44 第一部分 程序结构和执行-->
 
@@ -1285,7 +1287,7 @@
 <p>原理：无符号数编码的唯一性</p>
 <p>函数 <span class="arithmatex">\({B2}{U}_{w}\)</span> 是一个双射。</p>
 <p>数学术语双射是指一个函数 <span class="arithmatex">\(f\)</span> 有两面: 它将数值 <span class="arithmatex">\(x\)</span> 映射为数值 <span class="arithmatex">\(y\)</span> ,即 <span class="arithmatex">\(y = f\left( x\right)\)</span> ,但它也可以反向操作,因为对每一个 <span class="arithmatex">\(y\)</span> 而言,都有唯一一个数值 <span class="arithmatex">\(x\)</span> 使得 <span class="arithmatex">\(f\left( x\right)  = y\)</span> 。这可以用反函数 <span class="arithmatex">\({f}^{-1}\)</span> 来表示,在本例中,即 <span class="arithmatex">\(x = {f}^{-1}\left( y\right)\)</span> 。函数 <span class="arithmatex">\({B2}{U}_{w}\)</span> 将每一个长度为 <span class="arithmatex">\(w\)</span> 的位向量都映射为 <span class="arithmatex">\(0 \sim  {2}^{w} - 1\)</span> 之间的一个唯一值; 反过来,我们称其为 <span class="arithmatex">\({U2}{B}_{w}\)</span> (即 “无符号数到二进制”), 在 <span class="arithmatex">\(0 \sim  {2}^{w} - 1\)</span> 之间的每一个整数都可以映射为一个唯一的长度为 <span class="arithmatex">\(w\)</span> 的位模式。</p>
-<h2 id="223">2.2.3 补码编码</h2>
+<h2 id="223">2.2.3 补码编码<a class="headerlink" href="#223" title="Permanent link">&para;</a></h2>
 <p>对于许多应用, 我们还希望表示负数值。最常见的有符号数的计算机表示方式就是补码(two's-complement)形式。在这个定义中, 将字的最高有效位解释为负权(negative weight)。我们用函数 <span class="arithmatex">\({B 2}{T}_{w}\)</span> (Binary to Two’s-complement 的缩写,长度为 <span class="arithmatex">\(w\)</span> )来表示:</p>
 <!-- Meanless: 第 2 章 信息的表示和处理 45-->
 
@@ -1409,7 +1411,7 @@
 400506: 48 8 b 44 d 4 b 8 mov -0 x 48(%rsp,%rdx,8),%rax I</p>
 <hr />
 </details>
-<h2 id="224">2.2.4 有符号数和无符号数之间的转换</h2>
+<h2 id="224">2.2.4 有符号数和无符号数之间的转换<a class="headerlink" href="#224" title="Permanent link">&para;</a></h2>
 <p><span class="arithmatex">\(\mathrm{C}\)</span> 语言允许在各种不同的数字数据类型之间做强制类型转换。例如,假设变量 <span class="arithmatex">\(\mathrm{x}\)</span> 声明为 int, <span class="arithmatex">\(\mathrm{u}\)</span> 声明为 unsigned。表达式 (unsigned) <span class="arithmatex">\(\mathrm{x}\)</span> 会将 <span class="arithmatex">\(\mathrm{x}\)</span> 的值转换成一个无符号数值,而 (int) <span class="arithmatex">\(\mathrm{u}\)</span> 将 <span class="arithmatex">\(\mathrm{u}\)</span> 的值转换成一个有符号整数。将有符号数强制类型转换成无符号数,或者反过来, 会得到什么结果呢? 从数学的角度来说, 可以想象到几种不同的规则。很明显, 对于在两种形式中都能表示的值, 我们是想要保持不变的。另一方面, 将负数转换成无符号数可能会得到 0 。如果转换的无符号数太大以至于超出了补码能够表示的范围, 可能会得到 TMax。不过,对于大多数 <span class="arithmatex">\(\mathrm{C}\)</span> 语言的实现来说,对这个问题的回答都是从位级角度来看的, 而不是数的角度。</p>
 <p>比如说, 考虑下面的代码:</p>
 <hr />
@@ -1495,7 +1497,7 @@
 <!-- Meanless: 52 第一部分 程序结构和执行-->
 <p>总结一下,我们考虑无符号与补码表示之间互相转换的结果。对于在范围 <span class="arithmatex">\(0 \leq  x \leq\)</span> <span class="arithmatex">\({TMa}{x}_{w}\)</span> 之内的值 <span class="arithmatex">\(x\)</span> 而言,我们得到 <span class="arithmatex">\({T 2}{U}_{w}\left( x\right)  = x\)</span> 和 <span class="arithmatex">\({U 2}{T}_{w}\left( x\right)  = x\)</span> 。也就是说,在这个范围内的数字有相同的无符号和补码表示。对于这个范围以外的数值, 转换需要加上或者减去 <span class="arithmatex">\({2}^{w}\)</span> 。例如,我们有 <span class="arithmatex">\({T 2}{U}_{w}\left( {-1}\right)  =  - 1 + {2}^{w} = {UMa}{x}_{w}\)</span> ——最靠近 0 的负数映射为最大的无符号数。在另一个极端,我们可以看到 <span class="arithmatex">\({T 2}{U}_{w}\left( {\mathrm {{TMin}} }_{w}\right)  =  - {2}^{w - 1} + {2}^{w} = {2}^{w - 1} = {\mathrm {{TMax}} }_{w} +\)</span> 1 一最小的负数映射为一个刚好在补码的正数范围之外的无符号数。使用图 2-15 的示例,我们能看到 <span class="arithmatex">\({T 2}{U}_{16}\left( {-{12345}}\right)  = {65563} +  - {12345} = {53191}\)</span> 。</p>
 </details>
-<h2 id="225-c">2.2.5 C 语言中的有符号数与无符号数</h2>
+<h2 id="225-c">2.2.5 C 语言中的有符号数与无符号数<a class="headerlink" href="#225-c" title="Permanent link">&para;</a></h2>
 <p>如图 2-9 和图 2-10 所示,C 语言支持所有整型数据类型的有符号和无符号运算。尽管 <span class="arithmatex">\(\mathrm{C}\)</span> 语言标准没有指定有符号数要采用某种表示,但是几乎所有的机器都使用补码。通常, 大多数数字都默认为是有符号的。例如,当声明一个像 12345 或者 0 x 1 A 2 B 这样的常量时, 这个值就被认为是有符号的。要创建一个无符号常量,必须加上后缀字符‘u’或者‘u’, 例如,12345 U 或者 0 x 1 A 2 Bu。</p>
 <p><span class="arithmatex">\(\mathrm{C}\)</span> 语言允许无符号数和有符号数之间的转换。虽然 <span class="arithmatex">\(\mathrm{C}\)</span> 标准没有精确规定应如何进行这种转换, 但大多数系统遵循的原则是底层的位表示保持不变。因此, 在一台采用补码的机器上,当从无符号数转换为有符号数时,效果就是应用函数 <span class="arithmatex">\({U 2}{T}_{w}\)</span> ,而从有符号数转换为无符号数时,就是应用函数 <span class="arithmatex">\({T 2}{U}_{w}\)</span> ,其中 <span class="arithmatex">\(w\)</span> 表示数据类型的位数。</p>
 <p>显式的强制类型转换就会导致转换发生, 就像下面的代码:</p>
@@ -1550,13 +1552,13 @@
 <summary>网络旁注 DATA:TMIN C 语言中 TMin 的写法</summary>
 <p>在图 2-19 和练习题 2.21 中,我们很小心地将 <span class="arithmatex">\({TMi}{n}_{32}\)</span> 写成 -2147483647-1。为什么不简单地写成-2147483648 或者 0 x 80000000? 看一下 C 头文件 limits.h,注意到它们使用了跟我们写 <span class="arithmatex">\({TMi}{n}_{32}\)</span> 和 <span class="arithmatex">\({TMa}{x}_{32}\)</span> 类似的方法:</p>
 <p>/<em> Minimum and maximum values a 'signed int' can hold. </em>/</p>
-<h1 id="define-int_max-2147483647">define INT_MAX 2147483647</h1>
-<h1 id="define-int_min-int_max-1">define INT_MIN (-INT_MAX - 1)</h1>
+<h1 id="define-int_max-2147483647">define INT_MAX 2147483647<a class="headerlink" href="#define-int_max-2147483647" title="Permanent link">&para;</a></h1>
+<h1 id="define-int_min-int_max-1">define INT_MIN (-INT_MAX - 1)<a class="headerlink" href="#define-int_min-int_max-1" title="Permanent link">&para;</a></h1>
 <p>不幸的是, 补码表示的不对称性和 C 语言的转换规则之间奇怪的交互, 迫使我们用</p>
 <!-- Meanless: 54 第一部分 程序结构和执行-->
 <p>这种不寻常的方式来写 <span class="arithmatex">\({TMi}{n}_{32}\)</span> 。虽然理解这个问题需要我们钻研 <span class="arithmatex">\(\mathrm{C}\)</span> 语言标准的一些比较隐晦的角落,但是它能够帮助我们充分领会整数数据类型和表示的一些细微之处。</p>
 </details>
-<h2 id="226">2.2.6 扩展一个数字的位表示</h2>
+<h2 id="226">2.2.6 扩展一个数字的位表示<a class="headerlink" href="#226" title="Permanent link">&para;</a></h2>
 <p>一个常见的运算是在不同字长的整数之间转换, 同时又保持数值不变。当然, 当目标数据类型太小以至于不能表示想要的值时, 这根本就是不可能的。然而, 从一个较小的数据类型转换到一个较大的类型, 应该总是可能的。</p>
 <p>要将一个无符号数转换为一个更大的数据类型, 我们只要简单地在表示的开头添加 0 。这种运算被称为零扩展 (zero extension), 表示原理如下:</p>
 <p>原理: 无符号数的零扩展</p>
@@ -1667,7 +1669,7 @@ int fun 2(unsigned word) {
 <!-- Media -->
 <p>B. 用语言来描述这些函数执行的有用的计算。</p>
 </details>
-<h2 id="227">2.2.7 截断数字</h2>
+<h2 id="227">2.2.7 截断数字<a class="headerlink" href="#227" title="Permanent link">&para;</a></h2>
 <p>假设我们不用额外的位来扩展一个数值, 而是减少表示一个数字的位数。例如下面代码中这种情况:</p>
 <hr />
 <div class="language-text highlight"><pre><span></span><code>    1 int x = 53191 ;
@@ -1724,7 +1726,7 @@ int fun 2(unsigned word) {
 <!-- Media -->
 <p>解释如何将等式 (2.9) 和等式 (2.10) 应用到这些示例上。</p>
 </details>
-<h2 id="228">2.2.8 关于有符号数与无符号数的建议</h2>
+<h2 id="228">2.2.8 关于有符号数与无符号数的建议<a class="headerlink" href="#228" title="Permanent link">&para;</a></h2>
 <p>就像我们看到的那样, 有符号数到无符号数的隐式强制类型转换导致了某些非直观的行为。而这些非直观的特性经常导致程序错误, 并且这种包含隐式强制类型转换的细微差别的错误很难被发现。因为这种强制类型转换是在代码中没有明确指示的情况下发生的, 程序员经常忽视了它的影响。</p>
 <p>下面两个练习题说明了某些由于隐式强制类型转换和无符号数据类型造成的细微的错误。</p>
 <details class="question">
@@ -1774,7 +1776,7 @@ int strlonger(char </em>s, char *t) {
 /<em> Declaration of library function memcpy </em>/
 void <em>memcpy(void </em>dest, void <em>src, size_t n);
 /</em> Kernel memory region holding user-accessible data */</p>
-<h1 id="define-ksize-1024">define KSIZE 1024</h1>
+<h1 id="define-ksize-1024">define KSIZE 1024<a class="headerlink" href="#define-ksize-1024" title="Permanent link">&para;</a></h1>
 <p>char kbuf [KSIZE];
 /<em> Copy at most maxlen bytes from kernel region to user buffer </em>/
 int copy_from_kernel(void <em>user_dest, int maxlen) {

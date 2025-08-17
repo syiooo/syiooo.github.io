@@ -410,6 +410,8 @@
       
         
       
+        
+      
     
     
     
@@ -982,7 +984,7 @@
 <!-- more -->
 
 <p><img alt="效果" src="https://ccccooh.oss-cn-hangzhou.aliyuncs.com/img/202507151628302.png" /></p>
-<h2 id="_1">公式推导</h2>
+<h2 id="_1">公式推导<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>这是泰勒展开式：
 $$
 f(x)=f(0)+f'(0)x+\frac{f''(0)}{2!}x<sup _n_="(n)">2+\dots+\frac{f</sup>x}(0)}{n!<sup>n+o(x</sup>n)
@@ -1162,7 +1164,7 @@ $$</p>
 </span><span id="__span-1-132"><a id="__codelineno-1-132" name="__codelineno-1-132" href="#__codelineno-1-132"></a>    <span class="n">scene</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
 </span></code></pre></div>
 <p>下面进行逐段解释。</p>
-<h2 id="introduction">introduction</h2>
+<h2 id="introduction">introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 <p>该函数为画图前的公式推导铺垫动画。</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">introduction</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="n">intro</span> <span class="o">=</span> <span class="n">Text</span><span class="p">(</span><span class="s2">&quot;这是野生的泰勒展开式&quot;</span><span class="p">)</span>
@@ -1224,7 +1226,7 @@ $$</p>
 </span><span id="__span-2-58"><a id="__codelineno-2-58" name="__codelineno-2-58" href="#__codelineno-2-58"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Unwrite</span><span class="p">(</span><span class="n">tex_3</span><span class="p">))</span>
 </span></code></pre></div>
 <p>较为简单，用到<code>Animations</code>和<code>Tex</code>。</p>
-<h2 id="write_image">write_image</h2>
+<h2 id="write_image">write_image<a class="headerlink" href="#write_image" title="Permanent link">&para;</a></h2>
 <p>此程序的难点所在。</p>
 <p>先来看两个工具函数：
 <div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># 创建泰勒近似函数（前 n 项）</span>
@@ -1298,7 +1300,7 @@ $$
 </span><span id="__span-4-41"><a id="__codelineno-4-41" name="__codelineno-4-41" href="#__codelineno-4-41"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">current_graph</span><span class="p">),</span> <span class="n">Write</span><span class="p">(</span><span class="n">current_formula</span><span class="p">))</span>
 </span><span id="__span-4-42"><a id="__codelineno-4-42" name="__codelineno-4-42" href="#__codelineno-4-42"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </span></code></pre></div>
-<h3 id="section-1">section 1</h3>
+<h3 id="section-1">section 1<a class="headerlink" href="#section-1" title="Permanent link">&para;</a></h3>
 <p>第一部分建立坐标系，并画图，难度不大。</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">ax</span> <span class="o">=</span> <span class="n">Axes</span><span class="p">(</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>        <span class="n">x_range</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
@@ -1312,7 +1314,7 @@ $$
 </span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Create</span><span class="p">(</span><span class="n">ax</span><span class="p">),</span> <span class="n">Create</span><span class="p">(</span><span class="n">pl</span><span class="p">))</span>
 </span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Write</span><span class="p">(</span><span class="n">sin</span><span class="p">))</span>
 </span></code></pre></div>
-<h3 id="section-2">section 2</h3>
+<h3 id="section-2">section 2<a class="headerlink" href="#section-2" title="Permanent link">&para;</a></h3>
 <p>第二部分先是建立两个数组用于存放未来要画的泰勒函数图像，公式标签在右下角展示使视频更直观。通过循环生成了 15 个表达式，f 为我们根据<code>make_taylor_func</code>建立的函数对象。将函数对象 f 放入<code>ax.plot()</code>中即可得到图像对象，公式<code>formula</code>根据<code>make_formula_tex()</code>处理得到。</p>
 <blockquote>
 <p>由于公式较长时会溢出屏幕，需在 <span class="arithmatex">\(i\geq8\)</span> 时缩小其尺寸。   </p>
@@ -1329,7 +1331,7 @@ $$
 </span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>    <span class="n">taylor_graphs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span>
 </span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>    <span class="n">formula_labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">formula</span><span class="p">)</span>
 </span></code></pre></div>
-<h3 id="section-3">section 3</h3>
+<h3 id="section-3">section 3<a class="headerlink" href="#section-3" title="Permanent link">&para;</a></h3>
 <p>先画出第一个展开式的图像，后续展开式则用数组和循环批量处理。后续通过切片语法从第二个展开式开始迭代。每一次更新都播放衔接的过渡动画，移除当前处理的公式、函数图像。并将<code>current_xxx</code>指针指向下一个带处理的对象。留下最后一组时，上一组对象已被循环移除，直接播放动画即可。</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># 第一个图和公式</span>
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">current_graph</span> <span class="o">=</span> <span class="n">taylor_graphs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>

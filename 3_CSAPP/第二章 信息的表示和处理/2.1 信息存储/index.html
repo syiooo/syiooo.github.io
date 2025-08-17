@@ -406,6 +406,8 @@
       
         
       
+        
+      
     
     
     
@@ -1174,7 +1176,7 @@
 
 
 
-<h1 id="21">2.1 信息存储</h1>
+<h1 id="21">2.1 信息存储<a class="headerlink" href="#21" title="Permanent link">&para;</a></h1>
 <p>大多数计算机使用 8 位的块, 或者字节 (byte), 作为最小的可寻址的内存单位, 而不是访问内存中单独的位。机器级程序将内存视为一个非常大的字节数组, 称为虚拟内存 (virtual memory)。内存的每个字节都由一个唯一的数字来标识, 称为它的地址 (address), 所有可能地址的集合就称为虚拟地址空间 (virtual address space)。顾名思义, 这个虚拟地址空间只是一个展现给机器级程序的概念性映像。实际的实现 (见第 9 章) 是将动态随机访问存储器(DRAM)、闪存、磁盘存储器、特殊硬件和操作系统软件结合起来,为程序提供一个看上去统一的字节数组。</p>
 <p>在接下来的几章中, 我们将讲述编译器和运行时系统是如何将存储器空间划分为更可管理的单元,来存放不同的程序对象 (program object),即程序数据、指令和控制信息。可以用各种机制来分配和管理程序不同部分的存储。这种管理完全是在虚拟地址空间里完成的。例如, <span class="arithmatex">\(\mathrm{C}\)</span> 语言中一个指针的值 (无论它指向一个整数、一个结构或是某个其他程序对象)都是某个存储块的第一个字节的虚拟地址。 <span class="arithmatex">\(\mathrm{C}\)</span> 编译器还把每个指针和类型信息联系起来, 这样就可以根据指针值的类型, 生成不同的机器级代码来访问存储在指针所指向位置处的值。尽管 <span class="arithmatex">\(\mathrm{C}\)</span> 编译器维护着这个类型信息,但是它生成的实际机器级程序并不包含关于数据类型的信息。每个程序对象可以简单地视为一个字节块, 而程序本身就是一个字节序列。</p>
 <!-- Meanless: 第 2 章 信息的表示和处理 25-->
@@ -1184,7 +1186,7 @@
 <p>指针是 <span class="arithmatex">\(\mathrm{C}\)</span> 语言的一个重要特性。它提供了引用数据结构(包括数组)的元素的机制。与变量类似, 指针也有两个方面: 值和类型。它的值表示某个对象的位置, 而它的类型表示那个位置上所存储对象的类型(比如整数或者浮点数)。</p>
 <p>真正理解指针需要查看它们在机器级上的表示以及实现。这将是第 3 章的重点之一,3.10.1 节将对其进行深入介绍。</p>
 </details>
-<h2 id="211">2.1.1 十六进制表示法</h2>
+<h2 id="211">2.1.1 十六进制表示法<a class="headerlink" href="#211" title="Permanent link">&para;</a></h2>
 <p>一个字节由 8 位组成。在二进制表示法中,它的值域是 <span class="arithmatex">\({00000000}_{2} \sim  {11111111}_{2}\)</span> 。如果看成十进制整数,它的值域就是 <span class="arithmatex">\({0}_{10} \sim  {255}_{10}\)</span> 。两种符号表示法对于描述位模式来说都不是非常方便。二进制表示法太冗长,而十进制表示法与位模式的互相转化很麻烦。替代的方法是, 以 16 为基数, 或者叫做十六进制 (hexadecimal) 数, 来表示位模式。十六进制 (简写为 “hex”) 使用数字‘0’ <span class="arithmatex">\(\sim\)</span> ‘9’以及字符‘A’ <span class="arithmatex">\(\sim\)</span> ‘F’来表示 16 个可能的值。图 2-2 展示了 16 个十六进制数字对应的十进制值和二进制值。用十六进制书写,一个字节的值域为 <span class="arithmatex">\({\mathrm{{OO}}}_{16} \sim  {\mathrm{{FF}}}_{16}\)</span> 。</p>
 <!-- Media -->
 
@@ -1286,7 +1288,7 @@
 <p>C. <span class="arithmatex">\(0 \times  {503} \times  {64} =\)</span></p>
 <p>D. <span class="arithmatex">\(0 \times  {50} - 0\times{50}/2 =\)</span></p>
 </details>
-<h2 id="212">2.1.2 字数据大小</h2>
+<h2 id="212">2.1.2 字数据大小<a class="headerlink" href="#212" title="Permanent link">&para;</a></h2>
 <p>每台计算机都有一个字长 (word size), 指明指针数据的标称大小 (nominal size)。因为虚拟地址是以这样的一个字来编码的, 所以字长决定的最重要的系统参数就是虚拟地址空间的最大大小。也就是说,对于一个字长为 <span class="arithmatex">\(w\)</span> 位的机器而言,虚拟地址的范围为 <span class="arithmatex">\(0 \sim  {2}^{w} - 1\)</span> , 程序最多访问 <span class="arithmatex">\({2}^{w}\)</span> 个字节。</p>
 <p>最近这些年,出现了大规模的从 32 位字长机器到 64 位字长机器的迁移。这种情况首先出现在为大型科学和数据库应用设计的高端机器上, 之后是台式机和笔记本电脑, 最近则出现在智能手机的处理器上。32 位字长限制虚拟地址空间为 4 千兆字节 (写作 4 GB), 也就是说, 刚刚超过 <span class="arithmatex">\(4 \times  {10}^{9}\)</span> 字节。扩展到 64 位字长使得虚拟地址空间为 16 EB,大约是 <span class="arithmatex">\({1.84} \times  {10}^{19}\)</span> 字节。</p>
 <p>大多数 64 位机器也可以运行为 32 位机器编译的程序, 这是一种向后兼容。因此, 举例来说,当程序 prog. <span class="arithmatex">\(\mathrm{c}\)</span> 用如下伪指令编译后</p>
@@ -1331,7 +1333,7 @@ long unsigned int</p>
 <p>程序员应该力图使他们的程序在不同的机器和编译器上可移植。可移植性的一个方面就是使程序对不同数据类型的确切大小不敏感。C 语言标准对不同数据类型的数字范围设置了下界 (这点在后面还将讲到), 但是却没有上界。因为从 1980 年左右到 2010 年左右, 32 位机器和 32 位程序是主流的组合, 许多程序的编写都假设为图 2-3 中 32 位程序的字节分配。随着 64 位机器的日益普及, 在将这些程序移植到新机器上时, 许多隐藏的对字长的依赖性就会显现出来,成为错误。比如,许多程序员假设一个声明为 int 类型的程序对象能被用来存储一个指针。这在大多数 32 位的机器上能正常工作, 但是在一台 64 位的机器上却会导致问题。</p>
 <!-- Meanless: 第 2 章 信息的表示和处理 29-->
 
-<h2 id="213">2.1.3 寻址和字节顺序</h2>
+<h2 id="213">2.1.3 寻址和字节顺序<a class="headerlink" href="#213" title="Permanent link">&para;</a></h2>
 <p>对于跨越多字节的程序对象, 我们必须建立两个规则: 这个对象的地址是什么, 以及在内存中如何排列这些字节。在几乎所有的机器上, 多字节对象都被存储为连续的字节序列,对象的地址为所使用字节中最小的地址。例如,假设一个类型为 int 的变量 <span class="arithmatex">\(\mathrm{x}\)</span> 的地址为 0 x 100 ,也就是说,地址表达式 &amp;x 的值为 0 x 100 。那么,(假设数据类型 int 为 32 位表示)x 的 4 个字节将被存储在内存的 0 x 100、0 x 101、0 x 102 和 0 x 103 位置。</p>
 <p>排列表示一个对象的字节有两个通用的规则。考虑一个 <span class="arithmatex">\(w\)</span> 位的整数,其位表示为 <span class="arithmatex">\(\left\lbrack  {x}_{w - 1}\right.\)</span> , <span class="arithmatex">\(\left. {{x}_{w - 2},\cdots ,{x}_{1},{x}_{0}}\right\rbrack\)</span> ,其中 <span class="arithmatex">\({x}_{w - 1}\)</span> 是最高有效位,而 <span class="arithmatex">\({x}_{0}\)</span> 是最低有效位。假设 <span class="arithmatex">\(w\)</span> 是 8 的倍数,这些位就能被分组成为字节,其中最高有效字节包含位 <span class="arithmatex">\(\left\lbrack  {{x}_{w - 1},{x}_{w - 2},\cdots ,{x}_{w - 8}}\right\rbrack\)</span> ,而最低有效字节包含位 <span class="arithmatex">\(\left\lbrack  {{x}_{7},{x}_{6},\cdots ,{x}_{0}}\right\rbrack\)</span> ,其他字节包含中间的位。某些机器选择在内存中按照从最低有效字节到最高有效字节的顺序存储对象,而另一些机器则按照从最高有效字节到最低有效字节的顺序存储。前一种规则——最低有效字节在最前面的方式,称为小端法(little endian)。后一种规则——最高有效字节在最前面的方式,称为大端法 (big endian)。</p>
 <p>假设变量 <span class="arithmatex">\(\mathrm{x}\)</span> 的类型为 int,位于地址 0 x 100 处,它的十六进制值为 0 x 01234567。地址范围 0 x 100~0 x 103 的字节顺序依赖于机器的类型： 大端法</p>
@@ -1367,7 +1369,7 @@ long unsigned int</p>
 <!-- Media -->
 
 <hr />
-<h1 id="include">include <stdio.h></h1>
+<h1 id="include">include <stdio.h><a class="headerlink" href="#include" title="Permanent link">&para;</a></h1>
 <p>typedef unsigned char <em>byte_pointer;
 void show_bytes(byte_pointer start, size_t len) {
     size_t i;
@@ -1485,7 +1487,7 @@ show_bytes(valp, 3); /<em> C. </em>/</p>
 <p>A. 写出这两个十六进制值的二进制表示。</p>
 <p>B. 移动这两个二进制串的相对位置, 使得它们相匹配的位数最多。有多少位相匹配呢? C. 串中的什么部分不相匹配?</p>
 </details>
-<h2 id="214">2.1.4 表示字符串</h2>
+<h2 id="214">2.1.4 表示字符串<a class="headerlink" href="#214" title="Permanent link">&para;</a></h2>
 <p>C 语言中字符串被编码为一个以 null(其值为 0 )字符结尾的字符数组。每个字符都由某个标准编码来表示,最常见的是 ASCII 字符码。因此,如果我们以参数 “12345” 和 6 (包括终止符) 来运行例程 show_bytes, 我们得到结果 313233343500。请注意,十进制数字 <span class="arithmatex">\(x\)</span> 的 ASCII 码正好是 <span class="arithmatex">\(0 \times  {3x}\)</span> ,而终止字节的十六进制表示为 <span class="arithmatex">\(0 \times  {00}\)</span> 。在使用 ASCII 码作为字符码的任何系统上都将得到相同的结果, 与字节顺序和字大小规则无关。因而, 文本数据比二进制数据具有更强的平台独立性。</p>
 <details class="question">
 <summary>练习题 2.7</summary>
@@ -1502,7 +1504,7 @@ show_bytes(valp, 3); /<em> C. </em>/</p>
 <p>基本编码, 称为 Unicode 的 “统一字符集”, 使用 32 位来表示字符。这好像要求文本串中每个字符要占用 4 个字节。不过, 可以有一些替代编码, 常见的字符只需要 1 个或 2 个字节, 而不太常用的字符需要多一些的字节数。特别地, UTF-8 表示将每个字符编码为一个字节序列, 这样标准 ASCII 字符还是使用和它们在 ASCII 中一样的单字节编码,这也就意味着所有的 ASCII 字节序列用 ASCII 码表示和用 UTF-8 表示是一样的。</p>
 <p>Java 编程语言使用 Unicode 来表示字符串。对于 C 语言也有支持 Unicode 的程序库。</p>
 </details>
-<h2 id="215">2.1.5 表示代码</h2>
+<h2 id="215">2.1.5 表示代码<a class="headerlink" href="#215" title="Permanent link">&para;</a></h2>
 <p>考虑下面的 <span class="arithmatex">\(\mathrm{C}\)</span> 函数:</p>
 <!-- Meanless: 第 2 章 信息的表示和处理 35-->
 
@@ -1521,7 +1523,7 @@ Windows 5589 e5 8b 450c 03 45 08 5d c3
 <hr />
 <p>我们发现指令编码是不同的。不同的机器类型使用不同的且不兼容的指令和编码方式。即使是完全一样的进程, 运行在不同的操作系统上也会有不同的编码规则, 因此二进制代码是不兼容的。二进制代码很少能在不同机器和操作系统组合之间移植。</p>
 <p>计算机系统的一个基本概念就是, 从机器的角度来看, 程序仅仅只是字节序列。机器没有关于原始源程序的任何信息, 除了可能有些用来帮助调试的辅助表以外。在第 3 章学习机器级编程时, 我们将更清楚地看到这一点。</p>
-<h2 id="216">2.1.6 布尔代数简介</h2>
+<h2 id="216">2.1.6 布尔代数简介<a class="headerlink" href="#216" title="Permanent link">&para;</a></h2>
 <p>二进制值是计算机编码、存储和操作信息的核心, 所以围绕数值 0 和 1 的研究已经演化出了丰富的数学知识体系。这起源于 1850 年前后乔治・布尔 (George Boole, 1815-1864) 的工作, 因此也称为布尔代数 (Boolean algebra)。布尔注意到通过将逻辑值 TRUE (真) 和 FALSE(假)编码为二进制值 1 和 0, 能够设计出一种代数, 以研究逻辑推理的基本原则。</p>
 <p>最简单的布尔代数是在二元集合 <span class="arithmatex">\(\{ 0,1\}\)</span> 基础上的定义。图 2-7 定义了这种布尔代数中的几种运算。我们用来表示这些运算的符号与 <span class="arithmatex">\(\mathrm{C}\)</span> 语言位级运算使用的符号是相匹配的, 这些将在后面讨论到。布尔运算 ~ 对应于逻辑运算 NOT,在命题逻辑中用符号 <span class="arithmatex">\(\neg\)</span> 表示。也就是说,当 <span class="arithmatex">\(P\)</span> 不是真的时候,我们就说 <span class="arithmatex">\(\neg P\)</span> 是真的,反之亦然。相应地,当 <span class="arithmatex">\(P\)</span> 等于 0 时, <span class="arithmatex">\(\sim  P\)</span> 等于 1 ,反之亦然。布尔运算 &amp;对应于逻辑运算 <span class="arithmatex">\(\mathrm{{AND}}\)</span> ,在命题逻辑中用符号 <span class="arithmatex">\(\land\)</span> 表示。当 <span class="arithmatex">\(P\)</span> 和 <span class="arithmatex">\(Q\)</span> 都为真时,我们说 <span class="arithmatex">\(P \land\)</span> <span class="arithmatex">\(Q\)</span> 为真。相应地,只有当 <span class="arithmatex">\(p = 1\)</span> 且 <span class="arithmatex">\(q = 1\)</span> 时, <span class="arithmatex">\(p\&amp; q\)</span> 才等于 1。布尔运算 | 对应于逻辑运算 OR,在命题逻辑中用符号 <span class="arithmatex">\(\vee\)</span> 表示。当 <span class="arithmatex">\(P\)</span> 或者 <span class="arithmatex">\(Q\)</span> 为真时,我们说 <span class="arithmatex">\(P \vee  Q\)</span> 成立。相应地,当 <span class="arithmatex">\(p = 1\)</span> 或者 <span class="arithmatex">\(q = 1\)</span> 时, <span class="arithmatex">\(p \mid  q\)</span> 等于 1 。布尔运算 <span class="arithmatex">\(x\)</span> 对应于逻辑运算异或,在命题逻辑中用符号 <span class="arithmatex">\(\oplus\)</span> 表示。当 <span class="arithmatex">\(P\)</span> 或者 <span class="arithmatex">\(Q\)</span> 为真但不同时为真时,我们说 <span class="arithmatex">\(P \oplus  Q\)</span> 成立。相应地,当 <span class="arithmatex">\(p = 1\)</span> 且 <span class="arithmatex">\(q = 0\)</span> , 或者 <span class="arithmatex">\(p = 0\)</span> 且 <span class="arithmatex">\(q = 1\)</span> 时, <span class="arithmatex">\(p \cdot  q\)</span> 等于 1 。</p>
 <!-- Media -->
@@ -1575,7 +1577,7 @@ Windows 5589 e5 8b 450c 03 45 08 5d c3
 <p>黄色 &amp; 蓝绿色 =</p>
 <p>红色 , 红紫色 =</p>
 </details>
-<h2 id="217-c">2.1.7 C 语言中的位级运算</h2>
+<h2 id="217-c">2.1.7 C 语言中的位级运算<a class="headerlink" href="#217-c" title="Permanent link">&para;</a></h2>
 <p><span class="arithmatex">\(\mathrm{C}\)</span> 语言的一个很有用的特性就是它支持按位布尔运算。事实上,我们在布尔运算中使用的那些符号就是 <span class="arithmatex">\(\mathrm{C}\)</span> 语言所使用的: 就是 <span class="arithmatex">\(\mathrm{{OR}}\)</span> (或), <span class="arithmatex">\(\&amp;\)</span> 就是 <span class="arithmatex">\(\mathrm{{AND}}\)</span> (与), <span class="arithmatex">\(\sim\)</span> 就是 <span class="arithmatex">\(\mathrm{{NOT}}\)</span> (取反),而 “就是 EXCLUSIVE-OR(异或)。这些运算能运用到任何 “整型” 的数据类型上, 包括图 2-3 所示内容。以下是一些对 char 数据类型表达式求值的例子：</p>
 <!-- Media -->
 
@@ -1647,7 +1649,7 @@ int bool_xor( int x, int y ) {
 }</p>
 <hr />
 </details>
-<h2 id="218-c">2.1.8 C 语言中的逻辑运算</h2>
+<h2 id="218-c">2.1.8 C 语言中的逻辑运算<a class="headerlink" href="#218-c" title="Permanent link">&para;</a></h2>
 <p>C 语言还提供了一组逻辑运算符 <span class="arithmatex">\(\parallel \text{、}\&amp; \&amp;\)</span> 和!,分别对应于命题逻辑中的 OR、AND 和 NOT 运算。逻辑运算很容易和位级运算相混淆, 但是它们的功能是完全不同的。逻辑运算认为所有非零的参数都表示 TRUE, 而参数 0 表示 FALSE。它们返回 1 或者 0 ,分别表示结果为 TRUE 或者为 FALSE。以下是一些表达式求值的示例。</p>
 <!-- Media -->
 
@@ -1670,7 +1672,7 @@ int bool_xor( int x, int y ) {
 <summary>练习题 2.15</summary>
 <p>只使用位级和逻辑运算,编写一个 <span class="arithmatex">\(\mathrm{C}\)</span> 表达式,它等价于 <span class="arithmatex">\(\mathrm{x} =  = \mathrm{y}\)</span> 。换句话说,当 <span class="arithmatex">\(\mathrm{x}\)</span> 和 <span class="arithmatex">\(\mathrm{y}\)</span> 相等时它将返回 1,否则就返回 0。</p>
 </details>
-<h2 id="219-c">2.1.9 C 语言中的移位运算</h2>
+<h2 id="219-c">2.1.9 C 语言中的移位运算<a class="headerlink" href="#219-c" title="Permanent link">&para;</a></h2>
 <p><span class="arithmatex">\(\mathrm{C}\)</span> 语言还提供了一组移位运算,向左或者向右移动位模式。对于一个位表示为 <span class="arithmatex">\(\left\lbrack  {x}_{w - 1}\right.\)</span> , <span class="arithmatex">\(\left. {{x}_{w - 2},\cdots ,{x}_{0}}\right\rbrack\)</span> 的操作数 <span class="arithmatex">\(x,\mathrm{C}\)</span> 表达式 <span class="arithmatex">\(\mathrm{x} &lt; \mathrm{k}\)</span> 会生成一个值,其位表示为 <span class="arithmatex">\(\left\lbrack  {{x}_{w - k - 1},{x}_{w - k - 2},\cdots }\right.\)</span> , <span class="arithmatex">\(\left. {{x}_{0},0,\cdots ,0}\right\rbrack\)</span> 。也就是说, <span class="arithmatex">\(\mathrm{x}\)</span> 向左移动 <span class="arithmatex">\(k\)</span> 位,丢弃最高的 <span class="arithmatex">\(k\)</span> 位,并在右端补 <span class="arithmatex">\(k\)</span> 个 0。移位量应该是一个 <span class="arithmatex">\(0 \sim  w - 1\)</span> 之间的值。移位运算是从左至右可结合的,所以 <span class="arithmatex">\(\mathrm{x} &lt; \mathrm{y} &lt;  &lt; \mathrm{k}\)</span> 等价于 <span class="arithmatex">\(\left( {x &lt;  &lt; j}\right)  &lt;  &lt; k\)</span> 。</p>
 <p>有一个相应的右移运算 <span class="arithmatex">\(\mathrm{x} &gt;  &gt; \mathrm{k}\)</span> ,但是它的行为有点微妙。一般而言,机器支持两种形式的右移: 逻辑右移和算术右移。逻辑右移在左端补 <span class="arithmatex">\(k\)</span> 个 0,得到的结果是 <span class="arithmatex">\(\lbrack 0,\cdots ,0\)</span> , <span class="arithmatex">\(\left. {{x}_{w - 1},{x}_{w - 2},\cdots ,{x}_{k}}\right\rbrack\)</span> 。算术右移是在左端补 <span class="arithmatex">\(k\)</span> 个最高有效位的值,得到的结果是 <span class="arithmatex">\(\left\lbrack  {{x}_{w - 1},\cdots }\right.\)</span> , <span class="arithmatex">\(\left. {{x}_{w - 1},{x}_{w - 1},{x}_{w - 2},\cdots ,{x}_{k}}\right\rbrack\)</span> 。这种做法看上去可能有点奇特,但是我们会发现它对有符号整数数据的运算非常有用。</p>
 <p>让我们来看一个例子,下面的表给出了对一个 8 位参数 <span class="arithmatex">\(\mathrm{x}\)</span> 的两个不同的值做不同的移位操作得到的结果:</p>

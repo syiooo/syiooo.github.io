@@ -410,6 +410,8 @@
       
         
       
+        
+      
     
     
     
@@ -1426,14 +1428,14 @@
 
   <h1>【manim】Animations 详解</h1>
 
-<h2 id="animations">Animations</h2>
+<h2 id="animations">Animations<a class="headerlink" href="#animations" title="Permanent link">&para;</a></h2>
 <p><code>Animations</code>很重要，用于操作<code>Manim</code>中的动画行为。比如下面的<code>self.play()</code>方法中，<code>Create()</code>就是<code>Animtions</code>类下的一个方法，下面来详细说说有哪些。</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Create</span><span class="p">(</span><span class="n">circle</span><span class="p">))</span>
 </span></code></pre></div>
 <!-- more -->
 
-<h3 id="animation">animation</h3>
-<h4 id="add">Add</h4>
+<h3 id="animation">animation<a class="headerlink" href="#animation" title="Permanent link">&para;</a></h3>
+<h4 id="add">Add<a class="headerlink" href="#add" title="Permanent link">&para;</a></h4>
 <p>定义：<code>manim.animation.animation.Add</code></p>
 <p>该方法会立即在场景中添加<code>Mobject</code>。</p>
 <blockquote>
@@ -1444,7 +1446,7 @@
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Succession</span><span class="p">(</span><span class="n">Add</span><span class="p">(</span><span class="n">c</span><span class="p">)),</span><span class="n">Create</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
 </span></code></pre></div></p>
 <p>该方法区别于<code>self.add()</code>，特点是放在<code>Succession()</code> 中使用。</p>
-<h3 id="composition">composition</h3>
+<h3 id="composition">composition<a class="headerlink" href="#composition" title="Permanent link">&para;</a></h3>
 <p>一次显示多个动画的工具，部分方法我感觉没什么用本文就不记录了，如有需要自行查阅官方文档。</p>
 <blockquote>
 <p>其实也看不太懂，以后研究明白再记录吧。</p>
@@ -1475,7 +1477,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="laggedstartmap">LaggedStartMap</h4>
+<h4 id="laggedstartmap">LaggedStartMap<a class="headerlink" href="#laggedstartmap" title="Permanent link">&para;</a></h4>
 <p><code>LaggedStart(xxx, xxx, lage_ratio=0.25, run_time=4)</code>，<code>lage_ratio</code>为延迟因子，<code>run_time</code>为动画时间。</p>
 <p>让动画延迟执行，需要注意 <code>LaggedStart()</code>中不能直接放入<code>Circle</code>这类<code>Mobject</code>，报错遇到了别慌。</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">manim</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
@@ -1495,7 +1497,7 @@
 </span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>         <span class="p">)</span>
 </span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>      <span class="p">)</span>
 </span></code></pre></div>
-<h4 id="succession">Succession</h4>
+<h4 id="succession">Succession<a class="headerlink" href="#succession" title="Permanent link">&para;</a></h4>
 <p>正常的<code>self.play()</code>中写入多个动画会同时执行而不分先后。为了克服这一点，使用<code>Succession()</code>可以将多个动画串在一起为一个组，每个<code>Succession</code>组内的动画串行执行。</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">SuccessionExample</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -1512,7 +1514,7 @@
 </span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>            <span class="n">dot4</span><span class="o">.</span><span class="n">animate</span><span class="o">.</span><span class="n">move_to</span><span class="p">(</span><span class="n">dot1</span><span class="p">)</span>
 </span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>        <span class="p">))</span>
 </span></code></pre></div>
-<h3 id="creation">creation</h3>
+<h3 id="creation">creation<a class="headerlink" href="#creation" title="Permanent link">&para;</a></h3>
 <p><code>creation</code>下的方法用于显示或移除动画，极其实用。</p>
 <p>官网文档地址对照表：</p>
 <table>
@@ -1581,13 +1583,13 @@
 </tr>
 </tbody>
 </table>
-<h4 id="addtextletterbyletter">AddTextLetterByLetter</h4>
+<h4 id="addtextletterbyletter">AddTextLetterByLetter<a class="headerlink" href="#addtextletterbyletter" title="Permanent link">&para;</a></h4>
 <p>方法名：<code>manim.animation.creation.AddTextLetterByLetter</code></p>
 <p>作用：逐字显示文本。</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">t</span> <span class="o">=</span> <span class="n">Text</span><span class="p">(</span><span class="s2">&quot;你好，世界&quot;</span><span class="p">)</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">AddTextLetterByLetter</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
 </span></code></pre></div>
-<h4 id="create">Create</h4>
+<h4 id="create">Create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h4>
 <p>逐步显示一个<code>VMobject</code>。</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">manim</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
@@ -1595,7 +1597,7 @@
 </span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Create</span><span class="p">(</span><span class="n">Square</span><span class="p">()))</span>
 </span></code></pre></div>
-<h4 id="drawborderthenfill">DrawBorderThenFill</h4>
+<h4 id="drawborderthenfill">DrawBorderThenFill<a class="headerlink" href="#drawborderthenfill" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>下文省略方法名，自己去官网看吧，咱也不记这个。</p>
 </blockquote>
@@ -1606,7 +1608,7 @@
 </span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">DrawBorderThenFill</span><span class="p">(</span><span class="n">Square</span><span class="p">(</span><span class="n">fill_opacity</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">fill_color</span><span class="o">=</span><span class="n">ORANGE</span><span class="p">)))</span>
 </span></code></pre></div>
-<h4 id="removetextletterbyletter">RemoveTextLetterByLetter</h4>
+<h4 id="removetextletterbyletter">RemoveTextLetterByLetter<a class="headerlink" href="#removetextletterbyletter" title="Permanent link">&para;</a></h4>
 <p>逐字移除字符。</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">manim</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
@@ -1615,7 +1617,7 @@
 </span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>      <span class="n">t</span> <span class="o">=</span> <span class="n">Text</span><span class="p">(</span><span class="s2">&quot;你好，世界&quot;</span><span class="p">)</span>
 </span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>      <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">RemoveTextLetterByLetter</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
 </span></code></pre></div>
-<h4 id="spiralin">SpiralIn</h4>
+<h4 id="spiralin">SpiralIn<a class="headerlink" href="#spiralin" title="Permanent link">&para;</a></h4>
 <p>螺旋显示对象。</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">manim</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
@@ -1628,7 +1630,7 @@
 </span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>        <span class="n">shapes</span> <span class="o">=</span> <span class="n">VGroup</span><span class="p">(</span><span class="n">pi</span><span class="p">,</span> <span class="n">circle</span><span class="p">,</span> <span class="n">square</span><span class="p">)</span>
 </span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">SpiralIn</span><span class="p">(</span><span class="n">shapes</span><span class="p">))</span>
 </span></code></pre></div>
-<h4 id="typewithcursor">TypeWithCursor</h4>
+<h4 id="typewithcursor">TypeWithCursor<a class="headerlink" href="#typewithcursor" title="Permanent link">&para;</a></h4>
 <p>带有光标的输入。</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">manim</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
@@ -1646,7 +1648,7 @@
 </span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">TypeWithCursor</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">cursor</span><span class="p">))</span>
 </span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Blink</span><span class="p">(</span><span class="n">cursor</span><span class="p">,</span> <span class="n">blinks</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
 </span></code></pre></div>
-<h4 id="uncreate">Uncreate</h4>
+<h4 id="uncreate">Uncreate<a class="headerlink" href="#uncreate" title="Permanent link">&para;</a></h4>
 <p>与<code>Create</code>相反。</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">manim</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
@@ -1654,7 +1656,7 @@
 </span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Uncreate</span><span class="p">(</span><span class="n">Square</span><span class="p">()))</span>
 </span></code></pre></div>
-<h4 id="untypewithcursor">UntypeWithCursor</h4>
+<h4 id="untypewithcursor">UntypeWithCursor<a class="headerlink" href="#untypewithcursor" title="Permanent link">&para;</a></h4>
 <p>和<code>TypeWithCursor</code>相反。</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">manim</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 </span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
@@ -1672,7 +1674,7 @@
 </span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">UntypeWithCursor</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">cursor</span><span class="p">))</span>
 </span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Blink</span><span class="p">(</span><span class="n">cursor</span><span class="p">,</span> <span class="n">blinks</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
 </span></code></pre></div>
-<h4 id="unwrite">Unwrite</h4>
+<h4 id="unwrite">Unwrite<a class="headerlink" href="#unwrite" title="Permanent link">&para;</a></h4>
 <p>与<code>Write</code>相反。</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">manim</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 </span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
@@ -1683,7 +1685,7 @@
 </span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Unwrite</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
 </span></code></pre></div>
 <p>也可以另方向相反，只需要加上参数，<code>reverse=False</code>。</p>
-<h4 id="write">Write</h4>
+<h4 id="write">Write<a class="headerlink" href="#write" title="Permanent link">&para;</a></h4>
 <p>网上很常见的方法，很多创作者都在用该方法显示文字。</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">manim</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 </span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
@@ -1694,7 +1696,7 @@
 <p>可选参数：
 - <code>reverse=True</code>
 - <code>remover=False</code></p>
-<h3 id="fading">fading</h3>
+<h3 id="fading">fading<a class="headerlink" href="#fading" title="Permanent link">&para;</a></h3>
 <p>淡入和淡出，比较常用在过渡动画。</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">manim</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 </span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
@@ -1706,7 +1708,7 @@
 </span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">ReplacementTransform</span><span class="p">(</span><span class="n">tex_in</span><span class="p">,</span> <span class="n">tex_out</span><span class="p">))</span>
 </span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">FadeOut</span><span class="p">(</span><span class="n">tex_out</span><span class="p">,</span> <span class="n">shift</span><span class="o">=</span><span class="n">DOWN</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">1.5</span><span class="p">))</span>
 </span></code></pre></div>
-<h4 id="fadein">FadeIn</h4>
+<h4 id="fadein">FadeIn<a class="headerlink" href="#fadein" title="Permanent link">&para;</a></h4>
 <p>淡入，可选参数：
 - <strong>mobjects</strong> (<a href="https://docs.manim.community/en/stable/reference/manim.mobject.mobject.Mobject.html#manim.mobject.mobject.Mobject" title="manim.mobject.mobject.Mobject"><em>Mobject</em></a>) 传入被作用动画的Mobject 对象
 - <strong>shift</strong> – 淡入时的偏移
@@ -1729,7 +1731,7 @@
 </span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a>        <span class="p">]</span>
 </span><span id="__span-15-16"><a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">AnimationGroup</span><span class="p">(</span><span class="o">*</span><span class="n">animations</span><span class="p">,</span> <span class="n">lag_ratio</span><span class="o">=</span><span class="mf">0.5</span><span class="p">))</span>
 </span></code></pre></div>
-<h4 id="fadeout">FadeOut</h4>
+<h4 id="fadeout">FadeOut<a class="headerlink" href="#fadeout" title="Permanent link">&para;</a></h4>
 <p>淡出，参数同上，这里直接贴英文版，更详尽一些。
 - <strong>mobjects</strong> (<a href="https://docs.manim.community/en/stable/reference/manim.mobject.mobject.Mobject.html#manim.mobject.mobject.Mobject" title="manim.mobject.mobject.Mobject"><em>Mobject</em></a>) – The mobjects to be faded out.
 - <strong>shift</strong> – The vector by which the mobject shifts while being faded out.
@@ -1753,7 +1755,7 @@
 </span><span id="__span-16-15"><a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a>        <span class="p">]</span>
 </span><span id="__span-16-16"><a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">AnimationGroup</span><span class="p">(</span><span class="o">*</span><span class="n">animations</span><span class="p">,</span> <span class="n">lag_ratio</span><span class="o">=</span><span class="mf">0.5</span><span class="p">))</span>
 </span></code></pre></div></p>
-<h3 id="growing">growing</h3>
+<h3 id="growing">growing<a class="headerlink" href="#growing" title="Permanent link">&para;</a></h3>
 <p>对象从点开始生长来引入场景。</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">manim</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 </span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
@@ -1822,7 +1824,7 @@
 </span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">GrowArrow</span><span class="p">(</span><span class="n">arrows</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
 </span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">GrowArrow</span><span class="p">(</span><span class="n">arrows</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">point_color</span><span class="o">=</span><span class="n">RED</span><span class="p">))</span>
 </span></code></pre></div>
-<h4 id="growfromcenter">GrowFromCenter</h4>
+<h4 id="growfromcenter">GrowFromCenter<a class="headerlink" href="#growfromcenter" title="Permanent link">&para;</a></h4>
 <p>让<code>Mobject</code>从中心开始生长。</p>
 <p>参数：
 - <strong>mobject</strong> ( <a href="https://docs.manim.community/en/stable/reference/manim.mobject.mobject.Mobject.html#manim.mobject.mobject.Mobject" title="manim.mobject.mobject.Mobject"><em>Mobject</em></a> ) – 要引入的 mobjects。
@@ -1836,7 +1838,7 @@
 </span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">GrowFromCenter</span><span class="p">(</span><span class="n">squares</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
 </span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">GrowFromCenter</span><span class="p">(</span><span class="n">squares</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">point_color</span><span class="o">=</span><span class="n">RED</span><span class="p">))</span>
 </span></code></pre></div>
-<h4 id="growfromedge">GrowFromEdge</h4>
+<h4 id="growfromedge">GrowFromEdge<a class="headerlink" href="#growfromedge" title="Permanent link">&para;</a></h4>
 <p>从边界框边缘之一开始增长引入。</p>
 <p>参数：
 - <strong>mobject</strong> ( <a href="https://docs.manim.community/en/stable/reference/manim.mobject.mobject.Mobject.html#manim.mobject.mobject.Mobject" title="manim.mobject.mobject.Mobject"><em>Mobject</em></a> ) – 要引入的 <code>mobjects</code>。
@@ -1871,7 +1873,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="growfrompoint">GrowFromPoint</h4>
+<h4 id="growfrompoint">GrowFromPoint<a class="headerlink" href="#growfrompoint" title="Permanent link">&para;</a></h4>
 <p>从点开始生长来引入。可以是外部的点。</p>
 <p>参数：
 - <strong>mobject</strong> ( <a href="https://docs.manim.community/en/stable/reference/manim.mobject.mobject.Mobject.html#manim.mobject.mobject.Mobject" title="manim.mobject.mobject.Mobject"><em>Mobject</em></a> ) – 要引入的 <code>mobjects</code>。
@@ -1891,7 +1893,7 @@
 </span><span id="__span-21-12"><a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">GrowFromPoint</span><span class="p">(</span><span class="n">squares</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">dot</span><span class="p">,</span> <span class="n">dot</span><span class="o">.</span><span class="n">get_color</span><span class="p">()))</span>
 </span></code></pre></div>
 <p>说明：<code>ORIGIN</code>是屏幕中心点，是<code>manim</code>中的原点。</p>
-<h4 id="spininfromnothing">SpinInFromNothing</h4>
+<h4 id="spininfromnothing">SpinInFromNothing<a class="headerlink" href="#spininfromnothing" title="Permanent link">&para;</a></h4>
 <p>从中心开始旋转生长。</p>
 <p>参数：
 - <strong>mobject</strong> ( <a href="https://docs.manim.community/en/stable/reference/manim.mobject.mobject.Mobject.html#manim.mobject.mobject.Mobject" title="manim.mobject.mobject.Mobject"><em>Mobject</em></a> ) – 要引入的 mobjects。
@@ -1907,7 +1909,7 @@
 </span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">SpinInFromNothing</span><span class="p">(</span><span class="n">squares</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">angle</span><span class="o">=</span><span class="mi">2</span> <span class="o">*</span> <span class="n">PI</span><span class="p">))</span>
 </span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">SpinInFromNothing</span><span class="p">(</span><span class="n">squares</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">point_color</span><span class="o">=</span><span class="n">RED</span><span class="p">))</span>
 </span></code></pre></div>
-<h3 id="indication">indication</h3>
+<h3 id="indication">indication<a class="headerlink" href="#indication" title="Permanent link">&para;</a></h3>
 <p>吸引人注意的动画。</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">manim</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 </span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>
@@ -2008,7 +2010,7 @@
 </span><span id="__span-24-16"><a id="__codelineno-24-16" name="__codelineno-24-16" href="#__codelineno-24-16"></a>            <span class="n">ripples</span><span class="o">=</span><span class="mi">4</span>
 </span><span id="__span-24-17"><a id="__codelineno-24-17" name="__codelineno-24-17" href="#__codelineno-24-17"></a>        <span class="p">))</span>
 </span></code></pre></div>
-<h4 id="blink">Blink</h4>
+<h4 id="blink">Blink<a class="headerlink" href="#blink" title="Permanent link">&para;</a></h4>
 <p>闪烁，一闪一闪什么来着...</p>
 <p>参数：
 - <strong>mobject</strong> ( <a href="https://docs.manim.community/en/stable/reference/manim.mobject.mobject.Mobject.html#manim.mobject.mobject.Mobject" title="manim.mobject.mobject.Mobject"><em>Mobject</em></a> ) – 要闪烁的 <code>mobject</code>。
@@ -2025,7 +2027,7 @@
 </span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
 </span><span id="__span-25-7"><a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Blink</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">blinks</span><span class="o">=</span><span class="mi">3</span><span class="p">))</span>
 </span></code></pre></div>
-<h4 id="circumscribe">Circumscribe</h4>
+<h4 id="circumscribe">Circumscribe<a class="headerlink" href="#circumscribe" title="Permanent link">&para;</a></h4>
 <p>在对象周围画一条临时的线。</p>
 <p>参数：
 - <strong>mobject</strong> ( <a href="https://docs.manim.community/en/stable/reference/manim.mobject.mobject.Mobject.html#manim.mobject.mobject.Mobject" title="manim.mobject.mobject.Mobject"><em>Mobject</em></a> ) – 要外接的 <code>mobject</code>。
@@ -2058,7 +2060,7 @@
 </span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a>      <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
 </span><span id="__span-27-7"><a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a>      <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Circumscribe</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">Circle</span><span class="p">))</span>
 </span></code></pre></div>
-<h4 id="flash">Flash</h4>
+<h4 id="flash">Flash<a class="headerlink" href="#flash" title="Permanent link">&para;</a></h4>
 <p>向各个方向发出线路。</p>
 <p>参数：
 - <strong>point</strong> ( <em>np.ndarray</em> <em>|</em> <a href="https://docs.manim.community/en/stable/reference/manim.mobject.mobject.Mobject.html#manim.mobject.mobject.Mobject" title="manim.mobject.mobject.Mobject"><em>Mobject</em></a> ) – 闪光线的中心。如果是，<code>Mobject</code>则使用其中心。
@@ -2095,7 +2097,7 @@
 </span><span id="__span-29-13"><a id="__codelineno-29-13" name="__codelineno-29-13" href="#__codelineno-29-13"></a>            <span class="n">rate_func</span> <span class="o">=</span> <span class="n">rush_from</span>
 </span><span id="__span-29-14"><a id="__codelineno-29-14" name="__codelineno-29-14" href="#__codelineno-29-14"></a>        <span class="p">))</span>
 </span></code></pre></div>
-<h4 id="focuson">FocusOn</h4>
+<h4 id="focuson">FocusOn<a class="headerlink" href="#focuson" title="Permanent link">&para;</a></h4>
 <p>将灯光缩小到一个位置，类似于聚光灯。</p>
 <p>参数：</p>
 <ul>
@@ -2113,7 +2115,7 @@
 </span><span id="__span-30-7"><a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">FocusOn</span><span class="p">(</span><span class="n">dot</span><span class="p">))</span>
 </span><span id="__span-30-8"><a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
 </span></code></pre></div>
-<h4 id="indicate">Indicate</h4>
+<h4 id="indicate">Indicate<a class="headerlink" href="#indicate" title="Permanent link">&para;</a></h4>
 <p>临时调整大小和重新着色来强调 <code>Mobject</code>。</p>
 <p>参数：
 - <strong>mobject</strong> ( <a href="https://docs.manim.community/en/stable/reference/manim.mobject.mobject.Mobject.html#manim.mobject.mobject.Mobject" title="manim.mobject.mobject.Mobject"><em>Mobject</em></a> ) – 要指示的 mobject。
@@ -2129,7 +2131,7 @@
 </span><span id="__span-31-6"><a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Indicate</span><span class="p">(</span><span class="n">tex</span><span class="p">))</span>
 </span><span id="__span-31-7"><a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
 </span></code></pre></div>
-<h4 id="showpassingflash">ShowPassingFlash</h4>
+<h4 id="showpassingflash">ShowPassingFlash<a class="headerlink" href="#showpassingflash" title="Permanent link">&para;</a></h4>
 <p>类似于笔触动画，每一帧只显示<code>Mobj</code> 第一部分。</p>
 <p>参数：
 - <strong>mobject</strong> ( <a href="https://docs.manim.community/en/stable/reference/manim.mobject.types.vectorized_mobject.VMobject.html#manim.mobject.types.vectorized_mobject.VMobject" title="manim.mobject.types.vectorized_mobject.VMobject"><em>VMobject</em></a> ) – 笔触具有动画效果的 <code>mobject</code>。
@@ -2150,7 +2152,7 @@
 </span><span id="__span-32-14"><a id="__codelineno-32-14" name="__codelineno-32-14" href="#__codelineno-32-14"></a>                <span class="n">time_width</span><span class="o">=</span><span class="n">time_width</span>
 </span><span id="__span-32-15"><a id="__codelineno-32-15" name="__codelineno-32-15" href="#__codelineno-32-15"></a>            <span class="p">))</span>
 </span></code></pre></div>
-<h4 id="wiggle">Wiggle</h4>
+<h4 id="wiggle">Wiggle<a class="headerlink" href="#wiggle" title="Permanent link">&para;</a></h4>
 <p>摆动<code>Mobj</code>。</p>
 <p>参数：
 - <strong>mobject</strong>（<a href="https://docs.manim.community/en/stable/reference/manim.mobject.mobject.Mobject.html#manim.mobject.mobject.Mobject" title="manim.mobject.mobject.Mobject"><em>Mobject</em></a>） – 要摆动的 <code>mobject</code>。
@@ -2168,7 +2170,7 @@
 </span><span id="__span-33-6"><a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Wiggle</span><span class="p">(</span><span class="n">tex</span><span class="p">))</span>
 </span><span id="__span-33-7"><a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
 </span></code></pre></div>
-<h3 id="movement">movement</h3>
+<h3 id="movement">movement<a class="headerlink" href="#movement" title="Permanent link">&para;</a></h3>
 <p>与运动相关的动画。</p>
 <p>目录：</p>
 <blockquote>
@@ -2204,7 +2206,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="homotopy">Homotopy</h4>
+<h4 id="homotopy">Homotopy<a class="headerlink" href="#homotopy" title="Permanent link">&para;</a></h4>
 <p><code>Latex</code>不便于粘贴，只好用<code>Google</code>翻译截图之：</p>
 <p><img alt="官方描述" src="https://ccccooh.oss-cn-hangzhou.aliyuncs.com/img/%E6%88%AA%E5%B1%8F2025-07-10%2021.17.14.png" /></p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">manim</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
@@ -2223,7 +2225,7 @@
 </span><span id="__span-34-14"><a id="__codelineno-34-14" name="__codelineno-34-14" href="#__codelineno-34-14"></a>
 </span><span id="__span-34-15"><a id="__codelineno-34-15" name="__codelineno-34-15" href="#__codelineno-34-15"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Homotopy</span><span class="p">(</span><span class="n">homotopy</span><span class="p">,</span> <span class="n">square</span><span class="p">,</span> <span class="n">rate_func</span><span class="o">=</span> <span class="n">linear</span><span class="p">,</span> <span class="n">run_time</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
 </span></code></pre></div>
-<h4 id="movealongpath">MoveAlongPath</h4>
+<h4 id="movealongpath">MoveAlongPath<a class="headerlink" href="#movealongpath" title="Permanent link">&para;</a></h4>
 <p>使一个 <code>mobject</code> 沿着另一个 <code>mobject</code> 的路径移动。</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">manim</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 </span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>
@@ -2236,7 +2238,7 @@
 </span><span id="__span-35-9"><a id="__codelineno-35-9" name="__codelineno-35-9" href="#__codelineno-35-9"></a>        <span class="n">l2</span><span class="o">.</span><span class="n">add_updater</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">become</span><span class="p">(</span><span class="n">Line</span><span class="p">(</span><span class="n">LEFT</span><span class="p">,</span> <span class="n">d1</span><span class="o">.</span><span class="n">get_center</span><span class="p">())</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="n">ORANGE</span><span class="p">)))</span>
 </span><span id="__span-35-10"><a id="__codelineno-35-10" name="__codelineno-35-10" href="#__codelineno-35-10"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">MoveAlongPath</span><span class="p">(</span><span class="n">d1</span><span class="p">,</span> <span class="n">l1</span><span class="p">),</span> <span class="n">rate_func</span><span class="o">=</span><span class="n">linear</span><span class="p">)</span>
 </span></code></pre></div>
-<h3 id="numbers">numbers</h3>
+<h3 id="numbers">numbers<a class="headerlink" href="#numbers" title="Permanent link">&para;</a></h3>
 <p>改变数字的动画。</p>
 <blockquote>
 <p>官方给出的说明较为简略，以文档为准。</p>
@@ -2257,7 +2259,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="rotation">rotation</h3>
+<h3 id="rotation">rotation<a class="headerlink" href="#rotation" title="Permanent link">&para;</a></h3>
 <p>与旋转相关的动画。</p>
 <table>
 <thead>
@@ -2302,7 +2304,7 @@
 </span><span id="__span-36-12"><a id="__codelineno-36-12" name="__codelineno-36-12" href="#__codelineno-36-12"></a>            <span class="n">Rotate</span><span class="p">(</span><span class="n">Square</span><span class="p">(</span><span class="n">side_length</span><span class="o">=</span><span class="mf">0.5</span><span class="p">),</span> <span class="n">angle</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">PI</span><span class="p">,</span> <span class="n">rate_func</span><span class="o">=</span><span class="n">linear</span><span class="p">),</span>
 </span><span id="__span-36-13"><a id="__codelineno-36-13" name="__codelineno-36-13" href="#__codelineno-36-13"></a>            <span class="p">)</span>
 </span></code></pre></div>
-<h3 id="specialized">specialized</h3>
+<h3 id="specialized">specialized<a class="headerlink" href="#specialized" title="Permanent link">&para;</a></h3>
 <p>比较特殊的方法，特殊到只有一个。</p>
 <table>
 <thead>
@@ -2318,7 +2320,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="broadcast">Broadcast</h4>
+<h4 id="broadcast">Broadcast<a class="headerlink" href="#broadcast" title="Permanent link">&para;</a></h4>
 <p>从 开始广播一个 mobject <code>initial_width</code>，直到达到 mobject 的实际大小。</p>
 <p>参数：
 - <strong>mobject</strong> – 要广播的 <code>mobject</code>。
@@ -2339,7 +2341,7 @@
 </span><span id="__span-37-5"><a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a>        <span class="n">mob</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">TEAL_A</span><span class="p">)</span>
 </span><span id="__span-37-6"><a id="__codelineno-37-6" name="__codelineno-37-6" href="#__codelineno-37-6"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Broadcast</span><span class="p">(</span><span class="n">mob</span><span class="p">))</span>
 </span></code></pre></div>
-<h3 id="speedmodifier">speedmodifier</h3>
+<h3 id="speedmodifier">speedmodifier<a class="headerlink" href="#speedmodifier" title="Permanent link">&para;</a></h3>
 <p>用于修改动画播放速度的实用程序。</p>
 <table>
 <thead>
@@ -2359,7 +2361,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="transform">transform</h3>
+<h3 id="transform">transform<a class="headerlink" href="#transform" title="Permanent link">&para;</a></h3>
 <p>动画将一个对象转换为另一个对象。</p>
 <p>请看下方超级目录：</p>
 <table>
@@ -2456,7 +2458,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="applymatrix">ApplyMatrix</h4>
+<h4 id="applymatrix">ApplyMatrix<a class="headerlink" href="#applymatrix" title="Permanent link">&para;</a></h4>
 <p>对<code>Mobject</code>应用矩阵变换。</p>
 <p>参数：
 - <strong>matrix</strong>（<em>np.ndarray</em>）– 转换矩阵。
@@ -2474,7 +2476,7 @@
 <p>由于不懂矩阵变化是啥东东，这里博主看不懂哟。
 如果有大佬明白欢迎在 Comments 指出原理。</p>
 </blockquote>
-<h4 id="applypointwisefunction">ApplyPointwiseFunction</h4>
+<h4 id="applypointwisefunction">ApplyPointwiseFunction<a class="headerlink" href="#applypointwisefunction" title="Permanent link">&para;</a></h4>
 <p>将逐点函数应用于 <code>mobject</code> 的动画。</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">manim</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 </span><span id="__span-39-2"><a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a>
@@ -2491,7 +2493,7 @@
 <blockquote>
 <p>看不懂（<del>弱</del>）。</p>
 </blockquote>
-<h4 id="clockwisetransform">ClockwiseTransform</h4>
+<h4 id="clockwisetransform">ClockwiseTransform<a class="headerlink" href="#clockwisetransform" title="Permanent link">&para;</a></h4>
 <p>沿顺时针方向的圆弧变换 <code>mobject</code> 的点。</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">manim</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 </span><span id="__span-40-2"><a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a>
@@ -2511,7 +2513,7 @@
 </span><span id="__span-40-16"><a id="__codelineno-40-16" name="__codelineno-40-16" href="#__codelineno-40-16"></a>        <span class="p">)</span>
 </span><span id="__span-40-17"><a id="__codelineno-40-17" name="__codelineno-40-17" href="#__codelineno-40-17"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
 </span></code></pre></div>
-<h4 id="counterclockwisetransform">CounterclockwiseTransform</h4>
+<h4 id="counterclockwisetransform">CounterclockwiseTransform<a class="headerlink" href="#counterclockwisetransform" title="Permanent link">&para;</a></h4>
 <p>沿逆时针方向的圆弧变换物体的点。</p>
 <blockquote>
 <p>你问我参数呢？不知道，文档没写啊～</p>
@@ -2544,7 +2546,7 @@
 </span><span id="__span-41-26"><a id="__codelineno-41-26" name="__codelineno-41-26" href="#__codelineno-41-26"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Transform</span><span class="p">(</span><span class="n">transform</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">transform</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
 </span></code></pre></div>
 <p>为什么这么长，问就是官网复制的。</p>
-<h4 id="cyclicreplace">CyclicReplace</h4>
+<h4 id="cyclicreplace">CyclicReplace<a class="headerlink" href="#cyclicreplace" title="Permanent link">&para;</a></h4>
 <p>循环移动物体的动画，看起来像是扑克牌洗牌感觉适合用于制作排序算法的动画。</p>
 <p>参数：
 - <strong>mobjects</strong> ( <a href="https://docs.manim.community/en/stable/reference/manim.mobject.mobject.Mobject.html#manim.mobject.mobject.Mobject" title="manim.mobject.mobject.Mobject"><em>Mobject</em></a> ) – 要转换的 <code>mobject</code> 列表。
@@ -2561,7 +2563,7 @@
 </span><span id="__span-42-9"><a id="__codelineno-42-9" name="__codelineno-42-9" href="#__codelineno-42-9"></a>        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
 </span><span id="__span-42-10"><a id="__codelineno-42-10" name="__codelineno-42-10" href="#__codelineno-42-10"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">CyclicReplace</span><span class="p">(</span><span class="o">*</span><span class="n">group</span><span class="p">))</span>
 </span></code></pre></div>
-<h4 id="fadetocolor">FadeToColor</h4>
+<h4 id="fadetocolor">FadeToColor<a class="headerlink" href="#fadetocolor" title="Permanent link">&para;</a></h4>
 <p>改变对象颜色的动画。</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">manim</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 </span><span id="__span-43-2"><a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a>
@@ -2569,7 +2571,7 @@
 </span><span id="__span-43-4"><a id="__codelineno-43-4" name="__codelineno-43-4" href="#__codelineno-43-4"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="__span-43-5"><a id="__codelineno-43-5" name="__codelineno-43-5" href="#__codelineno-43-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">FadeToColor</span><span class="p">(</span><span class="n">Text</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="n">RED</span><span class="p">))</span>
 </span></code></pre></div>
-<h4 id="fadetransform">FadeTransform</h4>
+<h4 id="fadetransform">FadeTransform<a class="headerlink" href="#fadetransform" title="Permanent link">&para;</a></h4>
 <p>将一个对象淡入另一个对象。</p>
 <p>参数：
 - <strong>mobject</strong> – 起始<a href="https://docs.manim.community/en/stable/reference/manim.mobject.mobject.Mobject.html#manim.mobject.mobject.Mobject" title="manim.mobject.mobject.Mobject"><code>Mobject</code></a>。
@@ -2595,7 +2597,7 @@
 </span><span id="__span-44-16"><a id="__codelineno-44-16" name="__codelineno-44-16" href="#__codelineno-44-16"></a>
 </span><span id="__span-44-17"><a id="__codelineno-44-17" name="__codelineno-44-17" href="#__codelineno-44-17"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="o">*</span><span class="p">[</span><span class="n">FadeOut</span><span class="p">(</span><span class="n">mobj</span><span class="p">)</span> <span class="k">for</span> <span class="n">mobj</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">mobjects</span><span class="p">])</span>
 </span></code></pre></div>
-<h4 id="fadetransformpieces">FadeTransformPieces</h4>
+<h4 id="fadetransformpieces">FadeTransformPieces<a class="headerlink" href="#fadetransformpieces" title="Permanent link">&para;</a></h4>
 <p>将一个对象的子对象淡入另一个对象的子对象。</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">manim</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 </span><span id="__span-45-2"><a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a>

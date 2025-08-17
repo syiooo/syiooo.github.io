@@ -406,6 +406,8 @@
       
         
       
+        
+      
     
     
     
@@ -1286,7 +1288,7 @@
 <p>在本节中, 我们将看到 IEEE 浮点格式中数字是如何表示的。我们还将探讨舍入 (rounding) 的问题, 即当一个数字不能被准确地表示为这种格式时, 就必须向上调整或者向下调整。然后, 我们将探讨加法、乘法和关系运算符的数学属性。许多程序员认为浮点数没意思, 往坏了说, 深奥难懂。我们将看到, 因为 IEEE 格式是定义在一组小而一致的原则上的, 所以它实际上是相当优雅和容易理解的。</p>
 <!-- Meanless: 76 第一部分 程序结构和执行-->
 
-<h2 id="241">2.4.1 二进制小数</h2>
+<h2 id="241">2.4.1 二进制小数<a class="headerlink" href="#241" title="Permanent link">&para;</a></h2>
 <p>理解浮点数的第一步是考虑含有小数值的二进制数字。首先, 让我们来看看更熟悉的十进制表示法。十进制表示法使用如下形式的表示：</p>
 <div class="arithmatex">\[
 {d}_{m}{d}_{m - 1}\cdots {d}_{1}{d}_{0} \cdot  {d}_{-1}{d}_{-2}\cdots {d}_{-n}
@@ -1345,7 +1347,7 @@ b = \mathop{\sum }\limits_ {{i =  - n}} ^{m}{2}^{i} \times  {b}_{i} \tag{2.19}
 <p>通过一次读取时钟得到的绝对时间中的轻微错误,通常不会影响跟踪的计算。相反, 它应该依赖于两次连续的读取之间的相对时间。问题是爱国者导弹的软件已经升级,可以使用更精确的函数来读取时间, 但不是所有的函数调用都用新的代码替换了。结果就是, 跟踪软件一次读取用的是精确的时间,而另一次读取用的是不精确的时间[103]。</p>
 <!-- Meanless: 78 第一部分 程序结构和执行-->
 </details>
-<h2 id="242-ieee">2.4.2 IEEE 浮点表示</h2>
+<h2 id="242-ieee">2.4.2 IEEE 浮点表示<a class="headerlink" href="#242-ieee" title="Permanent link">&para;</a></h2>
 <p>前一节中谈到的定点表示法不能很有效地表示非常大的数字。例如,表达式 <span class="arithmatex">\(5 \times  {2}^{100}\)</span> 是用 101 后面跟随 100 个零的位模式来表示。相反,我们希望通过给定 <span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(y\)</span> 的值,来表示形如 <span class="arithmatex">\(x \times  {2}^{y}\)</span> 的数。</p>
 <p>IEEE 浮点标准用 <span class="arithmatex">\(V = {\left( -1\right) }^{s} \times  M \times  {2}^{E}\)</span> 的形式来表示一个数:</p>
 <ul>
@@ -1401,7 +1403,7 @@ b = \mathop{\sum }\limits_ {{i =  - n}} ^{m}{2}^{i} \times  {b}_{i} \tag{2.19}
 <p>非规格化数的另外一个功能是表示那些非常接近于 0.0 的数。它们提供了一种属性, 称为逐渐溢出 (gradual underflow), 其中, 可能的数值分布均匀地接近于 0.0 。</p>
 <p>情况 3: 特殊值</p>
 <p>最后一类数值是当指阶码全为 1 的时候出现的。当小数域全为 0 时, 得到的值表示无穷,当 <span class="arithmatex">\(s = 0\)</span> 时是 <span class="arithmatex">\(+ \infty\)</span> ,或者当 <span class="arithmatex">\(s = 1\)</span> 时是 <span class="arithmatex">\(- \infty\)</span> 。当我们把两个非常大的数相乘,或者除以零时,无穷能够表示溢出的结果。当小数域为非零时,结果值被称为 “NaN”,即 “不是一个数 (Not a Number) ” 的缩写。一些运算的结果不能是实数或无穷,就会返回这样的 NaN 值, 比如当计算 <span class="arithmatex">\(\sqrt{-1}\)</span> 或 <span class="arithmatex">\(\infty  - \infty\)</span> 时。在某些应用中,表示未初始化的数据时,它们也很有用处。</p>
-<h2 id="243">2.4.3 数字示例</h2>
+<h2 id="243">2.4.3 数字示例<a class="headerlink" href="#243" title="Permanent link">&para;</a></h2>
 <p>图 2-34 展示了一组数值,它们可以用假定的 6 位格式来表示,有 <span class="arithmatex">\(k = 3\)</span> 的阶码位和 <span class="arithmatex">\(n =\)</span> 2 的尾数位。偏置量是 <span class="arithmatex">\({2}^{3 - 1} - 1 = 3\)</span> 。图中的 a 部分显示了所有可表示的值 (除了 NaN)。两个无穷值在两个末端。最大数量值的规格化数是 <span class="arithmatex">\(\pm  {14}\)</span> 。非规格化数聚集在 0 的附近。图的 b 部分中, 我们只展示了介于 -1.0 和 +1.0 之间的数值, 这样就能够看得更加清楚了。两个零是特殊的非规格化数。可以观察到, 那些可表示的数并不是均匀分布的一一越靠近原点处它们越稠密。</p>
 <!-- Meanless: 80 第一部分 程序结构和执行-->
 
@@ -1485,7 +1487,7 @@ b = \mathop{\sum }\limits_ {{i =  - n}} ^{m}{2}^{i} \times  {b}_{i} \tag{2.19}
 <p>A. 对于一种具有 <span class="arithmatex">\(n\)</span> 位小数的浮点格式,给出不能准确描述的最小正整数的公式 (因为要想准确表示它需要 <span class="arithmatex">\(n + 1\)</span> 位小数)。假设阶码字段长度 <span class="arithmatex">\(k\)</span> 足够大,可以表示的阶码范围不会限制这个问题。</p>
 <p>B. 对于单精度格式 <span class="arithmatex">\(\left( {n = {23}}\right)\)</span> ,这个整数的数字值是多少?</p>
 </details>
-<h2 id="244">2.4.4 舍入</h2>
+<h2 id="244">2.4.4 舍入<a class="headerlink" href="#244" title="Permanent link">&para;</a></h2>
 <p>因为表示方法限制了浮点数的范围和精度, 所以浮点运算只能近似地表示实数运算。因此,对于值 <span class="arithmatex">\(x\)</span> ,我们一般想用一种系统的方法,能够找到 “最接近的” 匹配值 <span class="arithmatex">\({x}^{\prime }\)</span> ,它可以用期望的浮点形式表示出来。这就是舍入 (rounding) 运算的任务。一个关键问题是在两个可能值的中间确定舍入方向。例如, 如果我有 1.50 美元, 想把它舍入到最接近的美元数, 应该是 1 美元还是 2 美元呢? 一种可选择的方法是维持实际数字的下界和上界。例如,我们可以确定可表示的值 <span class="arithmatex">\({x}^{ - }\)</span> 和 <span class="arithmatex">\({x}^{ + }\)</span> ,使得 <span class="arithmatex">\(x\)</span> 的值位于它们之间: <span class="arithmatex">\({x}^{ - } \leq  x \leq  {x}^{ + }\)</span> 。IEEE 浮点格式定义了四种不同的舍入方式。默认的方法是找到最接近的匹配, 而其他三种可用于计算上界和下界。</p>
 <p>图 2-37 举例说明了四种舍入方式, 将一个金额数舍入到最接近的整数美元数。向偶数舍入 (round-to-even), 也被称为向最接近的值舍入 (round-to-nearest), 是默认的方式, 试图找到一个最接近的匹配值。因此, 它将 1.40 美元舍入成 1 美元, 而将 1.60 美元舍入成 2 美元, 因为它们是最接近的整数美元值。唯一的设计决策是确定两个可能结果中间数值的舍入效果。向偶数舍入方式采用的方法是: 它将数字向上或者向下舍入, 使得结果的最低有效数字是偶数。因此, 这种方法将 1.5 美元和 2.5 美元都舍入成 2 美元。</p>
 <!-- Media -->
@@ -1546,7 +1548,7 @@ b = \mathop{\sum }\limits_ {{i =  - n}} ^{m}{2}^{i} \times  {b}_{i} \tag{2.19}
 <p><table><tr><td colspan="2">格式 A</td><td colspan="2">格式 B</td></tr><tr><td>位</td><td>值</td><td>位</td><td>值</td></tr><tr><td>011 0000</td><td>1</td><td>0111 000</td><td>1</td></tr><tr><td>101 1110</td><td/><td/><td/></tr><tr><td>010 1001</td><td/><td/><td/></tr><tr><td>110 1111</td><td/><td/><td/></tr><tr><td>000 0001</td><td/><td/><td/></tr></table></p>
 <!-- Media -->
 </details>
-<h2 id="245">2.4.5 浮点运算</h2>
+<h2 id="245">2.4.5 浮点运算<a class="headerlink" href="#245" title="Permanent link">&para;</a></h2>
 <p>IEEE 标准指定了一个简单的规则, 来确定诸如加法和乘法这样的算术运算的结果。把浮点值 <span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(y\)</span> 看成实数,而某个运算 <span class="arithmatex">\(\odot\)</span> 定义在实数上,计算将产生 <span class="arithmatex">\(\operatorname{Round}\left( {x \odot  y}\right)\)</span> ,这是对实际运算的精确结果进行舍入后的结果。在实际中, 浮点单元的设计者使用一些聪明的小技巧来避免执行这种精确的计算,因为计算只要精确到能够保证得到一个正确的舍入结果就可以了。当参数中有一个是特殊值 (如 <span class="arithmatex">\(- 0\text{、} - \infty\)</span> 或 <span class="arithmatex">\({NaN}\)</span> ) 时,IEEE 标准定义了一些使之更合理的规则。例如,定义 <span class="arithmatex">\(1/ - 0\)</span> 将产生 <span class="arithmatex">\(- \infty\)</span> ,而定义 <span class="arithmatex">\(1/ + 0\)</span> 会产生 <span class="arithmatex">\(+ \infty\)</span> 。</p>
 <p>IEEE 标准中指定浮点运算行为方法的一个优势在于, 它可以独立于任何具体的硬件或者软件实现。因此, 我们可以检查它的抽象数学属性, 而不必考虑它实际上是如何实现的。</p>
 <p>前面我们看到了整数 (包括无符号和补码) 加法形成了阿贝尔群。实数上的加法也形成了阿贝尔群,但是我们必须考虑舍入对这些属性的影响。我们将 <span class="arithmatex">\(x + {}^{t}y\)</span> 定义为 <span class="arithmatex">\(\operatorname{Round}\left( {x + y}\right)\)</span> 。这个运算的定义针对 <span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(y\)</span> 的所有取值,但是虽然 <span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(y\)</span> 都是实数,由于溢出,该运算可能得到无穷值。对于所有 <span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(y\)</span> 的值,这个运算是可交换的,也就是说 <span class="arithmatex">\(x{ + }^{\mathrm{f}}y = y{ + }^{\mathrm{f}}x\)</span> 。另一方面,这个运算是不可结合的。例如,使用单精度浮点,表达式 <span class="arithmatex">\(\left( {{3.14} + 1\mathrm{e}{10}} \right)  - 1\mathrm{e}{10}\)</span> 求值得到 0.0——因为舍入,值 3.14 会丢失。另一方面,表达式 3.14+(1 e 10-1 e 10) 得出值 3.14。作为阿贝尔群,大多数值在浮点加法下都有逆元,也就是说 <span class="arithmatex">\(x{ + }^{\mathrm{f}} - x = 0\)</span> 。无穷 (因为 <span class="arithmatex">\(+ \infty  - \infty  = {NaN})\)</span> 和 <span class="arithmatex">\({NaN}\)</span> 是例外情况,因为对于任何 <span class="arithmatex">\(x\)</span> ,都有 <span class="arithmatex">\({NaN}{ + }^{t}x = {NaN}\)</span> 。</p>
@@ -1577,11 +1579,11 @@ a \geq  b\text{ 且 }c \leq  0 \Rightarrow  a * {}^{\mathrm{f}}c \leq  b * {}^{\
 \]</div>
 <p>此外,我们还可以保证,只要 <span class="arithmatex">\(a \neq  {NaN}\)</span> ,就有 <span class="arithmatex">\(a * {}^{\mathrm{f}}a \geq  0\)</span> 。像我们先前所看到的,无符号或补码的乘法没有这些单调性属性。</p>
 <p>对于科学计算程序员和编译器编写者来说, 缺乏结合性和分配性是很严重的问题。即使为了在三维空间中确定两条线是否交叉而写代码这样看上去很简单的任务, 也可能成为一个很大的挑战。</p>
-<h2 id="246-c">2.4.6 C 语言中的浮点数</h2>
+<h2 id="246-c">2.4.6 C 语言中的浮点数<a class="headerlink" href="#246-c" title="Permanent link">&para;</a></h2>
 <p>所有的 C 语言版本提供了两种不同的浮点数据类型： float 和 double。在支持 IEEE 浮点格式的机器上, 这些数据类型就对应于单精度和双精度浮点。另外, 这类机器使用向偶数舍入的舍入方式。不幸的是,因为 <span class="arithmatex">\(\mathrm{C}\)</span> 语言标准不要求机器使用 IEEE 浮点,所以没有标准的方法来改变舍入方式或者得到诸如 <span class="arithmatex">\(- 0\text{、} + \infty \text{、} - \infty\)</span> 或者 <span class="arithmatex">\({NaN}\)</span> 之类的特殊值。大多数系统提供 include <span class="arithmatex">\(\left( {{}^{4}\text{.h'}} \right)\)</span> 文件和读取这些特征的过程库,但是细节随系统不同而不同。例如,当程序文件中出现下列句子时,GNU 编译器 GCC 会定义程序常数 INFINITY(表示十∞)和 NAN(表示 NaN):</p>
 <hr />
-<h1 id="define-_gnu_source-1">define _GNU_SOURCE 1</h1>
-<h1 id="include">include <math.h></h1>
+<h1 id="define-_gnu_source-1">define _GNU_SOURCE 1<a class="headerlink" href="#define-_gnu_source-1" title="Permanent link">&para;</a></h1>
+<h1 id="include">include <math.h><a class="headerlink" href="#include" title="Permanent link">&para;</a></h1>
 <hr />
 <details class="question">
 <summary>练习题 2.53</summary>
@@ -1589,7 +1591,7 @@ a \geq  b\text{ 且 }c \leq  0 \Rightarrow  a * {}^{\mathrm{f}}c \leq  b * {}^{\
 <hr />
 <div class="language-text highlight"><pre><span></span><code>#define POS_INFINITY
 </code></pre></div>
-<h1 id="define-neg_infinity">define NEG_INFINITY</h1>
+<h1 id="define-neg_infinity">define NEG_INFINITY<a class="headerlink" href="#define-neg_infinity" title="Permanent link">&para;</a></h1>
 <div class="language-text highlight"><pre><span></span><code>#define NEG_ZERO
 </code></pre></div>
 <hr />
