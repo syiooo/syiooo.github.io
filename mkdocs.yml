@@ -10,6 +10,7 @@ plugins:
 theme: 
   # 应用主题
   name: material
+  custom_dir: overrides
   # 字体
   font:
     text: Noto Serif SC # 思源宋体
