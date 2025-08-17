@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1_Math/【第九讲】一元函数积分学的计算.md",
+                "file": "index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "【第九讲】一元函数积分学的计算"
+              "title": "index"
             }
           }
         ]
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "d585b806ec645efa",
@@ -170,9 +169,9 @@
   },
   "active": "a720d58b42bf1808",
   "lastOpenFiles": [
+    "1_Math/【第九讲】一元函数积分学的计算.md",
     "1_Math/【Math】三角函数基础整理.md",
     "1_Math/【Math】必背公式和定理整理.md",
-    "1_Math/【第九讲】一元函数积分学的计算.md",
     "blog/posts/【Latex】30分钟学会LaTeX.md",
     "blog/posts/【Latex】Latex-备忘录.md",
     "01_Bible/软微圣经.md",
