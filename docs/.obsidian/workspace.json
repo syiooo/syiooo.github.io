@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "921a775b86636c97",
+        "id": "cb095a23e709d225",
         "type": "tabs",
         "children": [
           {
-            "id": "af87d4b9c32f9058",
+            "id": "a720d58b42bf1808",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "1_Math/【第九讲】一元函数积分学的计算.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "【第九讲】一元函数积分学的计算"
             }
           }
         ]
@@ -74,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "d585b806ec645efa",
@@ -163,10 +168,11 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "af87d4b9c32f9058",
+  "active": "a720d58b42bf1808",
   "lastOpenFiles": [
-    "1_Math/【Math】必背公式和定理整理.md",
     "1_Math/【Math】三角函数基础整理.md",
+    "1_Math/【Math】必背公式和定理整理.md",
+    "1_Math/【第九讲】一元函数积分学的计算.md",
     "blog/posts/【Latex】30分钟学会LaTeX.md",
     "blog/posts/【Latex】Latex-备忘录.md",
     "01_Bible/软微圣经.md",
@@ -190,7 +196,6 @@
     "3_CSAPP/第一章 计算机系统漫游/1.08 系统之间利用网络通信.md",
     "3_CSAPP/第一章 计算机系统漫游/1.09 重要主题.md",
     "3_CSAPP/第一章 计算机系统漫游/1.10 小结.md",
-    "07_CSAPP/第一章 计算机系统漫游.md",
     "3_CSAPP/第一章 计算机系统漫游",
     "3_CSAPP/第二章 信息的表示和处理",
     "stylesheets/extra.css",

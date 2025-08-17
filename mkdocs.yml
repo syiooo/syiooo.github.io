@@ -46,6 +46,8 @@ theme:
 
 # markdown扩展（代码高亮）
 markdown_extensions:
+  - toc:
+      permalink: true
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.critic

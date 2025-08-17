@@ -139,8 +139,8 @@
 7. $(\cos x)'$ = $-\sin x$
 8. $(\arcsin x)'$ = $\frac{1}{\sqrt{ 1-x^{2} }}$
 9. $(\arccos x)'$ = $- \frac{1}{\sqrt{ 1-x^{2} }}$
-10. $(\tan x)'$ = $\sec x^{2}$
-11. $(\cot x)'$ = $-\csc x^{2}$
+10. $(\tan x)'$ = $\sec ^{2} x$
+11. $(\cot x)'$ = $-\csc ^{2} x$
 12. $(\arctan x)'$ = $\frac{1}{1+x^{2}}$
 13. $(arc\cot x)'$ = $-\frac{1}{1+x^{2}}$
 14. $(\sec x)'$ = $\sec x\tan x$
