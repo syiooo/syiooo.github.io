@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "a0ae50cddeaf21b1",
+        "id": "1264bb174d7f5794",
         "type": "tabs",
         "children": [
           {
-            "id": "f3c7218c69711c58",
+            "id": "f3c46b19043ba855",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "index.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "index"
+              "title": "新标签页"
             }
           }
         ]
@@ -167,8 +163,9 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "f3c7218c69711c58",
+  "active": "f3c46b19043ba855",
   "lastOpenFiles": [
+    "index.md",
     "blog/posts/【manim】manim-写一个泰勒展开式演示动画.md",
     "blog/posts/【manim】深入浅出进阶玩法.md",
     "blog/posts/【manim】Axes-坐标系及其基类详解.md",
@@ -177,7 +174,6 @@
     "blog/posts/【Latex】30分钟学会LaTeX.md",
     "blog/posts/【认知心理学杂谈】为什么有些人学不好xx？.md",
     "blog/posts/【认知心理学】考研如何复习？谈谈我对间隔式练习的理解。.md",
-    "index.md",
     "4_Experience/index.md",
     "1_Math/【第九讲】一元函数积分学的计算.md",
     "1_Math/【Math】三角函数基础整理.md",
