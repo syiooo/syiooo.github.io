@@ -575,6 +575,24 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 换元法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 分部积分法
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -903,6 +921,24 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 换元法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 分部积分法
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1041,6 +1077,53 @@
 <li><span class="arithmatex">\(\frac{1}{1+x^{2}}dx\)</span> = <span class="arithmatex">\(d(\arctan x)\)</span></li>
 <li><span class="arithmatex">\(\frac{1}{\sqrt{ 1-x^{2} }}dx\)</span> = <span class="arithmatex">\(d(\arcsin x)\)</span></li>
 </ol>
+<h3 id="22">2.2 换元法<a class="headerlink" href="#22" title="Permanent link">&para;</a></h3>
+<ol>
+<li>三角代换<ol>
+<li><span class="arithmatex">\(\sqrt{ a^{2}-x^{2} }\to\)</span> <span class="arithmatex">\(令x=a\sin t,|t|&lt; \frac{\pi}{2}\)</span></li>
+<li><span class="arithmatex">\(\sqrt{ a^{2}+x^{2} }\to\)</span> <span class="arithmatex">\(令x=a\tan t,|t|&lt; \frac{\pi}{2}\)</span></li>
+<li><span class="arithmatex">\(\sqrt{ x^{2}-a^{2} }\to\)</span> <span class="arithmatex">\(令x=a\sec t,注意范围见P262\)</span></li>
+</ol>
+</li>
+<li>恒等变形后做三角函数代换，见 <span class="arithmatex">\(P 262\)</span></li>
+<li>根式代换（见书本）</li>
+<li>倒代换（见书本）</li>
+<li>复杂函数的直接代换（见书本）</li>
+</ol>
+<h3 id="23">2.3 分部积分法<a class="headerlink" href="#23" title="Permanent link">&para;</a></h3>
+<p>分部积分公式：<span class="arithmatex">\(\int udv\)</span> = <span class="arithmatex">\(uv-\int vdu\)</span></p>
+<p>P 283 注 2 :<strong>反对幂指三</strong> <span class="arithmatex">\(\arcsin x, \ln x, x^{2}, e^x, \sin x\)</span>.</p>
+<p>相对位置左边的宜选作 <span class="arithmatex">\(u\)</span>，相对位置右边的宜选作 <span class="arithmatex">\(v\)</span>.</p>
+<blockquote>
+<p>实际上这个相对位置顺序是和 <span class="arithmatex">\(u,v\)</span> 在 <span class="arithmatex">\(\int udv\)</span> 中的相对顺序保持一致的。</p>
+</blockquote>
+<p>例 9.5 下注：</p>
+<ol>
+<li>$$
+\int e^{ax}\sin bxdx = </li>
+</ol>
+<p>\frac{
+\left|\begin{matrix}(e^{ax})' &amp; (\sin bx)' \
+e^{ax} &amp; \sin bx\end{matrix}\right|}</p>
+<p>{a<sup 2="2">{2}+b</sup>}</p>
+<p>+C
+$$
+2. $$
+\int e^{ax}\cos bxdx = </p>
+<p>\frac{
+\left|\begin{matrix}(e^{ax})' &amp; (\cos bx)' \
+e^{ax} &amp; \cos bx \end{matrix}\right|}</p>
+<p>{a<sup 2="2">{2}+b</sup>}</p>
+<p>+C
+$$
+例如： $$
+\int e^{-x}\sin nxdx = </p>
+<p>\frac{
+\left|\begin{matrix}(e^{-x})' &amp; (\sin nx)' \
+e^{-x} &amp; \sin nx\end{matrix}\right|}</p>
+<p>{(-1)<sup 2="2">{2}+n</sup>
+= \frac{-e^{-x}\sin nx-ne^{-x}\cos nx}{(-1)}<sup 2="2">{2}+n</sup>+C
+$$}</p>
 <h2 id="_3">三、定积分的计算<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <h2 id="_4">四、变限积分的计算<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <h2 id="_5">五、反常积分的计算<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
