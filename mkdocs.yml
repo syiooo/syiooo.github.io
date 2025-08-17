@@ -3,7 +3,8 @@ site_url: https://www.sy-study.top
 plugins:
   - search
   - blog
-  - meta 
+  - meta:
+      meta_file: .meta.yml
   # - social:
   #     cards_layout_options:
   #       font_family: Noto Sans SC
