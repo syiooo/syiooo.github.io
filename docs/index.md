@@ -6,7 +6,7 @@ comments: true
 ---
 !!! info "Announcement"
 
-	- 有关 CSAPP 中文版的搬运正在赶来的路上...
+	- 有关 [CSAPP 中文版](/3_CSAPP/)的搬运正在赶来的路上...
 
 ---
 
