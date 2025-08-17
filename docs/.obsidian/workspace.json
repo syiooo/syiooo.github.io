@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1_Math/【第九讲】一元函数积分学的计算.md",
+                "file": "1_Math/【Math】三角函数基础整理.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "【第九讲】一元函数积分学的计算"
+              "title": "【Math】三角函数基础整理"
             }
           }
         ]
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "d585b806ec645efa",
@@ -167,8 +168,9 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "cd83c24e48d61d19",
+  "active": "38cdcd6a7f1bde10",
   "lastOpenFiles": [
+    "1_Math/【第九讲】一元函数积分学的计算.md",
     "1_Math/【Math】三角函数基础整理.md",
     "1_Math/【Math】必背公式和定理整理.md",
     "index.md",
@@ -181,7 +183,6 @@
     "blog/posts/【认知心理学杂谈】为什么有些人学不好xx？.md",
     "blog/posts/【认知心理学】考研如何复习？谈谈我对间隔式练习的理解。.md",
     "4_Experience/index.md",
-    "1_Math/【第九讲】一元函数积分学的计算.md",
     "01_Bible/软微圣经.md",
     "blog/index.md",
     "06_Manim/【manim】初入代码动画的王国.md",

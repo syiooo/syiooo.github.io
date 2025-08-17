@@ -91,8 +91,8 @@ $$
 
 ![](https://ccccooh.oss-cn-hangzhou.aliyuncs.com/img/202507291022761.png)
 ### 2.3 正割
-![](https://ccccooh.oss-cn-hangzhou.aliyuncs.com/img/202507291022761.png)
+![](https://ccccooh.oss-cn-hangzhou.aliyuncs.com/img/202507291022185.png)
 
 ### 3.6 余割
+![image.png](https://ccccooh.oss-cn-hangzhou.aliyuncs.com/img/202508180232226.png)
 
-![](https://ccccooh.oss-cn-hangzhou.aliyuncs.com/img/202507291022185.png)
