@@ -1,3 +1,8 @@
 {
-  "cssTheme": "Typewriter"
+  "cssTheme": "Blue Topaz",
+  "translucency": false,
+  "nativeMenus": false,
+  "accentColor": "",
+  "baseFontSizeAction": true,
+  "textFontFamily": "Noto Serif Myanmar"
 }

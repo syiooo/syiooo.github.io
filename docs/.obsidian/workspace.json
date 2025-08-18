@@ -4,36 +4,37 @@
     "type": "split",
     "children": [
       {
-        "id": "b136ca2509b3e5ff",
+        "id": "ad31cf6142984193",
         "type": "split",
         "children": [
           {
-            "id": "f72c8e7077c2eb6d",
+            "id": "e13d6435ef200869",
             "type": "tabs",
             "children": [
               {
-                "id": "ceb44237512a2ea5",
+                "id": "8c93738efc98be61",
                 "type": "leaf",
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "index.md",
+                    "file": "blog/posts/【认知心理学】考研如何复习？谈谈我对间隔式练习的理解。.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "index"
+                  "title": "【认知心理学】考研如何复习？谈谈我对间隔式练习的理解。"
                 }
               }
             ]
           },
           {
-            "id": "68f763c27c93adda",
+            "id": "d40cd9b50ed854b3",
             "type": "tabs",
             "children": [
               {
-                "id": "24e59ff5645f47fa",
+                "id": "ca513f81089a1fdd",
                 "type": "leaf",
+                "pinned": true,
                 "state": {
                   "type": "terminal:terminal",
                   "state": {
@@ -63,8 +64,9 @@
                       "serial": null
                     }
                   },
+                  "pinned": true,
                   "icon": "terminal",
-                  "title": "终端：sy@SyMacBook:~/codes/静态博客网站/syiooo.github.io"
+                  "title": "终端：sy@SyMacBook:~/codes/静态博客网站/syiooo.github.io/docs"
                 }
               }
             ]
@@ -213,13 +215,27 @@
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
-      "obsidian-shellcommands:Shell commands: Custom variables": false,
       "terminal:Open terminal": false
     }
   },
-  "active": "24e59ff5645f47fa",
+  "active": "ca513f81089a1fdd",
   "lastOpenFiles": [
+    "blog/posts/【认知心理学】考研如何复习？谈谈我对间隔式练习的理解。.md",
     "index.md",
+    "stylesheets/templates/Grid.md",
+    "stylesheets/templates/Tab 📑.md",
+    "stylesheets/templates/Primary Button 🟢.md",
+    "stylesheets/templates/Default Button 🔘.md",
+    "stylesheets/templates/??? info.md",
+    "stylesheets/templates/!!! info.md",
+    "stylesheets/templates/!!! note.md",
+    "stylesheets/templates/??? quota.md",
+    "stylesheets/templates/??? note.md",
+    "stylesheets/templates/!!! quota.md",
+    "stylesheets/templates/note📒.md",
+    "stylesheets/templates/abstract 🧠.md",
+    "stylesheets/templates",
+    "blog/index.md",
     "1_Math/【第九讲】一元函数积分学的计算.md",
     "1_Math/【Math】三角函数基础整理.md",
     "1_Math/【Math】必背公式和定理整理.md",
@@ -230,21 +246,7 @@
     "blog/posts/【Latex】Latex-备忘录.md",
     "blog/posts/【Latex】30分钟学会LaTeX.md",
     "blog/posts/【认知心理学杂谈】为什么有些人学不好xx？.md",
-    "blog/posts/【认知心理学】考研如何复习？谈谈我对间隔式练习的理解。.md",
     "4_Experience/index.md",
-    "01_Bible/软微圣经.md",
-    "blog/index.md",
-    "06_Manim/【manim】初入代码动画的王国.md",
-    "03_Math/【奇技淫巧】Root quickly.md",
-    "4_Experience/【学院战神｜浙大】三峡学院25考研11408一战上岸浙大计算机经验贴.md",
-    "3_CSAPP/第一章 计算机系统漫游/参考文献说明.md",
-    "3_CSAPP/第一章 计算机系统漫游/练习题答案.md",
-    "3_CSAPP/第一章 计算机系统漫游/index.md",
-    "3_CSAPP/第一章 计算机系统漫游/1.01 信息就是位＋上下文.md",
-    "3_CSAPP/第一章 计算机系统漫游/1.02 程序被其他程序翻译成不同的格式.md",
-    "3_CSAPP/第一章 计算机系统漫游/1.03 了解编译系统如何工作是大有益处的.md",
-    "3_CSAPP/第一章 计算机系统漫游/1.04 处理器读并解释储存在内存中的指令.md",
-    "3_CSAPP/第一章 计算机系统漫游/1.05 高速缓存至关重要.md",
     "3_CSAPP/第一章 计算机系统漫游",
     "3_CSAPP/第二章 信息的表示和处理",
     "stylesheets/extra.css",
@@ -256,7 +258,6 @@
     "CSAPP笔记",
     "Web前端/Vitepress主题功能Todo.canvas",
     "Web前端/astro主题开发",
-    "Web前端",
     "30讲/未命名.canvas",
     "Pasted image 20250728154051.png",
     "Pasted image 20250728153941.png",

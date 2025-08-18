@@ -1,5 +1,5 @@
 ---
-title: 首页	
+title: 首页
 icon: material/home
 description: 网站事项
 comments: true
