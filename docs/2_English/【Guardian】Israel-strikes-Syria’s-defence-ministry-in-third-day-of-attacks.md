@@ -35,7 +35,7 @@ It was the first time Israel had targeted Damascus since May and the third day i
 
 > *这是自从五月以来以色列首次袭击大马士革，也是以色列连续第三天对叙利亚军队组织空袭。*
 
-A spokesperson for the Israeli military said the strike on the defence ministry had been a message to the Syrian president, Ahmed al-Sharaa “regarding the events in Sweida”. The Israeli military struck Syrian tanks on Monday and has continued to conduct dozens of drone strikes on troops, killing some soldiers.
+A spokesperson for the Isxistry had been a message to the Syrian president, Ahmed al-Sharaa “regarding the events in Sweida”. The Israeli military struck Syrian tanks on Monday and has continued to conduct dozens of drone strikes on troops, killing some soldiers.
 
 > *以色列军队的话事人表示本次对国防部的袭击是关于 Sweida 事件对叙利亚总统 Ahmed al-Sharaa 的一次传信。以色列军队在周一共计了叙利亚的坦克并持续组织几十家无人机攻击叙利亚的军队，杀死了一些士兵。*
 

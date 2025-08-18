@@ -1,8 +1,11 @@
 {
-  "cssTheme": "Blue Topaz",
+  "cssTheme": "Nier",
   "translucency": false,
   "nativeMenus": false,
   "accentColor": "",
   "baseFontSizeAction": true,
-  "textFontFamily": "Noto Serif Myanmar"
+  "textFontFamily": "PT Serif",
+  "theme": "system",
+  "interfaceFontFamily": "",
+  "baseFontSize": 19
 }

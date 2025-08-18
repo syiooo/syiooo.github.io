@@ -1,1 +1,0 @@
-[Subscribe to our newsletter](#){ .md-button }

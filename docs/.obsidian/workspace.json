@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "e13d6435ef200869",
+        "id": "54edef4119d73e33",
         "type": "tabs",
         "children": [
           {
-            "id": "8c93738efc98be61",
+            "id": "a4428098146ab07e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "blog/posts/【认知心理学】考研如何复习？谈谈我对间隔式练习的理解。.md",
+                "file": "index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "【认知心理学】考研如何复习？谈谈我对间隔式练习的理解。"
+              "title": "index"
             }
           }
         ]
@@ -141,13 +141,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "blog/posts/【认知心理学】考研如何复习？谈谈我对间隔式练习的理解。.md",
+                "file": "index.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "【认知心理学】考研如何复习？谈谈我对间隔式练习的理解。 的大纲"
+              "title": "index 的大纲"
             }
           }
         ],
@@ -164,18 +164,29 @@
       "canvas:新建白板": false,
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
-      "command-palette:打开命令面板": false,
-      "terminal:Open terminal": false
+      "command-palette:打开命令面板": false
     }
   },
-  "active": "8c93738efc98be61",
+  "active": "a4428098146ab07e",
   "lastOpenFiles": [
-    "blog/posts/【认知心理学】考研如何复习？谈谈我对间隔式练习的理解。.md",
-    "index.md",
-    "stylesheets/templates/Grid.md",
-    "stylesheets/templates/Tab 📑.md",
-    "stylesheets/templates/Primary Button 🟢.md",
     "stylesheets/templates/Default Button 🔘.md",
+    "stylesheets/templates/Tab 📑.txt",
+    "stylesheets/templates/Primary Button 🟢.txt",
+    "stylesheets/templates/Grid.txt",
+    "stylesheets/templates/Default Button 🔘.txt",
+    "stylesheets/templates/Primary Button 🟢.md",
+    "stylesheets/templates/Grid.md",
+    "index.md",
+    "3_CSAPP/index.md",
+    "3_CSAPP/第一章 计算机系统漫游/1.01 信息就是位＋上下文.md",
+    "3_CSAPP/第二章 信息的表示和处理/2.2 整数表示.md",
+    "3_CSAPP/第二章 信息的表示和处理/2.1 信息存储.md",
+    "1_Math/【Math】必背公式和定理整理.md",
+    "1_Math/【第九讲】一元函数积分学的计算.md",
+    "2_English/【Guardian】Israel-strikes-Syria’s-defence-ministry-in-third-day-of-attacks.md",
+    "blog/posts/【认知心理学杂谈】为什么有些人学不好xx？.md",
+    "blog/posts/【认知心理学】考研如何复习？谈谈我对间隔式练习的理解。.md",
+    "stylesheets/templates/Tab 📑.md",
     "stylesheets/templates/??? info.md",
     "stylesheets/templates/!!! info.md",
     "stylesheets/templates/!!! note.md",
@@ -186,28 +197,15 @@
     "stylesheets/templates/abstract 🧠.md",
     "stylesheets/templates",
     "blog/index.md",
-    "1_Math/【第九讲】一元函数积分学的计算.md",
     "1_Math/【Math】三角函数基础整理.md",
-    "1_Math/【Math】必背公式和定理整理.md",
     "blog/posts/【manim】manim-写一个泰勒展开式演示动画.md",
-    "blog/posts/【manim】深入浅出进阶玩法.md",
-    "blog/posts/【manim】Axes-坐标系及其基类详解.md",
-    "blog/posts/【manim】初入代码动画的王国.md",
-    "blog/posts/【Latex】Latex-备忘录.md",
-    "blog/posts/【Latex】30分钟学会LaTeX.md",
-    "blog/posts/【认知心理学杂谈】为什么有些人学不好xx？.md",
-    "4_Experience/index.md",
     "3_CSAPP/第一章 计算机系统漫游",
     "3_CSAPP/第二章 信息的表示和处理",
     "stylesheets/extra.css",
     "stylesheets",
     "stylesheets/NotoSerifSC-Regular.ttf",
-    "extra.css",
-    "4_Experience",
     "30讲/第三讲整理.canvas",
-    "CSAPP笔记",
     "Web前端/Vitepress主题功能Todo.canvas",
-    "Web前端/astro主题开发",
     "30讲/未命名.canvas",
     "Pasted image 20250728154051.png",
     "Pasted image 20250728153941.png",
