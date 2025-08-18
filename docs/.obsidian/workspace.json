@@ -4,75 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "ad31cf6142984193",
-        "type": "split",
+        "id": "e13d6435ef200869",
+        "type": "tabs",
         "children": [
           {
-            "id": "e13d6435ef200869",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "8c93738efc98be61",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "blog/posts/【认知心理学】考研如何复习？谈谈我对间隔式练习的理解。.md",
-                    "mode": "source",
-                    "source": false
-                  },
-                  "icon": "lucide-file",
-                  "title": "【认知心理学】考研如何复习？谈谈我对间隔式练习的理解。"
-                }
-              }
-            ]
-          },
-          {
-            "id": "d40cd9b50ed854b3",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "ca513f81089a1fdd",
-                "type": "leaf",
-                "pinned": true,
-                "state": {
-                  "type": "terminal:terminal",
-                  "state": {
-                    "terminal:terminal": {
-                      "cwd": "/Users/sy/codes/静态博客网站/syiooo.github.io/docs",
-                      "focus": false,
-                      "profile": {
-                        "args": [],
-                        "executable": "/bin/zsh",
-                        "name": "",
-                        "platforms": {
-                          "darwin": true
-                        },
-                        "pythonExecutable": "python3",
-                        "restoreHistory": false,
-                        "successExitCodes": [
-                          "0",
-                          "SIGINT",
-                          "SIGTERM"
-                        ],
-                        "terminalOptions": {
-                          "documentOverride": null
-                        },
-                        "type": "integrated",
-                        "useWin32Conhost": true
-                      },
-                      "serial": null
-                    }
-                  },
-                  "pinned": true,
-                  "icon": "terminal",
-                  "title": "终端：sy@SyMacBook:~/codes/静态博客网站/syiooo.github.io/docs"
-                }
-              }
-            ]
+            "id": "8c93738efc98be61",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "blog/posts/【认知心理学】考研如何复习？谈谈我对间隔式练习的理解。.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "【认知心理学】考研如何复习？谈谈我对间隔式练习的理解。"
+            }
           }
-        ],
-        "direction": "horizontal"
+        ]
       }
     ],
     "direction": "vertical"
@@ -192,12 +141,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "blog/posts/【认知心理学】考研如何复习？谈谈我对间隔式练习的理解。.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大纲"
+              "title": "【认知心理学】考研如何复习？谈谈我对间隔式练习的理解。 的大纲"
             }
           }
         ],
@@ -218,7 +168,7 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "ca513f81089a1fdd",
+  "active": "8c93738efc98be61",
   "lastOpenFiles": [
     "blog/posts/【认知心理学】考研如何复习？谈谈我对间隔式练习的理解。.md",
     "index.md",
