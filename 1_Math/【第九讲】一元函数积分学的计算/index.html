@@ -228,6 +228,25 @@
   
   
   
+  
+    <li class="md-tabs__item">
+      <a href="../../%E6%9C%AA%E5%91%BD%E5%90%8D/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  未命名
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
     
   
   
@@ -397,6 +416,28 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%9C%AA%E5%91%BD%E5%90%8D/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    未命名
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -426,10 +467,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -442,8 +483,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             1 Math
           </label>
@@ -593,6 +634,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 有理函数的积分
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -613,6 +663,30 @@
       四、变限积分的计算
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="四、变限积分的计算">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 求导公式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 重要结论
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -939,6 +1013,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 有理函数的积分
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -959,6 +1042,30 @@
       四、变限积分的计算
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="四、变限积分的计算">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 求导公式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 重要结论
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1078,6 +1185,10 @@
 <li><span class="arithmatex">\(\frac{1}{\sqrt{ 1-x^{2} }}dx\)</span> = <span class="arithmatex">\(d(\arcsin x)\)</span></li>
 </ol>
 <h3 id="22">2.2 换元法<a class="headerlink" href="#22" title="Permanent link">&para;</a></h3>
+<p>基本思想：
+$$
+\int f(x)dx \xlongequal{x=g(u)} \int f[g(u)]d[g(u)] = \int f[g(u)]g'(u)du
+$$</p>
 <ol>
 <li>三角代换<ol>
 <li><span class="arithmatex">\(\sqrt{ a^{2}-x^{2} }\to\)</span> <span class="arithmatex">\(令x=a\sin t,|t|&lt; \frac{\pi}{2}\)</span></li>
@@ -1091,8 +1202,8 @@
 <li>复杂函数的直接代换（见书本）</li>
 </ol>
 <h3 id="23">2.3 分部积分法<a class="headerlink" href="#23" title="Permanent link">&para;</a></h3>
-<p>分部积分公式：<span class="arithmatex">\(\int udv\)</span> = <span class="arithmatex">\(uv-\int vdu\)</span></p>
-<p>P 283 注 2 :<strong>反对幂指三</strong> <span class="arithmatex">\(\arcsin x, \ln x, x^{2}, e^x, \sin x\)</span>.</p>
+<p>(1)分部积分公式：<span class="arithmatex">\(\int udv\)</span> = <span class="arithmatex">\(uv-\int vdu\)</span></p>
+<p>P 283 注 2 —— uv 的选取原则为：<strong>反对幂指三</strong> <span class="arithmatex">\(\arcsin x, \ln x, x^{2}, e^x, \sin x\)</span>.</p>
 <p>相对位置左边的宜选作 <span class="arithmatex">\(u\)</span>，相对位置右边的宜选作 <span class="arithmatex">\(v\)</span>.</p>
 <blockquote>
 <p>实际上这个相对位置顺序是和 <span class="arithmatex">\(u,v\)</span> 在 <span class="arithmatex">\(\int udv\)</span> 中的相对顺序保持一致的。</p>
@@ -1123,10 +1234,70 @@ $$
 e^{-x} &amp; \sin nx\end{matrix}\right|}</p>
 <p>{(-1)<sup 2="2">{2}+n</sup>
 = \frac{-e^{-x}\sin nx-ne^{-x}\cos nx}{(-1)}<sup 2="2">{2}+n</sup>+C
-$$}</p>
+$$
+(2)分部积分的推广公式，见书本 P 284}</p>
+<h3 id="24">2.4 有理函数的积分<a class="headerlink" href="#24" title="Permanent link">&para;</a></h3>
+<p>略，见书 P 286</p>
 <h2 id="_3">三、定积分的计算<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<ul>
+<li>区间再现公式：</li>
+</ul>
+<div class="arithmatex">\[
+\int_{a}^b f(x)dx = \int_{a}^b f(a+b-x) \, dx 
+\]</div>
+<ul>
+<li>华里士公式（点火公式🔥）</li>
+</ul>
+<p>$$</p>
+<p>🔥 = \begin{cases}
+\frac{{n-1}}{n}\cdot \frac{{n-3}}{n-2} \cdot ... \cdot \frac{2}{3} \cdot 1, n&gt;1 且为奇数, \
+\frac{{n-1}}{n}\cdot \frac{{n-3}}{n-2} \cdot ... \cdot \frac{1}{2} \cdot \frac{\pi}{2}, n&gt;1且为偶数.
+\end{cases}
+$$</p>
+<div class="arithmatex">\[
+\int_{0}^{\frac{\pi}{2}} \sin^nxdx = \int_{0}^{\frac{\pi}{2}}\cos^nxdx = 🔥
+\]</div>
+<div class="arithmatex">\[
+\int_{0}^{\pi}\sin^nxdx = 2\cdot 🔥
+\]</div>
+<p>$$
+\int_{0}<sup>{\pi}\cos</sup>nxdx = </p>
+<p>\begin{cases}
+0, n为正奇数 \
+2\cdot🔥, n为正偶数.
+\end{cases}
+$$</p>
+<div class="arithmatex">\[
+\int_{0}^{2\pi}\sin^nxdx = \int_{0}^{2\pi}\cos^nxdx = 
+\begin{cases}
+0, n为正奇数, \\
+4\cdot🔥, n为正偶数.
+\end{cases}
+\]</div>
+<p>例 9.8 结论（证明可利用区间再现构造方程，换元 <span class="arithmatex">\(u=\pi-t\)</span> ）：</p>
+<div class="arithmatex">\[
+\int_{0}^\pi xf(\sin x)dx = \frac{\pi}{2} \int_{0}^\pi f(\sin x)dx.
+\]</div>
 <h2 id="_4">四、变限积分的计算<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="41">4.1 求导公式<a class="headerlink" href="#41" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+F'(x) = \frac{d}{dx} \left[ \int_{\varphi_{1}(x)}^{\varphi_{2}(x)} f(t)dt \right]
+= f[\varphi_{2}(x)]\varphi'_{2}(x) - 
+f[\varphi_{1}(x)]\varphi'_{1}(x)
+\]</div>
+<h3 id="42">4.2 重要结论<a class="headerlink" href="#42" title="Permanent link">&para;</a></h3>
+<ol>
+<li><span class="arithmatex">\(f(x)为可积的奇函数\implies \int_{0}^xf(t)dt为偶函数.\)</span></li>
+<li><span class="arithmatex">\(f(x)为可积的偶函数\implies 只有\int_{0}^xf(t)dt为奇函数.\)</span></li>
+<li><span class="arithmatex">\(f(x)是可积的以T为周期的周期函数\implies \int_{0}^xf(t)dt是以T为周期的周期函数.\)</span></li>
+</ol>
 <h2 id="_5">五、反常积分的计算<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<ul>
+<li><span class="arithmatex">\(\Gamma函数\)</span></li>
+<li><strong>定义</strong>: <span class="arithmatex">\(\Gamma(\alpha) = \int_{0}^{\infty} x^{\alpha-1}e^{-x}dx \xlongequal{x=t^{2}} 2\int_{0}^{\infty} t^{2\alpha-1}e^{-t^{2}}dt\)</span></li>
+<li><strong>递推式</strong>：<span class="arithmatex">\(\Gamma(\alpha+1) = \alpha \Gamma(\alpha)\)</span></li>
+<li><strong>特殊值</strong>：<span class="arithmatex">\(\Gamma\left( \frac{1}{2} \right) = \sqrt{ \pi }\)</span>, <span class="arithmatex">\(\Gamma(1) = 1\)</span></li>
+</ul>
 
 
 
