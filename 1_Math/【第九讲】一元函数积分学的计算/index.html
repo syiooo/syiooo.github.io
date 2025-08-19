@@ -1144,10 +1144,10 @@
 <li><span class="arithmatex">\(\frac{1}{\sqrt{ 1-x^{2} }}dx\)</span> = <span class="arithmatex">\(d(\arcsin x)\)</span></li>
 </ol>
 <h3 id="22">2.2 换元法<a class="headerlink" href="#22" title="Permanent link">&para;</a></h3>
-<p>基本思想：
-$$
+<p>基本思想：</p>
+<div class="arithmatex">\[
 \int f(x)dx \xlongequal{x=g(u)} \int f[g(u)]d[g(u)] = \int f[g(u)]g'(u)du
-$$</p>
+\]</div>
 <ol>
 <li>三角代换<ol>
 <li><span class="arithmatex">\(\sqrt{ a^{2}-x^{2} }\to\)</span> <span class="arithmatex">\(令x=a\sin t,|t|&lt; \frac{\pi}{2}\)</span></li>
@@ -1167,76 +1167,54 @@ $$</p>
 <blockquote>
 <p>实际上这个相对位置顺序是和 <span class="arithmatex">\(u,v\)</span> 在 <span class="arithmatex">\(\int udv\)</span> 中的相对顺序保持一致的。</p>
 </blockquote>
-<p>例 9.5 下注：</p>
-<ol>
-<li>$$
-\int e^{ax}\sin bxdx = </li>
-</ol>
-<p>\frac{
-\left|\begin{matrix}(e^{ax})' &amp; (\sin bx)' \
-e^{ax} &amp; \sin bx\end{matrix}\right|}</p>
-<p>{a<sup 2="2">{2}+b</sup>}</p>
-<p>+C
-$$
-2. $$
-\int e^{ax}\cos bxdx = </p>
-<p>\frac{
-\left|\begin{matrix}(e^{ax})' &amp; (\cos bx)' \
-e^{ax} &amp; \cos bx \end{matrix}\right|}</p>
-<p>{a<sup 2="2">{2}+b</sup>}</p>
-<p>+C
-$$
-例如： $$
-\int e^{-x}\sin nxdx = </p>
-<p>\frac{
-\left|\begin{matrix}(e^{-x})' &amp; (\sin nx)' \
-e^{-x} &amp; \sin nx\end{matrix}\right|}</p>
-<p>{(-1)<sup 2="2">{2}+n</sup>
-= \frac{-e^{-x}\sin nx-ne^{-x}\cos nx}{(-1)}<sup 2="2">{2}+n</sup>+C
-$$
-(2)分部积分的推广公式，见书本 P 284}</p>
+<p>例 9.5 下注：
+1. <span class="arithmatex">\(\int e^{ax}\sin bxdx = \\\frac{\left|\begin{matrix}(e^{ax})' &amp; (\sin bx)' \\ e^{ax} &amp; \sin bx\end{matrix}\right|}{a^{2}+b^{2}}+C\)</span>
+2.  <span class="arithmatex">\(\int e^{ax}\cos bxdx = \\\frac{ \\\left|\begin{matrix}(e^{ax})' &amp; (\cos bx)' \\e^{ax} &amp; \cos bx \end{matrix}\right|}{a^{2}+b^{2}} \\+C\)</span></p>
+<p>例如： </p>
+<div class="arithmatex">\[
+\int e^{-x}\sin nxdx = \\
+\frac{
+\left|\begin{matrix}(e^{-x})' &amp; (\sin nx)' \\
+e^{-x} &amp; \sin nx\end{matrix}\right|}
+{(-1)^{2}+n^{2}} \\
+= \frac{-e^{-x}\sin nx-ne^{-x}\cos nx}{(-1)^{2}+n^{2}}+C \\
+\]</div>
+<p>(2)分部积分的推广公式，见书本 P 284</p>
 <h3 id="24">2.4 有理函数的积分<a class="headerlink" href="#24" title="Permanent link">&para;</a></h3>
 <p>略，见书 P 286</p>
 <h2 id="_3">三、定积分的计算<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<ul>
-<li>区间再现公式：</li>
-</ul>
-<div class="arithmatex">\[
+<ol>
+<li>
+<p>区间再现公式：
+$$
 \int_{a}^b f(x)dx = \int_{a}^b f(a+b-x) \, dx 
-\]</div>
-<ul>
-<li>华里士公式（点火公式🔥）</li>
-</ul>
-<p>$$</p>
-<p>🔥 = \begin{cases}
+$$</p>
+</li>
+<li>
+<p>华里士公式（点火公式🔥）
+$$
+🔥 = \begin{cases}
 \frac{{n-1}}{n}\cdot \frac{{n-3}}{n-2} \cdot ... \cdot \frac{2}{3} \cdot 1, n&gt;1 且为奇数, \
 \frac{{n-1}}{n}\cdot \frac{{n-3}}{n-2} \cdot ... \cdot \frac{1}{2} \cdot \frac{\pi}{2}, n&gt;1且为偶数.
 \end{cases}
 $$</p>
-<div class="arithmatex">\[
-\int_{0}^{\frac{\pi}{2}} \sin^nxdx = \int_{0}^{\frac{\pi}{2}}\cos^nxdx = 🔥
-\]</div>
-<div class="arithmatex">\[
-\int_{0}^{\pi}\sin^nxdx = 2\cdot 🔥
-\]</div>
-<p>$$
-\int_{0}<sup>{\pi}\cos</sup>nxdx = </p>
-<p>\begin{cases}
-0, n为正奇数 \
-2\cdot🔥, n为正偶数.
-\end{cases}
-$$</p>
-<div class="arithmatex">\[
-\int_{0}^{2\pi}\sin^nxdx = \int_{0}^{2\pi}\cos^nxdx = 
-\begin{cases}
-0, n为正奇数, \\
-4\cdot🔥, n为正偶数.
-\end{cases}
-\]</div>
-<p>例 9.8 结论（证明可利用区间再现构造方程，换元 <span class="arithmatex">\(u=\pi-t\)</span> ）：</p>
-<div class="arithmatex">\[
+</li>
+<li>
+<p>四组点火公式</p>
+<ol>
+<li><span class="arithmatex">\(\int_{0}^{\frac{\pi}{2}} \sin^nxdx = \int_{0}^{\frac{\pi}{2}}\cos^nxdx = 🔥\)</span></li>
+<li><span class="arithmatex">\(\int_{0}^{\pi}\sin^nxdx = 2\cdot 🔥\)</span></li>
+<li><span class="arithmatex">\(\int_{0}^{\pi}\cos^nxdx = \begin{cases}0, n为正奇数 \\2\cdot🔥, n为正偶数. \\ \end{cases}\)</span></li>
+<li><span class="arithmatex">\(\int_{0}^{2\pi}\sin^nxdx = \int_{0}^{2\pi}\cos^nxdx = \begin{cases} 0, n为正奇数, \\ 4\cdot🔥, n为正偶数. \\ \end{cases}\)</span></li>
+</ol>
+</li>
+<li>
+<p>例 9.8 结论（证明可利用区间再现构造方程，换元 <span class="arithmatex">\(u=\pi-t\)</span> ）：
+$$
 \int_{0}^\pi xf(\sin x)dx = \frac{\pi}{2} \int_{0}^\pi f(\sin x)dx.
-\]</div>
+$$</p>
+</li>
+</ol>
 <h2 id="_4">四、变限积分的计算<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <h3 id="41">4.1 求导公式<a class="headerlink" href="#41" title="Permanent link">&para;</a></h3>
 <div class="arithmatex">\[
