@@ -11,10 +11,14 @@
             "id": "884ede880849af19",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "1_Math/【第九讲】一元函数积分学的计算.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "【第九讲】一元函数积分学的计算"
             }
           }
         ]
@@ -74,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 247.5
+    "width": 247.5,
+    "collapsed": true
   },
   "right": {
     "id": "d585b806ec645efa",
@@ -138,12 +143,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "1_Math/【第九讲】一元函数积分学的计算.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大纲"
+              "title": "【第九讲】一元函数积分学的计算 的大纲"
             }
           }
         ],
@@ -166,14 +172,14 @@
   },
   "active": "884ede880849af19",
   "lastOpenFiles": [
+    "blog/posts/【Latex】Latex-备忘录.md",
+    "1_Math/【第九讲】一元函数积分学的计算.md",
     "4_Experience/【双非｜科软】25考研双非一战科软397 408得分135 经验贴.md",
     "未命名.base",
     "4_Experience/【保姆贴】2024考研数学数一150分经验贴(完全符合26考研).md",
     "4_Experience/【狗哥】24 二战420 上岸浙大计专.md",
     "未命名 1.base",
     "未命名.md",
-    "1_Math/【第九讲】一元函数积分学的计算.md",
-    "blog/posts/【Latex】Latex-备忘录.md",
     "index.md",
     "3_CSAPP/index.md",
     "3_CSAPP/第二章 信息的表示和处理/2.4 浮点数.md",
