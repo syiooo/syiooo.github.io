@@ -33,6 +33,7 @@ date: 2025-07-15 01:41:00
 | `$\Leftrightarrow$`            | $\Leftrightarrow$            | 左右箭头，充要符号      | `\Leftrightarrow`  |
 | `$$\xrightarrow[x<y]{x+y+z}$$` | $$\xrightarrow[x<y]{x+y+z}$$ | 带有说明的右箭头       | `\xrightarrow[]{}` |
 | `$$\xleftarrow[x<y]{x+y+z}$$`  | $$\xleftarrow[x<y]{x+y+z}$$  | 带有说明的左箭头       | `\xleftarrow[]{}`  |
+| `$\xlongequal{\text{{条件}}}$`   | $\xlongequal{\text{{条件}}}$   | 带有条件的等号        | `\xlongequal{}`    |
 | `$x^2$`                        | $x^2$                        | 上标             | `^`                |
 | `$x_1$`                        | $x_1$                        | 下标             | `_`                |
 | `$\sqrt[n]{x^2}$`              | $\sqrt[n]{x^2}$              | 根号             | `\sqrt[n]`         |

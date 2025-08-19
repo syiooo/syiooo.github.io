@@ -4,21 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "54edef4119d73e33",
+        "id": "1269cde2d64686af",
         "type": "tabs",
         "children": [
           {
-            "id": "a4428098146ab07e",
+            "id": "481dc6f2bc99c956",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "index.md",
+                "file": "1_Math/【第九讲】一元函数积分学的计算.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "【第九讲】一元函数积分学的计算"
+            }
+          },
+          {
+            "id": "06ad40cbdd25e943",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "blog/posts/【Latex】Latex-备忘录.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "【Latex】Latex-备忘录"
             }
           }
         ]
@@ -78,7 +92,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 247.5,
+    "collapsed": true
   },
   "right": {
     "id": "d585b806ec645efa",
@@ -94,6 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "1_Math/【第九讲】一元函数积分学的计算.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +119,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "反向链接"
+              "title": "【第九讲】一元函数积分学的计算 的反向链接列表"
             }
           },
           {
@@ -112,12 +128,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "数学/必背公式整理.md",
+                "file": "1_Math/【第九讲】一元函数积分学的计算.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "必背公式整理 的出链列表"
+              "title": "【第九讲】一元函数积分学的计算 的出链列表"
             }
           },
           {
@@ -136,18 +152,18 @@
             }
           },
           {
-            "id": "a1e655b0b055f07d",
+            "id": "d75b5c223a6c50a6",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "index.md",
+                "file": "1_Math/【第九讲】一元函数积分学的计算.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "index 的大纲"
+              "title": "【第九讲】一元函数积分学的计算 的大纲"
             }
           }
         ],
@@ -155,10 +171,11 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 223.5
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:创建新数据库": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
@@ -167,8 +184,16 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "a4428098146ab07e",
+  "active": "481dc6f2bc99c956",
   "lastOpenFiles": [
+    "blog/posts/【Latex】Latex-备忘录.md",
+    "1_Math/【第九讲】一元函数积分学的计算.md",
+    "未命名.md",
+    "index.md",
+    "3_CSAPP/index.md",
+    "3_CSAPP/第二章 信息的表示和处理/2.4 浮点数.md",
+    "3_CSAPP/第二章 信息的表示和处理/2.3 整数运算.md",
+    "3_CSAPP/第二章 信息的表示和处理/2.1 信息存储.md",
     "stylesheets/templates/Default Button 🔘.md",
     "stylesheets/templates/Tab 📑.txt",
     "stylesheets/templates/Primary Button 🟢.txt",
@@ -176,13 +201,9 @@
     "stylesheets/templates/Default Button 🔘.txt",
     "stylesheets/templates/Primary Button 🟢.md",
     "stylesheets/templates/Grid.md",
-    "index.md",
-    "3_CSAPP/index.md",
     "3_CSAPP/第一章 计算机系统漫游/1.01 信息就是位＋上下文.md",
     "3_CSAPP/第二章 信息的表示和处理/2.2 整数表示.md",
-    "3_CSAPP/第二章 信息的表示和处理/2.1 信息存储.md",
     "1_Math/【Math】必背公式和定理整理.md",
-    "1_Math/【第九讲】一元函数积分学的计算.md",
     "2_English/【Guardian】Israel-strikes-Syria’s-defence-ministry-in-third-day-of-attacks.md",
     "blog/posts/【认知心理学杂谈】为什么有些人学不好xx？.md",
     "blog/posts/【认知心理学】考研如何复习？谈谈我对间隔式练习的理解。.md",
@@ -196,9 +217,6 @@
     "stylesheets/templates/note📒.md",
     "stylesheets/templates/abstract 🧠.md",
     "stylesheets/templates",
-    "blog/index.md",
-    "1_Math/【Math】三角函数基础整理.md",
-    "blog/posts/【manim】manim-写一个泰勒展开式演示动画.md",
     "3_CSAPP/第一章 计算机系统漫游",
     "3_CSAPP/第二章 信息的表示和处理",
     "stylesheets/extra.css",
