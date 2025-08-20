@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2_English/方法论/【转自知乎】Excel背单词法.md",
+                "file": "2_English/方法论/【红宝书】背红宝书的经验方法，25考研人码住！.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "【转自知乎】Excel背单词法"
+              "title": "【红宝书】背红宝书的经验方法，25考研人码住！"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2_English/方法论/【转自知乎】Excel背单词法.md",
+                "file": "2_English/方法论/【红宝书】背红宝书的经验方法，25考研人码住！.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "【转自知乎】Excel背单词法 的大纲"
+              "title": "【红宝书】背红宝书的经验方法，25考研人码住！ 的大纲"
             }
           }
         ],
@@ -171,7 +171,11 @@
   },
   "active": "406ec2c2e55292c9",
   "lastOpenFiles": [
-    "2_English/方法论/【转自知乎】Excel背单词法.md",
+    "2_English/方法论/【背单词】Excel背单词法.md",
+    "2_English/方法论/【红宝书】背红宝书的经验方法，25考研人码住！.md",
+    "3_408/方法论/【408教材推荐】从王道到黑书，经验分享.md",
+    "3_408/方法论",
+    "3_408",
     "2_English/外刊",
     "2_English/方法论",
     "1_Math/【第九讲】一元函数积分学的计算.md",
@@ -183,10 +187,10 @@
     "未命名 1.base",
     "未命名.md",
     "index.md",
-    "3_CSAPP/index.md",
-    "3_CSAPP/第二章 信息的表示和处理/2.4 浮点数.md",
-    "3_CSAPP/第二章 信息的表示和处理/2.3 整数运算.md",
-    "3_CSAPP/第二章 信息的表示和处理/2.1 信息存储.md",
+    "3_408/CSAPP/index.md",
+    "3_408/CSAPP/第二章 信息的表示和处理/2.4 浮点数.md",
+    "3_408/CSAPP/第二章 信息的表示和处理/2.3 整数运算.md",
+    "3_408/CSAPP/第二章 信息的表示和处理/2.1 信息存储.md",
     "stylesheets/templates/Default Button 🔘.md",
     "stylesheets/templates/Tab 📑.txt",
     "stylesheets/templates/Primary Button 🟢.txt",
@@ -194,8 +198,8 @@
     "stylesheets/templates/Default Button 🔘.txt",
     "stylesheets/templates/Primary Button 🟢.md",
     "stylesheets/templates/Grid.md",
-    "3_CSAPP/第一章 计算机系统漫游/1.01 信息就是位＋上下文.md",
-    "3_CSAPP/第二章 信息的表示和处理/2.2 整数表示.md",
+    "3_408/CSAPP/第一章 计算机系统漫游/1.01 信息就是位＋上下文.md",
+    "3_408/CSAPP/第二章 信息的表示和处理/2.2 整数表示.md",
     "1_Math/【Math】必背公式和定理整理.md",
     "2_English/外刊/【Guardian】Israel-strikes-Syria’s-defence-ministry-in-third-day-of-attacks.md",
     "blog/posts/【认知心理学杂谈】为什么有些人学不好xx？.md",
@@ -203,10 +207,6 @@
     "stylesheets/templates/Tab 📑.md",
     "stylesheets/templates/??? info.md",
     "stylesheets/templates/!!! info.md",
-    "stylesheets/templates/!!! note.md",
-    "stylesheets/templates/??? quota.md",
-    "stylesheets/templates",
-    "3_CSAPP/第一章 计算机系统漫游",
     "30讲/第三讲整理.canvas",
     "Web前端/Vitepress主题功能Todo.canvas",
     "30讲/未命名.canvas",
