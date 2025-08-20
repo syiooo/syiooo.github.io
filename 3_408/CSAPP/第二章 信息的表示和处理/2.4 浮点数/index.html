@@ -1,0 +1,1898 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://www.sy-study.top/3_408/CSAPP/%E7%AC%AC%E4%BA%8C%E7%AB%A0%20%E4%BF%A1%E6%81%AF%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E5%A4%84%E7%90%86/2.4%20%E6%B5%AE%E7%82%B9%E6%95%B0/">
+      
+      
+        <link rel="prev" href="../2.3%20%E6%95%B4%E6%95%B0%E8%BF%90%E7%AE%97/">
+      
+      
+        <link rel="next" href="../2.5%20%E5%B0%8F%E7%BB%93/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+    
+    
+      
+        <title>2.4 浮点数 - Sy_Blog&Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:300,300i,400,400i,700,700i%7CNoto+Sans+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Serif SC";--md-code-font:"Noto Sans Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#241" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Sy_Blog&amp;Notes" class="md-header__button md-logo" aria-label="Sy_Blog&Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sy_Blog&Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2.4 浮点数
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+  
+    
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../1_Math/%E3%80%90Math%E3%80%91%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%E5%9F%BA%E7%A1%80%E6%95%B4%E7%90%86/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  1 Math
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../2_English/%E5%A4%96%E5%88%8A/%E3%80%90Guardian%E3%80%91Israel-strikes-Syria%E2%80%99s-defence-ministry-in-third-day-of-attacks/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  2 English
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  3 408
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../4_Experience/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  4 Experience
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../blog/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Sy_Blog&amp;Notes" class="md-nav__button md-logo" aria-label="Sy_Blog&Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Sy_Blog&Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+  
+  <span class="md-ellipsis">
+    首页
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../1_Math/%E3%80%90Math%E3%80%91%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%E5%9F%BA%E7%A1%80%E6%95%B4%E7%90%86/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    1 Math
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../../../2_English/%E5%A4%96%E5%88%8A/%E3%80%90Guardian%E3%80%91Israel-strikes-Syria%E2%80%99s-defence-ministry-in-third-day-of-attacks/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    2 English
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    3 408
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            3 408
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    CSAPP
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            CSAPP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../%E7%AC%AC%E4%B8%80%E7%AB%A0%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%BC%AB%E6%B8%B8/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    第一章 计算机系统漫游
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    第二章 信息的表示和处理
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_1_3" id="__nav_4_1_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_1_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            第二章 信息的表示和处理
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.1%20%E4%BF%A1%E6%81%AF%E5%AD%98%E5%82%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.1 信息存储
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.2%20%E6%95%B4%E6%95%B0%E8%A1%A8%E7%A4%BA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.2 整数表示
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.3%20%E6%95%B4%E6%95%B0%E8%BF%90%E7%AE%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.3 整数运算
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    2.4 浮点数
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.4 浮点数
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#241" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.1 二进制小数
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#242-ieee" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.2 IEEE 浮点表示
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#243" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.3 数字示例
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#244" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.4 舍入
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#245" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.5 浮点运算
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#246-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.6 C 语言中的浮点数
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#define-_gnu_source-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      define _GNU_SOURCE 1
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include" class="md-nav__link">
+    <span class="md-ellipsis">
+      include
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#define-neg_infinity" class="md-nav__link">
+    <span class="md-ellipsis">
+      define NEG_INFINITY
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.5%20%E5%B0%8F%E7%BB%93/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.5 小结
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE%E8%AF%B4%E6%98%8E/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    参考文献说明
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%AE%B6%E5%BA%AD%E4%BD%9C%E4%B8%9A/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    家庭作业
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%BB%83%E4%B9%A0%E9%A2%98%E7%AD%94%E6%A1%88/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    练习题答案
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../%E6%96%B9%E6%B3%95%E8%AE%BA/%E3%80%90408%E6%95%99%E6%9D%90%E6%8E%A8%E8%8D%90%E3%80%91%E4%BB%8E%E7%8E%8B%E9%81%93%E5%88%B0%E9%BB%91%E4%B9%A6%EF%BC%8C%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    方法论
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../4_Experience/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    4 Experience
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../../blog/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Blog
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#241" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.1 二进制小数
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#242-ieee" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.2 IEEE 浮点表示
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#243" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.3 数字示例
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#244" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.4 舍入
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#245" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.5 浮点运算
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#246-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4.6 C 语言中的浮点数
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#define-_gnu_source-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      define _GNU_SOURCE 1
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include" class="md-nav__link">
+    <span class="md-ellipsis">
+      include
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#define-neg_infinity" class="md-nav__link">
+    <span class="md-ellipsis">
+      define NEG_INFINITY
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p>浮点表示对形如 <span class="arithmatex">\(V = x \times  {2}^{y}\)</span> 的有理数进行编码。它对执行涉及非常大的数字 <span class="arithmatex">\((\left| V\right|  &gt;  &gt;\)</span> 0 )、非常接近于 <span class="arithmatex">\(0\left( {\left| V\right|  \ll  1}\right)\)</span> 的数字,以及更普遍地作为实数运算的近似值的计算,是很有用的。</p>
+<p>直到 20 世纪 80 年代,每个计算机制造商都设计了自己的表示浮点数的规则,以及对浮点数执行运算的细节。另外, 它们常常不会太多地关注运算的精确性, 而把实现的速度和简便性看得比数字精确性更重要。</p>
+<p>太约在 1985 年, 这些情况随着 IEEE 标准 754 的推出而改变了, 这是一个仔细制订的表示浮点数及其运算的标准。这项工作是从 1976 年开始由 Intel 赞助的, 与 8087 的设计同时进行, 8087 是一种为 8086 处理器提供浮点支持的芯片。他们请 William Kahan(加州大学伯克利分校的一位教授)作为顾问,帮助设计未来处理器浮点标准。他们支持 Kahan 加入一个 IEEE 资助的制订工业标准的委员会。这个委员会最终采纳的标准非常接近于 Kahan 为 Intel 设计的标准。目前, 实际上所有的计算机都支持这个后来被称为 IEEE 浮点的标准。这大大提高了科学应用程序在不同机器上的可移植性。</p>
+<details class="info">
+<summary>旁注|IEEE(电气和电子工程师协会)</summary>
+</details>
+<p>电气和电子工程师协会 (IEEE, 读做 “eye-triple-ee”) 是一个包括所有电子和计算机技术的专业团体。它出版刊物,举办会议,并且建立委员会来定义标准,内容涉及从电力传输到软件工程。另一个 IEEE 标准的例子是无线网络的 802.11 标准。</p>
+<p>在本节中, 我们将看到 IEEE 浮点格式中数字是如何表示的。我们还将探讨舍入 (rounding) 的问题, 即当一个数字不能被准确地表示为这种格式时, 就必须向上调整或者向下调整。然后, 我们将探讨加法、乘法和关系运算符的数学属性。许多程序员认为浮点数没意思, 往坏了说, 深奥难懂。我们将看到, 因为 IEEE 格式是定义在一组小而一致的原则上的, 所以它实际上是相当优雅和容易理解的。</p>
+<!-- Meanless: 76 第一部分 程序结构和执行-->
+
+<h2 id="241">2.4.1 二进制小数<a class="headerlink" href="#241" title="Permanent link">&para;</a></h2>
+<p>理解浮点数的第一步是考虑含有小数值的二进制数字。首先, 让我们来看看更熟悉的十进制表示法。十进制表示法使用如下形式的表示：</p>
+<div class="arithmatex">\[
+{d}_{m}{d}_{m - 1}\cdots {d}_{1}{d}_{0} \cdot  {d}_{-1}{d}_{-2}\cdots {d}_{-n}
+\]</div>
+<p>其中每个十进制数 <span class="arithmatex">\({d}_{i}\)</span> 的取值范围是 <span class="arithmatex">\(0 \sim  9\)</span> 。这个表达描述的数值 <span class="arithmatex">\(d\)</span> 定义如下：</p>
+<div class="arithmatex">\[
+d = \mathop{\sum }\limits_ {{i =  - n}} ^{m}{10}^{i} \times  {d}_{i}
+\]</div>
+<p>数字权的定义与十进制小数点符号(‘.’)相关, 这意味着小数点左边的数字的权是 10 的正幂, 得到整数值, 而小数点右边的数字的权是 10 的负幂, 得到小数值。例如,</p>
+<ol>
+<li><span class="arithmatex">\({34}_{10}\)</span> 表示数字 <span class="arithmatex">\(1 \times  {10}^{1} + 2 \times  {10}^{0} + 3 \times  {10}^{-1} + 4 \times  {10}^{-2} = {12}\frac{34}{100}\)</span> 。</li>
+</ol>
+<p>类似, 考虑一个形如</p>
+<div class="arithmatex">\[
+{b}_{m}{b}_{m - 1}\cdots {b}_{1}{b}_{0}.{b}_{-1}{b}_{-2}\cdots {b}_{-n - 1}{b}_{-n}
+\]</div>
+<!-- Media -->
+
+<!-- figureText: ${2}^{m}$ ${2}^{m - 1}$ 4 2 ${b}_{-2}$ ${b}_{-3}$ ... 1/2 1/4 1/8 $1/{2}^{n}$ -->
+
+<p><img src="https://cdn.noedgeai.com/bo_d2ft4sref24c73b0iki0_55.jpg?x=769&y=790&w=732&h=601&r=0"/></p>
+<p>图 2-31 小数的二进制表示。二进制点左边的数字的权形如 <span class="arithmatex">\({2}^{i}\)</span> ,而右边的数字的权形如 <span class="arithmatex">\(1/{2}^{i}\)</span></p>
+<!-- Media -->
+
+<p>的表示法, 其中每个二进制数字, 或者称为位, <span class="arithmatex">\({b}_{i}\)</span> 的取值范围是 0 和 1,如图 2-31 所示。这种表示方法表示的数 <span class="arithmatex">\(b\)</span> 定义如下:</p>
+<div class="arithmatex">\[
+b = \mathop{\sum }\limits_ {{i =  - n}} ^{m}{2}^{i} \times  {b}_{i} \tag{2.19}
+\]</div>
+<p>符号‘.’现在变为了二进制的点,点左边的位的权是 2 的正幂, 点右边的位的权是 2 的负幂。例如, <span class="arithmatex">\({101.11}_{2}\)</span> 表示数字 <span class="arithmatex">\(1 \times  {2}^{2} + 0 \times  {2}^{1} + 1 \times  {2}^{0} + 1 \times  {2}^{-1} +\)</span> <span class="arithmatex">\(1 \times  {2}^{-2} = 4 + 0 + 1 + \frac{1}{2} + \frac{1}{4} = 5\frac{3}{4}\)</span> 。</p>
+<p>从等式 (2.19) 中可以很容易地看出,二进制小数点向左移动一位相当于这个数被 2 除。例如, <span class="arithmatex">\({101.1}{1}_{2}\)</span> 表示数 <span class="arithmatex">\(5\frac{3}{4}\)</span> ,而 10. <span class="arithmatex">\({111}_{2}\)</span> 表示数 <span class="arithmatex">\(2 + 0 + \frac{1}{2} + \frac{1}{4} + \frac{1}{8} = 2\frac{7}{8}\)</span> 。类似,二进制小数点向右移动一位相当于将该数乘 2 。例如 1011. <span class="arithmatex">\({1}_{2}\)</span> 表示数 <span class="arithmatex">\(8 + 0 + 2 + 1 + \frac{1}{2} = {11}\frac{1}{2}\)</span> 。</p>
+<p>注意,形如 <span class="arithmatex">\({0.11}\cdots {1}_{2}\)</span> 的数表示的是刚好小于 1 的数。例如, <span class="arithmatex">\({0.111111}{1}_{2}\)</span> 表示 <span class="arithmatex">\(\frac{63}{64}\)</span> ,我们将用简单的表达法 <span class="arithmatex">\({1.0} - \varepsilon\)</span> 来表示这样的数值。</p>
+<p>假定我们仅考虑有限长度的编码,那么十进制表示法不能准确地表达像 <span class="arithmatex">\(\frac{1}{3}\)</span> 和 <span class="arithmatex">\(\frac{5}{7}\)</span> 这样的数。类似,小数的二进制表示法只能表示那些能够被写成 <span class="arithmatex">\(x \times  {2}^{y}\)</span> 的数。其他的值只能够被近似地表示。例如,数字 <span class="arithmatex">\(\frac{1}{5}\)</span> 可以用十进制小数 0.20 精确表示。不过,我们并不能把它准确地表示为一个二进制小数, 我们只能近似地表示它, 增加二进制表示的长度可以提高表示的精度:</p>
+<!-- Meanless: 第 2 章 信息的表示和处理 77-->
+
+<!-- Media -->
+
+<table><tr><td>表示</td><td>值</td><td>十进制</td></tr><tr><td>0.0</td><td>0</td><td>${0.0}_{10}$</td></tr><tr><td>${0.01}_{2}$</td><td>$\frac{1}{4}$</td><td>${0.25}_{10}$</td></tr><tr><td>${0.01}{0}_{2}$</td><td>$\frac{2}{8}$</td><td>0.2510</td></tr><tr><td>${0.0011}{1}_{2}$</td><td>$\frac{3}{16}$</td><td>${0.1875}_{10}$</td></tr><tr><td>${0.0011}{0}_{2}$</td><td>$\frac{6}{32}$</td><td>${0.1875}_{10}$</td></tr><tr><td>${0.001101}{}_{2}$</td><td>$\frac{13}{64}$</td><td>${0.203125}_{10}$</td></tr><tr><td>${0.001101}{0}_{2}$</td><td>$\frac{26}{128}$</td><td>${0.203125}_{10}$</td></tr><tr><td>${0.00110011}{}_{2}$</td><td>$\frac{51}{256}$</td><td>${0.19921875}_{10}$</td></tr></table>
+
+<!-- Media -->
+
+<details class="question">
+<summary>练习题 2.45 </summary>
+<p>填写下表中的缺失的信息：</p>
+<!-- Media -->
+<p><table><tr><td>小数值</td><td>二进制表示</td><td>十进制表示</td></tr><tr><td><span class="arithmatex">\(\frac{1}{8}\)</span></td><td>0.001</td><td>0.125</td></tr><tr><td><span class="arithmatex">\(\frac{3}{4}\)</span></td><td/><td/></tr><tr><td><span class="arithmatex">\(\frac{25}{16}\)</span></td><td/><td/></tr><tr><td/><td>10.1011</td><td/></tr><tr><td/><td>1.001</td><td/></tr><tr><td/><td/><td>5.875</td></tr><tr><td/><td/><td>3.1875</td></tr></table></p>
+<!-- Media -->
+</details>
+<details class="question">
+<summary>练习题 2.46</summary>
+<p>浮点运算的不精确性能够产生灾难性的后果。1991 年 2 月 25 日,在第一次海湾战争期间,沙特阿拉伯的达摩地区设置的美国爱国者导弹,拦截伊拉克的飞毛腿导弹失败。飞毛腿导弹击中了美国的一个兵营,造成 28 名士兵死亡。美国总审计局 (GAO) 对失败原因做了详细的分析 [76],并且确定底层的原因在于一个数字计算不精确。在这个练习中, 你将重现总审计局分析的一部分。</p>
+<p>爱国者导弹系统中含有一个内置的时钟,其实现类似一个计数器,每 0.1 秒就加 1。为了以秒为单位来确定时间,程序将用一个 24 位的近似于 <span class="arithmatex">\(1/{10}\)</span> 的二进制小数值来乘以这个计数器的值。特别地, <span class="arithmatex">\(1/{10}\)</span> 的二进制表达式是一个无穷序列 0.000110011 <span class="arithmatex">\(\left\lbrack  {0011}\right\rbrack  {\cdots }_{2}\)</span> ,其中,方括号里的部分是无限重复的。程序用值 <span class="arithmatex">\(x\)</span> 来近似地表示 <span class="arithmatex">\({0.1},x\)</span> 只考虑这个序列的二进制小数点右边的前 23 位： <span class="arithmatex">\(x = {0.00011001100110011001100}\)</span> 。 (参考练习题 2.51, 里面有关于如何能够更精确地近似表示 0.1 的讨论。)</p>
+<p>A. <span class="arithmatex">\({0.1} - x\)</span> 的二进制表示是什么?</p>
+<p>B. <span class="arithmatex">\({0.1} - x\)</span> 的近似的十进制值是多少?</p>
+<p>C. 当系统初始启动时, 时钟从 0 开始, 并且一直保持计数。在这个例子中, 系统已经运行了大约 100 个小时。程序计算出的时间和实际的时间之差为多少?</p>
+<p>D. 系统根据一枚来袭导弹的速率和它最后被雷达侦测到的时间,来预测它将在哪里出现。假定飞毛腿的速率大约是 2000 米每秒,对它的预测偏差了多少?</p>
+<p>通过一次读取时钟得到的绝对时间中的轻微错误,通常不会影响跟踪的计算。相反, 它应该依赖于两次连续的读取之间的相对时间。问题是爱国者导弹的软件已经升级,可以使用更精确的函数来读取时间, 但不是所有的函数调用都用新的代码替换了。结果就是, 跟踪软件一次读取用的是精确的时间,而另一次读取用的是不精确的时间[103]。</p>
+<!-- Meanless: 78 第一部分 程序结构和执行-->
+</details>
+<h2 id="242-ieee">2.4.2 IEEE 浮点表示<a class="headerlink" href="#242-ieee" title="Permanent link">&para;</a></h2>
+<p>前一节中谈到的定点表示法不能很有效地表示非常大的数字。例如,表达式 <span class="arithmatex">\(5 \times  {2}^{100}\)</span> 是用 101 后面跟随 100 个零的位模式来表示。相反,我们希望通过给定 <span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(y\)</span> 的值,来表示形如 <span class="arithmatex">\(x \times  {2}^{y}\)</span> 的数。</p>
+<p>IEEE 浮点标准用 <span class="arithmatex">\(V = {\left( -1\right) }^{s} \times  M \times  {2}^{E}\)</span> 的形式来表示一个数:</p>
+<ul>
+<li>
+<p>符号 (sign) <span class="arithmatex">\(s\)</span> 决定这数是负数 <span class="arithmatex">\(\left( {s = 1}\right)\)</span> 还是正数 <span class="arithmatex">\(\left( {s = 0}\right)\)</span> ,而对于数值 0 的符号位解释作为特殊情况处理。</p>
+</li>
+<li>
+<p>尾数 (significand) <span class="arithmatex">\(M\)</span> 是一个二进制小数,它的范围是 <span class="arithmatex">\(1 \sim  2 - \varepsilon\)</span> ,或者是 <span class="arithmatex">\(0 \sim  1 - \varepsilon\)</span> 。</p>
+</li>
+<li>
+<p>阶码 (exponent) <span class="arithmatex">\(E\)</span> 的作用是对浮点数加权,这个权重是 2 的 <span class="arithmatex">\(E\)</span> 次幂 (可能是负数)。将浮点数的位表示划分为三个字段, 分别对这些值进行编码:</p>
+</li>
+<li>
+<p>一个单独的符号位 <span class="arithmatex">\(s\)</span> 直接编码符号 <span class="arithmatex">\(s\)</span> 。</p>
+</li>
+<li>
+<p><span class="arithmatex">\(k\)</span> 位的阶码字段 <span class="arithmatex">\(\exp  = {e}_{k - 1}\cdots {e}_{1}{e}_{0}\)</span> 编码阶码 <span class="arithmatex">\(E\)</span> 。</p>
+</li>
+<li>
+<p><span class="arithmatex">\(n\)</span> 位小数字段 <span class="arithmatex">\(\operatorname{frac} = {f}_{n - 1}\cdots {f}_{1}{f}_{0}\)</span> 编码尾数 <span class="arithmatex">\(M\)</span> ,但是编码出来的值也依赖于阶码字段的值是否等于 0 。</p>
+</li>
+</ul>
+<p>图 2-32 给出了将这三个字段装进字中两种最常见的格式。在单精度浮点格式 ( <span class="arithmatex">\(\mathrm{C}\)</span> 语言中的 float) 中, <span class="arithmatex">\(\mathrm{s}\)</span> 、 <span class="arithmatex">\(\exp\)</span> 和 frac 字段分别为 1 位、 <span class="arithmatex">\(k = 8\)</span> 位和 <span class="arithmatex">\(n = {23}\)</span> 位,得到一个 32 位的表示。在双精度浮点格式 ( <span class="arithmatex">\(\mathrm{C}\)</span> 语言中的 double) 中, <span class="arithmatex">\(\mathrm{s}\)</span> 、 <span class="arithmatex">\(\exp\)</span> 和 frac 字段分别为 1 位、 <span class="arithmatex">\(k =\)</span> 11 位和 <span class="arithmatex">\(n = {52}\)</span> 位,得到一个 64 位的表示。</p>
+<!-- Media -->
+
+<!-- figureText: 单精度 0 frac 32 frac(51:32) 0 3130 23 22 exp 双精度 63 62 5251 31 frac(31:0) -->
+
+<p><img src="https://cdn.noedgeai.com/bo_d2ft4sref24c73b0iki0_57.jpg?x=298&y=1142&w=1055&h=391&r=0"/></p>
+<p>图 2-32 标准浮点格式 (浮点数由 3 个字段表示。两种最常见的格式是它们被封装到 32 位 (单精度) 和 64 位 (双精度) 的字中)</p>
+<!-- Media -->
+
+<p>给定位表示,根据 exp 的值, 被编码的值可以分成三种不同的情况 (最后一种情况有两个变种)。图 2-33 说明了对单精度格式的情况。</p>
+<!-- Media -->
+
+<!-- figureText: 1. 规格化的 $f$ 0 0 0 0 $\neq  0$ $\neq  0\&  \neq  {255}$ 2. 非规格化的 ${500} \div  {0.010} = {0.010}$ 3a. 无穷大 0 0 3b. NaN s | 1 | 1 | 1 | 1 | 1 | 1 | 1 | -->
+
+<p><img src="https://cdn.noedgeai.com/bo_d2ft4sref24c73b0iki0_57.jpg?x=296&y=1747&w=1057&h=411&r=0"/></p>
+<p>图 2-33 单精度浮点数值的分类 (阶码的值决定了这个数是规格化的、非规格化的或特殊值)</p>
+<!-- Media -->
+
+<!-- Meanless: 第 2 章 信息的表示和处理 79-->
+
+<p>情况 1: 规格化的值</p>
+<p>这是最普遍的情况。当 <span class="arithmatex">\(\exp\)</span> 的位模式既不全为 0 (数值 0 ),也不全为 1 (单精度数值为 255, 双精度数值为 2047)时, 都属于这类情况。在这种情况中, 阶码字段被解释为以偏置 (biased) 形式表示的有符号整数。也就是说,阶码的值是 <span class="arithmatex">\(E = e - {Bias}\)</span> ,其中 <span class="arithmatex">\(e\)</span> 是无符号数, 其位表示为 <span class="arithmatex">\({e}_{k - 1}\cdots {e}_{1}{e}_{0}\)</span> ,而 <span class="arithmatex">\(B{ias}\)</span> 是一个等于 <span class="arithmatex">\({2}^{k - 1} - 1\)</span> (单精度是 127,双精度是 1023) 的偏置值。由此产生指数的取值范围,对于单精度是 <span class="arithmatex">\(- {126} \sim   + {127}\)</span> ,而对于双精度是 -1022 ~ +1023。</p>
+<p>小数字段 frac 被解释为描述小数值 <span class="arithmatex">\(f\)</span> ,其中 <span class="arithmatex">\(0 \leq  f &lt; 1\)</span> ,其二进制表示为 <span class="arithmatex">\(0.{f}_{n - 1}\cdots\)</span> <span class="arithmatex">\({f}_{1}{f}_{0}\)</span> ,也就是二进制小数点在最高有效位的左边。尾数定义为 <span class="arithmatex">\(M = 1 + f\)</span> 。有时,这种方式也叫做隐含的以 1 开头的 (implied leading 1) 表示,因为我们可以把 <span class="arithmatex">\(M\)</span> 看成一个二进制表达式为 <span class="arithmatex">\(1.{f}_{n - 1}{f}_{n - 2}\cdots {f}_{0}\)</span> 的数字。既然我们总是能够调整阶码 <span class="arithmatex">\(E\)</span> ,使得尾数 <span class="arithmatex">\(M\)</span> 在范围 <span class="arithmatex">\(1 \leq\)</span> <span class="arithmatex">\(M &lt; 2\)</span> 之中 (假设没有溢出),那么这种表示方法是一种轻松获得一个额外精度位的技巧。既然第一位总是等于 1 , 那么我们就不需要显式地表示它。</p>
+<p>情况 2: 非规格化的值</p>
+<p>当阶码域为全 0 时,所表示的数是非规格化形式。在这种情况下,阶码值是 <span class="arithmatex">\(E = 1 -\)</span> Bias,而尾数的值是 <span class="arithmatex">\(M = f\)</span> ,也就是小数字段的值,不包含隐含的开头的 1 。</p>
+<details class="question">
+<summary>旁注｜对于非规格化值为什么要这样设置偏置值</summary>
+<p>使阶码值为 1-Bias 而不是简单的 -Bias 似乎是违反直觉的。我们将很快看到, 这种方式提供了一种从非规格化值平滑转换到规格化值的方法。</p>
+</details>
+<p>非规格化数有两个用途。首先, 它们提供了一种表示数值 0 的方法, 因为使用规格化数,我们必须总是使 <span class="arithmatex">\(M \geq  1\)</span> ,因此我们就不能表示 0 。实际上, <span class="arithmatex">\(+ {0.0}\)</span> 的浮点表示的位模式为全 0 ：符号位是 0 ,阶码字段全为 0 (表明是一个非规格化值),而小数域也全为 0 ,这就得到 <span class="arithmatex">\(M = f = 0\)</span> 。令人奇怪的是,当符号位为 1,而其他域全为 0 时,我们得到值 -0.0。根据 IEEE 的浮点格式, 值 +0.0 和 -0.0 在某些方面被认为是不同的, 而在其他方面是相同的。</p>
+<p>非规格化数的另外一个功能是表示那些非常接近于 0.0 的数。它们提供了一种属性, 称为逐渐溢出 (gradual underflow), 其中, 可能的数值分布均匀地接近于 0.0 。</p>
+<p>情况 3: 特殊值</p>
+<p>最后一类数值是当指阶码全为 1 的时候出现的。当小数域全为 0 时, 得到的值表示无穷,当 <span class="arithmatex">\(s = 0\)</span> 时是 <span class="arithmatex">\(+ \infty\)</span> ,或者当 <span class="arithmatex">\(s = 1\)</span> 时是 <span class="arithmatex">\(- \infty\)</span> 。当我们把两个非常大的数相乘,或者除以零时,无穷能够表示溢出的结果。当小数域为非零时,结果值被称为 “NaN”,即 “不是一个数 (Not a Number) ” 的缩写。一些运算的结果不能是实数或无穷,就会返回这样的 NaN 值, 比如当计算 <span class="arithmatex">\(\sqrt{-1}\)</span> 或 <span class="arithmatex">\(\infty  - \infty\)</span> 时。在某些应用中,表示未初始化的数据时,它们也很有用处。</p>
+<h2 id="243">2.4.3 数字示例<a class="headerlink" href="#243" title="Permanent link">&para;</a></h2>
+<p>图 2-34 展示了一组数值,它们可以用假定的 6 位格式来表示,有 <span class="arithmatex">\(k = 3\)</span> 的阶码位和 <span class="arithmatex">\(n =\)</span> 2 的尾数位。偏置量是 <span class="arithmatex">\({2}^{3 - 1} - 1 = 3\)</span> 。图中的 a 部分显示了所有可表示的值 (除了 NaN)。两个无穷值在两个末端。最大数量值的规格化数是 <span class="arithmatex">\(\pm  {14}\)</span> 。非规格化数聚集在 0 的附近。图的 b 部分中, 我们只展示了介于 -1.0 和 +1.0 之间的数值, 这样就能够看得更加清楚了。两个零是特殊的非规格化数。可以观察到, 那些可表示的数并不是均匀分布的一一越靠近原点处它们越稠密。</p>
+<!-- Meanless: 80 第一部分 程序结构和执行-->
+
+<!-- Media -->
+
+<!-- figureText: $- \infty$ -10 -5 0 $+ 5$ $+ {10}$ $+ \infty$ 规格化的 $\square$ 无穷 +0.2 +0.4 $+ {0.6}$ +0.8 +1 无穷 非规格化的 a) 完整范围 $- 0 + 0$ -1 -0.8 -0.6 -0.4 -0.2 0 非规格化的 规格化的 -->
+
+<p><img src="https://cdn.noedgeai.com/bo_d2ft4sref24c73b0iki0_59.jpg?x=260&y=210&w=1115&h=356&r=0"/></p>
+<p>图 2-34 6 位浮点格式可表示的值 <span class="arithmatex">\((k = 3\)</span> 的阶码位和 <span class="arithmatex">\(n = 2\)</span> 的尾数位。偏置量是 3)</p>
+<!-- Media -->
+
+<p>图 2-35 展示了假定的 8 位浮点格式的示例,其中有 <span class="arithmatex">\(k = 4\)</span> 的阶码位和 <span class="arithmatex">\(n = 3\)</span> 的小数位。偏置量是 <span class="arithmatex">\({2}^{4 - 1} - 1 = 7\)</span> 。图被分成了三个区域,来描述三类数字。不同的列给出了阶码字段是如何编码阶码 <span class="arithmatex">\(E\)</span> 的,小数字段是如何编码尾数 <span class="arithmatex">\(M\)</span> 的,以及它们一起是如何形成要表示的值 <span class="arithmatex">\(V = {2}^{E} \times  M\)</span> 的。从 0 自身开始,最靠近 0 的是非规格化数。这种格式的非规格化数的 <span class="arithmatex">\(E = 1 - 7 =  - 6\)</span> ,得到权 <span class="arithmatex">\({2}^{E} = \frac{1}{64}\)</span> 。小数 <span class="arithmatex">\(f\)</span> 的值的范围是 <span class="arithmatex">\(0,\frac{1}{8},\cdots ,\frac{7}{8}\)</span> ,从而得到数 <span class="arithmatex">\(V\)</span> 的范围是 <span class="arithmatex">\(0 \sim  \frac{1}{64} \times  \frac{7}{8} = \frac{7}{512}\)</span> 。</p>
+<!-- Media -->
+
+<table><tr><td rowspan="2">描述</td><td rowspan="2">位表示</td><td colspan="3">指数</td><td colspan="2">小数</td><td colspan="3">值</td></tr><tr><td>$e$</td><td>$E$</td><td>${2}^{E}$</td><td>$f$</td><td>$M$</td><td>${2}^{E} \times  M$</td><td>$V$</td><td>十进制</td></tr><tr><td rowspan="4">0 最小的非规格化数</td><td>0 0000 000</td><td>0</td><td>-6</td><td>$\frac{1}{64}$</td><td>$\frac{0}{8}$</td><td>$\frac{0}{8}$</td><td>$\frac{0}{512}$</td><td>0</td><td>0.0</td></tr><tr><td>0 0000 001</td><td>0</td><td>-6</td><td>$\frac{1}{64}$</td><td>$\frac{1}{8}$</td><td>$\frac{1}{8}$</td><td>$\frac{1}{512}$</td><td>$\frac{1}{512}$</td><td>0.001953</td></tr><tr><td>0 0000 010</td><td>0</td><td>-6</td><td>$\frac{1}{64}$</td><td>$\frac{2}{8}$</td><td>$\frac{2}{8}$</td><td>$\frac{2}{512}$</td><td>$\frac{1}{256}$</td><td>0.003906</td></tr><tr><td>0 0000 011</td><td>0</td><td>-6</td><td>$\frac{1}{64}$</td><td>$\frac{3}{8}$</td><td>$\frac{3}{8}$</td><td>$\frac{3}{512}$</td><td>$\frac{3}{512}$</td><td>0.005859</td></tr><tr><td>最大的非规格化数</td><td>$\vdots$ 0 0000 111</td><td>0</td><td>-6</td><td>$\frac{1}{64}$</td><td>$\frac{7}{8}$</td><td>$\frac{7}{8}$</td><td>$\frac{7}{512}$</td><td>$\frac{7}{512}$</td><td>0.013672</td></tr><tr><td rowspan="4">最小的规格化数</td><td>0 0001 000</td><td>1</td><td>-6</td><td>$\frac{1}{64}$</td><td>$\frac{0}{8}$</td><td>$\frac{8}{8}$</td><td>$\frac{8}{512}\frac{9}{512}$</td><td>$\frac{1}{64}$</td><td>0.015625</td></tr><tr><td>0 0001 001 $\vdots$</td><td>1</td><td>-6</td><td>$\frac{1}{64}$</td><td>$\frac{1}{8}$</td><td>$\frac{9}{8}$</td><td/><td>$\frac{9}{512}$</td><td>0.017578</td></tr><tr><td>0 0110 110</td><td>6</td><td>-1</td><td>$\frac{1}{2}$</td><td>$\frac{6}{8}$</td><td>$\frac{14}{8}$</td><td>$\frac{14}{16}$</td><td>$\frac{7}{8}$</td><td>0.875</td></tr><tr><td>0 0110 111</td><td>6</td><td>-1</td><td>$\frac{1}{2}$</td><td>$\frac{7}{8}$</td><td>$\frac{15}{8}$</td><td>$\frac{15}{16}$</td><td>$\frac{15}{16}$</td><td>0.9375</td></tr><tr><td rowspan="4">1</td><td>0 0111 000</td><td>7</td><td>0</td><td>1</td><td>$\frac{0}{8}$</td><td>$\frac{8}{8}$</td><td>$\frac{8}{8}$</td><td>1</td><td>1.0</td></tr><tr><td>0 0111 001</td><td>7</td><td>0</td><td>1</td><td>$\frac{1}{8}$</td><td>$\frac{9}{8}$</td><td>$\frac{9}{8}$</td><td>$\frac{9}{8}$</td><td>1.125</td></tr><tr><td>0 0111 010</td><td>7</td><td>0</td><td>1</td><td>$\frac{2}{8}$</td><td>$\frac{10}{8}$</td><td>$\frac{10}{8}$</td><td>$\frac{5}{4}$</td><td>1.25</td></tr><tr><td>$\vdots$ 0 1110 110</td><td>14</td><td>7</td><td>128</td><td>$\frac{6}{8}$</td><td>$\frac{14}{8}$</td><td>$\frac{1792}{8}$</td><td>224</td><td>224.0</td></tr><tr><td>最大的规格化数</td><td>01110 111</td><td>14</td><td>7</td><td>128</td><td>$\frac{7}{8}$</td><td>$\frac{15}{8}$</td><td>$\frac{1920}{8}$</td><td>240</td><td>240.0</td></tr><tr><td>无穷大</td><td>01111000</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>$\infty$</td><td>-</td></tr></table>
+
+<p>图 2-358 位浮点格式的非负值示例 <span class="arithmatex">\((k = 4\)</span> 的阶码位的和 <span class="arithmatex">\(n = 3\)</span> 的小数位。偏置量是 7)</p>
+<!-- Media -->
+
+<p>这种形式的最小规格化数同样有 <span class="arithmatex">\(E = 1 - 7 =  - 6\)</span> ,并且小数取值范围也为 <span class="arithmatex">\(0,\frac{1}{8},\cdots\)</span> , <span class="arithmatex">\(\frac{7}{8}\)</span> 。然而,尾数在范围 <span class="arithmatex">\(1 + 0 = 1\)</span> 和 <span class="arithmatex">\(1 + \frac{7}{8} = \frac{15}{8}\)</span> 之间,得出数 <span class="arithmatex">\(V\)</span> 在范围 <span class="arithmatex">\(\frac{8}{512} = \frac{1}{64}\)</span> 和 <span class="arithmatex">\(\frac{15}{512}\)</span> 之间。</p>
+<!-- Meanless: 第 2 章 信息的表示和处理 81-->
+
+<p>可以观察到最大非规格化数 <span class="arithmatex">\(\frac{7}{512}\)</span> 和最小规格化数 <span class="arithmatex">\(\frac{8}{512}\)</span> 之间的平滑转变。这种平滑性归功于我们对非规格化数的 <span class="arithmatex">\(E\)</span> 的定义。通过将 <span class="arithmatex">\(E\)</span> 定义为 <span class="arithmatex">\(1 -\)</span> Bias,而不是 -Bias,我们可以补偿非规格化数的尾数没有隐含的开头的 1 。</p>
+<p>当增大阶码时, 我们成功地得到更大的规格化值, 通过 1.0 后得到最大的规格化数。这个数具有阶码 <span class="arithmatex">\(E = 7\)</span> ,得到一个权 <span class="arithmatex">\({2}^{E} = {128}\)</span> 。小数等于 <span class="arithmatex">\(\frac{7}{8}\)</span> 得到尾数 <span class="arithmatex">\(M = \frac{15}{8}\)</span> 。因此,数值是 <span class="arithmatex">\(V = {240}\)</span> 。超出这个值就会溢出到 <span class="arithmatex">\(+ \infty\)</span> 。</p>
+<p>这种表示具有一个有趣的属性, 假如我们将图 2-35 中的值的位表达式解释为无符号整数, 它们就是按升序排列的, 就像它们表示的浮点数一样。这不是偶然的 - IEEE 格式如此设计就是为了浮点数能够使用整数排序函数来进行排序。当处理负数时,有一个小的难点, 因为它们有开头的 1 , 并且它们是按照降序出现的, 但是不需要浮点运算来进行比较也能解决这个问题 (参见家庭作业 2.84)。</p>
+<details class="question">
+<summary>练习题 2.47</summary>
+<p>假设一个基于 IEEE 浮点格式的 5 位浮点表示, 有 1 个符号位、 2 个阶码位 <span class="arithmatex">\(\left( {k = 2}\right)\)</span> 和两个小数位 <span class="arithmatex">\(\left( {n = 2}\right)\)</span> 。阶码偏置量是 <span class="arithmatex">\({2}^{2 - 1} - 1 = 1\)</span> 。</p>
+<p>下表中列举了这个 5 位浮点表示的全部非负取值范围。使用下面的条件, 填写表格中的空白项:</p>
+<p><span class="arithmatex">\(e\)</span>  : 假定阶码字段是一个无符号整数所表示的值。</p>
+<p><span class="arithmatex">\(E\)</span>  : 偏置之后的阶码值。</p>
+<p><span class="arithmatex">\({2}^{E}\)</span>  : 阶码的权重。</p>
+<p><span class="arithmatex">\(f\)</span>  : 小数值。</p>
+<p><span class="arithmatex">\(M\)</span>  : 尾数的值。</p>
+<p><span class="arithmatex">\({2}^{E} \times  M\)</span>  : 该数 (未归约的) 小数值。</p>
+<p><span class="arithmatex">\(V\)</span>  : 该数归约后的小数值。</p>
+<p>. 十进制：该数的十进制表示。</p>
+<p>写出 <span class="arithmatex">\({2}^{E}\)</span> 、 <span class="arithmatex">\(f\)</span> 、 <span class="arithmatex">\(M\)</span> 、 <span class="arithmatex">\({2}^{E} \times  M\)</span> 和 <span class="arithmatex">\(V\)</span> 的值,要么是整数 (如果可能的话),要么是形如 <span class="arithmatex">\(\frac{x}{y}\)</span> 的小数,这里 <span class="arithmatex">\(y\)</span> 是 2 的幂。标注为 “一” 的条目不用填。</p>
+<!-- Media -->
+<p><table><tr><td>位</td><td><span class="arithmatex">\(e\)</span></td><td><span class="arithmatex">\(E\)</span></td><td><span class="arithmatex">\({2}^{E}\)</span></td><td><span class="arithmatex">\(f\)</span></td><td><span class="arithmatex">\(M\)</span></td><td><span class="arithmatex">\({2}^{E} \times  M\)</span></td><td><span class="arithmatex">\(V\)</span></td><td>十进制</td></tr><tr><td>0 00 00</td><td/><td/><td/><td/><td/><td/><td/><td/></tr><tr><td>0 00 01</td><td/><td/><td/><td/><td/><td/><td/><td/></tr><tr><td>0 0010</td><td/><td/><td/><td/><td/><td/><td/><td/></tr><tr><td>0 0011</td><td/><td/><td/><td/><td/><td/><td/><td/></tr><tr><td>0 01 00</td><td/><td/><td/><td/><td/><td/><td/><td/></tr><tr><td><span class="arithmatex">\(\begin{array}{ll} 0 &amp; 0 \end{array}\begin{array}{ll} 1 &amp; 0 \end{array}\begin{array}{l} 1 \end{array}\)</span></td><td>1</td><td>0</td><td>1</td><td><span class="arithmatex">\(\frac{1}{4}\)</span></td><td><span class="arithmatex">\(\frac{5}{4}\)</span></td><td><span class="arithmatex">\(\frac{5}{4}\)</span></td><td><span class="arithmatex">\(\frac{5}{4}\)</span></td><td>1.25</td></tr><tr><td><span class="arithmatex">\(\begin{array}{ll} 0 &amp; 0 \end{array}\begin{array}{lll} 1 &amp; 1 &amp; 0 \end{array}\)</span></td><td/><td/><td/><td/><td/><td/><td/><td/></tr><tr><td>0 01 11</td><td/><td/><td/><td/><td/><td/><td/><td/></tr><tr><td>01000</td><td/><td/><td/><td/><td/><td/><td/><td/></tr><tr><td>01001</td><td/><td/><td/><td/><td/><td/><td/><td/></tr><tr><td>01010</td><td/><td/><td/><td/><td/><td/><td/><td/></tr><tr><td>01011</td><td/><td/><td/><td/><td/><td/><td/><td/></tr><tr><td>0 1100</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td/><td>-</td></tr><tr><td>01101</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td/><td>-</td></tr><tr><td>01110</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td/><td>-</td></tr><tr><td><span class="arithmatex">\(\begin{array}{lll} 0 &amp; {11} &amp; {11} \end{array}\)</span></td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td/><td>-</td></tr></table></p>
+<!-- Media -->
+<!-- Meanless: 82 第一部分 程序结构和执行-->
+<p>图 2-36 展示了一些重要的单精度和双精度浮点数的表示和数字值。根据图 2-35 中展示的 8 位格式,我们能够看出有 <span class="arithmatex">\(k\)</span> 位阶码和 <span class="arithmatex">\(n\)</span> 位小数的浮点表示的一般属性。</p>
+<!-- Media -->
+<p><table><tr><td rowspan="2">描述</td><td rowspan="2">exp</td><td rowspan="2">frac</td><td colspan="2">单精度</td><td colspan="2">双精度</td></tr><tr><td>值</td><td>十进制</td><td>值</td><td>十进制</td></tr><tr><td>0</td><td><span class="arithmatex">\({00}\cdots {00}\)</span></td><td><span class="arithmatex">\(0\cdots {00}\)</span></td><td>0</td><td>0.0</td><td>0</td><td>0.0</td></tr><tr><td>最小非规格化数</td><td><span class="arithmatex">\({00}\cdots {00}\)</span></td><td><span class="arithmatex">\(0\cdots {01}\)</span></td><td><span class="arithmatex">\({2}^{-{23}} \times  {2}^{-{126}}\)</span></td><td><span class="arithmatex">\({1.4} \times  {10}^{-{45}}\)</span></td><td><span class="arithmatex">\({2}^{-{52}} \times  {2}^{-{1022}}\)</span></td><td><span class="arithmatex">\({4.9} \times  {10}^{-{324}}\)</span></td></tr><tr><td>最大非规格化数</td><td>00 ... 00</td><td><span class="arithmatex">\(1\cdots {11}\)</span></td><td><span class="arithmatex">\(\left( {1 - \varepsilon }\right)  \times  {2}^{-{126}}\)</span></td><td><span class="arithmatex">\({1.2} \times  {10}^{-{38}}\)</span></td><td><span class="arithmatex">\(\left( {1 - \varepsilon }\right)  \times  {2}^{-{1022}}\)</span></td><td><span class="arithmatex">\({2.2} \times  {10}^{-{308}}\)</span></td></tr><tr><td>最小规格化数</td><td><span class="arithmatex">\({00}\cdots {01}\)</span></td><td><span class="arithmatex">\(0\cdots {00}\)</span></td><td><span class="arithmatex">\(1 \times  {2}^{-{126}}\)</span></td><td><span class="arithmatex">\({1.2} \times  {10}^{-{38}}\)</span></td><td><span class="arithmatex">\(1 \times  {2}^{-{1022}}\)</span></td><td><span class="arithmatex">\({2.2} \times  {10}^{-{308}}\)</span></td></tr><tr><td>1</td><td>01 ... 11</td><td><span class="arithmatex">\(0\cdots {00}\)</span></td><td><span class="arithmatex">\(1 \times  {2}^{0}\)</span></td><td>1.0</td><td><span class="arithmatex">\(1 \times  {2}^{0}\)</span></td><td>1.0</td></tr><tr><td>最大规格化数</td><td>11 ... 10</td><td><span class="arithmatex">\(1\cdots {11}\)</span></td><td><span class="arithmatex">\(\left( {2 - \varepsilon }\right)  \times  {2}^{127}\)</span></td><td><span class="arithmatex">\({3.4} \times  {10}^{38}\)</span></td><td><span class="arithmatex">\(\left( {2 - \varepsilon }\right)  \times  {2}^{1023}\)</span></td><td><span class="arithmatex">\({1.8} \times  {10}^{308}\)</span></td></tr></table></p>
+<p>图 2-36 非负浮点数的示例</p>
+<!-- Media -->
+<ul>
+<li>
+<p>值 +0.0 总有一个全为 0 的位表示。</p>
+</li>
+<li>
+<p>最小的正非规格化值的位表示,是由最低有效位为 1 而其他所有位为 0 构成的。它具有小数 (和尾数) 值 <span class="arithmatex">\(M = f = {2}^{-n}\)</span> 和阶码值 <span class="arithmatex">\(E =  - {2}^{k - 1} + 2\)</span> 。因此它的数字值是 <span class="arithmatex">\(V = {2}^{-n - {2}^{k - 1} + 2}\)</span> 。</p>
+</li>
+<li>
+<p>最大的非规格化值的位模式是由全为 0 的阶码字段和全为 1 的小数字段组成的。它有小数 (和尾数) 值 <span class="arithmatex">\(M = f = 1 - {2}^{-n}\)</span> (我们写成 <span class="arithmatex">\(1 - \varepsilon\)</span> ) 和阶码值 <span class="arithmatex">\(E =  - {2}^{k - 1} + 2\)</span> 。因此, 数值 <span class="arithmatex">\(V = \left( {1 - {2}^{-n}}\right)  \times  {2}^{-{2}^{k - 1} + 2}\)</span> ,这仅比最小的规格化值小一点。</p>
+</li>
+<li>
+<p>最小的正规格化值的位模式的阶码字段的最低有效位为 1 , 其他位全为 0 。它的尾数值 <span class="arithmatex">\(M = 1\)</span> ,而阶码值 <span class="arithmatex">\(E =  - {2}^{k - 1} + 2\)</span> 。因此,数值 <span class="arithmatex">\(V = {2}^{-{2}^{k - 1} + 2}\)</span> 。</p>
+</li>
+<li>
+<p>值 1.0 的位表示的阶码字段除了最高有效位等于 1 以外, 其他位都等于 0 。它的尾数值是 <span class="arithmatex">\(M = 1\)</span> ,而它的阶码值是 <span class="arithmatex">\(E = 0\)</span> 。</p>
+</li>
+<li>
+<p>最大的规格化值的位表示的符号位为 0 ,阶码的最低有效位等于 0 ,其他位等于 1 。它的小数值 <span class="arithmatex">\(f = 1 - {2}^{-n}\)</span> ,尾数 <span class="arithmatex">\(M = 2 - {2}^{-n}\)</span> (我们写作 <span class="arithmatex">\(2 - \varepsilon\)</span> )。它的阶码值 <span class="arithmatex">\(E = {2}^{k - 1} -\)</span> 1,得到数值 $V = \left( {2 - {2}^{-n}}\right)  \times  {2}^ {{2}^{k - 1} - 1} = \left( {1 - {2}^{-n - 1}} \right)  \times  {2}^ {{2}^{k - 1}} $ 。</p>
+</li>
+</ul>
+<p>练习把一些整数值转换成浮点形式对理解浮点表示很有用。例如, 在图 2-15 中我们看到 12345 具有二进制表示[11000000111001]。通过将二进制小数点左移 13 位,我们创建这个数的一个规格化表示,得到 <span class="arithmatex">\({12345} = {1.100000011100}{1}_{2} \times  {2}^{13}\)</span> 。为了用 IEEE 单精度形式来编码, 我们丢弃开头的 1 , 并且在末尾增加 10 个 0 , 来构造小数字段, 得到二进制表示[10000001110010000000000]。为了构造阶码字段,我们用 13 加上偏置量 127,得到 140,其二进制表示为 [10001100]。加上符号位 0 ,我们就得到二进制的浮点表示 [0100011001000000111001000000000]。回想一下 2.1.3 节,我们观察到整数值 12345 (0 x 3039) 和单精度浮点值 12345.0(0 x 4640 E 400) 在位级表示上有下列关系：</p>
+<!-- Media -->
+<p><span class="arithmatex">\(\begin{array}{llllllll} 0 &amp; 0 &amp; 0 &amp; 0 &amp; 3 &amp; 0 &amp; 3 &amp; 9 \end{array}\)</span>  0000000000000000011000000111001 <strong><em>*</em></strong><strong>*</strong> <span class="arithmatex">\(\begin{array}{llllllll} 4 &amp; 6 &amp; 4 &amp; 0 &amp; E &amp; 4 &amp; 0 &amp; 0 \end{array}\)</span> 0100011001000000111001000000000</p>
+<!-- Media -->
+<p>现在我们可以看到, 相关的区域对应于整数的低位, 刚好在等于 1 的最高有效位之前停止 (这个位就是隐含的开头的位 1 ), 和浮点表示的小数部分的高位是相匹配的。</p>
+</details>
+<details class="question">
+<summary>练习题 2.48</summary>
+<p>正如在练习题 2.6 中提到的, 整数 3 510 593 的十六进制表示为 0 x 00359141,而单精度浮点数 3510593.0 的十六进制表示为 0 x 4 A 564504。推导出这个浮点表示,并解释整数和浮点数表示的位之间的关系。</p>
+<!-- Meanless: 第 2 章 信息的表示和处理 83-->
+</details>
+<details class="question">
+<summary>练习题 2. 49</summary>
+<p>A. 对于一种具有 <span class="arithmatex">\(n\)</span> 位小数的浮点格式,给出不能准确描述的最小正整数的公式 (因为要想准确表示它需要 <span class="arithmatex">\(n + 1\)</span> 位小数)。假设阶码字段长度 <span class="arithmatex">\(k\)</span> 足够大,可以表示的阶码范围不会限制这个问题。</p>
+<p>B. 对于单精度格式 <span class="arithmatex">\(\left( {n = {23}}\right)\)</span> ,这个整数的数字值是多少?</p>
+</details>
+<h2 id="244">2.4.4 舍入<a class="headerlink" href="#244" title="Permanent link">&para;</a></h2>
+<p>因为表示方法限制了浮点数的范围和精度, 所以浮点运算只能近似地表示实数运算。因此,对于值 <span class="arithmatex">\(x\)</span> ,我们一般想用一种系统的方法,能够找到 “最接近的” 匹配值 <span class="arithmatex">\({x}^{\prime }\)</span> ,它可以用期望的浮点形式表示出来。这就是舍入 (rounding) 运算的任务。一个关键问题是在两个可能值的中间确定舍入方向。例如, 如果我有 1.50 美元, 想把它舍入到最接近的美元数, 应该是 1 美元还是 2 美元呢? 一种可选择的方法是维持实际数字的下界和上界。例如,我们可以确定可表示的值 <span class="arithmatex">\({x}^{ - }\)</span> 和 <span class="arithmatex">\({x}^{ + }\)</span> ,使得 <span class="arithmatex">\(x\)</span> 的值位于它们之间: <span class="arithmatex">\({x}^{ - } \leq  x \leq  {x}^{ + }\)</span> 。IEEE 浮点格式定义了四种不同的舍入方式。默认的方法是找到最接近的匹配, 而其他三种可用于计算上界和下界。</p>
+<p>图 2-37 举例说明了四种舍入方式, 将一个金额数舍入到最接近的整数美元数。向偶数舍入 (round-to-even), 也被称为向最接近的值舍入 (round-to-nearest), 是默认的方式, 试图找到一个最接近的匹配值。因此, 它将 1.40 美元舍入成 1 美元, 而将 1.60 美元舍入成 2 美元, 因为它们是最接近的整数美元值。唯一的设计决策是确定两个可能结果中间数值的舍入效果。向偶数舍入方式采用的方法是: 它将数字向上或者向下舍入, 使得结果的最低有效数字是偶数。因此, 这种方法将 1.5 美元和 2.5 美元都舍入成 2 美元。</p>
+<!-- Media -->
+
+<table><tr><td>方式</td><td>1.40</td><td>1.60</td><td>1.50</td><td>2.50</td><td>-1.50</td></tr><tr><td>向偶数舍入</td><td>1</td><td>2</td><td>2</td><td>2</td><td>-2</td></tr><tr><td>向零舍入</td><td>1</td><td>1</td><td>1</td><td>2</td><td>-1</td></tr><tr><td>向下舍人</td><td>1</td><td>1</td><td>1</td><td>2</td><td>-2</td></tr><tr><td>向上舍入</td><td>2</td><td>2</td><td>2</td><td>3</td><td>-1</td></tr></table>
+
+<p>图 2-37 以美元舍入为例说明舍入方式 (第一种方法是舍入到一个最接近的值, 而其他三种方法向上或向下限定结果, 单位为美元)</p>
+<!-- Media -->
+
+<p>其他三种方式产生实际值的确界(guaranteed bound)。这些方法在一些数字应用中是很有用的。向零舍入方式把正数向下舍入,把负数向上舍入,得到值 <span class="arithmatex">\(\widehat{x}\)</span> ,使得 <span class="arithmatex">\(\left| \widehat{x}\right|  \leq  \left| x\right|\)</span> 。向下舍入方式把正数和负数都向下舍入,得到值 <span class="arithmatex">\({x}^{ - }\)</span> ,使得 <span class="arithmatex">\({x}^{ - } \leq  x\)</span> 。向上舍入方式把正数和负数都向上舍入,得到值 <span class="arithmatex">\({x}^{ + }\)</span> ,满足 <span class="arithmatex">\(x \leq  {x}^{ + }\)</span> 。</p>
+<p>向偶数舍入初看上去好像是个相当随意的目标——有什么理由偏向取偶数呢？为什么不始终把位于两个可表示的值中间的值都向上舍入呢? 使用这种方法的一个问题就是很容易假想到这样的情景：这种方法舍入一组数值,会在计算这些值的平均数中引入统计偏差。我们采用这种方式舍入得到的一组数的平均值将比这些数本身的平均值略高一些。相反,如果我们总是把两个可表示值中间的数字向下舍入,那么舍入后的一组数的平均值将比这些数本身的平均值略低一些。向偶数舍入在大多数现实情况中避免了这种统计偏差。在 <span class="arithmatex">\({50}\%\)</span> 的时间里,它将向上舍入,而在 <span class="arithmatex">\({50}\%\)</span> 的时间里,它将向下舍入。</p>
+<!-- Meanless: 84 第一部分 程序结构和执行-->
+
+<p>在我们不想舍入到整数时, 也可以使用向偶数舍入。我们只是简单地考虑最低有效数字是奇数还是偶数。例如, 假设我们想将十进制数舍入到最接近的百分位。不管用那种舍入方式, 我们都将把 1.2349999 舍入到 1.23 ,而将 1.2350001 舍入到 1.24 ,因为它们不是在 1.23 和 1.24 的正中间。另一方面我们将把两个数 1.2350000 和 1.2450000 都舍入到 1.24 , 因为 4 是偶数。</p>
+<p>相似地, 向偶数舍入法能够运用在二进制小数上。我们将最低有效位的值 0 认为是偶数,值 1 认为是奇数。一般来说,只有对形如 <span class="arithmatex">\({XX}\cdots X.{YY}\cdots {Y 100}\cdots\)</span> 的二进制位模式的数, 这种舍入方式才有效,其中 <span class="arithmatex">\(X\)</span> 和 <span class="arithmatex">\(Y\)</span> 表示任意位值,最右边的 <span class="arithmatex">\(Y\)</span> 是要被舍入的位置。只有这种位模式表示在两个可能的结果正中间的值。例如, 考虑舍入值到最近的四分之一的问题(也就是二进制小数点右边 2 位)。我们将 <span class="arithmatex">\({10.00011}_{2}\left( {2\frac{3}{32}}\right)\)</span> 向下舍入到 <span class="arithmatex">\({10.00}_{2}\left( 2\right)\)</span> , 10. <span class="arithmatex">\({00110}_{2}\left( {2\frac{3}{16}}\right)\)</span> 向上舍入到 <span class="arithmatex">\({10.01}_{2}\left( {2\frac{1}{4}}\right)\)</span> ,因为这些值不是两个可能值的正中间值。我们将 10. <span class="arithmatex">\({11100}_{2}\left( {2\frac{7}{8}}\right)\)</span> 向上舍入成 <span class="arithmatex">\({11.00}_{2}\left( 3\right)\)</span> ,而 <span class="arithmatex">\({10.10100}_{2}\left( {2\frac{5}{8}}\right)\)</span> 向下舍入成 <span class="arithmatex">\({10.10}_{2}\left( {2\frac{1}{2}}\right)\)</span> ,因为这些值是两个可能值的中间值, 并且我们倾向于使最低有效位为零。</p>
+<details class="question">
+<summary>练习题 2.50</summary>
+<p>根据舍入到偶数规则,说明如何将下列二进制小数值舍入到最接近的二分之一 (二进制小数点右边 1 位)。对每种情况, 给出舍入前后的数字值。</p>
+<p>A. <span class="arithmatex">\({10.010}_{2}\)</span></p>
+<p>B. <span class="arithmatex">\({10.01}{1}_{2}\)</span></p>
+<p>C. <span class="arithmatex">\({10.11}{\mathrm{O}}_{2}\)</span></p>
+<p>D.11.001,</p>
+</details>
+<details class="question">
+<summary>练习题 2.51</summary>
+<p>在练习题 2.46 中我们看到,爱国者导弹软件将 0.1 近似表示为 <span class="arithmatex">\(x =\)</span> 0.00011001100110011001100 <span class="arithmatex">\({}_{2}\)</span> 。假设使用 IEEE 舍入到偶数方式来确定 0.1 的二进制小数点右边 23 位的近似表示 <span class="arithmatex">\({x}^{\prime }\)</span> 。</p>
+<p>A. <span class="arithmatex">\({x}^{\prime }\)</span> 的二进制表示是什么?</p>
+<p>B. <span class="arithmatex">\({x}^{\prime } - {0.1}\)</span> 的十进制表示的近似值是什么?</p>
+<p>C. 运行 100 小时后,计算时钟值会有多少偏差?</p>
+<p>D. 该程序对飞毛腿导弹位置的预测会有多少偏差?</p>
+</details>
+<details class="question">
+<summary>练习题 2.52</summary>
+<p>考虑下列基于 IEEE 浮点格式的 7 位浮点表示。两个格式都没有符号位——它们只能表示非负的数字。</p>
+<ol>
+<li>
+<p>格式 <span class="arithmatex">\(\mathrm{A}\)</span></p>
+</li>
+<li>
+<p>有 <span class="arithmatex">\(k = 3\)</span> 个阶码位。阶码的偏置值是 3 。</p>
+</li>
+<li>
+<p>有 <span class="arithmatex">\(n = 4\)</span> 个小数位。</p>
+</li>
+<li>
+<p>格式 <span class="arithmatex">\(\mathrm{B}\)</span></p>
+</li>
+<li>
+<p>有 <span class="arithmatex">\(k = 4\)</span> 个阶码位。阶码的偏置值是 7 。</p>
+</li>
+<li>
+<p>有 <span class="arithmatex">\(n = 3\)</span> 个小数位。</p>
+</li>
+</ol>
+<p>下面给出了一些格式 <span class="arithmatex">\(\mathrm{A}\)</span> 表示的位模式,你的任务是将它们转换成格式 <span class="arithmatex">\(\mathrm{B}\)</span> 中最接近的值。如果需要,请使用舍入到偶数的舍入原则。另外, 给出由格式 <span class="arithmatex">\(\mathrm{A}\)</span> 和格式 <span class="arithmatex">\(\mathrm{B}\)</span> 表示的位模式对应的数字的值。给出整数(例如 17 )或者小数 (例如 17/64)。</p>
+<!-- Meanless: 第 2 章 信息的表示和处理 85-->
+<!-- Media -->
+<p><table><tr><td colspan="2">格式 A</td><td colspan="2">格式 B</td></tr><tr><td>位</td><td>值</td><td>位</td><td>值</td></tr><tr><td>011 0000</td><td>1</td><td>0111 000</td><td>1</td></tr><tr><td>101 1110</td><td/><td/><td/></tr><tr><td>010 1001</td><td/><td/><td/></tr><tr><td>110 1111</td><td/><td/><td/></tr><tr><td>000 0001</td><td/><td/><td/></tr></table></p>
+<!-- Media -->
+</details>
+<h2 id="245">2.4.5 浮点运算<a class="headerlink" href="#245" title="Permanent link">&para;</a></h2>
+<p>IEEE 标准指定了一个简单的规则, 来确定诸如加法和乘法这样的算术运算的结果。把浮点值 <span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(y\)</span> 看成实数,而某个运算 <span class="arithmatex">\(\odot\)</span> 定义在实数上,计算将产生 <span class="arithmatex">\(\operatorname{Round}\left( {x \odot  y}\right)\)</span> ,这是对实际运算的精确结果进行舍入后的结果。在实际中, 浮点单元的设计者使用一些聪明的小技巧来避免执行这种精确的计算,因为计算只要精确到能够保证得到一个正确的舍入结果就可以了。当参数中有一个是特殊值 (如 <span class="arithmatex">\(- 0\text{、} - \infty\)</span> 或 <span class="arithmatex">\({NaN}\)</span> ) 时,IEEE 标准定义了一些使之更合理的规则。例如,定义 <span class="arithmatex">\(1/ - 0\)</span> 将产生 <span class="arithmatex">\(- \infty\)</span> ,而定义 <span class="arithmatex">\(1/ + 0\)</span> 会产生 <span class="arithmatex">\(+ \infty\)</span> 。</p>
+<p>IEEE 标准中指定浮点运算行为方法的一个优势在于, 它可以独立于任何具体的硬件或者软件实现。因此, 我们可以检查它的抽象数学属性, 而不必考虑它实际上是如何实现的。</p>
+<p>前面我们看到了整数 (包括无符号和补码) 加法形成了阿贝尔群。实数上的加法也形成了阿贝尔群,但是我们必须考虑舍入对这些属性的影响。我们将 <span class="arithmatex">\(x + {}^{t}y\)</span> 定义为 <span class="arithmatex">\(\operatorname{Round}\left( {x + y}\right)\)</span> 。这个运算的定义针对 <span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(y\)</span> 的所有取值,但是虽然 <span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(y\)</span> 都是实数,由于溢出,该运算可能得到无穷值。对于所有 <span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(y\)</span> 的值,这个运算是可交换的,也就是说 <span class="arithmatex">\(x{ + }^{\mathrm{f}}y = y{ + }^{\mathrm{f}}x\)</span> 。另一方面,这个运算是不可结合的。例如,使用单精度浮点,表达式 <span class="arithmatex">\(\left( {{3.14} + 1\mathrm{e}{10}} \right)  - 1\mathrm{e}{10}\)</span> 求值得到 0.0——因为舍入,值 3.14 会丢失。另一方面,表达式 3.14+(1 e 10-1 e 10) 得出值 3.14。作为阿贝尔群,大多数值在浮点加法下都有逆元,也就是说 <span class="arithmatex">\(x{ + }^{\mathrm{f}} - x = 0\)</span> 。无穷 (因为 <span class="arithmatex">\(+ \infty  - \infty  = {NaN})\)</span> 和 <span class="arithmatex">\({NaN}\)</span> 是例外情况,因为对于任何 <span class="arithmatex">\(x\)</span> ,都有 <span class="arithmatex">\({NaN}{ + }^{t}x = {NaN}\)</span> 。</p>
+<p>浮点加法不具有结合性, 这是缺少的最重要的群属性。对于科学计算程序员和编译器编写者来说, 这具有重要的含义。例如, 假设一个编译器给定了如下代码片段：</p>
+<hr />
+<p><span class="arithmatex">\(\mathrm{x} = \mathrm{a} + \mathrm{b} + \mathrm{c};\)</span></p>
+<div class="arithmatex">\[
+\text{y} = b + c + d\text{;}
+\]</div>
+<hr />
+<p>编译器可能试图通过产生下列代码来省去一个浮点加法:</p>
+<hr />
+<p><span class="arithmatex">\(\mathrm{t} = \mathrm{b} + \mathrm{c}\)</span> ;
+    <span class="arithmatex">\(\mathrm{x} = \mathrm{a} + \mathrm{t}\)</span> ;
+<span class="arithmatex">\(\mathrm{y} = \mathrm{t} + \mathrm{d}\)</span> ;</p>
+<hr />
+<p>然而,对于 <span class="arithmatex">\(\mathrm{x}\)</span> 来说,这个计算可能会产生与原始值不同的值,因为它使用了加法运算的不同的结合方式。在大多数应用中, 这种差异小得无关紧要。不幸的是, 编译器无法知道在效率和忠实于原始程序的确切行为之间, 使用者愿意做出什么样的选择。结果是, 编译器倾向于保守,避免任何对功能产生影响的优化,即使是很轻微的影响。</p>
+<p>另一方面,浮点加法满足了单调性属性: 如果 <span class="arithmatex">\(a \geq  b\)</span> ,那么对于任何 <span class="arithmatex">\(a\text{、}b\)</span> 以及 <span class="arithmatex">\(x\)</span> 的值, 除了 <span class="arithmatex">\({NaN}\)</span> ,都有 <span class="arithmatex">\(x + a \geq  x + b\)</span> 。无符号或补码加法不具有这个实数 (和整数) 加法的属性。</p>
+<p>浮点乘法也遵循通常乘法所具有的许多属性。我们定义 <span class="arithmatex">\(x * {}^{i}y\)</span> 为 <span class="arithmatex">\(\operatorname{Round}\left( {x \times  y}\right)\)</span> 。这个运算在乘法中是封闭的 (虽然可能产生无穷大或 <span class="arithmatex">\({NaN}\)</span> ),它是可交换的,而且它的乘法单位元为 1.0 。另一方面,由于可能发生溢出,或者由于舍入而失去精度,它不具有可结合性。例如,单精度浮点情况下,表达式 <span class="arithmatex">\(\left( {\operatorname{le 20*le 20)} * \operatorname{le}{-{20}}}\right)\)</span> 求值为 <span class="arithmatex">\(+ \infty\)</span> ,而 <span class="arithmatex">\(\operatorname{le 20*}\left( {\operatorname{le 20*}\operatorname{le}{-{20}}}\right)\)</span> 将得出 1 e 20。另外, 浮点乘法在加法上不具备分配性。例如, 单精度浮点情况下, 表达式 le 20<em> (le 20-le 20) 求值为 0.0 ,而 le 20</em>le 20-le 20*1 e 20 会得出 <span class="arithmatex">\({NaN}\)</span> 。</p>
+<!-- Meanless: 86 第一部分 程序结构和执行-->
+
+<p>另一方面,对于任何 <span class="arithmatex">\(a\text{、}b\)</span> 和 <span class="arithmatex">\(c\)</span> ,并且 <span class="arithmatex">\(a\text{、}b\)</span> 和 <span class="arithmatex">\(c\)</span> 都不等于 <span class="arithmatex">\({NaN}\)</span> ,浮点乘法满足下列单调性:</p>
+<div class="arithmatex">\[
+a \geq  b\text{ 且 }c \geq  0 \Rightarrow  a * {}^{\mathrm{f}}c \geq  b * {}^{\mathrm{f}}c
+\]</div>
+<div class="arithmatex">\[
+a \geq  b\text{ 且 }c \leq  0 \Rightarrow  a * {}^{\mathrm{f}}c \leq  b * {}^{\mathrm{f}}c
+\]</div>
+<p>此外,我们还可以保证,只要 <span class="arithmatex">\(a \neq  {NaN}\)</span> ,就有 <span class="arithmatex">\(a * {}^{\mathrm{f}}a \geq  0\)</span> 。像我们先前所看到的,无符号或补码的乘法没有这些单调性属性。</p>
+<p>对于科学计算程序员和编译器编写者来说, 缺乏结合性和分配性是很严重的问题。即使为了在三维空间中确定两条线是否交叉而写代码这样看上去很简单的任务, 也可能成为一个很大的挑战。</p>
+<h2 id="246-c">2.4.6 C 语言中的浮点数<a class="headerlink" href="#246-c" title="Permanent link">&para;</a></h2>
+<p>所有的 C 语言版本提供了两种不同的浮点数据类型： float 和 double。在支持 IEEE 浮点格式的机器上, 这些数据类型就对应于单精度和双精度浮点。另外, 这类机器使用向偶数舍入的舍入方式。不幸的是,因为 <span class="arithmatex">\(\mathrm{C}\)</span> 语言标准不要求机器使用 IEEE 浮点,所以没有标准的方法来改变舍入方式或者得到诸如 <span class="arithmatex">\(- 0\text{、} + \infty \text{、} - \infty\)</span> 或者 <span class="arithmatex">\({NaN}\)</span> 之类的特殊值。大多数系统提供 include <span class="arithmatex">\(\left( {{}^{4}\text{.h'}} \right)\)</span> 文件和读取这些特征的过程库,但是细节随系统不同而不同。例如,当程序文件中出现下列句子时,GNU 编译器 GCC 会定义程序常数 INFINITY(表示十∞)和 NAN(表示 NaN):</p>
+<hr />
+<h1 id="define-_gnu_source-1">define _GNU_SOURCE 1<a class="headerlink" href="#define-_gnu_source-1" title="Permanent link">&para;</a></h1>
+<h1 id="include">include <math.h><a class="headerlink" href="#include" title="Permanent link">&para;</a></h1>
+<hr />
+<details class="question">
+<summary>练习题 2.53</summary>
+<p>完成下列宏定义,生成双精度值 <span class="arithmatex">\(+ \infty \text{、} - \infty\)</span> 和 0 :</p>
+<hr />
+<div class="language-text highlight"><pre><span></span><code>#define POS_INFINITY
+</code></pre></div>
+<h1 id="define-neg_infinity">define NEG_INFINITY<a class="headerlink" href="#define-neg_infinity" title="Permanent link">&para;</a></h1>
+<div class="language-text highlight"><pre><span></span><code>#define NEG_ZERO
+</code></pre></div>
+<hr />
+<p>不能使用任何 include 文件 (例如 math.h), 但你能利用这样一个事实: 双精度能够表示的最大的有限数,大约是 <span class="arithmatex">\({1.8} \times  {10}^{308}\)</span> 。</p>
+<p>当在 int、float 和 double 格式之间进行强制类型转换时, 程序改变数值和位模式的原则如下 (假设 int 是 32 位的):</p>
+<ul>
+<li>
+<p>从 int 转换成 float, 数字不会溢出, 但是可能被舍入。</p>
+</li>
+<li>
+<p>从 int 或 float 转换成 double, 因为 double 有更大的范围(也就是可表示值的范围),也有更高的精度(也就是有效位数),所以能够保留精确的数值。</p>
+</li>
+<li>
+<p>从 double 转换成 float,因为范围要小一些,所以值可能溢出成 <span class="arithmatex">\(+ \infty\)</span> 或 <span class="arithmatex">\(- \infty\)</span> 。另外, 由于精确度较小, 它还可能被舍入。</p>
+</li>
+<li>
+<p>从 float 或者 double 转换成 int, 值将会向零舍入。例如, 1.999 将被转换成 1, 而 -1.999 将被转换成 -1。进一步来说,值可能会溢出。 <span class="arithmatex">\(\mathrm{C}\)</span> 语言标准没有对这种情况指定固定的结果。与 Intel 兼容的微处理器指定位模式 <span class="arithmatex">\(\left\lbrack  {{10}\cdots {00}} \right\rbrack\)</span> (字长为 <span class="arithmatex">\(w\)</span> 时的 <span class="arithmatex">\({TMi}{n}_{w}\)</span> ) 为整数不确定 (integer indefinite) 值。一个从浮点数到整数的转换,如果不能为该浮点数找到一个合理的整数近似值, 就会产生这样一个值。因此, 表达式 (int) + 1 e 10 会得到 -21483648 ,即从一个正值变成了一个负值。</p>
+</li>
+</ul>
+<!-- Meanless: 第 2 章 信息的表示和处理 87-->
+</details>
+<details class="info">
+<summary>旁注｜Ariane 5——浮点溢出的高昂代价</summary>
+</details>
+<p>将大的浮点数转换成整数是一种常见的程序错误来源。1996 年 6 月 4 日,Ariane 5 火箭初次航行,一个错误便产生了灾难性的后果。发射后仅仅 37 秒钟,火箭偏离了它的飞行路径,解体并且爆炸。火箭上载有价值 5 亿美元的通信卫星。</p>
+<p>后来的调查[73, 33]显示,控制惯性导航系统的计算机向控制引擎喷嘴的计算机发送了一个无效数据。它没有发送飞行控制信息,而是送出了一个诊断位模式, 表明在将一个 64 位浮点数转换成 16 位有符号整数时, 产生了溢出。</p>
+<p>溢出的值测量的是火箭的水平速率, 这比早先的 Ariane 4 火箭所能达到的速度高出了 5 倍。在设计 Ariane 4 火箭软件时, 他们小心地分析了这些数字值, 并且确定水平速率决不会超出一个 16 位数的表示范围。不幸的是, 他们在 Ariane 5 火箭的系统中简单地重用了这一部分,而没有检查它所基于的假设。</p>
+<details class="question">
+<summary>练习题 2.54</summary>
+<p>假定变量 <span class="arithmatex">\(\mathrm{x}\)</span> 、 <span class="arithmatex">\(\mathrm{f}\)</span> 和 <span class="arithmatex">\(\mathrm{d}\)</span> 的类型分别是 int、float 和 double。除了 <span class="arithmatex">\(\mathrm{f}\)</span> 和 <span class="arithmatex">\(\mathrm{d}\)</span> 都不能等于 <span class="arithmatex">\(+ \infty\)</span> 、 <span class="arithmatex">\(- \infty\)</span> 或者 <span class="arithmatex">\({NaN}\)</span> ,它们的值是任意的。对于下面每个 <span class="arithmatex">\(\mathrm{C}\)</span> 表达式,证明它总是为真 (也就是求值为 1 ), 或者给出一个使表达式不为真的值 (也就是求值为 0 )。</p>
+<p>A. <span class="arithmatex">\(x =  =\)</span> (int) (double) <span class="arithmatex">\(x\)</span></p>
+<p>B. <span class="arithmatex">\(x =  =\)</span> (int) (float) <span class="arithmatex">\(x\)</span></p>
+<p>C. <span class="arithmatex">\(d =  =\)</span> (double) (float) <span class="arithmatex">\(d\)</span></p>
+<p>D. <span class="arithmatex">\(f =  =\)</span> (float) (double) <span class="arithmatex">\(f\)</span></p>
+<p>E. <span class="arithmatex">\(f =  =  - \left( {-f}\right)\)</span></p>
+<p>F. <span class="arithmatex">\({1.0}/2 =  = 1/{2.0}\)</span></p>
+<p>G. <span class="arithmatex">\(\mathrm{d} \star  \mathrm{d} &gt;  = {0.0}\)</span></p>
+<p>H. <span class="arithmatex">\(\left( {f + d}\right)  - f =  = d\)</span></p>
+</details>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+  <h2 id="__comments">Comments</h2>
+  <!-- Insert generated snippet here -->
+  <script src="https://giscus.app/client.js"
+        data-repo="syiooo/syiooo.github.io"
+        data-repo-id="R_kgDOPeemcg"
+        data-category="Show and tell"
+        data-category-id="DIC_kwDOPeemcs4CuRNW"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
+  <!-- Synchronize Giscus theme with palette -->
+  <script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    // Set palette on initial load
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+      var theme = palette.color.scheme === "slate"
+        ? "transparent_dark"
+        : "light"
+
+      // Instruct Giscus to set theme
+      giscus.setAttribute("data-theme", theme) 
+    }
+
+    // Register event handlers after documented loaded
+    document.addEventListener("DOMContentLoaded", function() {
+      var ref = document.querySelector("[data-md-component=palette]")
+      ref.addEventListener("change", function() {
+        var palette = __md_get("__palette")
+        if (palette && typeof palette.color === "object") {
+          var theme = palette.color.scheme === "slate"
+            ? "transparent_dark"
+            : "light"
+
+          // Instruct Giscus to change theme
+          var frame = document.querySelector(".giscus-frame")
+          frame.contentWindow.postMessage(
+            { giscus: { setConfig: { theme } } },
+            "https://giscus.app"
+          )
+        }
+      })
+    })
+  </script>
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.instant.progress", "navigation.tracking", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "content.code.copy", "content.code.select", "navigation.tabs", "content.footnote.tooltips"], "search": "../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.50899def.min.js"></script>
+      
+        <script src="../../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
