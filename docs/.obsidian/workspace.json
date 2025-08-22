@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "blog/posts/【游戏开发】如何学习游戏美术，从一个程序员的角度.md",
+                "file": "blog/posts/【转载】聊一聊独立游戏开发者的邪道自学绘画.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "【游戏开发】如何学习游戏美术，从一个程序员的角度"
+              "title": "【转载】聊一聊独立游戏开发者的邪道自学绘画"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "blog/posts/【游戏开发】如何学习游戏美术，从一个程序员的角度.md",
+                "file": "blog/posts/【转载】聊一聊独立游戏开发者的邪道自学绘画.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "【游戏开发】如何学习游戏美术，从一个程序员的角度 的大纲"
+              "title": "【转载】聊一聊独立游戏开发者的邪道自学绘画 的大纲"
             }
           }
         ],
@@ -171,8 +171,9 @@
   },
   "active": "406ec2c2e55292c9",
   "lastOpenFiles": [
-    "2_English/方法论/【背单词】Excel背单词法.md",
     "blog/posts/【游戏开发】如何学习游戏美术，从一个程序员的角度.md",
+    "blog/posts/【转载】聊一聊独立游戏开发者的邪道自学绘画.md",
+    "2_English/方法论/【背单词】Excel背单词法.md",
     "2_English/方法论/【红宝书】背红宝书的经验方法，25考研人码住！.md",
     "3_408/方法论/【408教材推荐】从王道到黑书，经验分享.md",
     "3_408/方法论",
@@ -206,7 +207,6 @@
     "blog/posts/【认知心理学杂谈】为什么有些人学不好xx？.md",
     "blog/posts/【认知心理学】考研如何复习？谈谈我对间隔式练习的理解。.md",
     "stylesheets/templates/Tab 📑.md",
-    "stylesheets/templates/??? info.md",
     "30讲/第三讲整理.canvas",
     "Web前端/Vitepress主题功能Todo.canvas",
     "30讲/未命名.canvas",
