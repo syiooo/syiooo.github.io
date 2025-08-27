@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "blog/posts/【GAMES101｜Lecture 02】- Review of Linear Algebra.md",
+                "file": "5_CG/index.md.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "【GAMES101｜Lecture 02】- Review of Linear Algebra"
+              "title": "index.md"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "blog/posts/【GAMES101｜Lecture 02】- Review of Linear Algebra.md",
+                "file": "5_CG/index.md.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "【GAMES101｜Lecture 02】- Review of Linear Algebra 的大纲"
+              "title": "index.md 的大纲"
             }
           }
         ],
@@ -169,44 +169,44 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "cd83c24e48d61d19",
+  "active": "5eecaca9f20ebc0f",
   "lastOpenFiles": [
+    "5_CG/23 - 可视化.md",
+    "5_CG/index.md.md",
+    "5_CG/22 - 游戏中的计算机图形学.md",
+    "5_CG/21 - 隐式建模.md",
+    "5_CG/20 - 色调重构.md",
+    "5_CG/19 - 视觉感知.md",
+    "5_CG/18 - 色彩.md",
+    "5_CG/17 - 使用图形硬件.md",
+    "5_CG/16 - 计算机动画.md",
+    "5_CG/15 - 曲线.md",
+    "5_CG/14 - PBR：基于物理的渲染.md",
+    "5_CG/13 - 采样.md",
+    "5_CG/12 - 图形数据结构.md",
+    "5_CG/11 - 纹理映射.md",
+    "5_CG/10 - 信号处理.md",
+    "5_CG/9 - 图形管线.md",
+    "5_CG/8 - 视图.md",
+    "5_CG/6 & 7 - 线性代数与变换矩阵.md",
+    "5_CG/5 - 表面着色.md",
+    "5_CG/4 - 光线追踪.md",
+    "5_CG/3 - 光栅图像.md",
+    "5_CG/1 & 2 - 介绍与数学基础.md",
+    "5_CG",
     "blog/posts/【manim】Axes-坐标系及其基类详解.md",
     "blog/posts/【manim】manim-写一个泰勒展开式演示动画.md",
     "latex.md",
     "blog/posts/【GAMES101｜Lecture 02】- Review of Linear Algebra.md",
-    "blog/posts/【50projects-50-days】Day-1.md",
-    "blog/posts/【50projects-50-days】Day-2.md",
-    "blog/posts/【50projects-50-days】Day-3.md",
-    "2025-08-23.md",
-    "blog/posts/【认知心理学】考研如何复习？谈谈我对间隔式练习的理解。.md",
-    "blog/posts/【游戏开发】聊一聊独立游戏开发者的邪道自学绘画.md",
-    "blog/posts/【Drawabox】笔记.md",
-    "blog/posts/【认知心理学杂谈】为什么有些人学不好xx？.md",
-    "blog/posts/【Latex】30分钟学会LaTeX.md",
-    "blog/posts/【认知心理学杂谈】为什么有些人学不好xx？~.md",
-    "blog/posts/【游戏开发】如何学习游戏美术，从一个程序员的角度.md",
-    "2_English/方法论/【背单词】Excel背单词法.md",
-    "2_English/方法论/【红宝书】背红宝书的经验方法，25考研人码住！.md",
-    "3_408/方法论/【408教材推荐】从王道到黑书，经验分享.md",
     "3_408/方法论",
     "3_408",
     "2_English/外刊",
     "2_English/方法论",
-    "1_Math/【第九讲】一元函数积分学的计算.md",
-    "blog/posts/【Latex】Latex-备忘录.md",
-    "4_Experience/【双非｜科软】25考研双非一战科软397 408得分135 经验贴.md",
     "未命名.base",
-    "4_Experience/【保姆贴】2024考研数学数一150分经验贴(完全符合26考研).md",
-    "4_Experience/【狗哥】24 二战420 上岸浙大计专.md",
     "未命名 1.base",
-    "未命名.md",
-    "index.md",
-    "3_408/CSAPP/index.md",
     "stylesheets/templates/Tab 📑.txt",
     "stylesheets/templates/Primary Button 🟢.txt",
     "stylesheets/templates/Grid.txt",
-    "stylesheets/templates/Default Button 🔘.txt",
     "30讲/第三讲整理.canvas",
     "Web前端/Vitepress主题功能Todo.canvas",
     "30讲/未命名.canvas",
