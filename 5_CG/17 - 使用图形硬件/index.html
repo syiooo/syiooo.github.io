@@ -1,0 +1,2028 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://www.sy-study.top/5_CG/17%20-%20%E4%BD%BF%E7%94%A8%E5%9B%BE%E5%BD%A2%E7%A1%AC%E4%BB%B6/">
+      
+      
+        <link rel="prev" href="../16%20-%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8A%A8%E7%94%BB/">
+      
+      
+        <link rel="next" href="../18%20-%20%E8%89%B2%E5%BD%A9/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+    
+    
+      
+        <title>17 - 使用图形硬件 - Sy_Blog&Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:300,300i,400,400i,700,700i%7CNoto+Sans+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Serif SC";--md-code-font:"Noto Sans Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#17-" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Sy_Blog&amp;Notes" class="md-header__button md-logo" aria-label="Sy_Blog&Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sy_Blog&Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              17 - 使用图形硬件
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../1_Math/%E3%80%90Math%E3%80%91%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%E5%9F%BA%E7%A1%80%E6%95%B4%E7%90%86/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  1 Math
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../2_English/%E5%A4%96%E5%88%8A/%E3%80%90Guardian%E3%80%91Israel-strikes-Syria%E2%80%99s-defence-ministry-in-third-day-of-attacks/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  2 English
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../3_408/CSAPP/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  3 408
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../4_Experience/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  4 Experience
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../1%20%26%202%20-%20%E4%BB%8B%E7%BB%8D%E4%B8%8E%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  5 CG
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../blog/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Sy_Blog&amp;Notes" class="md-nav__button md-logo" aria-label="Sy_Blog&Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Sy_Blog&Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+  
+  <span class="md-ellipsis">
+    首页
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../1_Math/%E3%80%90Math%E3%80%91%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%E5%9F%BA%E7%A1%80%E6%95%B4%E7%90%86/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    1 Math
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../2_English/%E5%A4%96%E5%88%8A/%E3%80%90Guardian%E3%80%91Israel-strikes-Syria%E2%80%99s-defence-ministry-in-third-day-of-attacks/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    2 English
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../3_408/CSAPP/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    3 408
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../4_Experience/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    4 Experience
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    5 CG
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            5 CG
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1%20%26%202%20-%20%E4%BB%8B%E7%BB%8D%E4%B8%8E%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 &amp; 2 - 介绍与数学基础
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10%20-%20%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    10 - 信号处理
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11%20-%20%E7%BA%B9%E7%90%86%E6%98%A0%E5%B0%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    11 - 纹理映射
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12%20-%20%E5%9B%BE%E5%BD%A2%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    12 - 图形数据结构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13%20-%20%E9%87%87%E6%A0%B7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    13 - 采样
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14%20-%20PBR%EF%BC%9A%E5%9F%BA%E4%BA%8E%E7%89%A9%E7%90%86%E7%9A%84%E6%B8%B2%E6%9F%93/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    14 - PBR：基于物理的渲染
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15%20-%20%E6%9B%B2%E7%BA%BF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    15 - 曲线
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16%20-%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8A%A8%E7%94%BB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    16 - 计算机动画
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    17 - 使用图形硬件
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    17 - 使用图形硬件
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#171" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.1 硬件概述
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#172" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.2 什么是图形硬件
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#173" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.3 异构多处理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="17.3 异构多处理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1731-opengl" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.3.1 OpenGL 编程
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#174" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.4 图形硬件编程：缓冲、状态与着色器
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="17.4 图形硬件编程：缓冲、状态与着色器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1741" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.4.1 缓冲
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1742" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.4.2 显示缓冲
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1743" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.4.3 刷新周期
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#175" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.5 状态机
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#176-opengl" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.6 基本 OpenGL 应用
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#177" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.7 几何学
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#178-shader" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.8 初见 Shader
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#179" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.9 顶点缓冲对象
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1710" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.10 顶点数组对象
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1711" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.11 变换矩阵
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1712" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.12 逐顶点着色器
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1713" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.13 逐片元着色器
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1714" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.14 网格与实例
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1715" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.15 纹理对象
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1716" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.16 针对图形硬件编程的面向对象设计
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1717" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.17 后续的学习
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18%20-%20%E8%89%B2%E5%BD%A9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    18 - 色彩
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19%20-%20%E8%A7%86%E8%A7%89%E6%84%9F%E7%9F%A5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    19 - 视觉感知
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20%20-%20%E8%89%B2%E8%B0%83%E9%87%8D%E6%9E%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    20 - 色调重构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21%20-%20%E9%9A%90%E5%BC%8F%E5%BB%BA%E6%A8%A1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    21 - 隐式建模
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22%20-%20%E6%B8%B8%E6%88%8F%E4%B8%AD%E7%9A%84%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    22 - 游戏中的计算机图形学
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23%20-%20%E5%8F%AF%E8%A7%86%E5%8C%96/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    23 - 可视化
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3%20-%20%E5%85%89%E6%A0%85%E5%9B%BE%E5%83%8F/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 - 光栅图像
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4%20-%20%E5%85%89%E7%BA%BF%E8%BF%BD%E8%B8%AA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 - 光线追踪
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5%20-%20%E8%A1%A8%E9%9D%A2%E7%9D%80%E8%89%B2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 - 表面着色
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6%20%26%207%20-%20%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%B8%8E%E5%8F%98%E6%8D%A2%E7%9F%A9%E9%98%B5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 &amp; 7 - 线性代数与变换矩阵
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8%20-%20%E8%A7%86%E5%9B%BE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    8 - 视图
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9%20-%20%E5%9B%BE%E5%BD%A2%E7%AE%A1%E7%BA%BF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    9   图形管线
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.md/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Index.md
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../blog/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Blog
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#171" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.1 硬件概述
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#172" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.2 什么是图形硬件
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#173" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.3 异构多处理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="17.3 异构多处理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1731-opengl" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.3.1 OpenGL 编程
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#174" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.4 图形硬件编程：缓冲、状态与着色器
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="17.4 图形硬件编程：缓冲、状态与着色器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1741" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.4.1 缓冲
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1742" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.4.2 显示缓冲
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1743" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.4.3 刷新周期
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#175" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.5 状态机
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#176-opengl" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.6 基本 OpenGL 应用
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#177" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.7 几何学
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#178-shader" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.8 初见 Shader
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#179" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.9 顶点缓冲对象
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1710" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.10 顶点数组对象
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1711" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.11 变换矩阵
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1712" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.12 逐顶点着色器
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1713" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.13 逐片元着色器
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1714" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.14 网格与实例
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1715" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.15 纹理对象
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1716" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.16 针对图形硬件编程的面向对象设计
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1717" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.17 后续的学习
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="17-">17 - 使用图形硬件<a class="headerlink" href="#17-" title="Permanent link">&para;</a></h1>
+<h2 id="171">17.1 硬件概述<a class="headerlink" href="#171" title="Permanent link">&para;</a></h2>
+<p>在本书的大部分内容中，重点是底层计算机图形学的基础知识，而不是与算法可能实现的 api 或硬件相关的任何细节。
+本章采用了稍微不同的路线，并将使用图形硬件的细节与与硬件编程相关的一些实际问题混合在一起。本章旨在成为图形硬件的入门指南，并可作为研究图形硬件的一组每周实验的基础。</p>
+<h2 id="172">17.2 什么是图形硬件<a class="headerlink" href="#172" title="Permanent link">&para;</a></h2>
+<p>图形硬件描述了使用专门的基于光栅化(在某些情况下，基于光线追踪器)的硬件架构快速将 3 D 对象渲染为计算机屏幕上的像素所必需的硬件组件。
+使用术语“图形硬件”是为了引出执行一系列图形计算所需的物理组件的概念。换句话说，硬件是当前显示卡上的芯片组、晶体管、总线、处理器和计算核心的集合。
+正如你将在本章学到的，并最终亲身体验到的那样，当前的图形硬件非常擅长处理 3 D 对象的描述，并将这些表示转换为填充显示器的彩色像素。</p>
+<p>在过去的十年里，图形硬件确实发生了非常迅速的变化。较新的图形硬件提供了更多的并行处理能力，以及对专门渲染的更好支持。快速发展的原因之一是电子游戏产业及其经济发展势头。本质上，这意味着每个新的显卡提供更好的性能和处理能力。因此，电子游戏在视觉上显得更加逼真。</p>
+<p>图形硬件上的处理器(通常称为 gpu 或图形处理单元)是高度并行的，并提供数千个并发执行线程。硬件是为吞吐量而设计的，它允许在更短的时间内处理更多的像素和顶点。所有这些并行性都有利于图形算法，但其他工作也受益于并行硬件。
+除了视频游戏，gpu 还用于加速物理计算，开发实时光线追踪代码，解决流体模拟的 Navier-Stokes 相关方程，并开发更快的代码来理解气候。
+一些 api 和 sdk 已经开发出来，可以提供更直接的通用计算，比如 OpenCL 和 NVIDIA 的 CUDA。硬件加速光线追踪 api 也可以加速光线与物体的相交。类似地，用于编程视频游戏的图形组件的标准 api，如 OpenGL 和 DirectX，也允许利用图形硬件的并行能力。
+随着新硬件的开发以支持更复杂的计算，这些 api 中的许多都发生了变化。</p>
+<p>图形硬件是可编程的。作为开发人员，您可以控制与处理几何图形、顶点和最终成为像素的片元相关的许多计算。最近的硬件变化以及正在进行的 api 更新，如 OpenGL 或 DirectX，都支持完全可编程的管道。这些变化为开发人员提供了创造性的许可，以利用 gpu 上可用的计算。
+在此之前，固定函数光栅化管道将计算强制到特定样式的顶点转换，照明和片元处理。管道的固定功能确保了基本的着色、照明和纹理可以非常快速地发生。
+<img alt="" src="pic/Pasted%20image%2020240408204723.png" />
+无论是可编程接口，还是固定函数计算，光栅化流水线的基本计算都是相似的。在点阵化流水线中，顶点经过观看变换矩阵和投影变换矩阵的变换，从局部空间变换到全局空间，最终转化为屏幕坐标。与几何顶点相关联的屏幕坐标集被栅格化为片元。管道的最后阶段将片元处理成像素，并可以应用每个片段的纹理查找，照明和任何必要的混合。
+一般来说，流水线适合并行执行，GPU 内核可以同时处理顶点和片元。</p>
+<h2 id="173">17.3 异构多处理<a class="headerlink" href="#173" title="Permanent link">&para;</a></h2>
+<p>在使用图形硬件时，可以方便地将 CPU 和 GPU 区分为单独的计算实体。
+在这种情况下，术语“主机”指的是 CPU，包括它可用的线程和内存。术语“设备”指的是 GPU 或图形处理单元，以及与之相关的线程和内存。
+这是有意义的，因为大多数图形硬件是由外部硬件组成的，通过 PCI 总线连接到机器上。硬件也可以作为一个单独的芯片组焊接到机器上。
+从这个意义上说，图形硬件代表一个专门的协处理器，因为 CPU(及其核心)和 GPU 及其核心都可以编程。所有使用图形硬件的程序必须首先在 CPU 和 GPU 内存之间建立映射。这是一个相当低级的细节，但它是必需的，以便驻留在操作系统中的图形硬件驱动程序可以在硬件、操作系统和窗口系统软件之间进行接口。
+回想一下，因为主机(CPU)和设备(GPU)是分开的，所以数据必须在两个系统之间进行通信。更正式地说，操作系统、硬件驱动程序、硬件和窗口系统之间的这种映射称为<strong>图形上下文</strong>。上下文通常通过对窗口系统的 API 调用来建立。
+关于建立上下文的细节超出了本章的范围，但是许多窗口系统开发库都有方法来查询图形硬件的各种功能，并根据这些需求建立图形上下文。
+因为设置上下文依赖于窗口系统，这也意味着这样的代码不太可能是跨平台的代码。然而，在实践中，或者至少在开始时，不太可能需要这种低级上下文设置代码，因为存在许多高级 api 来帮助人们开发可移植的交互式应用程序。</p>
+<p>许多用于开发交互式应用程序的框架都支持查询输入设备，如键盘或鼠标。一些框架提供对网络、音频系统和其他高级系统资源的访问。在这方面，许多 api 都是开发图像甚至游戏应用程序的首选方式。</p>
+<p>跨平台硬件加速通常是通过 OpenGL API 实现的。OpenGL 是一个开放的行业标准图形 API，支持多种类型图形硬件的硬件加速。OpenGL 代表了图形硬件编程最常见的 api 之一，以及 DirectX 等 api。虽然 OpenGL 可以在许多操作系统和硬件架构上使用，但 DirectX 是特定于基于微软的系统的。</p>
+<h3 id="1731-opengl">17.3.1 OpenGL 编程<a class="headerlink" href="#1731-opengl" title="Permanent link">&para;</a></h3>
+<p>当你用 OpenGL API 编程时，你至少是在为两个处理器编写代码:CPU 和 GPU。
+OpenGL 是用 c 风格的 API 实现的，所有函数的前缀都是“gl”，以表明它们包含在 OpenGL 中。OpenGL 函数调用改变图形硬件的状态，并可用于声明和定义几何，加载顶点和片段着色器，并确定数据通过硬件时计算将如何发生。</p>
+<p>本章介绍的 OpenGL 变体是 OpenGL 3.3 Core Profile 版本。虽然不是最新的 OpenGL 版本，但 3.3 版本的 OpenGL 符合 OpenGL 编程的未来方向。这些版本的重点是提高效率，同时将管道的编程完全交给开发人员。在早期版本的 OpenGL 中存在的许多函数调用在这些较新的 api 中不存在。例如，即时渲染模式。
+即时模式渲染用于根据每帧的需要将数据从 CPU 内存发送到图形卡内存，并且通常非常低效，特别是对于较大的模型和复杂的场景。
+当前的 API 侧重于在需要数据之前将数据存储在图形卡上，并在渲染时<strong>实例化</strong>它。
+另一个例子是，OpenGL 的矩阵栈也被弃用了，开发者只能使用第三方矩阵库(比如 GLM)或者他们自己的类来创建必要的矩阵来进行查看、投影和转换。
+因此，OpenGL 的着色器语言(GLSL)也承担了更大的角色，在着色器中执行必要的矩阵变换以及照明和着色。因为执行每个顶点转换和照明的固定功能管道不再存在，程序员必须自己开发所有着色器。</p>
+<h2 id="174">17.4 图形硬件编程：缓冲、状态与着色器<a class="headerlink" href="#174" title="Permanent link">&para;</a></h2>
+<p>三个概念将有助于理解当代图形硬件编程。
+首先是数据缓冲区的概念，它非常简单，是设备上的<strong>线性内存分配</strong>，可以存储 gpu 将要操作的各种数据。
+第二个是图形卡保持计算状态的想法，该状态决定了场景数据和着色器如何与计算数据相关联。此外，状态可以从主机传输到设备，甚至可以在设备内部的着色器之间传输。
+着色器代表了与每个顶点或每个片元处理相关的 GPU 上的计算发生的机制。
+本章将重点关注顶点和片元着色器，但是专门的几何和计算着色器也存在于当前版本的 OpenGL 中。着色器在现代图形硬件的功能中扮演着非常重要的角色。</p>
+<h3 id="1741">17.4.1 缓冲<a class="headerlink" href="#1741" title="Permanent link">&para;</a></h3>
+<p>缓冲区是在图形硬件上存储数据的主要结构。它们表示图形硬件的内部内存，这些内存与几何、纹理和图像平面数据相关。
+栅格化管道与硬件加速栅格化相关的计算读取和写入 GPU 上的各种缓冲区。从编程的角度来看，应用程序必须初始化应用程序所需的 GPU 上的缓冲区。这相当于主机到设备的复制操作。在执行的各个阶段结束时，也可以执行设备到主机传输副本，以便将数据从 GPU 拉到 CPU 内存。
+此外，OpenGL 的 API 中确实存在允许将设备内存映射到主机内存的机制，以便应用程序可以直接写入显卡上的缓冲区。</p>
+<h3 id="1742">17.4.2 显示缓冲<a class="headerlink" href="#1742" title="Permanent link">&para;</a></h3>
+<p>在图形管道中，最终的像素颜色集可以链接到显示，或者它们可以作为 PNG 图像写入磁盘。与这些像素相关联的数据通常是颜色值的二维数组。数据本质上是二维的，但它在 GPU 上有效地表示为内存的一维线性阵列。<strong>这个数组实现了显示缓冲区，它最终被映射到窗口</strong>。渲染图像需要通过图形 API 将更改传递给图形硬件上的显示缓冲区。在光栅化流水线的末端，片元处理和混合阶段将数据写入输出显示缓冲存储器。同时，窗口系统读取显示缓冲区的内容，在监视器的窗口上产生光栅图像。</p>
+<blockquote>
+<p>所以不需要非得使用 Qt 带的 OpenGL 库，只要有能力改变显示缓冲区，你用什么库都行。</p>
+</blockquote>
+<h3 id="1743">17.4.3 刷新周期<a class="headerlink" href="#1743" title="Permanent link">&para;</a></h3>
+<p>大多数应用程序更喜欢双缓冲的显示状态。这意味着有两个缓冲区与图形窗口相关联：前缓冲区和后缓冲区。双缓冲系统的目的是应用程序可以将更改传递给后缓冲(因此，将更改写入该缓冲区)，而前缓冲内存用于驱动窗口上的像素颜色。</p>
+<p>在显示循环结束时，通过指针交换交换缓冲区。前缓冲区指针指向后缓冲区，后缓冲区指针随后被赋值给前一个前缓冲区。这样，窗口系统将用最新的缓冲区刷新窗口的内容。
+如果缓冲区指针交换与窗口系统对整个显示的刷新同步，则呈现将看起来是无缝的。否则，用户可能会在实际显示中观察到几何图形的撕裂，因为场景几何图形的变化和片元的处理(并因此写入显示缓冲区)比屏幕刷新更快。</p>
+<p>当显示器被视为内存缓冲区时，显示器上最简单的操作之一本质上是内存设置(或复制)操作，该操作将内存归零或清除到默认状态。对于图形程序，这可能意味着将窗口背景清除为特定的颜色。要在 OpenGL 应用程序中清除背景颜色(为黑色)，可以使用以下代码：
+<img alt="" src="pic/Pasted%20image%2020240408212728.png" />
+此操作仅清除颜色缓冲区。除了颜色缓冲区，图形硬件还使用深度缓冲区来表示片元相对于相机的距离。清除深度缓冲区是必要的，以确保 zbuffer 算法的操作。清除深度缓冲区可以通过将两个位字段值放在一起来实现，如下所示：
+<img alt="" src="pic/Pasted%20image%2020240408212917.png" /></p>
+<h2 id="175">17.5 状态机<a class="headerlink" href="#175" title="Permanent link">&para;</a></h2>
+<p>通过对显示器颜色和深度缓冲区的缓冲区清除操作的说明，介绍了图形硬件状态的思想。glclearcolor 函数设置默认的颜色值，当调用 glClear 时，这些值被写入颜色缓冲区内的所有像素。clear 调用初始化显示缓冲区的颜色组件，还可以重置深度缓冲区的值。如果在应用程序中不改变透明颜色，则只需要设置一次透明颜色，并且通常在 OpenGL 程序的初始化中完成。每次调用 glClear 时，它都会使用之前设置的 clear 颜色状态。</p>
+<p>还要注意，z-buffer 算法状态可以根据需要启用和禁用。z-buffer 算法在 OpenGL 中也被称为深度测试。通过启用它，在将任何片段颜色写入颜色缓冲区之前，将片段的深度值与当前存储在深度缓冲区中的深度值进行比较。有时，深度测试是不必要的，并且可能会降低应用程序的速度。禁用深度测试将阻止 z 缓冲区计算并改变可执行文件的行为。</p>
+<p>OpenGL 中的状态概念模仿了面向对象类中静态变量的使用。
+根据需要，程序员启用、禁用和/或设置驻留在显卡上的 OpenGL 变量的状态。这些状态会影响硬件上的任何后续计算。一般来说，<strong>高效的 OpenGL 程序会尽量减少状态变化，启用需要的状态，而禁用渲染不需要的状态</strong>。</p>
+<h2 id="176-opengl">17.6 基本 OpenGL 应用<a class="headerlink" href="#176-opengl" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>[!note] 123
+这部分建议看 Github 上的 LearnOpenGL 开源项目。
+<a href="https://learnopengl-cn.github.io/">主页 - LearnOpenGL CN (learnopengl-cn.github.io)</a></p>
+</blockquote>
+<h2 id="177">17.7 几何学<a class="headerlink" href="#177" title="Permanent link">&para;</a></h2>
+<h2 id="178-shader">17.8 初见 Shader<a class="headerlink" href="#178-shader" title="Permanent link">&para;</a></h2>
+<h2 id="179">17.9 顶点缓冲对象<a class="headerlink" href="#179" title="Permanent link">&para;</a></h2>
+<h2 id="1710">17.10 顶点数组对象<a class="headerlink" href="#1710" title="Permanent link">&para;</a></h2>
+<h2 id="1711">17.11 变换矩阵<a class="headerlink" href="#1711" title="Permanent link">&para;</a></h2>
+<h2 id="1712">17.12 逐顶点着色器<a class="headerlink" href="#1712" title="Permanent link">&para;</a></h2>
+<h2 id="1713">17.13 逐片元着色器<a class="headerlink" href="#1713" title="Permanent link">&para;</a></h2>
+<h2 id="1714">17.14 网格与实例<a class="headerlink" href="#1714" title="Permanent link">&para;</a></h2>
+<h2 id="1715">17.15 纹理对象<a class="headerlink" href="#1715" title="Permanent link">&para;</a></h2>
+<h2 id="1716">17.16 针对图形硬件编程的面向对象设计<a class="headerlink" href="#1716" title="Permanent link">&para;</a></h2>
+<h2 id="1717">17.17 后续的学习<a class="headerlink" href="#1717" title="Permanent link">&para;</a></h2>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+  <h2 id="__comments">Comments</h2>
+  <!-- Insert generated snippet here -->
+  <script src="https://giscus.app/client.js"
+        data-repo="syiooo/syiooo.github.io"
+        data-repo-id="R_kgDOPeemcg"
+        data-category="Show and tell"
+        data-category-id="DIC_kwDOPeemcs4CuRNW"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
+  <!-- Synchronize Giscus theme with palette -->
+  <script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    // Set palette on initial load
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+      var theme = palette.color.scheme === "slate"
+        ? "transparent_dark"
+        : "light"
+
+      // Instruct Giscus to set theme
+      giscus.setAttribute("data-theme", theme) 
+    }
+
+    // Register event handlers after documented loaded
+    document.addEventListener("DOMContentLoaded", function() {
+      var ref = document.querySelector("[data-md-component=palette]")
+      ref.addEventListener("change", function() {
+        var palette = __md_get("__palette")
+        if (palette && typeof palette.color === "object") {
+          var theme = palette.color.scheme === "slate"
+            ? "transparent_dark"
+            : "light"
+
+          // Instruct Giscus to change theme
+          var frame = document.querySelector(".giscus-frame")
+          frame.contentWindow.postMessage(
+            { giscus: { setConfig: { theme } } },
+            "https://giscus.app"
+          )
+        }
+      })
+    })
+  </script>
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant.progress", "navigation.tracking", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "content.code.copy", "content.code.select", "navigation.tabs", "content.footnote.tooltips"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.50899def.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

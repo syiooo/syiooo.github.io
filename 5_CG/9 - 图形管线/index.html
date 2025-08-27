@@ -1,0 +1,2274 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://www.sy-study.top/5_CG/9%20-%20%E5%9B%BE%E5%BD%A2%E7%AE%A1%E7%BA%BF/">
+      
+      
+        <link rel="prev" href="../8%20-%20%E8%A7%86%E5%9B%BE/">
+      
+      
+        <link rel="next" href="../index.md/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+    
+    
+      
+        <title>9 图形管线 - Sy_Blog&Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:300,300i,400,400i,700,700i%7CNoto+Sans+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Serif SC";--md-code-font:"Noto Sans Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#9-" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Sy_Blog&amp;Notes" class="md-header__button md-logo" aria-label="Sy_Blog&Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sy_Blog&Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              9   图形管线
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../1_Math/%E3%80%90Math%E3%80%91%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%E5%9F%BA%E7%A1%80%E6%95%B4%E7%90%86/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  1 Math
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../2_English/%E5%A4%96%E5%88%8A/%E3%80%90Guardian%E3%80%91Israel-strikes-Syria%E2%80%99s-defence-ministry-in-third-day-of-attacks/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  2 English
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../3_408/CSAPP/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  3 408
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../4_Experience/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  4 Experience
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../1%20%26%202%20-%20%E4%BB%8B%E7%BB%8D%E4%B8%8E%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  5 CG
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../blog/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Sy_Blog&amp;Notes" class="md-nav__button md-logo" aria-label="Sy_Blog&Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Sy_Blog&Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+  
+  <span class="md-ellipsis">
+    首页
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../1_Math/%E3%80%90Math%E3%80%91%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%E5%9F%BA%E7%A1%80%E6%95%B4%E7%90%86/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    1 Math
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../2_English/%E5%A4%96%E5%88%8A/%E3%80%90Guardian%E3%80%91Israel-strikes-Syria%E2%80%99s-defence-ministry-in-third-day-of-attacks/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    2 English
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    
+  
+  
+  
+    <a href="../../3_408/CSAPP/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    3 408
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../4_Experience/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    4 Experience
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    5 CG
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            5 CG
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1%20%26%202%20-%20%E4%BB%8B%E7%BB%8D%E4%B8%8E%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 &amp; 2 - 介绍与数学基础
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10%20-%20%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    10 - 信号处理
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11%20-%20%E7%BA%B9%E7%90%86%E6%98%A0%E5%B0%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    11 - 纹理映射
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12%20-%20%E5%9B%BE%E5%BD%A2%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    12 - 图形数据结构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13%20-%20%E9%87%87%E6%A0%B7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    13 - 采样
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14%20-%20PBR%EF%BC%9A%E5%9F%BA%E4%BA%8E%E7%89%A9%E7%90%86%E7%9A%84%E6%B8%B2%E6%9F%93/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    14 - PBR：基于物理的渲染
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15%20-%20%E6%9B%B2%E7%BA%BF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    15 - 曲线
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16%20-%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8A%A8%E7%94%BB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    16 - 计算机动画
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17%20-%20%E4%BD%BF%E7%94%A8%E5%9B%BE%E5%BD%A2%E7%A1%AC%E4%BB%B6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    17 - 使用图形硬件
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18%20-%20%E8%89%B2%E5%BD%A9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    18 - 色彩
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19%20-%20%E8%A7%86%E8%A7%89%E6%84%9F%E7%9F%A5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    19 - 视觉感知
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20%20-%20%E8%89%B2%E8%B0%83%E9%87%8D%E6%9E%84/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    20 - 色调重构
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21%20-%20%E9%9A%90%E5%BC%8F%E5%BB%BA%E6%A8%A1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    21 - 隐式建模
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22%20-%20%E6%B8%B8%E6%88%8F%E4%B8%AD%E7%9A%84%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    22 - 游戏中的计算机图形学
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23%20-%20%E5%8F%AF%E8%A7%86%E5%8C%96/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    23 - 可视化
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3%20-%20%E5%85%89%E6%A0%85%E5%9B%BE%E5%83%8F/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 - 光栅图像
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4%20-%20%E5%85%89%E7%BA%BF%E8%BF%BD%E8%B8%AA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 - 光线追踪
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5%20-%20%E8%A1%A8%E9%9D%A2%E7%9D%80%E8%89%B2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 - 表面着色
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6%20%26%207%20-%20%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%B8%8E%E5%8F%98%E6%8D%A2%E7%9F%A9%E9%98%B5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6 &amp; 7 - 线性代数与变换矩阵
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8%20-%20%E8%A7%86%E5%9B%BE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    8 - 视图
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    9   图形管线
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    9   图形管线
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#91" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.1 光栅化
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.1 光栅化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#911" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.1.1 绘制线段——使用隐式直线方程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#912" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.1.2 三角形光栅化
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#913" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.1.3 透视矫正插值
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#914" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.1.4 裁切
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.1.4 裁切">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 - 在透视变换之前裁切
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 - 在变换后的齐次坐标中裁切
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      对平面进行裁切
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#92" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2 在光栅化前后的操作
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.2 在光栅化前后的操作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#921-2-d" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2.1 简单 2 D 绘制
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#922-3-d" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2.2 一个小型的 3 D 流水线
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#923-z-" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2.3 使用 z-缓冲绘制物体阻挡
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.2.3 使用 z-缓冲绘制物体阻挡">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      精度问题
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#924" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2.4 逐顶点着色
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#925" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2.5 逐片元着色
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#926" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2.6 纹理映射
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#927" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2.7 着色频率
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#93" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.3 简单抗锯齿
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#94" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.4 剔除图元以提高效率
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.4 剔除图元以提高效率">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#941" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.4.1 视图体积剔除
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#942" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.4.2 “背面”剔除
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.md/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Index.md
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../blog/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    Blog
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#91" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.1 光栅化
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.1 光栅化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#911" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.1.1 绘制线段——使用隐式直线方程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#912" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.1.2 三角形光栅化
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#913" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.1.3 透视矫正插值
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#914" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.1.4 裁切
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.1.4 裁切">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 - 在透视变换之前裁切
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 - 在变换后的齐次坐标中裁切
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      对平面进行裁切
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#92" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2 在光栅化前后的操作
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.2 在光栅化前后的操作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#921-2-d" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2.1 简单 2 D 绘制
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#922-3-d" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2.2 一个小型的 3 D 流水线
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#923-z-" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2.3 使用 z-缓冲绘制物体阻挡
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.2.3 使用 z-缓冲绘制物体阻挡">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      精度问题
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#924" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2.4 逐顶点着色
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#925" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2.5 逐片元着色
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#926" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2.6 纹理映射
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#927" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2.7 着色频率
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#93" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.3 简单抗锯齿
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#94" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.4 剔除图元以提高效率
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.4 剔除图元以提高效率">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#941" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.4.1 视图体积剔除
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#942" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.4.2 “背面”剔除
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<blockquote>
+<p>[!note] 123
+(Vertex Shader) =&gt; (Geometry Shader) =&gt; Clip Space =&gt; (透视除法) =&gt; NDC =&gt; (视口变换) =&gt; Window Space =&gt; (Fragment Shader)</p>
+</blockquote>
+<hr />
+<h1 id="9-">9 - 图形管线<a class="headerlink" href="#9-" title="Permanent link">&para;</a></h1>
+<p>前面几章已经建立了数学脚手架，我们需要看看渲染的第二个主要方法（光栅渲染）：将对象一个接一个地绘制到屏幕上或对象顺序渲染。
+在光线追踪中，我们依次考虑每个像素并找到影响其颜色的对象，而在光栅渲染中，我们将依次考虑每个几何对象并找到可能对其产生影响的像素。
+寻找图像中被几何原语占用的所有像素的过程称为光栅化，因此对象顺序渲染也可以称为光栅化渲染。所需的操作序列，从对象开始，以更新图像中的像素结束，被称为图形管线。</p>
+<blockquote>
+<p>基于光栅化渲染的渲染器也叫扫描线渲染器。</p>
+</blockquote>
+<p>对象顺序渲染由于其高效率而获得了巨大的成功。对于大型场景，数据访问模式的管理对性能至关重要，并且相比于重复检索场景以获得像素所指向的物体，对整个场景做一次扫描所有几何体显然更有优势。</p>
+<p>本章的标题表明，只有一种方法可以实现对象顺序显然。当然，这是不正确的——两个有着不同目标的完全不同的图形管道的例子是：</p>
+<ol>
+<li>通过 OpenGL 和 Direct 3 D 等 api 支持交互渲染的硬件管线。硬件管道必须运行得足够快，以便对游戏、可视化和用户界面做出实时反应。</li>
+<li>用于电影制作的支持 RenderMan 等 api 的软件管线。制作流程必须尽可能渲染最高质量的动画和视觉效果，并按比例缩放到巨大的场景，但可能会花费很多时间。</li>
+</ol>
+<p>对象顺序渲染中需要完成的工作可以依据光栅化任务本身来整理：光栅化之前对几何图形的操作，以及光栅化后对像素的操作。
+最常见的几何操作是应用前两章中讨论的矩阵变换，以将定义几何图形的点从对象空间映射到屏幕空间，因此，光栅化器的输入是以像素坐标或屏幕空间来表示的。
+最常见的像素化操作是隐藏面去除，将更接近观察者的表面布置为远离观察者的表面的前方。在每个阶段也可以包括许多其他操作，从而使用相同的通用过程来实现各种不同的渲染效果。
+<img alt="" src="pic/Pasted%20image%2020240307203827.png" />
+几何对象从交互应用程序或场景描述文件被馈入流水线，在顶点处理阶段对顶点进行操作，然后将使用这些顶点的基本体发送到光栅化阶段。光栅化器将每个原语几何分解成多个片元，每个片元对应于几何原语覆盖的每个像素。片元在片元处理阶段被处理，然后与每个像素相对应的各个片段在片段混合阶段被合并。</p>
+<h2 id="91">9.1 光栅化<a class="headerlink" href="#91" title="Permanent link">&para;</a></h2>
+<p>光栅化是对象顺序图形中的核心操作，而光栅化器是任何图形流水线的核心。对于进入的每个基元，光栅化器有两个工作：</p>
+<ol>
+<li>枚举基元覆盖的像素</li>
+<li>为基元覆盖的每个像素插值出它所对应的属性值</li>
+</ol>
+<p>这些属性的用途将在后面的示例中解释。光栅化的输出是一组片元，每个片元代表一个特定的像素，并带有它自己的一组属性值。</p>
+<p>在本章中，我们将介绍光栅化。同样的光栅化方法用于绘制线段和 2 D 形状——尽管使用 3 D 图形系统“在幕后”完成所有 2 D 绘制已经变得越来越普遍。</p>
+<h3 id="911">9.1.1 绘制线段——使用隐式直线方程<a class="headerlink" href="#911" title="Permanent link">&para;</a></h3>
+<p>大多数图形包都包含一个线条绘制命令，它在屏幕坐标中获取两个端点，并在它们之间绘制一条线。对于一般的屏幕坐标端点(x 0, y 0)和(x 1, y 1)，例程应该绘制一些“合理”的像素集，以近似于它们之间的一条线。绘制这样的直线是基于直线方程的，我们有两种类型的方程可供选择：隐式方程和参数方程。本节描述使用隐式方程的方法。</p>
+<p>使用隐式方程绘制直线的最常用方法是中点算法。中点算法最终画出与 Bresenham 算法相同的线，但它在某种程度上更直接。直线的隐式方程：
+<span class="arithmatex">\(<span class="arithmatex">\(f(x,y)=(y_0-y_1)x+(x_1-x_0)y+x_0y_1-x_1y_0\quad and \quad x_0\le x_1\)</span>\)</span>
+直线的斜率为：<span class="arithmatex">\(<span class="arithmatex">\(m=\frac{y_1-y_0}{x_1-x_0}\)</span>\)</span>
+接下来假设 <span class="arithmatex">\(m\in(0,1]\)</span>，因为其他情况可以推导出类似的结论。</p>
+<p>中点算法的关键假设是我们尽可能画出没有“gap”的最细的线。两个像素之间的对角连接不被认为是间隙。
+当这条线从左端点向右前进时，只有两种可能性：将一个像素绘制在其左侧（相同的高度），或者将像素绘制得更高（对角位置，但不可以绘制在上方）。
+端点之间的每列像素中始终恰好有一个像素。零表示间隙，两个像素太粗。
+同一行中可能有两个像素：这条线可能更倾向于 x 轴，所以有时它是向右的，有时是向上的。</p>
+<p>中点算法首先建立最左边的像素和最右边的像素的列号(x 值)，然后循环水平地建立每个像素的行(y 值)。
+<img alt="" src="pic/Pasted%20image%2020240307211340.png" />
+关键是在 if 语句中建立有效的方法来做出决定。做出选择的有效方法是查看两个潜在像素中心之间的直线的中点。两个候选像素的中心之间的中点是(+1，y+1)。Y+0.5)。如果直线低于该中点，则绘制底部像素，否则，绘制顶部像素。
+为了确定直线通过(x+1，+0.5)的上方还是下方，我们计算 f(x+1，+0.5)。公式中 y 项地系数是正的，意味着当 f(x,y)&gt;0 时，点位于直线的上方。</p>
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">0.5</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">//f&lt;0时，测试点在直线下方，意味着要向上提升一格</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="n">y</span><span class="o">++</span><span class="p">;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>上面的代码可以很好地处理适当斜率的线(即，在 0 和 1 之间)。读者可以解决其他三种情况，它们只有在小细节上有所不同。</p>
+<p>如果想要更高的效率，可以使用增量方法。增量方法试图通过重复使用前一步的计算来使循环更有效。在所给出的中点算法中，主要计算是对 f(+1，y+0.5)的求值。在循环内，在第一次迭代之后，我们已经计算了 f(x-1，y+0.5)或 f(x-1，y+0.5，Y-0.5)，下步计算的增量关系为：
+<span class="arithmatex">\(<span class="arithmatex">\(f(x+1,y)=f(x,y)+(y_0-y_1)\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(f(x+1,y+1)=f(x,y)+(y_0-y_1)+(x_1-x_0)\)</span>\)</span>
+代码如下：
+<img alt="" src="pic/Pasted%20image%2020240307212940.png" />
+这个代码应该运行得更快，因为它与非增量版本相比几乎没有额外的设置成本(对于增量算法来说并不总是正确的)，但是它可能累积更多的数值错误，因为对于一些长的线段，f(x，y+0.5)的求值可能由许多加法组成。然而，考虑到线段很少比千几像素还要长，这样的错误不太可能是严重的。
+通过将(x 1-xo)+(yo-y 1)和(yo-y 1)存储为变量，可以实现稍微高一些的设置成本，但更快的循环执行。</p>
+<h3 id="912">9.1.2 三角形光栅化<a class="headerlink" href="#912" title="Permanent link">&para;</a></h3>
+<p>我们想用三个点 <span class="arithmatex">\(p_0p_1p_2\)</span> 在屏幕坐标上画一个三角形。这和绘制直线的问题类似，但是有它独有的子问题。在绘制时，我们希望利用图元端点插值计算出像素的属性（例如颜色）。如果利用中心公式，这个问题便迎刃而解了。
+假使三角形图元内的 p 点拥有重心坐标 <span class="arithmatex">\((\alpha,\beta,\gamma)\)</span>，那么 p 点的属性 c 为：
+<span class="arithmatex">\(<span class="arithmatex">\(c=\alpha c_0+\beta c_1+\gamma c_2\)</span>\)</span>
+这种类型的颜色插值在图形中被称为 Gouraud 插值，以其发明者命名(Gouraud, 1971)。</p>
+<p>栅格化三角形的另一个微妙之处是，我们经常会栅格化那些共享边线和顶点的三角形。这意味着我们想要栅格化相邻的三角形，并且邻接的部分没有孔洞。
+我们可以通过使用中点算法绘制每个三角形的轮廓，然后填充内部像素来做到这一点。这意味着相邻三角形沿每条边绘制相同的像素。如果相邻三角形的颜色不同，则图像将取决于绘制这两个三角形的顺序。</p>
+<p>避免顺序问题和消除孔洞的栅格化三角形最常见的方法是使用<strong>当且仅当像素的中心位于三角形内部时才绘制像素的惯例</strong>。也就是说，像素中心的重心坐标都在(0,1)区间内。
+这就产生了一个问题，如果中心正好在三角形的边缘上该怎么办。有几种方法可以处理这个问题，本节稍后将对此进行讨论。
+关键的观察是，质心坐标允许我们决定是否绘制像素，以及如果我们从顶点插值颜色，像素应该是什么颜色。
+因此，我们对三角形光栅化的问题归结为有效地找到像素中心的质心坐标。蛮力光栅化算法是：
+<img alt="" src="pic/Pasted%20image%2020240308100857.png" />
+对算法的改进主要有</p>
+<ol>
+<li>将外部循环限制在较小的候选像素集上：确定三角形的矩形边界（最小外接矩形），然后只考虑矩形区域内部的候选点。</li>
+<li>使以重心为中心的计算变得高效：应用 2 章提到的重心坐标求解公式。</li>
+</ol>
+<p><img alt="" src="pic/Pasted%20image%2020240308101302.png" />
+接下来讨论了关于算法的增量形式：
+大致的意思是：<span class="arithmatex">\((\alpha,\beta,\gamma)\)</span> 的计算可以用增量式，因为在内部循环中只有 x 在变换（x++;），显然 <span class="arithmatex">\((\alpha,\beta,\gamma)\)</span> 每一次增加一个固定的量。
+如果 <span class="arithmatex">\((\alpha,\beta,\gamma)\)</span> 是增量型的，那么像素的属性 c 也应该是增量型的。
+再看外部循环，由于内部循环的 <span class="arithmatex">\((\alpha,\beta,\gamma)\)</span> 以恒定增量变换，外部循环也可以写成增量型的。</p>
+<hr />
+<p><strong>接下来考虑在三角形的边缘绘制像素</strong></p>
+<p>我们仍然没有讨论中心恰好在三角形边缘的像素做什么。如果一个像素恰好位于三角形的边缘，那么它一定落于其邻接三角形的边线上（如果有的话）。没有明显的方法可以将像素授予一个三角形或另一个三角形。最差的决定是不绘制像素，这样会导致两个三角形之间产生一个洞。更好但仍然不好的是，两个三角形都绘制像素。如果三角形是透明的，这将导致双色。
+我们真的希望将像素授予恰好其中一个三角形，我们希望这个过程很简单；只要很好地定义选择，选择哪个三角形并不重要。</p>
+<p>一种方法是：任何屏幕外点肯定在我们将要绘制边线的一侧。对于非共享边上的三角形顶点，他们一定位于共享边的两侧（下图中 a、b 两点在共享边的两侧），其中有一个顶点与屏幕外点位于边线的同侧（下图中 a 与外点同侧）。我们可以直接计算下列式子。如果这个式子成立，说明 a 与外点同侧：
+<span class="arithmatex">\(<span class="arithmatex">\(f(a)\cdot f(外点)&gt;0\)</span>\)</span>
+<img alt="" src="pic/Pasted%20image%2020240308105846.png" />
+请注意这个方法并不完美，因为通过边缘的线也可能穿过屏幕外点，但我们至少大大减少了有问题的案例的数量。使用哪个屏幕外点是任意的。我们只需要对恰好在边缘上的外点的情况添加额外的检查。我们希望对于常见的情况，即完全内部或外部测试，不会达到此检查：
+<img alt="" src="pic/Pasted%20image%2020240308111424.png" /></p>
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">//我的写法和他不太一样</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1">//完全内部和完全外部的情况远大于在线上的情况</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1">//应该先判完全内部和完全外部</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">calculate</span><span class="p">(</span><span class="err">\</span><span class="n">alpha</span><span class="p">,</span><span class="w"> </span><span class="err">\</span><span class="n">beta</span><span class="p">,</span><span class="w"> </span><span class="err">\</span><span class="n">gamma</span><span class="p">)</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="k">if</span><span class="p">(</span><span class="err">\</span><span class="n">alpha</span><span class="o">&gt;</span><span class="mi">0</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="err">\</span><span class="n">beta</span><span class="o">&gt;</span><span class="mi">0</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="err">\</span><span class="n">gamma</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">){</span><span class="w">  </span><span class="c1">//完全内部</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="n">drawPixel</span><span class="p">();</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">}</span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="err">\</span><span class="n">alpha</span><span class="o">&lt;</span><span class="mi">0</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="err">\</span><span class="n">beta</span><span class="o">&lt;</span><span class="mi">0</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="err">\</span><span class="n">gamma</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">){</span><span class="w">  </span><span class="c1">//完全外部</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="k">continue</span><span class="err">；</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="p">}</span><span class="k">else</span><span class="p">{</span><span class="w">  </span><span class="c1">//在边线上</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">和某条线关于外点同侧</span><span class="p">){</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">        </span><span class="n">drawPixel</span><span class="p">();</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>我们可能期望只有当我们对两个三角形使用完全相同的线方程时，上述代码才会努力消除孔洞和双绘制。事实上，只有当两个共享顶点在绘图调用中具有相同的顺序时，线方程才相同。否则，方程可能会翻转符号。
+这可能是一个问题，具体取决于编译器是否改变了操作的顺序。因此，如果需要健壮的实现，可能需要检查编译器和算术单元的细节。上述伪代码中的前四行必须仔细编码，以处理边缘恰好命中像素中心的情况。</p>
+<p>除了适应增量实现之外，还有几个潜在的早期退出点。例如，如果 α 为负，则不需要计算 β 或 γ。虽然这可能会导致速度的提高。但是额外的分支可能会减少流水线或并发性，并可能减慢代码的速度。因此，如果代码位于系统的关键部位，那么可以多试试几种可能的优化方法。</p>
+<p>上述代码的另一个细节是退化三角形的分母可能为零，即如果 fγ=0。要么考虑如何适应浮点数的误差，要么需要另一个测试。</p>
+<h3 id="913">9.1.3 透视矫正插值<a class="headerlink" href="#913" title="Permanent link">&para;</a></h3>
+<p>在插值时实现正确的透视效果，这个过程中有一些子问题。我们将用纹理坐标作为例子告诉大家，插值时作透视矫正很重要，这样的考虑方式同样适用于 3 D 空间中的任何属性。</p>
+<p>原因很简单，只是在屏幕空间中插值纹理坐标会导致不正确的图像，如图 9.7 中的网格纹理所示。由于透视中的事物随着与观看者的距离的增加而变小，因此在 3 D 中均匀间隔的行应该在 2 D 图像空间中随距离的增加而压缩。
+<img alt="" src="pic/Pasted%20image%2020240308115219.png" />
+我们可以通过插值(u, v)坐标来实现三角形的纹理映射，但这导致了上图右侧所示的问题。如果使用<strong>屏幕空间重心坐标</strong>，则三角形会出现类似的问题。</p>
+<p>为了解开基本问题，让我们考虑从世界空间 q 到齐次点 r 到齐次点 s 的进展：
+<img alt="" src="pic/Pasted%20image%2020240308115940.png" /></p>
+<blockquote>
+<p>世界坐标下的 q 点，做透视投影变换到齐次点 r，在求出与齐次点等价的 3 维点 s。</p>
+</blockquote>
+<p>纹理坐标插值问题的最简单形式是我们有两个 3 维空间中的点 q 和 Q，他们的投影分别时 s 和 S，另外，在 qQ 直线上存在一点 q’，它的投影称 s'，也应当在 sS 直线上。现在，q'和 s‘应当有相同的纹理坐标。</p>
+<p>原始的屏幕空间的方法（上述算法中体现），称点 s’：<span class="arithmatex">\(s'=s+\alpha(S-s)\)</span>，应当有纹理坐标(u,v)：<span class="arithmatex">\((u_s',v_s')=(u_s+\alpha(u_S-u_s),v_s+\alpha(v_S-v_s))\)</span>。然而实际上是错误的，因为屏幕空间上的 s'，它所对应的世界空间 q'，并非 <span class="arithmatex">\(q+\alpha(Q-q)\)</span>。</p>
+<p>然而实际上，sS 上的 s'确实能在 qQ 上找到其对应点（只不过比例比一定一样罢了）。我们称：
+<span class="arithmatex">\(<span class="arithmatex">\(q+t(Q-q) \to s+\alpha(S-s)\)</span>\)</span>
+事实上我们能从一个参数求出另一个参数（例如求 t）：
+<img alt="" src="pic/Pasted%20image%2020240308145347.png" /></p>
+<p>这个方程为在屏幕空间做插值提供了一思想。为了获得屏幕空间点 S‘=S+a(S-S)的纹理坐标，计算 us+t(A)(us-us)和 vs+t(A)(vs-vs)。这个坐标是 s'对应世界空间下 q'得坐标，因此这是可行的。然而，对于每个片元求值很慢，并且有一种更简单的方法。</p>
+<blockquote>
+<p>[!warning] 透视矫正插值专题
+透视矫正插值专题：<a href="关于透视矫正插值.md">关于透视矫正插值</a></p>
+</blockquote>
+<p>关键点是，透视变换保留线和面，所以在三角形内线性内插任何我们想要的属性是可以的，<strong>但只有当它们（属性）与点一起经历透视变换</strong>。</p>
+<blockquote>
+<p>[!NOTE] 让属性与点一起经历透视变换时
+<strong>让属性与点一起经历透视变换时</strong> &gt; <span class="arithmatex">\(<span class="arithmatex">\(s_{homo}=M\cdot p_{homo}=\begin{bmatrix} 1&amp;0&amp;0&amp;0&amp;0\\0&amp;n&amp;0&amp;0&amp;0\\0&amp;0&amp;n&amp;0&amp;0\\0&amp;0&amp;0&amp;n+f&amp;-nf\\0&amp;0&amp;0&amp;1&amp;0 \end{bmatrix}\cdot\begin{bmatrix} Attribute\\x\\y\\z\\1 \end{bmatrix}=\begin{bmatrix} Attribute\\nx\\ny\\z(n+f)-nf\\z \end{bmatrix}\)</span>\)</span>
+将属性 attr 加到变换后的齐次坐标中（非空间相关的属性在投影时不变）：
+<span class="arithmatex">\(<span class="arithmatex">\(s_{homo}=\begin{bmatrix} Attribute\\nx\\ny\\z(n+f)-nf\\z \end{bmatrix}\to\begin{bmatrix} \frac{Attribute}{z}\\ \frac{nx}{z}\\ \frac{ny}{z}\\ (n+f)- \frac{nf}{z}\\ 1 \end{bmatrix}\)</span>\)</span></p>
+</blockquote>
+<p>为了更直观得理解这种几何推理，我们在 2 维空间上分析，我们有齐次点(xr，yr，wr)和一个属性 u。属性 u 被假定为 xr 和 yr 的线性函数，因此如果我们将 u 绘制为(xr，yr)上的高度场，结果会是一个平面的。现在，如果我们将 u 视为第三个空间坐标(称为 u，强调它与其他点一样对待)，并让整个 3 D 齐次点(xr，yr，ur，w)通过透视变换，结果(xs，ys，us)仍然生成位于平面上的点。平面内会有一些翘曲，但保持平坦。这意味着 us 是(xs，ys)的线性函数。也就是说，我们可以在任何地方通过基于坐标(xs，ys)的线性插值法计算 us。</p>
+<p>回到完整的问题，我们需要对纹理坐标(u，v)进行内插，这些纹理坐标是世界空间坐标(x，y，z)的线性函数。在将这些点变换到屏幕空间之后，将纹理坐标添加为附加坐标，我们就得到了：
+<img alt="" src="pic/Pasted%20image%2020240310110115.png" />
+上一段的实际含义是我们可以根据屏幕空间的坐标插值出原空间所有属性（包括 z 缓冲区中会使用到的深度信息）。原始方法（直接使用屏幕空间的比例插值）的问题是，我们正在对选择不一致的组件进行插值——只要涉及的属性来自透视划分前后，所有组件都将很好。</p>
+<blockquote>
+<p>这句话的意思是：插值属性时，要么都使用变换前的属性和比例，要么都使用变换后的属性和比例。这样插值出来的属性一定不会错。
+原来直接使用屏幕空间比例进行插值的方法错在：它使用<strong>变换后</strong>的比例，和<strong>变换前</strong>的属性。</p>
+</blockquote>
+<p>剩下的一个问题是 (u/wr, v/wr ) 不能直接用于查找纹理数据；我们需要 (u, v)。这解释了我们加入 (9.3) 的额外参数的目的，其值始终为 1：一旦我们有 u/wr,v/wr 和 1/wr，我们可以通过划分轻松恢复 (u, v)。</p>
+<blockquote>
+<p>它在(u, v)坐标下加了一位变成(u, v, 1)，在透视除法下，1 会变成(1 / wr)，这个参数存储了 wr，用来恢复 u 和 v 的原始值。</p>
+</blockquote>
+<p>这种在变换空间中以无误差线性插值 1/wr 的能力使我们能够正确纹理三角形。我们可以使用这些理论来修改扫描转换代码：
+<img alt="" src="pic/Pasted%20image%2020240310112249.png" />
+当然，这个伪代码中出现的许多表达式将在循环之外预先计算以加快速度。</p>
+<p>在实践中，现代系统以透视正确的方式插入所有属性，除非特别要求其他一些方法。</p>
+<h3 id="914">9.1.4 裁切<a class="headerlink" href="#914" title="Permanent link">&para;</a></h3>
+<p>简单地将图元转换为屏幕空间并栅格化它们并不是很有效。这是因为视图体积之外的图元——特别是视图体积后面的图元——最终可以被栅格化，从而导致不正确的结果。
+<img alt="" src="pic/Pasted%20image%2020240310134833.png" />
+例如，两个顶点在视图体积中，但第三个顶点在视图体积后面的图元。投影变换将此顶点映射到远平面后面的无意义位置，如果允许发生这种情况，三角形将被错误地栅格化。出于这个原因，光栅化必须在裁剪操作之后，这删除可以延伸到眼睛后面的部分图元。</p>
+<blockquote>
+<p>意思是：上图中（摄像机朝向 z+方向，n 和 f 为正）c 点位于近平面之前，甚至伸到了 z 轴负半轴的位置，做完透视变换，c 点的坐标会大于 n+f，这使得 c 点处于场上所有几何体之后（z 深度比场上所有的几何体都要大）。</p>
+</blockquote>
+<p>在裁剪时，“错误”部分是视图体积之外的部分。裁剪视图体积之外的所有几何图形总是安全的——也就是说，裁剪到体积的所有六个面——但许多系统仅裁剪到近平面。
+实现裁剪的两种最常见的方法是：</p>
+<ol>
+<li>在世界坐标中，使用视图截锥体的六个平面。</li>
+<li>在透视除法之前的 4 D 变换空间中裁切。</li>
+</ol>
+<p>对于每个三角形：</p>
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">for</span><span class="w"> </span><span class="n">each</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">six</span><span class="w"> </span><span class="n">planes</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="k">if</span><span class="p">((</span><span class="n">triangle</span><span class="w"> </span><span class="n">entirely</span><span class="w"> </span><span class="n">outside</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">plane</span><span class="p">){</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">        </span><span class="k">break</span><span class="p">;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="p">}</span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">triangle</span><span class="w"> </span><span class="n">spans</span><span class="w"> </span><span class="n">plane</span><span class="p">){</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">        </span><span class="n">clip</span><span class="w"> </span><span class="n">triangle</span><span class="p">;</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">quadrilateral</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">left</span><span class="p">){</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">            </span><span class="k">break</span><span class="w"> </span><span class="n">into</span><span class="w"> </span><span class="n">two</span><span class="w"> </span><span class="n">triangles</span><span class="p">;</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="p">}</span>
+</span></code></pre></div>
+<h4 id="1-">1 - 在透视变换之前裁切<a class="headerlink" href="#1-" title="Permanent link">&para;</a></h4>
+<p>直接对视图体积的 8 个顶点（<span class="arithmatex">\([l,r]\times[b,t]\times[n,f]\)</span>）做逆透视变换，再求解出 6 个平面的方程。</p>
+<h4 id="2-">2 - 在变换后的齐次坐标中裁切<a class="headerlink" href="#2-" title="Permanent link">&para;</a></h4>
+<p>常见的实现手段是在透视除法前在齐次坐标中裁剪。在这里，视图体积为 4 D，受 3 D 体积（hyperplanes）的限制。他们是：
+<span class="arithmatex">\(<span class="arithmatex">\(\begin{cases} -x+lw=0\\x-rw=0\\-y+bw=0\\y-tw=0\\-z+nw=0\\z-fw=0 \end{cases}\)</span>\)</span>
+这些平面非常简单，因此效率优于选项 1。通过将视图体积 [l, r] × [b, t] × [f, n] 转换为 [0, 1]^3 仍然可以改进它们。事实证明，三角形的裁剪在 3 D 中并没有更复杂多少。</p>
+<h4 id="_1">对平面进行裁切<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
+<p>无论我们选择哪种选项，我们必须针对平面进行裁剪。回忆起平面的隐式方程：
+<span class="arithmatex">\(<span class="arithmatex">\(f(p)=n\cdot (p-q)=n\cdot  p+D=0\)</span>\)</span>
+有趣的是，这个方程不仅描述了 3 D 平面，而且还描述了 2 D 中的一条线和 4 D 中平面的体积模拟。所有这些实体通常在其适当的维度中称为平面。</p>
+<blockquote>
+<p>这个是 3 D 平面的表达式，但长得像 2 D 直线的表达式（形如 kx+b），并且某种意义上是所有满足 4 D 齐次坐标点乘为 0 的齐次点 p。</p>
+</blockquote>
+<p>如果我们在点 a 和 b 之间有一个线段，我们可以使用第 12 节中描述的 BSP 树程序中切割 3 D 三角形边缘的技术将其“裁切”到平面上。
+在这里，测试点 a 和 b 以确定它们是否在平面 f (p) = 0 的相反两侧，通过检查 f (a) 和 f (b) 是否有不同的符号：
+<span class="arithmatex">\(<span class="arithmatex">\(f(a)\cdot f(b)&lt;0\)</span>\)</span>
+通常，f (p)&lt;=0 定义为平面的“内部”，f (p)&gt;0 是平面的“外部”。如果平面确实分裂了线，那么我们可以通过代入参数线方程来求解交点：
+<span class="arithmatex">\(<span class="arithmatex">\(f(p)=n\cdot (p-q)=n\cdot  p+D=0\quad and \quad p=a+t(b-a)\)</span>\)</span>
+解得：
+<span class="arithmatex">\(<span class="arithmatex">\(t=\frac{n\cdot a+D}{n\cdot(a-b)}\)</span>\)</span></p>
+<h2 id="92">9.2 在光栅化前后的操作<a class="headerlink" href="#92" title="Permanent link">&para;</a></h2>
+<p>在栅格化图元之前，定义它的顶点必须位于屏幕坐标中，并且必须知道在原语之间进行插值的颜色或其他属性。
+准备这些数据是管线顶点处理阶段的工作。在这个阶段，传入的顶点通过模型变换、视变换、投影变换和视图变换，将它们从原始坐标映射到屏幕空间。
+同时，根据需要转换其他信息，如颜色、表面法线或纹理坐标。我们将在下面的例子中讨论这些附加属性。</p>
+<p>在光栅化之后，进行进一步处理以计算每个片段的颜色和深度。这种处理可以像仅通过插值颜色并使用光栅化器计算的深度一样简单；或者它也可以涉及复杂的着色操作。最后，混合阶段将重叠每个像素的图元(可能是几个)产生的片元组合起来计算最终的颜色。</p>
+<p>最常见的混合方法是选择深度最小的碎片的颜色(最接近眼睛)。</p>
+<h3 id="921-2-d">9.2.1 简单 2 D 绘制<a class="headerlink" href="#921-2-d" title="Permanent link">&para;</a></h3>
+<p>最简单的管道在顶点或片元阶段什么都不做，在混合阶段，每个片元的颜色覆盖前一个片元的值。应用程序直接在像素坐标中提供图元，而光栅化程序完成所有工作。</p>
+<p>这种基本排列是许多用于绘制用户界面、绘图、图形和其他 2 D 内容的简单、较旧的 API 调用。通过为每个基元的所有顶点指定相同的颜色，可以绘制纯色形状，我们的模型管道还支持使用插值法平滑地变色。</p>
+<h3 id="922-3-d">9.2.2 一个小型的 3 D 流水线<a class="headerlink" href="#922-3-d" title="Permanent link">&para;</a></h3>
+<p>为了在 3 D 中绘制对象，对 2 D 绘制流水线的唯一改变是一个变换矩阵：顶点处理阶段将输入的顶点位置乘以模型变换、视变换、投影变换和视窗变换的乘积，产生屏幕空间三角形，然后以与在 2 D 中直接绘制它们相同的方式来绘制这些三角形。</p>
+<p>最小 3 D 流水线的一个问题是，为了获得正确的遮挡关系——图元必须以自后而前的顺序绘制。这样的算法被称为画家算法，用来移除被隐藏的面，类似于首先绘制绘画的背景，然后在上面绘制前景。</p>
+<p>画家的算法是一种有效的删除隐藏表面的方法，但它有几个缺点：</p>
+<ol>
+<li>它不能处理彼此相交的三角形，因为没有正确的绘制顺序。类似地，多个三角形，即使它们不相交，仍然可以排列在一个遮挡循环中，</li>
+<li>另一种情况是不存在从后到前的顺序。</li>
+</ol>
+<p><img alt="" src="pic/Pasted%20image%2020240310153439.png" />
+最重要的是，按深度对基元进行排序速度很慢，特别是对于大型场景，并扰乱了使对象顺序渲染如此之快的高效数据流。</p>
+<h3 id="923-z-">9.2.3 使用 z-缓冲绘制物体阻挡<a class="headerlink" href="#923-z-" title="Permanent link">&para;</a></h3>
+<p>在实践中，很少使用画家的算法。相反，使用了一种简单有效的隐藏表面去除算法，称为 z 缓冲区算法。
+该方法非常简单：在每个像素上，我们记录到到目前为止绘制过的最近表面的距离，我们丢弃那些离距离更远的片元。除了红色、绿色和蓝色值之外，通过为每个像素分配一个额外的值来存储最近的距离，称为深度或 z-缓冲。</p>
+<p>z-buffer 算法是在片元混合阶段实现的，通过将每个片元的深度与存储在 z-buffer 中的当前值进行比较。如果片元的深度更接近，其颜色及其深度值都会覆盖当前颜色和深度缓冲区中的值。如果片元的深度更远，则丢弃。为了确保第一个片元将通过深度测试，zbuffer 被初始化为最大深度（远平面的深度）。无论绘制表面的顺序如何，相同的片段将赢得深度测试，图像将是相同的。</p>
+<p>z-buffer 算法要求每个片元携带深度。这是通过将 z 坐标插值为顶点属性来完成的，这与颜色或其他属性进行插值的方式相同。</p>
+<p>z-buffer 是一种简单且实用的方法来处理对象顺序渲染中的隐藏表面，直到现在它都是主要的方法。它比几何方法简单得多，几何法将表面切割成可以按深度排序的片段。而深度顺序只需要在像素的位置确定。它普遍支持硬件图形管道，也是软件管道最常用的方法。</p>
+<h4 id="_2">精度问题<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<p>在实践中，存储在缓冲区中的 z 值是非负的整数。这比真正的浮点数更可取，因为 z 缓冲区所需的快速内存有些昂贵。</p>
+<p>整数的使用可能会导致一些精度问题。如果我们使用一个有 B 个值的整数范围{0,1，…， B−1}，我们可以将 0 映射到近裁剪平面 z = n，将 B−1 映射到远裁剪平面 z = f（这里的 n、z、f 都是正的）。我们将每个 z 值送到宽度为 Δz = (f−n)/B 的“桶”。如果内存不是很重要，我们就不会使用整数 z 缓冲区，因此使 B 尽可能小是有用的。
+如果我们分配 b bit 来存储 z 值，那么 <span class="arithmatex">\(B=b^2\)</span>。我们需要足够的比特位来确保在一个三角形前面的任何三角形都能映射到不同的桶中。</p>
+<p>例如，如果你正在渲染一个场景，其中三角形的间距至少为一米，那么 Δz &lt; 1 应该产生没有伪影的图像。有两种方法可以使 Δz 变小：将 n 和 f 移得更近，或者增加 b。
+如果 b 是固定的，就像在 api 或特定硬件平台上一样，调整 n 和 f 是唯一的选择。</p>
+<p>在创建透视图像时，必须非常小心地处理 z 缓冲区的精度。上面的值 Δz 在透视除法之后使用。透视除法的结果是：
+<span class="arithmatex">\(<span class="arithmatex">\(z'=(n+f)- \frac{nf}{z}\)</span>\)</span>
+实际的分箱宽度应当与世界坐标下的 z 值有关，而不是透视变换后的 z 值。
+<span class="arithmatex">\(<span class="arithmatex">\(dz'=fn\,\frac{ dz}{z^2}\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(\triangle z'\approx fn\, \frac{\triangle z}{z^2}\)</span>\)</span>
+世界空间中的分箱间距为：
+<span class="arithmatex">\(<span class="arithmatex">\(\triangle z\approx \frac{z^2\,\triangle z'}{fn}\)</span>\)</span>
+正如上面讨论的那样，最大的箱子由 z=f 产生：
+<span class="arithmatex">\(<span class="arithmatex">\(\triangle z^{max}\approx \frac{f}{n}\,\triangle z'\)</span>\)</span>
+上述公式表示：如果我们希望让 n 尽可能地接近 0（这样能在摄像机前捕获尽可能多的物体），会导致最大分箱的宽度趋向正无穷，这意味着会有大量物体无法区分它们的前后关系。
+一般地，我们会希望最大分箱宽度尽可能地小，使我们能更好地区分所有物体地远近关系。因此，仔细选择 n 和 f 总是很重要的。</p>
+<h3 id="924">9.2.4 逐顶点着色<a class="headerlink" href="#924" title="Permanent link">&para;</a></h3>
+<p>到目前为止，将三角形发送到管线的应用程序负责设置颜色。光栅化器只是插值颜色，并且直接写入输出图像。但在许多情况下，我们希望利用我们在之前提及的渲染方程来对 3 D 对象着色。
+回想一下，这些方程需要光方向、摄像机方向和表面法线来计算表面的颜色。</p>
+<p>处理阴影计算的一种方法是在顶点阶段执行它们。应用程序在顶点处提供法向量，并且分别提供光的位置和颜色（对于三角面上的光照信息、面法线，面上的顶点共享这些信息）。对于每个顶点，到观察者的方向和到每个光源的方向是基于相机、光源和顶点的位置计算的。利用阴影方程计算颜色，然后将其作为顶点颜色传递给光栅器。</p>
+<blockquote>
+<p>顶点着色有时被称为 Gouraud 着色。</p>
+</blockquote>
+<p>要做的一个决定是进行着色计算的坐标系统。世界空间或视空间都是不错的选择。当在世界空间中查看时，选择一个标准正交的坐标系是很重要的，因为阴影方程依赖于向量之间的角度，而这些角度不能通过非均匀尺度或透视投影等操作来保存。在视空间中着色有一个优点，我们不需要跟踪相机的位置，因为相机总是在视空间的原。</p>
+<p>逐顶点着色的缺点是它不能在着色中产生任何比图元更小的细节，因为它只对每个顶点计算一次着色，而不会计算顶点之间的着色。
+例如，在一个房间里，地板是用两个大三角形绘制的，并由房间中间的光源照亮，阴影只会在房间的角落进行评估，而插值值可能会在中心太暗。同样，拥有镜面高光的曲面必须使用足够小的图元来绘制，以便在逐顶点着色阶段计算出足够精确的高光。</p>
+<h3 id="925">9.2.5 逐片元着色<a class="headerlink" href="#925" title="Permanent link">&para;</a></h3>
+<p>为了避免与逐顶点着色相关的插值伪影，我们可以在片元阶段通过在插值之后执行着色计算来避免插值颜色。在每个片元着色中，评估相同的着色方程，但它们是使用插值向量对每个片段进行评估，而不是使用来自应用程序的向量对每个顶点进行评估。</p>
+<p>在逐片段着色中，着色所需的几何信息作为属性通过光栅器传递，因此顶点阶段必须与片段阶段协调以适当地准备数据。一种方法是插值视空间表面法线和视空间顶点位置，然后可以像在逐顶点着色中一样使用它们。</p>
+<h3 id="926">9.2.6 纹理映射<a class="headerlink" href="#926" title="Permanent link">&para;</a></h3>
+<p>纹理用来为表面的着色添加额外细节。这个想法很简单：每次计算着色时，我们从纹理中读取着色计算中使用的值，例如漫反射颜色，而不是使用附加到正在渲染的几何体的属性。
+这个操作被称为纹理查找：指定一个纹理坐标（这是纹理域中的一个点），纹理映射系统在纹理图像中找到该点的值并返回它。纹理值随后用于着色的计算。</p>
+<p>定义纹理坐标最常见的方法是简单地将纹理坐标作为另一个顶点属性。然后每个图元都知道自己在纹理中的位置。</p>
+<h3 id="927">9.2.7 着色频率<a class="headerlink" href="#927" title="Permanent link">&para;</a></h3>
+<p>决定在哪里进行着色计算取决于颜色变化的速度—— Detail 细节的尺度。
+具有大规模特征的着色，例如曲面上的漫射着色，可以相当不频繁地进行评估，然后进行插值——它可以使用低频率进行着色计算。
+产生小尺度特征的着色，如尖锐的高光或详细的纹理，需要在高着色频率下进行评估。对于需要在图像中看起来清晰的细节，着色频率至少要为每像素一个着色样本。</p>
+<p>所以大规模的效果可以安全地在顶点阶段计算，即使图元包含许多像素。
+需要高着色频率的效果也可以在顶点阶段计算，只要顶点在图像中足够接近。当图元大于一个像素时，它们可以考虑在片元阶段计算。</p>
+<p>例如，在电脑游戏中使用的硬件管线，通常使用覆盖几个像素的图元来确保高效率，这些硬件管线通常在逐片元着色执行大多数着色计算。另一方面，写实的 RenderMan 系统在首次细分有表面后，对每个顶点进行所有着色计算，这些细分的四边形表面被称为微多边形，大约是像素大小。由于图元很小，该系统中的逐顶点着色实现了高着色频率，适合于细节的着色。</p>
+<h2 id="93">9.3 简单抗锯齿<a class="headerlink" href="#93" title="Permanent link">&para;</a></h2>
+<p>就像光线跟踪一样，如果我们对每个像素是否在图元内部做出全有或全无的判断，光栅化将产生锯齿线和三角形边缘。事实上，简单光栅化算法生成的片元集合，有时称为标准光栅化或混叠光栅化。它与光线跟踪器映射到三角形的像素集完全相同，光线跟踪器通过每个像素的中心发射一条光线。因此正如在光线跟踪中，解决方案是允许像素被不同的图元<strong>部分覆盖</strong>。
+在实践中，这种形式的模糊有助于视觉质量，特别是在动画中。
+<img alt="" src="pic/Pasted%20image%2020240310172539.png" />
+在光栅化应用程序中有许多不同的抗锯齿方法。就像在光线跟踪器中一样，我们可以通过将每个像素值设置为以像素为中心的方形区域上颜色的平均值，来产生抗锯齿图像，称为方框过滤。</p>
+<p>实现框滤波抗锯齿最简单的方法是通过超采样：创建极高分辨率的图像，然后进行下采样。例如，如果我们的目标是宽度为 1.2 像素的线条的 256 x 256 像素的图像，我们可以在 1024 x 1024 屏幕上栅格化宽度为 4.8 像素的矩形版本的线条，然后平均 4 x 4 组像素以获得‘缩小’图像中 256 x 256 像素中每一个的颜色。
+这是实际框过滤图像的近似值。但只有当对象相对于像素之间的距离不是非常小时，效果才会好。</p>
+<p>然而，超采样是相当昂贵的。
+由于导致混叠伪影的非常尖锐的边缘通常是由图元的边线引起的，而非图元中着色的突然变化。因此一种广泛使用的优化是在图元边线上使用更高的可视性采样率。</p>
+<p>如果在每个像素内存储几个点的覆盖率和深度信息，即使只计算一种颜色也可以实现非常好的抗锯齿。在像 RenderMan 这样使用逐顶点着色的系统中，这是通过高分辨率的栅格化来实现的：这样做是不昂贵的，因为着色只是简单地插值片元产生来颜色。在每个片元着色的系统中，如硬件管道，多样本抗锯齿是通过为每个片元存储一个颜色加上一个遮罩和一组深度值来实现的。</p>
+<h2 id="94">9.4 剔除图元以提高效率<a class="headerlink" href="#94" title="Permanent link">&para;</a></h2>
+<p>对象顺序渲染的优势在于，它需要对场景中的所有几何体进行一次传递（光追需要反复查询场景几何），这也是它面对复杂场景的弱点。例如，在整个城市的模型中，只有少数建筑物可能是可见的。通过绘制场景中的所有原语可以获得正确的图像，但是在处理可见建筑物后面或观看者后面的几何图形时将浪费大量的精力，而且对最终图像没有任何贡献。</p>
+<p>识别和丢弃不可见的几何图形，以节省处理它所花费的时间，被称为剔除。三种常用的筛选策略(通常同时使用)是：</p>
+<ol>
+<li>视体积剔除：移除视图体外的几何体。</li>
+<li>遮蔽剔除：移除可能在视图体内，但被更近的几何体遮挡的几何体。</li>
+<li>背面剔除：移除背对相机的图元。</li>
+</ol>
+<p>我们将简要讨论视图体积剔除和背面剔除，但高性能系统中的剔除是一个复杂的主题。</p>
+<h3 id="941">9.4.1 视图体积剔除<a class="headerlink" href="#941" title="Permanent link">&para;</a></h3>
+<p>当整个图元位于视图体积之外时，它可以被剔除，因为它在光栅化时不会产生片元。如果我们可以通过快速测试剔除许多图元，我们可能能够显著加快绘制速度。
+另一方面，单独测试图元（以确定需要绘制哪些图元）可能比让光栅化器消除它更费时。</p>
+<p>视图体积剔除，也称为视图截锥体剔除，在许多三角面归属于一个几何体，并且这个几何体有一个明确的边界体积时，视图体积剔除会很有用。如果边界体位于视图体之外，那么构成对象的所有三角形也位于视图体之外。例如，如果我们有 1000 个三角形以一个圆心为 c，半径为 r 的球体为界，我们可以检查球体是否位于剪切平面之外：
+<span class="arithmatex">\(<span class="arithmatex">\(\frac{(c-a)\cdot n}{\Vert n \Vert}&gt;r\)</span>\)</span>
+c 和 r 是球体的中心-和半径，n 是面法向，a 是平面上的一点。</p>
+<p>请注意，即使在所有三角形都位于平面外的情况下，球体也可能与平面重叠。因此，这是一个保守的测试。测试的保守程度取决于球体对物体的约束程度。</p>
+<p>如果场景是在第 12 章中描述的空间数据结构中组织的，那么同样的想法也可以分层应用。</p>
+<h3 id="942">9.4.2 “背面”剔除<a class="headerlink" href="#942" title="Permanent link">&para;</a></h3>
+<p>当多边形模型是封闭的，即它们约束一个没有孔的封闭空间时，通常假设它们具有面向外的法向量。
+对于这样的模型，背向摄像机的多边形肯定会被朝向摄像机的多边形所覆盖。因此，这些多边形可以在图形管线开始之前被剔除。</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+  <h2 id="__comments">Comments</h2>
+  <!-- Insert generated snippet here -->
+  <script src="https://giscus.app/client.js"
+        data-repo="syiooo/syiooo.github.io"
+        data-repo-id="R_kgDOPeemcg"
+        data-category="Show and tell"
+        data-category-id="DIC_kwDOPeemcs4CuRNW"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
+  <!-- Synchronize Giscus theme with palette -->
+  <script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    // Set palette on initial load
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+      var theme = palette.color.scheme === "slate"
+        ? "transparent_dark"
+        : "light"
+
+      // Instruct Giscus to set theme
+      giscus.setAttribute("data-theme", theme) 
+    }
+
+    // Register event handlers after documented loaded
+    document.addEventListener("DOMContentLoaded", function() {
+      var ref = document.querySelector("[data-md-component=palette]")
+      ref.addEventListener("change", function() {
+        var palette = __md_get("__palette")
+        if (palette && typeof palette.color === "object") {
+          var theme = palette.color.scheme === "slate"
+            ? "transparent_dark"
+            : "light"
+
+          // Instruct Giscus to change theme
+          var frame = document.querySelector(".giscus-frame")
+          frame.contentWindow.postMessage(
+            { giscus: { setConfig: { theme } } },
+            "https://giscus.app"
+          )
+        }
+      })
+    })
+  </script>
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant.progress", "navigation.tracking", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "content.code.copy", "content.code.select", "navigation.tabs", "content.footnote.tooltips"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.50899def.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
