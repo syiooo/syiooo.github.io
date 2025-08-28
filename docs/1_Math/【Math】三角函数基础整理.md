@@ -125,7 +125,7 @@ $$
 
 ### 4.4 积化和差与和差化积公式
 
-1️⃣积化和差公式
+1️⃣ 积化和差公式
 1.  $\sin\alpha \cos\beta$ = $\frac{1}{2}[\sin(\alpha+\beta)+\sin(\alpha-\beta)]$
 2. $\cos\alpha \sin\beta$ = $\frac{1}{2}[\sin(\alpha+\beta)-\sin(\alpha-\beta)]$
 3. $\cos\alpha \cos\beta$ = $\frac{1}{2}[\cos(\alpha+\beta)+\cos(\alpha-\beta)]$
@@ -141,9 +141,7 @@ $$
 3. $CC$ = $\frac{1}{2}(C+C)$
 4. $SS$ = $-\frac{1}{2}(C-C)$
 
-
-
-2️⃣和差化积公式 (本质就是从积化和差换元得到的)
+2️⃣ 和差化积公式 (本质就是从积化和差换元得到的)
 1. $\sin\alpha+\sin\beta$ = $2\sin \frac {{\alpha+\beta}} {2} \cos \frac{{\alpha-\beta}}{2}$
 2. $\sin\alpha-\sin\beta$ = $2\sin \frac {{\alpha-\beta}} {2}\cos \frac{{\alpha+\beta}}{2}$
 3. $\cos\alpha+\cos\beta$ = $2\cos \frac {{\alpha+\beta}} {2} \cos \frac{{\alpha-\beta}}{2}$
@@ -165,7 +163,8 @@ $$
 4. $\cos(\arcsin x)$ = $\sqrt{ 1-x^{2} },x\in[-1,1]$
 5. $\arcsin(\sin x)$ = $x,x\in\left[ - \frac{\pi}{2}, \frac{\pi}{2} \right]$
 6. $\arccos(\cos x)$ = $x,x\in[0, \pi]$
-7. $\arcsin x+\arccos x$ = $\frac{\pi}{2}(-1\leq x\leq 1)$
+7. $\arcsin x+\arccos x$ = $\frac{\pi}{2}$
+8. $\arctan x+arc\cot x= \frac{\pi}{2}$
 
 ## 6. 诱导公式
 
