@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "f4fe70e2d846efff",
+        "id": "8e7b7f4c95a7f557",
         "type": "tabs",
         "children": [
           {
-            "id": "8d57bddbe7b59bd3",
+            "id": "1ccafc411f0d1127",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -74,8 +74,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 247.5,
-    "collapsed": true
+    "width": 247.5
   },
   "right": {
     "id": "d585b806ec645efa",
@@ -167,7 +166,7 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "8d57bddbe7b59bd3",
+  "active": "1ccafc411f0d1127",
   "lastOpenFiles": [
     "1_Math/【第十讲】几何应用.md",
     "blog/posts/【Latex】Latex-备忘录.md",
