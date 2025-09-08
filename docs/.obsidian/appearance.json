@@ -1,11 +1,11 @@
 {
-  "cssTheme": "Wasp",
+  "cssTheme": "Obsidian gruvbox",
   "translucency": false,
   "nativeMenus": false,
   "accentColor": "",
   "baseFontSizeAction": true,
   "textFontFamily": "PT Serif",
-  "theme": "system",
+  "theme": "obsidian",
   "interfaceFontFamily": "",
   "baseFontSize": 19
 }
