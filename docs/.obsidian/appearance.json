@@ -1,11 +1,11 @@
 {
-  "cssTheme": "Obsidian gruvbox",
+  "cssTheme": "Solarized",
   "translucency": false,
   "nativeMenus": false,
   "accentColor": "",
   "baseFontSizeAction": true,
   "textFontFamily": "PT Serif",
-  "theme": "obsidian",
+  "theme": "system",
   "interfaceFontFamily": "",
   "baseFontSize": 19
 }
