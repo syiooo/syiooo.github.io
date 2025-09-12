@@ -11,10 +11,14 @@
             "id": "f360ff9ce6ec329f",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "1_Math/【基础】常见不等式整理.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "【基础】常见不等式整理"
             }
           }
         ]
@@ -168,9 +172,9 @@
   },
   "active": "f360ff9ce6ec329f",
   "lastOpenFiles": [
-    "1_Math/【前八讲｜大杂糅】必背公式和定理整理.md",
-    "1_Math/【基础】泰勒展开式.md",
     "1_Math/【基础】三角函数基础整理.md",
+    "1_Math/【基础】泰勒展开式.md",
+    "1_Math/【前八讲｜大杂糅】必背公式和定理整理.md",
     "1_Math/【基础】常见不等式整理.md",
     "1_Math/【第九讲】一元函数积分学的计算.md",
     "1_Math/【第十一讲】积分应用（二）.md",
