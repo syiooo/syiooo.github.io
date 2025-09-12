@@ -35,6 +35,14 @@ comments: true
 
 <div class="grid cards" markdown>
 
+-   :fontawesome-brands-vuejs:{ .lg .middle } __Astro 博客主题 - Syight__
+
+    ---
+
+    简约大气的博客主题，极值的访问速度，现已部署于 Vercel 可随时访问🚀。
+
+    [:octicons-arrow-right-24: Getting started](https://syight.site/)
+
 -   :fontawesome-brands-vuejs:{ .lg .middle } __基于Vue的搜索起始页__
 
     ---
