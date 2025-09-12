@@ -1255,12 +1255,15 @@ $$</p>
 <p>我们可以将一个形式如 <span class="arithmatex">\(\int_{a}^b f(x)d_{x}\)</span> 的表达式改造为 <span class="arithmatex">\(f_{a}^x f(t)d_{t}\)</span>，这样就从一个定值将其抽象为了一个函数，通过研究函数的性质得到不等式关系。</p>
 <p>该方法的思想就是构造。</p>
 <h3 id="22">2.2 用拉格朗日中值定理<a class="headerlink" href="#22" title="Permanent link">&para;</a></h3>
-<p>拉格朗日中值定理见：[[【前八讲｜大杂糅】必背公式和定理整理]] 的第十一个标题。</p>
+<p>拉格朗日中值定理见：[[【中值定理】第六讲相关整理]] 的专题整理，如 <code>例 11.8</code> 中要找到 <span class="arithmatex">\(f(x)\)</span> 和 <span class="arithmatex">\(f'(x)\)</span> 的关系就可以考虑用拉格朗日中值定理构建 <span class="arithmatex">\(f(x)\)</span> 与 <span class="arithmatex">\(f'(x)\)</span> 的关系。</p>
+<p>再利用好连续函数上 <span class="arithmatex">\(f'(\xi)\)</span>  一定存在最大值即可。</p>
 <h3 id="23">2.3 用泰勒公式<a class="headerlink" href="#23" title="Permanent link">&para;</a></h3>
 <p>若题目中有“<span class="arithmatex">\(f(x)\)</span> 二阶可导”且题目中有简单函数可以考虑泰勒展开，对于泰勒展开又可以分为带佩诺亚余项展开和拉格朗日余项的展开，如果题目中不涉及极限一般采用拉格朗日展开，届时会产生带有 <span class="arithmatex">\(\xi\)</span>  的误差项，我们利用 <span class="arithmatex">\(\xi\)</span> 作文章即可。</p>
-<p>比如 <code>例 11.9</code>，</p>
 <h3 id="24">2.4 用积分法<a class="headerlink" href="#24" title="Permanent link">&para;</a></h3>
+<p>被积函数是两项相乘形式可考虑该方法。</p>
 <h3 id="25-">2.5 用牛顿-莱布尼兹公式<a class="headerlink" href="#25-" title="Permanent link">&para;</a></h3>
+<p>一个很绝妙的构造，零生万物，如果条件中给了 <span class="arithmatex">\(f(a)=f(b)=0\)</span> 类似的 <span class="arithmatex">\(0\)</span> 值，可以考虑把零加在式子的任何一个地方构造出新的函数：<span class="arithmatex">\(f(x)=f(x)-f(a)=\int_{a}^x f'(t)d_{t}\)</span>。</p>
+<p>如果对 <span class="arithmatex">\(f'(x)\)</span> 求原函数并代入 <span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(a\)</span> 就是在用牛顿-莱布尼兹公式了。</p>
 
 
 
