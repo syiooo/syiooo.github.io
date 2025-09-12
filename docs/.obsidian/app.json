@@ -3,5 +3,6 @@
   "foldHeading": true,
   "showLineNumber": false,
   "smartIndentList": true,
-  "useTab": true
+  "useTab": true,
+  "alwaysUpdateLinks": true
 }
