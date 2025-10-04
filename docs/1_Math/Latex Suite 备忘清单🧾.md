@@ -23,8 +23,6 @@
 | xund    | \underline{x}      | $\underline{x}$ |
 | ee      | e^{ }              | $e^{ 2 }$       |
 | invs    | ^{-1}              | $2^{-1}$        |
-|         |                    |                 |
-|         |                    |                 |
 
 When running a snippet that **moves the cursor inside brackets {}, press Tab to exit the brackets**.
 
