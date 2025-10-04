@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "cbcdea6050f52642",
+        "id": "54719f30cd1cd346",
         "type": "tabs",
         "children": [
           {
-            "id": "03fa632aac304351",
+            "id": "a87b16b0a41a20ec",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1_Math/Latex Suite 备忘清单🧾.md",
+                "file": "5_Cognition/考研122天小记.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Latex Suite 备忘清单🧾"
+              "title": "考研122天小记"
             }
           }
         ]
@@ -170,15 +170,26 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "03fa632aac304351",
+  "active": "cd83c24e48d61d19",
   "lastOpenFiles": [
+    "blog/posts/MkDocs Material 常用块语法.md",
+    "5_Cognition/考研122天小记.md",
+    "blog/posts/【游戏开发】聊一聊独立游戏开发者的邪道自学绘画.md",
+    "blog/posts/【GAMES101｜Lecture 02】- Review of Linear Algebra.md",
+    "blog/posts/【Latex】30分钟学会LaTeX.md",
+    "blog/posts/【Latex】Latex-备忘录.md",
+    "blog/posts/【manim】初入代码动画的王国.md",
+    "5_Cognition/【认知心理学杂谈】为什么有些人学不好xx？.md",
+    "5_Cognition/【认知心理学】考研如何复习？谈谈我对间隔式练习的理解。.md",
+    "blog/posts/【50projects-50-days】Day-3.md",
+    "blog/posts/【50projects-50-days】Day-1.md",
+    "1_Math/Latex Suite 备忘清单🧾.md",
     "1_Math/【第12讲】一元积分的物理应用.md",
     "1_Math/【第14讲】二重积分整理.md",
     "1_Math/【前8讲】必背公式和定理整理.md",
     "1_Math/【基础】泰勒展开式.md",
     "1_Math/【基础】三角函数基础整理.md",
     "1_Math/【基础】常见不等式整理.md",
-    "1_Math/Latex Suite 备忘清单🧾.md",
     "1_Math/【第16讲】无穷级数.md",
     "1_Math/【第11讲】积分积分应用（二）.md",
     "1_Math/【第13讲】多元函数微分学整理.md",
@@ -188,16 +199,6 @@
     "1_Math/默写/【答案】公式默写自测.md",
     "1_Math/默写",
     "1_Math/默写/【默写】公式默写自测.md",
-    "3_408/CSAPP/第一章 计算机系统漫游/1.01 信息就是位＋上下文.md",
-    "3_408/CSAPP/第二章 信息的表示和处理/2.1 信息存储.md",
-    "5_Cognition/【组块搭建步骤】要当一个耐刷王.md",
-    "5_Cognition/【专注力】专注力提升.md",
-    "index.md",
-    "4_Experience/个人小记.md",
-    "blog/posts/【Latex】Latex-备忘录.md",
-    "第五讲.md",
-    "6_DataStructure/【第二章】线性表.md",
-    "latex.md",
     "6_DataStructure",
     "5_Cognition",
     "未命名.base",

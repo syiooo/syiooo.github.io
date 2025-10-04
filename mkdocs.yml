@@ -19,6 +19,10 @@ theme:
   #   code: Noto Sans Mono
 
   features:
+    - attr_list # 注释
+    - md_in_html # 注释
+    - pymdownx.superfences # 注释
+    - content.tooltips # 工具提示
     - navigation.instant.progress # 进度指示器仅仅在400ms仍未加载出页面时显示来优化用户体验
     - navigation.tracking # 锚点追踪
     - navigation.prune # 导航修剪
@@ -29,7 +33,6 @@ theme:
     - content.code.copy # 代码复制按钮
     - content.code.select # 代码选择
     - navigation.tabs # 导航栏标签
-    - content.footnote.tooltips # 脚注
   # 修改颜色
   palette:
   # 明亮主题
