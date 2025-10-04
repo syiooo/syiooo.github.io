@@ -13,10 +13,10 @@ theme:
   name: material
   custom_dir: overrides
   # 字体
-  font:
-    text: Noto Serif SC # 思源宋体
-    # text: Noto Sans Simplified Chinese
-    code: Noto Sans Mono
+  # font:
+  #   text: Noto Serif SC # 思源宋体
+  #   # text: Noto Sans Simplified Chinese
+  #   code: Noto Sans Mono
 
   features:
     - navigation.instant.progress # 进度指示器仅仅在400ms仍未加载出页面时显示来优化用户体验
@@ -34,14 +34,14 @@ theme:
   palette:
   # 明亮主题
     - scheme: default
-      primary: indigo
+      primary: white
       toggle:
         icon: material/brightness-7 
         name: Switch to dark mode
 
     # 暗色主题
     - scheme: slate
-      primary: teal
+      primary: black
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
