@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "ef9d1c2ed475ba71",
+        "id": "b1e2f540808134d3",
         "type": "tabs",
         "children": [
           {
-            "id": "b0b9e3b0f2c5bd94",
+            "id": "5009f55ef9594c25",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "5_Cognition/【组块搭建步骤】为什么要当一个耐刷王.md",
+                "file": "4_Experience/个人小记.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "【组块搭建步骤】为什么要当一个耐刷王"
+              "title": "个人小记"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "5_Cognition/【组块搭建步骤】为什么要当一个耐刷王.md",
+                "file": "4_Experience/个人小记.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "【组块搭建步骤】为什么要当一个耐刷王 的大纲"
+              "title": "个人小记 的大纲"
             }
           }
         ],
@@ -169,12 +169,13 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "b0b9e3b0f2c5bd94",
+  "active": "5009f55ef9594c25",
   "lastOpenFiles": [
+    "1_Math/【答案】公式默写自测.md",
+    "4_Experience/个人小记.md",
+    "1_Math/【默写】公式默写自测.md",
     "5_Cognition/【专注力】专注力提升.md",
     "5_Cognition/【组块搭建步骤】为什么要当一个耐刷王.md",
-    "1_Math/【默写】公式默写自测.md",
-    "1_Math/【答案】公式默写自测.md",
     "1_Math/【基础】三角函数基础整理.md",
     "1_Math/【基础】泰勒展开式.md",
     "1_Math/【积分计算】第九讲｜一元函数积分学的计算.md",
@@ -198,7 +199,6 @@
     "late.md",
     "4_Experience/【保姆贴】2024考研数学数一150分经验贴(完全符合26考研).md",
     "blog/posts/【manim】Axes-坐标系及其基类详解.md",
-    "blog/posts/【manim】初入代码动画的王国.md",
     "未命名.base",
     "6_School",
     "5_CG",
