@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "5_Cognition/考研122天小记.md",
+                "file": "5_Cognition/【转载】如何高效地4个月刷满500题.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "考研122天小记"
+              "title": "【转载】如何高效地4个月刷满500题"
             }
           }
         ]
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 399.5
+    "width": 443.5
   },
   "right": {
     "id": "d585b806ec645efa",
@@ -170,10 +170,12 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "cd83c24e48d61d19",
+  "active": "a87b16b0a41a20ec",
   "lastOpenFiles": [
-    "blog/posts/MkDocs Material 常用块语法.md",
     "5_Cognition/考研122天小记.md",
+    "5_Cognition/【转载】如何高效地4个月刷满500题.md",
+    "未命名",
+    "blog/posts/MkDocs Material 常用块语法.md",
     "blog/posts/【游戏开发】聊一聊独立游戏开发者的邪道自学绘画.md",
     "blog/posts/【GAMES101｜Lecture 02】- Review of Linear Algebra.md",
     "blog/posts/【Latex】30分钟学会LaTeX.md",
@@ -198,7 +200,6 @@
     "1_Math/【第9讲】一元函数积分学的计算.md",
     "1_Math/默写/【答案】公式默写自测.md",
     "1_Math/默写",
-    "1_Math/默写/【默写】公式默写自测.md",
     "6_DataStructure",
     "5_Cognition",
     "未命名.base",
@@ -207,7 +208,6 @@
     "3_408/方法论",
     "3_408",
     "2_English/外刊",
-    "2_English/方法论",
     "30讲/第三讲整理.canvas",
     "Web前端/Vitepress主题功能Todo.canvas",
     "30讲/未命名.canvas",
