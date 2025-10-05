@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 443.5
+    "width": 443.5,
+    "collapsed": true
   },
   "right": {
     "id": "d585b806ec645efa",
@@ -142,13 +143,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "1_Math/【第12讲】一元积分的物理应用.md",
+                "file": "5_Cognition/【转载】如何高效地4个月刷满500题.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "【第12讲】一元积分的物理应用 的大纲"
+              "title": "【转载】如何高效地4个月刷满500题 的大纲"
             }
           }
         ],
@@ -156,8 +157,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 223.5,
-    "collapsed": true
+    "width": 223.5
   },
   "left-ribbon": {
     "hiddenItems": {
