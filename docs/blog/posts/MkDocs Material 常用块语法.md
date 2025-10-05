@@ -71,6 +71,18 @@ theme:
       quote: octicons/quote-16
 ```
 
+!!! note "note"
+!!! abstract "abstract"
+!!! info "info"
+!!! tip "tip"
+!!! success "success"
+!!! question "question"
+!!! warning "warning"
+!!! failure "failure"
+!!! danger "danger"
+!!! bug "bug"
+!!! example "example"
+!!! quote "quote"
 ## 2. 注释
 
 ### 配置
