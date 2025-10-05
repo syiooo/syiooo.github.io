@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "5_Cognition/【机试小记】面向kr机试的资料整理.md",
+                "file": "7_ Retest/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "【机试小记】面向kr机试的资料整理"
+              "title": "index"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "5_Cognition/【机试小记】面向kr机试的资料整理.md",
+                "file": "7_ Retest/index.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "【机试小记】面向kr机试的资料整理 的大纲"
+              "title": "index 的大纲"
             }
           }
         ],
@@ -171,13 +171,15 @@
   },
   "active": "a87b16b0a41a20ec",
   "lastOpenFiles": [
-    "5_Cognition/【机试｜转载】如何高效地4个月刷满500题.md",
+    "7_ Retest/【机试｜转载】如何高效地4个月刷满500题.md",
+    "7_ Retest/【机试小记】面向kr机试的资料整理.md",
+    "7_ Retest/index.md",
+    "4_Experience/个人小记.md",
+    "7_ Retest",
     "5_Cognition/【专注力】专注力提升.md",
-    "5_Cognition/【机试小记】面向kr机试的资料整理.md",
     "5_Cognition/【组块搭建步骤】要当一个耐刷王.md",
     "5_Cognition/【认知心理学】考研如何复习？谈谈我对间隔式练习的理解。.md",
     "5_Cognition/考研122天小记.md",
-    "未命名",
     "blog/posts/MkDocs Material 常用块语法.md",
     "blog/posts/【游戏开发】聊一聊独立游戏开发者的邪道自学绘画.md",
     "blog/posts/【GAMES101｜Lecture 02】- Review of Linear Algebra.md",
@@ -196,8 +198,6 @@
     "1_Math/【基础】常见不等式整理.md",
     "1_Math/【第16讲】无穷级数.md",
     "1_Math/【第11讲】积分积分应用（二）.md",
-    "1_Math/【第13讲】多元函数微分学整理.md",
-    "1_Math/【第10讲】积分几何应用（一）.md",
     "1_Math/默写",
     "6_DataStructure",
     "5_Cognition",
