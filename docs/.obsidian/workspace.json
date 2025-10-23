@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "91052546f5969a80",
+        "id": "d4e9839418e5a4c1",
         "type": "tabs",
         "children": [
           {
-            "id": "5bd210356a7b59ea",
+            "id": "a6af1331d8644f8e",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -150,9 +150,19 @@
               "icon": "lucide-list",
               "title": "【第二章】线性表 的大纲"
             }
+          },
+          {
+            "id": "ed67bdf42b1b82ea",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -166,12 +176,26 @@
       "canvas:新建白板": false,
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
-      "command-palette:打开命令面板": false
+      "command-palette:打开命令面板": false,
+      "obsidian-git:Open Git source control": false
     }
   },
-  "active": "5bd210356a7b59ea",
+  "active": "cd83c24e48d61d19",
   "lastOpenFiles": [
+    "6_DataStructure/【第二章】线性表.md",
+    "blog/posts/27 考研群知乎推广贴.md",
+    "blog/posts/【游戏开发】聊一聊独立游戏开发者的邪道自学绘画.md",
+    "1_Math/浙群提问归档.md",
+    "1_Math/Latex Suite 备忘清单🧾.md",
+    "5_Cognition/考研122天小记.md",
     "6_DataStructure/【第一章】绪论.md",
+    "1_Math/【第16讲】无穷级数.md",
+    "1_Math/【第12讲】一元积分的物理应用.md",
+    "1_Math/【前8讲】必背公式和定理整理.md",
+    "5_Cognition/【认知心理学】考研如何复习？谈谈我对间隔式练习的理解。.md",
+    "5_Cognition/【认知心理学杂谈】为什么有些人学不好xx？.md",
+    "5_Cognition/【专注力】专注力提升.md",
+    "5_Cognition/【组块搭建步骤】要当一个耐刷王.md",
     "7_ Retest/【机试小记】面向kr机试的资料整理.md",
     "7_ Retest/【机试｜转载】如何高效地4个月刷满500题.md",
     "7_ Retest/index.md",
@@ -179,25 +203,12 @@
     "blog/posts/MkDocs Material 常用块语法.md",
     "4_Experience/个人小记.md",
     "7_ Retest",
-    "5_Cognition/【专注力】专注力提升.md",
-    "5_Cognition/【组块搭建步骤】要当一个耐刷王.md",
-    "5_Cognition/【认知心理学】考研如何复习？谈谈我对间隔式练习的理解。.md",
-    "5_Cognition/考研122天小记.md",
-    "blog/posts/【游戏开发】聊一聊独立游戏开发者的邪道自学绘画.md",
     "blog/posts/【GAMES101｜Lecture 02】- Review of Linear Algebra.md",
     "blog/posts/【Latex】30分钟学会LaTeX.md",
     "blog/posts/【Latex】Latex-备忘录.md",
     "blog/posts/【manim】初入代码动画的王国.md",
-    "5_Cognition/【认知心理学杂谈】为什么有些人学不好xx？.md",
     "blog/posts/【50projects-50-days】Day-3.md",
     "blog/posts/【50projects-50-days】Day-1.md",
-    "1_Math/Latex Suite 备忘清单🧾.md",
-    "1_Math/【第12讲】一元积分的物理应用.md",
-    "1_Math/【第14讲】二重积分整理.md",
-    "1_Math/【前8讲】必背公式和定理整理.md",
-    "1_Math/【基础】泰勒展开式.md",
-    "1_Math/【基础】三角函数基础整理.md",
-    "1_Math/【基础】常见不等式整理.md",
     "1_Math/默写",
     "6_DataStructure",
     "5_Cognition",
